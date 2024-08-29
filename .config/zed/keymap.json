@@ -1,0 +1,14 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-shift-/": "editor::ToggleComments"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-b": "workspace::ToggleRightDock"
+    }
+  }
+]
