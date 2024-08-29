@@ -637,17 +637,21 @@ require('lazy').setup({
           lsp_format = lsp_format_opt,
         }
       end,
-      formatters_by_ft = {
-        lua = { 'stylua' },
-        -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
-        --
-        -- You can use 'stop_after_first' to run the first available formatter from the list
-        javascript = { 'prettierd', 'prettier', stop_after_first = true },
-        typescript = { 'prettierd', 'prettier', stop_after_first = true },
-        vue = { 'prettierd', 'prettier', stop_after_first = true },
-        html = { 'prettierd', 'prettier', stop_after_first = true },
-      },
+      formatters_by_ft = (function()
+        local config = {
+          lua = { 'stylua' },
+          -- Conform can also run multiple formatters sequentially
+          -- python = { "isort", "black" },
+          --
+          -- You can use 'stop_after_first' to run the first available formatter from the list
+        }
+
+        for _, lang in ipairs { 'javascript', 'typescript', 'vue', 'html' } do
+          config[lang] = { 'prettierd', 'prettier', stop_after_first = true }
+        end
+
+        return config
+      end)(),
     },
   },
 
