@@ -15,3 +15,6 @@ export PATH=$BUN_INSTALL/bin:$PATH
 # nvim
 export PATH="$PATH:/opt/nvim-linux64/bin"
 alias vim="nvim"
+
+# git
+alias undo="git reset --soft HEAD^"
