@@ -13,4 +13,4 @@
 [trailer "changeid"]
 	key = Change-Id
 [core]
-	editor = nvim
+	editor = nvim --clean
