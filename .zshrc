@@ -1,0 +1,17 @@
+# starship
+eval "$(starship init zsh)"
+
+# fnm
+FNM_PATH="/home/evest/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/evest/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+
+# nvim
+export PATH="$PATH:/opt/nvim-linux64/bin"
+alias vim="nvim"
