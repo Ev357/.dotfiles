@@ -154,7 +154,21 @@ require('lazy').setup({
     },
     config = true,
   },
-  'numToStr/Comment.nvim',
+  {
+    'numToStr/Comment.nvim',
+    config = function()
+      ---@diagnostic disable-next-line
+      require('Comment').setup {
+        pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+      }
+    end,
+    event = 'BufReadPre',
+    lazy = false,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'JoosepAlviste/nvim-ts-context-commentstring',
+    },
+  },
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
