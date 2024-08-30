@@ -169,6 +169,20 @@ require('lazy').setup({
       'JoosepAlviste/nvim-ts-context-commentstring',
     },
   },
+  {
+    'stevearc/oil.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }, -- use if prefer nvim-web-devicons
+    config = function()
+      local oil = require 'oil'
+
+      oil.setup {
+        default_file_explorer = true,
+        skip_confirm_for_simple_edits = true,
+      }
+
+      vim.keymap.set('n', '-', oil.open, { desc = 'Open parent directory' })
+    end,
+  },
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
