@@ -155,6 +155,7 @@ require('lazy').setup({
       'nvim-telescope/telescope.nvim',
     },
     config = true,
+    branch = 'master',
   },
   {
     'numToStr/Comment.nvim',
