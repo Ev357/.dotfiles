@@ -100,6 +100,10 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = '[E]rror diagnostics' })
 
+vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv", { desc = 'Move line up' })
+vim.keymap.set('v', '<C-j>', ":m '>+1<CR>gv", { desc = 'Move line down' })
+vim.keymap.set('v', '<C-Up>', ":m '<-2<CR>gv", { desc = 'Move line up' })
+vim.keymap.set('v', '<C-Down>', ":m '>+1<CR>gv", { desc = 'Move line down' })
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
