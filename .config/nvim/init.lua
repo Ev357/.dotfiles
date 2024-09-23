@@ -104,6 +104,14 @@ vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv", { desc = 'Move line up' })
 vim.keymap.set('v', '<C-j>', ":m '>+1<CR>gv", { desc = 'Move line down' })
 vim.keymap.set('v', '<C-Up>', ":m '<-2<CR>gv", { desc = 'Move line up' })
 vim.keymap.set('v', '<C-Down>', ":m '>+1<CR>gv", { desc = 'Move line down' })
+
+vim.keymap.set('n', '<PageUp>', '')
+vim.keymap.set('n', '<PageDown>', '')
+vim.keymap.set('v', '<PageUp>', '')
+vim.keymap.set('v', '<PageDown>', '')
+vim.keymap.set('i', '<PageUp>', '')
+vim.keymap.set('i', '<PageDown>', '')
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
