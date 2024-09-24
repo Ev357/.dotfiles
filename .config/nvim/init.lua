@@ -107,6 +107,8 @@ vim.keymap.set('v', '<C-Down>', ":m '>+1<CR>gv", { desc = 'Move line down' })
 
 vim.keymap.set('v', '<S-Up>', 'k')
 vim.keymap.set('v', '<S-Down>', 'j')
+vim.keymap.set('n', '<S-Up>', 'k')
+vim.keymap.set('n', '<S-Down>', 'j')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
