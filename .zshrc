@@ -19,3 +19,7 @@ alias vim="nvim"
 
 # git
 alias undo="git reset --soft HEAD^"
+
+# zsh
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
