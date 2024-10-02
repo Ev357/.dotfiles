@@ -196,6 +196,19 @@ require('lazy').setup({
       vim.keymap.set('n', '-', oil.open, { desc = 'Open parent directory' })
     end,
   },
+  {
+    'mbbill/undotree',
+    keys = {
+      {
+        '<leader>u',
+        vim.cmd.UndotreeToggle,
+        desc = '[U]ndo tree',
+      },
+    },
+    config = function()
+      vim.g.undotree_SetFocusWhenToggle = 1
+    end,
+  },
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
