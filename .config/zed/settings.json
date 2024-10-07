@@ -8,6 +8,9 @@
 // from the command palette or from `Zed` application menu.
 {
   "vim_mode": true,
+  "vim": {
+    "toggle_relative_line_numbers": true
+  },
   "telemetry": {
     "diagnostics": false,
     "metrics": false
