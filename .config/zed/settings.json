@@ -7,6 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "vim_mode": true,
   "telemetry": {
     "diagnostics": false,
     "metrics": false
@@ -24,7 +25,6 @@
   "features": {
     "inline_completion_provider": "none"
   },
-  "autosave": "on_focus_change",
   "tab_size": 2,
   "formatter": {
     "external": {
