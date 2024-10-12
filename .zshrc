@@ -63,7 +63,6 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 # aliases
 alias ls="ls --color"
 alias la="ls -lAh --color"
-alias undo="git reset --soft HEAD^"
 alias vim="nvim"
 
 # integrations
