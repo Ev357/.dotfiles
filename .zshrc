@@ -60,6 +60,10 @@ zstyle ':completion:*' menu no
 # nvim
 export PATH="$PATH:/opt/nvim-linux64/bin"
 
+# zoxide
+export PATH="$PATH:$HOME/.local/bin"
+eval "$(zoxide init --cmd cd zsh)"
+
 # aliases
 alias ls="ls --color"
 alias la="ls -lAh --color"
