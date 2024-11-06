@@ -16,3 +16,5 @@
 	editor = nvim --clean
 [alias]
 	undo = reset --soft HEAD^
+[status]
+	showUntrackedFiles = all
