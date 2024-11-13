@@ -696,13 +696,14 @@ require('lazy').setup({
       formatters_by_ft = (function()
         local config = {
           lua = { 'stylua' },
+          arduino = { 'clang-format' },
           -- Conform can also run multiple formatters sequentially
           -- python = { "isort", "black" },
           --
           -- You can use 'stop_after_first' to run the first available formatter from the list
         }
 
-        for _, lang in ipairs { 'javascript', 'typescript', 'vue', 'html', 'css', 'json', 'typescriptreact' } do
+        for _, lang in ipairs { 'javascript', 'typescript', 'vue', 'html', 'css', 'json', 'typescriptreact', 'yaml' } do
           config[lang] = { 'prettierd', 'prettier', stop_after_first = true }
         end
 
