@@ -697,6 +697,7 @@ require('lazy').setup({
         local config = {
           lua = { 'stylua' },
           arduino = { 'clang-format' },
+          cs = { 'csharpier' },
           -- Conform can also run multiple formatters sequentially
           -- python = { "isort", "black" },
           --
