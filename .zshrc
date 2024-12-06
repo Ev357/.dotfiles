@@ -52,6 +52,9 @@ export PATH=$BUN_INSTALL/bin:$PATH
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
+# dotnet
+export PATH="$PATH:$HOME/.dotnet/tools"
+
 # zsh completions
 autoload -U compinit && compinit
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
