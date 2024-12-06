@@ -71,6 +71,7 @@ eval "$(zoxide init --cmd cd zsh)"
 alias ls="ls --color"
 alias la="ls -lAh --color"
 alias vim="nvim"
+alias cat="bat"
 alias nuget="mono /usr/local/bin/nuget.exe"
 
 # integrations
