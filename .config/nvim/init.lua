@@ -705,7 +705,7 @@ require('lazy').setup({
         }
 
         for _, lang in ipairs { 'javascript', 'typescript', 'vue', 'html', 'css', 'scss', 'json', 'typescriptreact', 'yaml' } do
-          config[lang] = { 'prettierd', 'prettier', stop_after_first = true }
+          config[lang] = { 'biome', 'prettierd', 'prettier', stop_after_first = true }
         end
 
         return config
