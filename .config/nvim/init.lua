@@ -975,11 +975,3 @@ lspconfig.ts_ls.setup {
 }
 
 lspconfig.volar.setup {}
-
-lspconfig.tailwindcss.setup {
-  root_dir = function(fname)
-    local root_pattern = lspconfig.util.root_pattern('tailwind.config.cjs', 'tailwind.config.js', 'postcss.config.js', 'tailwind.config.ts')
-
-    return root_pattern(fname)
-  end,
-}
