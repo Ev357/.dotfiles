@@ -531,6 +531,12 @@ require('lazy').setup({
           --  Similar to document symbols, except searches over your entire project.
           map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
+          local lsp_priority = {
+            rename = {
+              'csharp_ls',
+            },
+          }
+
           local lsp_have_feature = {
             rename = function(client)
               return client.supports_method 'textDocument/rename'
@@ -581,9 +587,26 @@ require('lazy').setup({
             vim.ui.select(client_names, { prompt = prompt }, on_choice)
           end
 
+          local function lsp_buf_rename_use_priority(fallback)
+            local client_names = get_lsp_client_names(lsp_have_feature.rename)
+            for _, client_priority_name in ipairs(lsp_priority.rename) do
+              for _, client_name in ipairs(client_names) do
+                if client_priority_name == client_name then
+                  lsp_buf_rename(client_priority_name)
+                  return
+                end
+              end
+            end
+            if fallback then
+              fallback()
+            end
+          end
+
           local function lsp_buf_rename_use_priority_or_select()
             lsp_buf_rename_use_one(function()
-              lsp_buf_rename_use_select()
+              lsp_buf_rename_use_priority(function()
+                lsp_buf_rename_use_select()
+              end)
             end)
           end
 
