@@ -67,9 +67,12 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$PATH:$HOME/.local/bin"
 eval "$(zoxide init --cmd cd zsh)"
 
+# eza
+export EZA_CONFIG_DIR="$HOME/.config/eza"
+
 # aliases
-alias ls="ls --color"
-alias la="ls -lAh --color"
+alias ls="eza --icons"
+alias la="eza -lAh --icons"
 alias vim="nvim"
 alias cat="bat"
 alias nuget="mono /usr/local/bin/nuget.exe"
@@ -79,3 +82,11 @@ source <(fzf --zsh)
 
 # bat
 export BAT_THEME="tokyonight_night"
+
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
