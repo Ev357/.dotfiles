@@ -83,6 +83,9 @@ source <(fzf --zsh)
 # bat
 export BAT_THEME="tokyonight_night"
 
+# yazi
+export EDITOR=nvim
+
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
