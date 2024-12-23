@@ -1,12 +1,99 @@
 @import "macchiato.css";
 
 * {
-  /* reference the color by using @color-name */
-  color: @text;
+  font-size: 17px;
+  min-height: 0;
+  font-family: GeistMono Nerd Font; 
 }
 
-window#waybar {
-  /* you can also GTK3 CSS functions! */
-  background-color: shade(@base, 0.9);
-  border: 2px solid alpha(@crust, 0.3);
+#waybar {
+  background: transparent;
+  color: @Maroon;
+  margin: 5px 5px;
+}
+
+#workspaces {
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: @surface0;
+  margin-left: 1rem;
+}
+
+#workspaces button {
+  color: @lavender;
+  border-radius: 1rem;
+  padding: 0.4rem;
+}
+
+#workspaces button.active {
+  color: @surface2;
+  border-radius: 1rem;
+}
+
+#workspaces button:hover {
+  background-color: @surface2;
+  color: @surface2;
+  border-radius: 1rem;
+}
+
+#custom-music,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#custom-lock,
+#custom-power {
+  background-color: @surface0;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+}
+
+#clock {
+  color: @lavender;
+  border-radius: 0px 1rem 1rem 0px;
+  margin-right: 1rem;
+}
+
+#battery {
+  color: @lavender;
+}
+
+#battery.charging {
+  color: @lavender;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+
+#backlight, #battery {
+    border-radius: 0;
+}
+
+#pulseaudio {
+  color: @lavender;
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 1rem;
+}
+
+#custom-music {
+    color: @lavender;
+    border-radius: 1rem;
+}
+
+#custom-lock {
+    border-radius: 1rem 0px 0px 1rem;
+    color: @lavender;
+}
+
+#custom-power {
+    margin-right: 1rem;
+    border-radius: 0px 1rem 1rem 0px;
+    color: @lavender;
+}
+
+#tray {
+  margin-right: 1rem;
+  border-radius: 1rem;
 }
