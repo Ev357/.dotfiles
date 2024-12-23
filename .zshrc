@@ -59,3 +59,4 @@ alias cat="bat"
 # variables
 export EDITOR="nvim"
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
+export SDL_VIDEODRIVER=wayland
