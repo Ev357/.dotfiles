@@ -9,14 +9,15 @@
 #waybar {
   background: transparent;
   color: @Maroon;
-  margin: 5px 5px;
+  margin: 5px;
+  margin-bottom: 0px;
 }
 
 #workspaces {
   border-radius: 1rem;
   margin: 5px;
   background-color: @surface0;
-  margin-left: 1rem;
+  margin-left: 10px;
 }
 
 #workspaces button {
@@ -53,7 +54,7 @@
 #clock {
   color: @lavender;
   border-radius: 0px 1rem 1rem 0px;
-  margin-right: 1rem;
+  margin-right: 10px;
 }
 
 #battery {
@@ -75,15 +76,15 @@
 #pulseaudio {
   color: @lavender;
   border-radius: 1rem 0px 0px 1rem;
-  margin-left: 1rem;
+  margin-left: 10px;
 }
 
 #custom-music {
     color: @lavender;
-    border-radius: 1rem;
+    border-radius: 10px;
 }
 
 #tray {
-  margin-right: 1rem;
-  border-radius: 1rem;
+  margin-right: 10px;
+  border-radius: 10px;
 }
