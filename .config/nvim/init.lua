@@ -164,7 +164,9 @@ require('lazy').setup({
 
       'nvim-telescope/telescope.nvim',
     },
-    config = true,
+    opts = {
+      disable_context_highlighting = true,
+    },
     branch = 'master',
   },
   {
@@ -935,7 +937,10 @@ require('lazy').setup({
       }
       vim.cmd.colorscheme 'catppuccin'
 
-      vim.cmd.hi 'CursorLine cterm=NONE ctermbg=NONE guibg=NONE'
+      vim.api.nvim_set_hl(0, 'CursorLine', { bg = 'NONE', fg = 'NONE' })
+
+      local palette = require('catppuccin.palettes').get_palette()
+      vim.api.nvim_set_hl(0, 'TelescopeSelection', { bg = palette.surface0, fg = palette.text, bold = true })
     end,
   },
 
