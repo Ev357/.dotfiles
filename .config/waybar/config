@@ -55,14 +55,4 @@
         },
         "on-click": "pw-volume mute toggle"
     },
-    "custom/lock": {
-        "tooltip": false,
-        "on-click": "sh -c '(sleep 0.5s; hyprlock)' & disown",
-        "format": "",
-    },
-    "custom/power": {
-        "tooltip": false,
-        "on-click": "loginctl lock-session &",
-        "format": "襤"
-    }
 }

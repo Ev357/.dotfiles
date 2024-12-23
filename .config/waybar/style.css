@@ -82,17 +82,6 @@
     border-radius: 1rem;
 }
 
-#custom-lock {
-    border-radius: 1rem 0px 0px 1rem;
-    color: @lavender;
-}
-
-#custom-power {
-    margin-right: 1rem;
-    border-radius: 0px 1rem 1rem 0px;
-    color: @lavender;
-}
-
 #tray {
   margin-right: 1rem;
   border-radius: 1rem;
