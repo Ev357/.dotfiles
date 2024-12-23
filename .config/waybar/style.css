@@ -69,6 +69,10 @@
   color: @red;
 }
 
+#backlight {
+  color: @lavender;
+}
+
 #backlight, #battery {
     border-radius: 0;
 }
