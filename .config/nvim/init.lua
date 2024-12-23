@@ -792,6 +792,7 @@ require('lazy').setup({
           lua = { 'stylua' },
           arduino = { 'clang-format' },
           cs = { 'csharpier' },
+          nix = { 'nixpkgs_fmt' },
           -- Conform can also run multiple formatters sequentially
           -- python = { "isort", "black" },
           --
@@ -804,6 +805,11 @@ require('lazy').setup({
 
         return config
       end)(),
+    },
+    formatters = {
+      nixpkgs_fmt = {
+        command = 'nixpkgs-fmt',
+      },
     },
   },
 

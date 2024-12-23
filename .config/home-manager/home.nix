@@ -28,7 +28,6 @@
     pkgs.eza
     pkgs.yazi
     pkgs.git
-    pkgs.stow
     pkgs.nerd-fonts.geist-mono
   ];
 
