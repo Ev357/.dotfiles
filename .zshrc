@@ -55,3 +55,7 @@ alias ls="eza --icons"
 alias la="eza -lAh --icons"
 alias vim="nvim"
 alias cat="bat"
+
+# variables
+export EDITOR="nvim"
+export ELECTRON_OZONE_PLATFORM_HINT=wayland

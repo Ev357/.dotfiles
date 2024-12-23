@@ -21,7 +21,6 @@
   home.packages = [
     pkgs.neovim
     pkgs.starship
-    pkgs.bun
     pkgs.fnm
     pkgs.zoxide
     pkgs.fzf
