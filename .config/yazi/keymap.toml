@@ -2,3 +2,8 @@
 on   = [ "g", "c" ]
 run  = [ "cd ~/.dotfiles/.config", "hidden show" ]
 desc = "Goto ~/.dotfiles/.config"
+
+[[manager.prepend_keymap]]
+on   = [ "g", "w" ]
+run  = "cd ~/work"
+desc = "Goto ~/work"
