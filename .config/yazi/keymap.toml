@@ -7,3 +7,8 @@ desc = "Goto ~/.dotfiles/.config"
 on   = [ "g", "w" ]
 run  = "cd ~/work"
 desc = "Goto ~/work"
+
+[[manager.prepend_keymap]]
+on   = [ "c", "a" ]
+run  = "plugin compress"
+desc = "Archive selected files"
