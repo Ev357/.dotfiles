@@ -2,7 +2,7 @@ theme = catppuccin-macchiato
 gtk-titlebar = false
 background-opacity = 0.975
 font-family = GeistMono NF
-font-size = 12
+font-size = 14
 gtk-tabs-location = bottom
 
 keybind = ctrl+alt+h=goto_split:left
