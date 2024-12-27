@@ -59,6 +59,7 @@ alias cat="bat"
 # variables
 export EDITOR="nvim"
 export PATH="$PATH:$HOME/.dotnet/tools"
+export PATH="$PATH:$HOME/.local/bin"
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 export SDL_VIDEODRIVER=wayland
 export GTK_THEME=Adwaita:dark
