@@ -22,7 +22,6 @@
     pkgs.neovim
     pkgs.starship
     pkgs.fnm
-    pkgs.tmux
     pkgs.zoxide
     pkgs.fzf
     pkgs.bat
