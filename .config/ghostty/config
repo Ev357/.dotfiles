@@ -14,3 +14,12 @@ keybind = super+ctrl+shift+h=resize_split:left,10
 keybind = super+ctrl+shift+j=resize_split:down,10
 keybind = super+ctrl+shift+k=resize_split:up,10
 keybind = super+ctrl+shift+l=resize_split:right,10
+
+keybind = alt+plus=goto_tab:1
+keybind = alt+ě=goto_tab:2
+keybind = alt+š=goto_tab:3
+keybind = alt+č=goto_tab:4
+keybind = alt+ř=goto_tab:5
+keybind = alt+ž=goto_tab:6
+keybind = alt+ý=goto_tab:7
+keybind = alt+á=goto_tab:8
