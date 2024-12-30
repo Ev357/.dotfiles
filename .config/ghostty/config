@@ -23,3 +23,5 @@ keybind = alt+ř=goto_tab:5
 keybind = alt+ž=goto_tab:6
 keybind = alt+ý=goto_tab:7
 keybind = alt+á=goto_tab:8
+
+keybind = alt+o=toggle_tab_overview
