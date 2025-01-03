@@ -36,13 +36,15 @@ zstyle ':completion:*' menu no
 
 # fnm
 eval "$(fnm env --use-on-cd --shell zsh)"
-source <(fzf --zsh)
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# fzf
+source <(fzf --zsh)
 
 # zoxide
 eval "$(zoxide init --cmd cd zsh)"
