@@ -16,9 +16,12 @@ configuration {
     font: "GeistMono Nerd Font 14";
 }
 
-element-text, element-icon , mode-switcher {
-    background-color: inherit;
-    text-color:       inherit;
+element-text, element-icon, mode-switcher {
+    text-color: @fg-col;
+}
+
+element-text selected {
+    text-color: @fg-col2;
 }
 
 window {
@@ -26,6 +29,7 @@ window {
     border: 2px;
     border-color: @border-col;
     background-color: @bg-col;
+    border-radius: 5px;
 }
 
 mainbox {
@@ -71,7 +75,22 @@ listview {
 element {
     padding: 5px;
     background-color: @bg-col;
-    text-color: @fg-col  ;
+}
+
+element normal normal, button {
+    background-color: @fg-col;
+}
+
+element selected.normal {
+    background-color: @bg-col;
+}
+
+element alternate normal {
+    background-color: @bg-col;
+}
+
+element normal normal {
+    background-color: @bg-col;
 }
 
 element-icon {
@@ -79,13 +98,12 @@ element-icon {
 }
 
 element selected {
-    background-color:  @selected-col ;
-    text-color: @fg-col2  ;
+    background-color: @selected-col;
 }
 
 mode-switcher {
     spacing: 0;
-  }
+}
 
 button {
     padding: 10px;
@@ -96,8 +114,7 @@ button {
 }
 
 button selected {
-  background-color: @bg-col;
-  text-color: @blue;
+    background-color: @bg-col;
 }
 
 message {
