@@ -7,6 +7,7 @@ gtk-tabs-location = hidden
 window-theme = ghostty
 mouse-hide-while-typing = true
 confirm-close-surface = false
+window-new-tab-position = end
 
 keybind = ctrl+alt+h=goto_split:left
 keybind = ctrl+alt+j=goto_split:bottom
