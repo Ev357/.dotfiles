@@ -811,13 +811,14 @@ require('lazy').setup({
           arduino = { 'clang-format' },
           cs = { 'csharpier' },
           nix = { 'nixpkgs_fmt' },
+          html = { 'prettierd' },
           -- Conform can also run multiple formatters sequentially
           -- python = { "isort", "black" },
           --
           -- You can use 'stop_after_first' to run the first available formatter from the list
         }
 
-        for _, lang in ipairs { 'javascript', 'typescript', 'vue', 'html', 'css', 'scss', 'json', 'typescriptreact', 'yaml' } do
+        for _, lang in ipairs { 'javascript', 'typescript', 'vue', 'css', 'scss', 'json', 'typescriptreact', 'yaml' } do
           config[lang] = { 'biome', 'prettierd', 'prettier', stop_after_first = true }
         end
 
