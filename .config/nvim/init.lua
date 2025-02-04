@@ -569,6 +569,7 @@ require('lazy').setup({
           local lsp_priority = {
             rename = {
               'csharp_ls',
+              'angularls',
             },
           }
 
