@@ -818,8 +818,20 @@ require('lazy').setup({
           -- You can use 'stop_after_first' to run the first available formatter from the list
         }
 
+        local formatters = { 'biome', 'prettierd', 'prettier' }
+
+        local function reorder_formatters()
+          if vim.fs.find({
+            '.prettierrc',
+          }, { upward = true, stop = vim.loop.os_homedir() })[1] then
+            return { 'prettierd', 'biome', 'prettier' }
+          end
+          return formatters
+        end
+
         for _, lang in ipairs { 'javascript', 'typescript', 'vue', 'css', 'scss', 'json', 'typescriptreact', 'yaml' } do
-          config[lang] = { 'biome', 'prettierd', 'prettier', stop_after_first = true }
+          config[lang] = reorder_formatters()
+          config[lang].stop_after_first = true
         end
 
         return config
