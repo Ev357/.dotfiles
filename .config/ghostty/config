@@ -32,6 +32,7 @@ keybind = alt+ý=goto_tab:7
 keybind = alt+á=goto_tab:8
 
 keybind = alt+o=toggle_tab_overview
+keybind = global:alt+q=toggle_quick_terminal
 
 keybind = "ctrl+shift+h=write_screen_file:paste"
 keybind = "ctrl+shift+j=text:\x1b0i nvim +\"normal G\" \n"
