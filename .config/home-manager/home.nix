@@ -25,7 +25,7 @@
 
   programs = {
     home-manager.enable = true;
-    nixvim = import ./nvim inputs;
+    nixvim = import ./neovim inputs;
     zsh = import ./zsh inputs;
     starship = import ./starship inputs;
     fzf = {
