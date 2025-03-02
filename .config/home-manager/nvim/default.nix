@@ -36,6 +36,7 @@
     };
   };
   clipboard.register = "unnamedplus";
+  performance.byteCompileLua.enable = true;
 
   keymaps = [ ]
     ++ import ./keymaps/keymaps.nix
