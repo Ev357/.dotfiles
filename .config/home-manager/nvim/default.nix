@@ -50,12 +50,12 @@
     ++ import ./keymaps/undotree.nix;
 
   plugins = {
-    treesitter.enable = true;
     comment.enable = true;
     fidget.enable = true;
     sleuth.enable = true;
   } // (
     (import ./plugins/telescope.nix)
+      // (import ./plugins/treesitter.nix)
       // (import ./plugins/oil.nix)
       // (import ./plugins/neogit.nix)
       // (import ./plugins/mini.nix)
