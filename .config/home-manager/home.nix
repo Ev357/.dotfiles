@@ -12,6 +12,7 @@
     bat
     git
     nerd-fonts.geist-mono
+    yazi
   ];
 
   home.sessionVariables = {
