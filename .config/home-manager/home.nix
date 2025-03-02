@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, ... }@inputs:
 
 {
   home.username = "evest";
@@ -8,13 +8,8 @@
 
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
-    starship
     fnm
-    zoxide
-    fzf
     bat
-    eza
-    yazi
     git
     nerd-fonts.geist-mono
   ];
@@ -23,8 +18,29 @@
     EDITOR = "nvim";
   };
 
+  home.sessionPath = [
+    "$HOME/.dotnet/tools"
+    "$HOME/.local/bin"
+  ];
+
   programs = {
     home-manager.enable = true;
-    nixvim = import ./nvim { inherit pkgs; };
+    nixvim = import ./nvim inputs;
+    zsh = import ./zsh inputs;
+    starship = import ./starship inputs;
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+      options = [ "--cmd cd" ];
+    };
+    eza = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
 }
+

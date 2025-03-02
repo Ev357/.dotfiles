@@ -37,6 +37,7 @@
   };
   clipboard.register = "unnamedplus";
   performance.byteCompileLua.enable = true;
+  vimAlias = true;
 
   keymaps = [ ]
     ++ import ./keymaps/keymaps.nix
