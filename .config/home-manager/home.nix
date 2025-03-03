@@ -24,6 +24,10 @@
     "$HOME/.local/bin"
   ];
 
+  home.file = {
+    ".config/electron-flags.conf".source = ./dotfiles/.config/electron-flags.conf;
+  };
+
   programs = {
     home-manager.enable = true;
     nixvim = import ./neovim inputs;
