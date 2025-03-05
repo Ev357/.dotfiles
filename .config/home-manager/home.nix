@@ -39,6 +39,7 @@
     nixvim = import ./neovim inputs;
     zsh = import ./zsh inputs;
     starship = import ./starship inputs;
+    git = import ./git;
     fzf = {
       enable = true;
       enableZshIntegration = true;
