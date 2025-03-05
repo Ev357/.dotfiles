@@ -9,7 +9,6 @@
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     fnm
-    bat
     git
     nerd-fonts.geist-mono
     yazi
@@ -42,6 +41,7 @@
     starship = import ./programs/starship inputs;
     git = import ./programs/git;
     btop = import ./programs/btop;
+    bat.enable = true;
     fzf = {
       enable = true;
       enableZshIntegration = true;
