@@ -41,6 +41,7 @@
     zsh = import ./programs/zsh inputs;
     starship = import ./programs/starship inputs;
     git = import ./programs/git;
+    btop = import ./programs/btop;
     fzf = {
       enable = true;
       enableZshIntegration = true;
