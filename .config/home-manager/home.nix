@@ -9,7 +9,6 @@
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     fnm
-    git
     nerd-fonts.geist-mono
     yazi
   ];
