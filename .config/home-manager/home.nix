@@ -36,10 +36,10 @@
 
   programs = {
     home-manager.enable = true;
-    nixvim = import ./neovim inputs;
-    zsh = import ./zsh inputs;
-    starship = import ./starship inputs;
-    git = import ./git;
+    nixvim = import ./programs/neovim inputs;
+    zsh = import ./programs/zsh inputs;
+    starship = import ./programs/starship inputs;
+    git = import ./programs/git;
     fzf = {
       enable = true;
       enableZshIntegration = true;
