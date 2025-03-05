@@ -24,7 +24,6 @@
       golangci_lint_ls.enable = true;
       jsonls.enable = true;
       pylyzer.enable = false;
-      superhtml.enable = true;
 
       rust_analyzer = {
         enable = true;

@@ -12,9 +12,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix.url = "github:danth/stylix/release-24.11";
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, ... }:
+  outputs = { nixpkgs, home-manager, nixvim, stylix, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -23,7 +24,11 @@
       homeConfigurations."evest" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
-        modules = [ ./home.nix nixvim.homeManagerModules.nixvim ];
+        modules = [
+          stylix.homeManagerModules.stylix
+          ./home.nix
+          nixvim.homeManagerModules.nixvim
+        ];
       };
     };
 }
