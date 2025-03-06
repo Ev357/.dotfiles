@@ -1,7 +1,8 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   enable = true;
+  package = pkgs.rofi-wayland;
   theme =
     let
       inherit (config.lib.formats.rasi) mkLiteral;
@@ -27,6 +28,7 @@
 
       "element-text, element-icon, mode-switcher" = {
         text-color = mkLiteral "@fg-col";
+        background-color = mkLiteral "@bg-col";
       };
 
       "element-text selected" = {
@@ -97,11 +99,11 @@
         background-color = mkLiteral "@bg-col";
       };
 
-      "element alternate normal" = {
+      "element alternate.alternate" = {
         background-color = mkLiteral "@bg-col";
       };
 
-      "element normal normal" = {
+      "element normal.normal" = {
         background-color = mkLiteral "@bg-col";
       };
 

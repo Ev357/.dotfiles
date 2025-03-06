@@ -41,6 +41,7 @@
     starship = import ./programs/starship inputs;
     git = import ./programs/git;
     btop = import ./programs/btop;
+    rofi = import ./programs/rofi inputs;
     bat.enable = true;
     mpv.enable = true;
     fzf = {
@@ -66,7 +67,10 @@
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
     image = ./dotfiles/.config/backgrounds/wall2.png;
-    targets.nixvim.enable = false;
+    targets = {
+      nixvim.enable = false;
+      rofi.enable = false;
+    };
     fonts = with pkgs.nerd-fonts; {
       serif = {
         package = geist-mono;
