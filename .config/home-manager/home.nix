@@ -39,6 +39,8 @@
 
   programs = {
     home-manager.enable = true;
+    bat.enable = true;
+    mpv.enable = true;
     nixvim = import ./programs/neovim inputs;
     zsh = import ./programs/zsh inputs;
     starship = import ./programs/starship inputs;
@@ -46,21 +48,9 @@
     btop = import ./programs/btop;
     rofi = import ./programs/rofi inputs;
     yazi = import ./programs/yazi inputs;
-    bat.enable = true;
-    mpv.enable = true;
-    fzf = {
-      enable = true;
-      enableZshIntegration = true;
-    };
-    zoxide = {
-      enable = true;
-      enableZshIntegration = true;
-      options = [ "--cmd cd" ];
-    };
-    eza = {
-      enable = true;
-      enableZshIntegration = true;
-    };
+    fzf = import ./programs/fzf;
+    zoxide = import ./programs/zoxide;
+    eza = import ./programs/eza;
   };
 
   services = {
