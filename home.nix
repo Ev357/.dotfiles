@@ -24,6 +24,7 @@
 
   home.file = {
     ".config/electron-flags.conf".source = ./dotfiles/.config/electron-flags.conf;
+    ".config/starship.toml".source = ./dotfiles/.config/starship.toml;
     ".config/backgrounds/".source = ./dotfiles/.config/backgrounds;
     ".config/OpenTabletDriver/Presets/".source = ./dotfiles/.config/OpenTabletDriver/Presets;
     ".config/mpv/mpv.conf".source = ./dotfiles/.config/mpv/mpv.conf;
@@ -44,7 +45,7 @@
     mpv.enable = true;
     nixvim = import ./programs/neovim inputs;
     zsh = import ./programs/zsh inputs;
-    starship = import ./programs/starship inputs;
+    starship = import ./programs/starship;
     git = import ./programs/git;
     btop = import ./programs/btop;
     rofi = import ./programs/rofi inputs;
