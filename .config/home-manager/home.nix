@@ -71,17 +71,14 @@
         package = geist-mono;
         name = "GeistMono NFM";
       };
-
       sansSerif = {
         package = geist-mono;
         name = "GeistMono NFM";
       };
-
       monospace = {
         package = geist-mono;
         name = "GeistMono NFM";
       };
-
       emoji = {
         package = geist-mono;
         name = "GeistMono NFM";
