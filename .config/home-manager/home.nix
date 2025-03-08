@@ -11,6 +11,7 @@
     fnm
     nerd-fonts.geist-mono
     yazi
+    dotnet-sdk_6
   ];
 
   home.sessionVariables = {
@@ -27,6 +28,7 @@
     ".config/backgrounds/".source = ./dotfiles/.config/backgrounds;
     ".config/OpenTabletDriver/Presets/".source = ./dotfiles/.config/OpenTabletDriver/Presets;
     ".config/mpv/mpv.conf".source = ./dotfiles/.config/mpv/mpv.conf;
+    ".config/zed/settings.json".source = ./dotfiles/.config/zed/settings.json;
     ".icons/hypr_Bibata-Modern-Classic/".source = builtins.fetchTarball {
       url = "https://github.com/LOSEARDES77/Bibata-Cursor-hyprcursor/releases/download/1.0/hypr_Bibata-Modern-Classic.tar.gz";
       sha256 = "08q5l2sywc0s70zdn7jvr0rbzz0w8j18wmlkf2x1l64y93lbvzsj";
@@ -107,8 +109,11 @@
     '';
   };
 
-  nixpkgs = {
-    config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "dotnet-sdk-6.0.428"
+    ];
   };
 }
 

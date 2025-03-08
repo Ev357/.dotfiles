@@ -10,7 +10,6 @@
       angularls.enable = true;
       tailwindcss.enable = true;
       biome.enable = true;
-      csharp_ls.enable = true;
       cssls.enable = true;
       emmet_language_server.enable = true;
       html.enable = true;
@@ -20,7 +19,8 @@
       dockerls.enable = true;
       golangci_lint_ls.enable = true;
       jsonls.enable = true;
-      pylyzer.enable = false;
+      omnisharp.enable = true;
+      pylyzer.enable = true;
 
       rust_analyzer = {
         enable = true;
