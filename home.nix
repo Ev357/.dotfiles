@@ -68,22 +68,22 @@
       rofi.enable = false;
       yazi.enable = false;
     };
-    fonts = with pkgs.nerd-fonts; {
+    fonts = with pkgs; {
       serif = {
-        package = geist-mono;
-        name = "GeistMono NFM";
+        package = geist-font;
+        name = "Geist";
       };
       sansSerif = {
-        package = geist-mono;
-        name = "GeistMono NFM";
+        package = geist-font;
+        name = "Geist";
       };
       monospace = {
-        package = geist-mono;
-        name = "GeistMono NFM";
+        package = nerd-fonts.geist-mono;
+        name = "GeistMono Nerd Font";
       };
       emoji = {
-        package = geist-mono;
-        name = "GeistMono NFM";
+        package = nerd-fonts.geist-mono;
+        name = "GeistMono Nerd Font";
       };
     };
 
