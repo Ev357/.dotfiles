@@ -10,7 +10,6 @@
   home.packages = with pkgs; [
     fnm
     nerd-fonts.geist-mono
-    yazi
     dotnet-sdk_6
   ];
 
@@ -44,6 +43,7 @@
     git = import ./programs/git;
     btop = import ./programs/btop;
     rofi = import ./programs/rofi inputs;
+    yazi = import ./programs/yazi inputs;
     bat.enable = true;
     mpv.enable = true;
     fzf = {
@@ -72,6 +72,7 @@
     targets = {
       nixvim.enable = false;
       rofi.enable = false;
+      yazi.enable = false;
     };
     fonts = with pkgs.nerd-fonts; {
       serif = {
