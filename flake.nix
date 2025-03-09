@@ -33,7 +33,7 @@
         extraSpecialArgs = { inherit inputs; };
       };
       packages.${system}.nixvim = nixvim.legacyPackages.${system}.makeNixvimWithModule {
-        module = import ./programs/neovim;
+        module = import ./programs/nixvim;
         extraSpecialArgs = { inherit inputs; };
       };
     };

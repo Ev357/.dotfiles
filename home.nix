@@ -45,7 +45,7 @@
     mpv.enable = true;
     nixvim = {
       enable = true;
-      imports = [ (import ./programs/neovim inputs) ];
+      imports = [ (import ./programs/nixvim inputs) ];
     };
     zsh = import ./programs/zsh inputs;
     starship = import ./programs/starship;
