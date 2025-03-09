@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-  enable = true;
   opts = {
     number = true;
     relativenumber = true;

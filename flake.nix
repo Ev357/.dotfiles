@@ -15,7 +15,7 @@
     stylix.url = "github:danth/stylix/release-24.11";
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, stylix, ... }:
+  outputs = { nixpkgs, home-manager, nixvim, stylix, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -29,6 +29,12 @@
           ./home.nix
           nixvim.homeManagerModules.nixvim
         ];
+
+        extraSpecialArgs = { inherit inputs; };
+      };
+      packages.${system}.nixvim = nixvim.legacyPackages.${system}.makeNixvimWithModule {
+        module = import ./programs/neovim;
+        extraSpecialArgs = { inherit inputs; };
       };
     };
 }

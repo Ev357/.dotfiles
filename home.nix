@@ -43,7 +43,10 @@
     home-manager.enable = true;
     bat.enable = true;
     mpv.enable = true;
-    nixvim = import ./programs/neovim inputs;
+    nixvim = {
+      enable = true;
+      imports = [ (import ./programs/neovim inputs) ];
+    };
     zsh = import ./programs/zsh inputs;
     starship = import ./programs/starship;
     git = import ./programs/git;
