@@ -12,6 +12,7 @@ confirm-close-surface = false
 window-new-tab-position = end
 focus-follows-mouse = true
 copy-on-select = clipboard
+app-notifications = no-clipboard-copy
 
 keybind = ctrl+alt+h=goto_split:left
 keybind = ctrl+alt+j=goto_split:bottom
