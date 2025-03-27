@@ -10,7 +10,10 @@
   home.packages = with pkgs; [
     fnm
     nerd-fonts.geist-mono
-    dotnet-sdk_6
+    (with dotnetCorePackages; combinePackages [
+      sdk_6_0
+      sdk_8_0
+    ])
   ];
 
   home.sessionVariables = {
