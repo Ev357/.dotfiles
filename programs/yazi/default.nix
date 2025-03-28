@@ -26,10 +26,10 @@
   theme = import ./theme.nix;
   plugins = {
     compress = pkgs.fetchFromGitHub {
-      owner = "KKV9";
+      owner = "Ev357";
       repo = "compress.yazi";
       rev = "main";
-      sha256 = "0cdb8m38n3i356lmq6i7jldx446w98m1bz59650w5s9dgzf53zk1";
+      sha256 = "0xpasrxs6dv19k8j0vdga4g3a3bwkcc51aldnp1rfsdcw88ghr8c";
     };
   };
 }
