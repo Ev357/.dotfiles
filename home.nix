@@ -1,46 +1,47 @@
 { pkgs, ... }@inputs:
 
 {
-  home.username = "evest";
-  home.homeDirectory = "/home/evest";
+  home = {
+    username = "evest";
+    homeDirectory = "/home/evest";
+    stateVersion = "24.11";
 
-  home.stateVersion = "24.11";
+    packages = with pkgs; [
+      fnm
+      nerd-fonts.geist-mono
+      (with dotnetCorePackages; combinePackages [
+        sdk_6_0
+        sdk_8_0
+      ])
+    ];
+
+    sessionVariables = {
+      EDITOR = "nvim";
+    };
+    sessionPath = [
+      "$HOME/.dotnet/tools"
+      "$HOME/.local/bin"
+    ];
+
+    file = {
+      ".config/electron-flags.conf".source = ./dotfiles/.config/electron-flags.conf;
+      ".config/starship.toml".source = ./dotfiles/.config/starship.toml;
+      ".config/backgrounds/".source = ./dotfiles/.config/backgrounds;
+      ".config/OpenTabletDriver/Presets/".source = ./dotfiles/.config/OpenTabletDriver/Presets;
+      ".config/mpv/mpv.conf".source = ./dotfiles/.config/mpv/mpv.conf;
+      ".config/zed/settings.json".source = ./dotfiles/.config/zed/settings.json;
+      ".config/hyprpanel/config.json".source = ./dotfiles/.config/hyprpanel/config.json;
+      ".config/ghostty/config".source = ./dotfiles/.config/ghostty/config;
+      ".config/hypr/".source = ./dotfiles/.config/hypr;
+      ".icons/hypr_Bibata-Modern-Classic/".source = builtins.fetchTarball {
+        url = "https://github.com/LOSEARDES77/Bibata-Cursor-hyprcursor/releases/download/1.0/hypr_Bibata-Modern-Classic.tar.gz";
+        sha256 = "08q5l2sywc0s70zdn7jvr0rbzz0w8j18wmlkf2x1l64y93lbvzsj";
+      };
+      ".face.icon".source = ./dotfiles/.face.icon;
+    };
+  };
 
   fonts.fontconfig.enable = true;
-  home.packages = with pkgs; [
-    fnm
-    nerd-fonts.geist-mono
-    (with dotnetCorePackages; combinePackages [
-      sdk_6_0
-      sdk_8_0
-    ])
-  ];
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
-
-  home.sessionPath = [
-    "$HOME/.dotnet/tools"
-    "$HOME/.local/bin"
-  ];
-
-  home.file = {
-    ".config/electron-flags.conf".source = ./dotfiles/.config/electron-flags.conf;
-    ".config/starship.toml".source = ./dotfiles/.config/starship.toml;
-    ".config/backgrounds/".source = ./dotfiles/.config/backgrounds;
-    ".config/OpenTabletDriver/Presets/".source = ./dotfiles/.config/OpenTabletDriver/Presets;
-    ".config/mpv/mpv.conf".source = ./dotfiles/.config/mpv/mpv.conf;
-    ".config/zed/settings.json".source = ./dotfiles/.config/zed/settings.json;
-    ".config/hyprpanel/config.json".source = ./dotfiles/.config/hyprpanel/config.json;
-    ".config/ghostty/config".source = ./dotfiles/.config/ghostty/config;
-    ".config/hypr/".source = ./dotfiles/.config/hypr;
-    ".icons/hypr_Bibata-Modern-Classic/".source = builtins.fetchTarball {
-      url = "https://github.com/LOSEARDES77/Bibata-Cursor-hyprcursor/releases/download/1.0/hypr_Bibata-Modern-Classic.tar.gz";
-      sha256 = "08q5l2sywc0s70zdn7jvr0rbzz0w8j18wmlkf2x1l64y93lbvzsj";
-    };
-    ".face.icon".source = ./dotfiles/.face.icon;
-  };
 
   programs = {
     home-manager.enable = true;
