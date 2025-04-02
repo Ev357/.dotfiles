@@ -69,11 +69,12 @@
   stylix = {
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
-    image = ./dotfiles/.config/backgrounds/wall2.png;
     targets = {
       nixvim.enable = false;
       rofi.enable = false;
       yazi.enable = false;
+      mpv.enable = false;
+      starship.enable = false;
     };
     fonts = with pkgs; {
       serif = {
