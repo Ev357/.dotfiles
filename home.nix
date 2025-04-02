@@ -59,6 +59,7 @@
     fzf = import ./programs/fzf;
     zoxide = import ./programs/zoxide;
     eza = import ./programs/eza;
+    direnv = import ./programs/direnv;
   };
 
   services = {
