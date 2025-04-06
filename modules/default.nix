@@ -1,0 +1,27 @@
+{
+  imports = [
+    ./hyprland
+    ./nixvim
+    ./rofi
+    ./udiskie
+    ./hyprland
+    ./hypridle
+    ./hyprpaper
+    ./hyprlock
+    ./hyprpolkitagent
+    ./ghostty
+    ./swaync
+    ./stylix
+    ./zsh
+    ./starship
+    ./fzf
+    ./eza
+    ./bat
+    ./yazi
+    ./direnv
+    ./btop
+    ./git
+    ./zoxide
+    ./zed-editor
+  ];
+}
