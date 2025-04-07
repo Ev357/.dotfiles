@@ -15,6 +15,7 @@
         autocrlf = "input";
       };
       status.showUntrackedFiles = "all";
+      safe.directory = "/etc/nixos";
     };
   };
 }
