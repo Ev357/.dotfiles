@@ -23,5 +23,6 @@
     ./git
     ./zoxide
     ./zed-editor
+    ./ags
   ];
 }

@@ -17,6 +17,8 @@
     };
 
     stylix.url = "github:danth/stylix";
+
+    ags.url = "github:aylur/ags";
   };
 
   outputs = { nixpkgs, nixvim, home-manager, stylix, ... }@inputs:
