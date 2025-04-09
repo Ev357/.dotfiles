@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, ... }@inputs:
 
 {
   opts = {
@@ -47,7 +47,9 @@
     ++ import ./keymaps/neogit.nix
     ++ import ./keymaps/flash.nix
     ++ import ./keymaps/gitsigns.nix
-    ++ import ./keymaps/undotree.nix;
+    ++ import ./keymaps/undotree.nix
+    ++ import ./keymaps/dap.nix
+    ++ import ./keymaps/dap-ui.nix;
 
   plugins = {
     comment.enable = true;
@@ -67,6 +69,9 @@
       // (import ./plugins/gitsigns.nix)
       // (import ./plugins/todo-comments.nix)
       // (import ./plugins/undotree.nix)
+      // (import ./plugins/dap.nix inputs)
+      // (import ./plugins/dap-ui.nix)
+      // (import ./plugins/dap-virtual-text.nix)
   );
 
   autoCmd = [
@@ -97,5 +102,9 @@
     end
 
     require('supermaven-nvim').setup({ log_level = 'off' })
+
+    require('dap').listeners.after.event_initialized['dapui_config'] = require('dapui').open
+    require('dap').listeners.before.event_terminated['dapui_config'] = require('dapui').close
+    require('dap').listeners.before.event_exited['dapui_config'] = require('dapui').close
   '';
 }
