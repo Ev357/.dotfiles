@@ -11,6 +11,7 @@
             cs = { 'csharpier' },
             nix = { 'nixpkgs_fmt' },
             html = { 'prettierd' },
+            htmlangular = { 'prettierd' },
           }
 
           local formatters = { 'biome', 'prettierd' }
