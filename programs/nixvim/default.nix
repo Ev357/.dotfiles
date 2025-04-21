@@ -32,6 +32,7 @@
     enable = true;
     settings = {
       flavour = "macchiato";
+      transparent_background = true;
     };
   };
   clipboard.register = "unnamedplus";
