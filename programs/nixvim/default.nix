@@ -54,7 +54,6 @@
 
   plugins = {
     comment.enable = true;
-    fidget.enable = true;
     sleuth.enable = true;
   } // (
     (import ./plugins/telescope.nix)
@@ -73,6 +72,7 @@
       // (import ./plugins/dap.nix inputs)
       // (import ./plugins/dap-ui.nix)
       // (import ./plugins/dap-virtual-text.nix)
+      // (import ./plugins/fidget.nix)
   );
 
   autoCmd = [
