@@ -5,7 +5,6 @@
   shellAliases = {
     "ls" = "eza --icons";
     "la" = "eza -lAh --icons";
-    "cat" = "bat";
   };
 
   history = {
