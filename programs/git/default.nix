@@ -12,6 +12,8 @@
     core = {
       editor = "nvim --clean";
       autocrlf = "input";
+      compression = 9;
+      preloadindex = true;
     };
     status.showUntrackedFiles = "all";
   };
