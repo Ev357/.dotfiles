@@ -14,13 +14,12 @@
       emmet_language_server.enable = true;
       html.enable = true;
       lua_ls.enable = true;
-      pylsp.enable = true;
       svelte.enable = true;
       dockerls.enable = true;
       golangci_lint_ls.enable = true;
       jsonls.enable = true;
       omnisharp.enable = true;
-      pylyzer.enable = true;
+      tinymist.enable = true;
 
       rust_analyzer = {
         enable = true;

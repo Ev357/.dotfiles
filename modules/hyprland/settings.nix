@@ -92,6 +92,7 @@
 
   input = {
     kb_layout = "cz, us";
+    kb_variant = "qwerty";
     kb_options = "grp:alt_shift_toggle";
 
     follow_mouse = 1;

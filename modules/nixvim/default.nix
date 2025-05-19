@@ -1,9 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, ... }@inputs:
 
 {
   programs.nixvim = {
     enable = true;
-
     opts = {
       number = true;
       relativenumber = true;
@@ -35,6 +34,7 @@
       enable = true;
       settings = {
         flavour = "macchiato";
+        transparent_background = true;
       };
     };
     clipboard.register = "unnamedplus";
@@ -50,11 +50,12 @@
       ++ import ./keymaps/neogit.nix
       ++ import ./keymaps/flash.nix
       ++ import ./keymaps/gitsigns.nix
-      ++ import ./keymaps/undotree.nix;
+      ++ import ./keymaps/undotree.nix
+      ++ import ./keymaps/dap.nix
+      ++ import ./keymaps/dap-ui.nix;
 
     plugins = {
       comment.enable = true;
-      fidget.enable = true;
       sleuth.enable = true;
     } // (
       (import ./plugins/telescope.nix)
@@ -70,6 +71,10 @@
         // (import ./plugins/gitsigns.nix)
         // (import ./plugins/todo-comments.nix)
         // (import ./plugins/undotree.nix)
+        // (import ./plugins/dap.nix inputs)
+        // (import ./plugins/dap-ui.nix)
+        // (import ./plugins/dap-virtual-text.nix)
+        // (import ./plugins/fidget.nix)
     );
 
     autoCmd = [
@@ -100,6 +105,10 @@
       end
 
       require('supermaven-nvim').setup({ log_level = 'off' })
+
+      require('dap').listeners.after.event_initialized['dapui_config'] = require('dapui').open
+      require('dap').listeners.before.event_terminated['dapui_config'] = require('dapui').close
+      require('dap').listeners.before.event_exited['dapui_config'] = require('dapui').close
     '';
   };
 }
