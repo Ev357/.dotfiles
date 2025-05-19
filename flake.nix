@@ -19,6 +19,11 @@
     stylix.url = "github:danth/stylix";
 
     ags.url = "github:aylur/ags";
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, nixvim, home-manager, stylix, ... }@inputs:
@@ -31,7 +36,7 @@
         inherit pkgs;
 
         modules = [
-          stylix.homeManagerModules.stylix
+          stylix.homeModules.stylix
           ./home.nix
           nixvim.homeManagerModules.nixvim
         ];

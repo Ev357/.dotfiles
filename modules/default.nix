@@ -24,5 +24,6 @@
     ./zoxide
     ./zed-editor
     ./ags
+    ./zen-browser
   ];
 }
