@@ -5,6 +5,10 @@
     inputs.stylix.homeModules.stylix
   ];
 
+  home.packages = with pkgs; [
+    nerd-fonts.geist-mono
+  ];
+
   stylix = {
     enable = true;
     enableReleaseChecks = false;
