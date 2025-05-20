@@ -1,6 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
+  imports = [
+    inputs.stylix.homeModules.stylix
+  ];
+
   stylix = {
     enable = true;
     enableReleaseChecks = false;

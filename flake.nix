@@ -26,35 +26,25 @@
     };
   };
 
-  outputs = { nixpkgs, nixvim, home-manager, stylix, ... }@inputs:
-    let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
-    in
+  outputs = { nixpkgs, home-manager, ... }@inputs:
     {
-      homeConfigurations."evest@nixos" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      homeConfigurations = {
+        "evest@nixos" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
 
-        modules = [
-          stylix.homeModules.stylix
-          ./home.nix
-          nixvim.homeManagerModules.nixvim
-        ];
+          modules = [
+            ./hosts/nixos/home.nix
+            {
+              home = {
+                username = "evest";
+                homeDirectory = "/home/evest";
+                stateVersion = "24.11";
+              };
+            }
+          ];
 
-        extraSpecialArgs = { inherit inputs; };
-      };
-
-
-      homeConfigurations."evest@archlinux" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        modules = [
-          stylix.homeModules.stylix
-          ./home.nix
-          nixvim.homeManagerModules.nixvim
-        ];
-
-        extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = { inherit inputs; };
+        };
       };
     };
 }
