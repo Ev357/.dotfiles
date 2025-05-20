@@ -1,4 +1,6 @@
 {
+  home.file.".config/backgrounds/".source = ./backgrounds;
+
   services.hyprpaper = {
     enable = true;
     settings = {

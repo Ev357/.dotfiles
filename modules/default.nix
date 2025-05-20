@@ -25,5 +25,9 @@
     ./zed-editor
     ./ags
     ./zen-browser
+    ./mpv
+    ./opentabletdriver
+    ./hyprcursor
+    ./desktop
   ];
 }
