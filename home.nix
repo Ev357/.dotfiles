@@ -15,6 +15,7 @@
       nerd-fonts.geist-mono
       hyprshot
       libnotify
+      nautilus
     ];
 
     sessionVariables = {
