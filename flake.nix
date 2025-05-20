@@ -43,5 +43,18 @@
 
         extraSpecialArgs = { inherit inputs; };
       };
+
+
+      homeConfigurations."evest@archlinux" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        modules = [
+          stylix.homeModules.stylix
+          ./home.nix
+          nixvim.homeManagerModules.nixvim
+        ];
+
+        extraSpecialArgs = { inherit inputs; };
+      };
     };
 }
