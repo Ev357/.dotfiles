@@ -12,9 +12,5 @@
       libnotify
       nautilus
     ];
-
-    sessionVariables = {
-      EDITOR = "nvim";
-    };
   };
 }
