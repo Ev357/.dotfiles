@@ -4,11 +4,6 @@
     ./nixvim
     ./rofi
     ./udiskie
-    ./hyprland
-    ./hypridle
-    ./hyprpaper
-    ./hyprlock
-    ./hyprpolkitagent
     ./ghostty
     ./swaync
     ./stylix
@@ -27,7 +22,6 @@
     ./zen-browser
     ./mpv
     ./opentabletdriver
-    ./hyprcursor
     ./desktop
     ./home-manager
     ./applications

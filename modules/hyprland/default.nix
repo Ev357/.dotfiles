@@ -1,18 +1,24 @@
-{ pkgs, ... }:
+{ lib, config, ... }:
 
 {
-  wayland.windowManager.hyprland = {
-    enable = true;
-    package = null;
-    portalPackage = null;
-    systemd.enable = false;
-    settings = import ./settings.nix;
+  imports = [
+    ./hyprcursor
+    ./hypridle
+    ./hyprland
+    ./hyprlock
+    ./hyprpaper
+  ];
+
+  options.modules.hyprland = {
+    enable = lib.mkEnableOption "enables hyprland";
   };
 
-  home = {
-    file.".config/hypr/hyprland/colors.conf".source = ./colors.conf;
-    packages = with pkgs; [
-      hyprshot
-    ];
+  config = lib.mkIf config.modules.hyprland.enable {
+    modules.hyprland.hyprcursor.enable = lib.mkDefault true;
+    services.hypridle.enable = lib.mkDefault true;
+    wayland.windowManager.hyprland.enable = lib.mkDefault true;
+    programs.hyprlock.enable = lib.mkDefault true;
+    services.hyprpaper.enable = lib.mkDefault true;
+    services.hyprpolkitagent.enable = lib.mkDefault true;
   };
 }

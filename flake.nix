@@ -45,6 +45,23 @@
 
           extraSpecialArgs = { inherit inputs; };
         };
+
+        "evest@archlinux" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+
+          modules = [
+            ./hosts/archlinux/home.nix
+            {
+              home = {
+                username = "evest";
+                homeDirectory = "/home/evest";
+                stateVersion = "24.11";
+              };
+            }
+          ];
+
+          extraSpecialArgs = { inherit inputs; };
+        };
       };
     };
 }
