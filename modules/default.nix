@@ -30,5 +30,6 @@
     ./hyprcursor
     ./desktop
     ./home-manager
+    ./applications
   ];
 }
