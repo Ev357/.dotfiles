@@ -32,7 +32,7 @@
       pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
     in
     {
-      homeConfigurations."evest" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."evest@nixos" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         modules = [
