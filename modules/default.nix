@@ -29,5 +29,6 @@
     ./opentabletdriver
     ./hyprcursor
     ./desktop
+    ./home-manager
   ];
 }
