@@ -11,6 +11,7 @@
       swaync.enable = true;
       bat.enable = true;
       btop.enable = true;
+      gtk.enable = true;
     };
     fonts = with pkgs; {
       serif = {
