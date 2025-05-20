@@ -8,4 +8,5 @@
   };
 
   services.hyprlock.enable = false;
+  programs.ghostty.enable = false;
 }

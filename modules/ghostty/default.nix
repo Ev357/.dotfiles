@@ -1,6 +1,6 @@
 {
   programs.ghostty = {
-    enable = true;
+    enable = lib.mkDefault true;
     settings = {
       theme = "catppuccin-macchiato";
       gtk-titlebar = false;
