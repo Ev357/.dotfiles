@@ -6,6 +6,6 @@
   programs.ags = {
     enable = true;
 
-    configDir = ../../dotfiles/.config/ags;
+    configDir = ./ags;
   };
 }
