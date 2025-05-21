@@ -8,8 +8,8 @@
   };
 
   programs = {
-    hyprlock.enable = false;
+    hyprlock.package = null;
     ghostty.package = null;
-    zed-editor.package = null;
+    # zed-editor.package = null;
   };
 }
