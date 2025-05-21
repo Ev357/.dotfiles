@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   imports = [
     ../../modules
@@ -10,6 +12,6 @@
   programs = {
     hyprlock.package = null;
     ghostty.package = null;
-    # zed-editor.package = null;
+    zed-editor.package = pkgs.emptyDirectory;
   };
 }
