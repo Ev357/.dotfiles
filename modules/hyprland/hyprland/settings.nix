@@ -1,7 +1,7 @@
 {
   source = "~/.config/hypr/hyprland/colors.conf";
 
-  monitor = [ "Virtual-1, preferred, auto, 1" ", preferred, auto-up, 1" ];
+  monitor = [ "eDP-1, preferred, auto, 1" ", preferred, auto-up, 1" ];
 
   "$terminal" = "ghostty";
   "$fileManager" = "ghostty -e yazi";
@@ -130,6 +130,9 @@
     "$mainMod SHIFT, p, exec, shutdown now"
     "$mainMod SHIFT, r, exec, reboot"
     "$mainMod SHIFT, h, exec, systemctl suspend"
+
+    "$mainMod SHIFT, m, exec, hyprctl keyword monitor \", preferred, auto-up, 1, mirror, eDP-1\""
+    "$mainMod SHIFT, e, exec, hyprctl keyword monitor \", preferred, auto-up, 1\""
 
     "$mainMod, PRINT, exec, hyprshot -m window"
     ", PRINT, exec, hyprshot -m output"
