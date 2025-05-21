@@ -7,6 +7,8 @@
     hyprland.enable = true;
   };
 
-  services.hyprlock.enable = false;
-  programs.ghostty.enable = false;
+  programs = {
+    hyprlock.enable = false;
+    ghostty.enable = false;
+  };
 }
