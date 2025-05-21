@@ -9,6 +9,7 @@
 
   programs = {
     hyprlock.enable = false;
-    ghostty.enable = false;
+    ghostty.package = null;
+    zed-editor.package = null;
   };
 }
