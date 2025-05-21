@@ -1,3 +1,5 @@
+{ lib, ... }:
+
 {
   programs.ghostty = {
     enable = lib.mkDefault true;
