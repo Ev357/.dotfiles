@@ -32,5 +32,7 @@
       zoxide.enable = lib.mkDefault true;
       zsh.enable = lib.mkDefault true;
     };
+
+    stylix.enable = true;
   };
 }

@@ -1,7 +1,6 @@
 {
   imports = [
     ./hyprland
-    ./udiskie
     ./swaync
     ./stylix
     ./ags

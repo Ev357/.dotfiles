@@ -31,5 +31,7 @@
       zed-editor.enable = lib.mkDefault true;
       zen-browser.enable = lib.mkDefault true;
     };
+
+    stylix.enable = true;
   };
 }
