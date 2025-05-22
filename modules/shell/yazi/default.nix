@@ -1,29 +1,31 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./theme.nix
+  ];
+
   programs.yazi = {
     enableZshIntegration = true;
     keymap = {
-      manager.prepend_keymap =
-        [
-          {
-            on = [ "g" "c" ];
-            run = [ "cd ~/.config" "hidden show" ];
-            desc = "Goto ~/.config";
-          }
-          {
-            on = [ "g" "w" ];
-            run = "cd ~/work";
-            desc = "Goto ~/work";
-          }
-          {
-            on = [ "c" "a" ];
-            run = "plugin compress";
-            desc = "Archive selected files";
-          }
-        ];
+      manager.prepend_keymap = [
+        {
+          on = [ "g" "c" ];
+          run = [ "cd ~/.config" "hidden show" ];
+          desc = "Goto ~/.config";
+        }
+        {
+          on = [ "g" "w" ];
+          run = "cd ~/work";
+          desc = "Goto ~/work";
+        }
+        {
+          on = [ "c" "a" ];
+          run = "plugin compress";
+          desc = "Archive selected files";
+        }
+      ];
     };
-    theme = import ./theme.nix;
     plugins = {
       compress = pkgs.fetchFromGitHub {
         owner = "Ev357";

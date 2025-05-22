@@ -1,7 +1,5 @@
 {
-  programs.btop = {
-    settings = {
-      vim_keys = true;
-    };
+  programs.btop.settings = {
+    vim_keys = true;
   };
 }

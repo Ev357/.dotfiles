@@ -1,11 +1,14 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./settings.nix
+  ];
+
   wayland.windowManager.hyprland = {
     package = null;
     portalPackage = null;
     systemd.enable = false;
-    settings = import ./settings.nix;
   };
 
   home = {

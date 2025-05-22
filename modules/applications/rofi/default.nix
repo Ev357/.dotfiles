@@ -1,8 +1,11 @@
-{ pkgs, ... }@inputs:
+{ pkgs, ... }:
 
 {
+  imports = [
+    ./theme.nix
+  ];
+
   programs.rofi = {
     package = pkgs.rofi-wayland;
-    theme = import ./theme.nix inputs;
   };
 }
