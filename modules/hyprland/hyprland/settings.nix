@@ -1,7 +1,11 @@
 {
   source = "~/.config/hypr/hyprland/colors.conf";
 
-  monitor = [ "eDP-1, preferred, auto, 1" ", preferred, auto-up, 1" ];
+  monitor = [
+    "eDP-1, preferred, auto, 1"
+    ", preferred, auto-up, 1"
+    "Virtual-1, preferred, auto, 1"
+  ];
 
   "$terminal" = "ghostty";
   "$fileManager" = "ghostty -e yazi";
