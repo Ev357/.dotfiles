@@ -7,6 +7,7 @@
 
   modules = {
     hyprland.enable = true;
+    shell.enable = true;
   };
 
   programs = {

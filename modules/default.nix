@@ -1,22 +1,11 @@
 {
   imports = [
     ./hyprland
-    ./nixvim
     ./rofi
     ./udiskie
     ./ghostty
     ./swaync
     ./stylix
-    ./zsh
-    ./starship
-    ./fzf
-    ./eza
-    ./bat
-    ./yazi
-    ./direnv
-    ./btop
-    ./git
-    ./zoxide
     ./zed-editor
     ./ags
     ./zen-browser
@@ -25,5 +14,6 @@
     ./desktop
     ./home-manager
     ./applications
+    ./shell
   ];
 }

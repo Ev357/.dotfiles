@@ -2,7 +2,6 @@
 
 {
   programs.zsh = {
-    enable = true;
     syntaxHighlighting.enable = true;
 
     shellAliases = {
@@ -30,9 +29,5 @@
           exec uwsm start hyprland-uwsm.desktop
       fi
     '';
-  };
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
   };
 }

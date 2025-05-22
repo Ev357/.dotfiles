@@ -1,6 +1,5 @@
 {
-  programs.fzf = {
-    enable = true;
+  programs.eza = {
     enableZshIntegration = true;
   };
 }

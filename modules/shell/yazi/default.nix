@@ -2,7 +2,6 @@
 
 {
   programs.yazi = {
-    enable = true;
     enableZshIntegration = true;
     keymap = {
       manager.prepend_keymap =
