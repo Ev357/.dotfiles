@@ -1,8 +1,5 @@
-{ lib, ... }:
-
 {
   programs.zed-editor = {
-    enable = lib.mkDefault true;
     userSettings = {
       ui_font_size = 16;
       buffer_font_size = 16;

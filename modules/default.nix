@@ -1,19 +1,13 @@
 {
   imports = [
     ./hyprland
-    ./rofi
     ./udiskie
-    ./ghostty
     ./swaync
     ./stylix
-    ./zed-editor
     ./ags
-    ./zen-browser
-    ./mpv
     ./opentabletdriver
-    ./desktop
     ./home-manager
-    ./applications
     ./shell
+    ./applications
   ];
 }

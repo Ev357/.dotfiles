@@ -1,7 +1,31 @@
-{ pkgs, ... }:
+{ lib, config, ... }:
 
 {
-  home.packages = with pkgs; [
-    nautilus
+  imports = [
+    ./applications
+    ./electron-flags
+    ./ghostty
+    ./mpv
+    ./rofi
+    ./zed-editor
+    ./zen-browser
   ];
+
+  options.modules.applications = {
+    enable = lib.mkEnableOption "enables hyprland";
+  };
+
+  config = lib.mkIf config.modules.applications.enable {
+    modules.applications = {
+      applications.enable = lib.mkDefault true;
+      electron-flags.enable = lib.mkDefault true;
+      mpv.enable = lib.mkDefault true;
+    };
+    programs = {
+      ghostty.enable = lib.mkDefault true;
+      rofi.enable = lib.mkDefault true;
+      zed-editor.enable = lib.mkDefault true;
+      zen-browser.enable = lib.mkDefault true;
+    };
+  };
 }
