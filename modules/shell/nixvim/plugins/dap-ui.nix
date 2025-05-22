@@ -1,7 +1,6 @@
 {
-  dap-ui = {
-    enable = true;
-    settings = {
+  programs.nixvim = {
+    plugins.dap-ui.settings = {
       icons = { expanded = "▾"; collapsed = "▸"; current_frame = "*"; };
       controls = {
         icons = {
@@ -17,5 +16,18 @@
         };
       };
     };
+
+    keymaps = [
+      {
+        mode = "n";
+        key = "<F7>";
+        action.__raw = /*lua*/ ''
+          function()
+            require('dapui').toggle()
+          end
+        '';
+        options.desc = "Debug: See last session result.";
+      }
+    ];
   };
 }

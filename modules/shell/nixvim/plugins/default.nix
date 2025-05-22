@@ -1,0 +1,20 @@
+{
+  imports = [
+    ./blink-cmp.nix
+    ./conform-nvim.nix
+    ./dap-ui.nix
+    ./dap.nix
+    ./fidget.nix
+    ./flash.nix
+    ./gitsigns.nix
+    ./lsp.nix
+    ./mini.nix
+    ./neogit.nix
+    ./oil.nix
+    ./telescope.nix
+    ./todo-comments.nix
+    ./treesitter.nix
+    ./undotree.nix
+    ./which-key.nix
+  ];
+}

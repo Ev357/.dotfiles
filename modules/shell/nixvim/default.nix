@@ -1,8 +1,11 @@
-{ pkgs, ... }@inputs:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
-    inputs.inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeManagerModules.nixvim
+
+    ./plugins
+    ./keymaps.nix
   ];
 
   programs.nixvim = {
@@ -45,41 +48,27 @@
     performance.byteCompileLua.enable = true;
     vimAlias = true;
 
-    keymaps = [ ]
-      ++ import ./keymaps/keymaps.nix
-      ++ import ./keymaps/telescope.nix
-      ++ import ./keymaps/oil.nix
-      ++ import ./keymaps/lsp.nix
-      ++ import ./keymaps/conform-nvim.nix
-      ++ import ./keymaps/neogit.nix
-      ++ import ./keymaps/flash.nix
-      ++ import ./keymaps/gitsigns.nix
-      ++ import ./keymaps/undotree.nix
-      ++ import ./keymaps/dap.nix
-      ++ import ./keymaps/dap-ui.nix;
-
     plugins = {
       comment.enable = true;
       sleuth.enable = true;
-    } // (
-      (import ./plugins/telescope.nix)
-        // (import ./plugins/treesitter.nix)
-        // (import ./plugins/oil.nix)
-        // (import ./plugins/neogit.nix)
-        // (import ./plugins/mini.nix)
-        // (import ./plugins/which-key.nix)
-        // (import ./plugins/lsp.nix)
-        // (import ./plugins/blink-cmp.nix)
-        // (import ./plugins/conform-nvim.nix)
-        // (import ./plugins/flash.nix)
-        // (import ./plugins/gitsigns.nix)
-        // (import ./plugins/todo-comments.nix)
-        // (import ./plugins/undotree.nix)
-        // (import ./plugins/dap.nix inputs)
-        // (import ./plugins/dap-ui.nix)
-        // (import ./plugins/dap-virtual-text.nix)
-        // (import ./plugins/fidget.nix)
-    );
+      telescope.enable = true;
+      treesitter.enable = true;
+      oil.enable = true;
+      neogit.enable = true;
+      mini.enable = true;
+      which-key.enable = true;
+      lsp.enable = true;
+      blink-cmp.enable = true;
+      conform-nvim.enable = true;
+      flash.enable = true;
+      gitsigns.enable = true;
+      todo-comments.enable = true;
+      undotree.enable = true;
+      dap.enable = true;
+      dap-ui.enable = true;
+      dap-virtual-text.enable = true;
+      fidget.enable = true;
+    };
 
     autoCmd = [
       {

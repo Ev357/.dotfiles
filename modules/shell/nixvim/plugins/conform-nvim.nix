@@ -1,8 +1,6 @@
 {
-  conform-nvim = {
-    enable = true;
-
-    settings = {
+  programs.nixvim = {
+    plugins.conform-nvim.settings = {
       formatters_by_ft.__raw = /*lua*/ ''
         (function()
           local config = {
@@ -47,5 +45,18 @@
         end
       '';
     };
+
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>f";
+        action.__raw = /*lua*/ ''
+          function()
+            require('conform').format { async = true, lsp_format = 'fallback' }
+          end
+        '';
+        options.desc = "[F]ormat buffer";
+      }
+    ];
   };
 }
