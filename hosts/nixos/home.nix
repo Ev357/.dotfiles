@@ -9,4 +9,7 @@
     applications.enable = true;
     games.enable = true;
   };
+
+  services.swaync.enable = true;
+  programs.ags.enable = true;
 }

@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ lib, config, pkgs, ... }:
 
 {
-  services.swaync.enable = true;
-
-  home.packages = with pkgs; [
-    libnotify
-  ];
+  config = lib.mkIf config.services.swaync.enable {
+    home.packages = with pkgs; [
+      libnotify
+    ];
+  };
 }

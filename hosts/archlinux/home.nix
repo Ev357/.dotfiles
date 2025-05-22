@@ -20,4 +20,6 @@
     ghostty.package = null;
     zed-editor.package = pkgs.emptyDirectory;
   };
+
+  services.swaync.enable = true;
 }
