@@ -5,9 +5,11 @@
     ./swaync
     ./stylix
     ./ags
-    ./opentabletdriver
     ./home-manager
     ./shell
     ./applications
+    ./games
+    ./nixpkgs
+    ./electron-flags
   ];
 }

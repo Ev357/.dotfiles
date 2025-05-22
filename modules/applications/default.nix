@@ -3,12 +3,12 @@
 {
   imports = [
     ./applications
-    ./electron-flags
     ./ghostty
     ./mpv
     ./rofi
     ./zed-editor
     ./zen-browser
+    ./opentabletdriver
   ];
 
   options.modules.applications = {
@@ -16,10 +16,14 @@
   };
 
   config = lib.mkIf config.modules.applications.enable {
-    modules.applications = {
-      applications.enable = lib.mkDefault true;
-      electron-flags.enable = lib.mkDefault true;
-      mpv.enable = lib.mkDefault true;
+    modules = {
+      applications = {
+        applications.enable = lib.mkDefault true;
+        mpv.enable = lib.mkDefault true;
+        opentabletdriver.enable = lib.mkDefault true;
+      };
+
+      electron-flags.enable = true;
     };
     programs = {
       ghostty.enable = lib.mkDefault true;
