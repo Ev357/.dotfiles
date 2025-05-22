@@ -46,7 +46,7 @@
           extraSpecialArgs = { inherit inputs; };
         };
 
-        "evest@archlinux" = home-manager.lib.homeManagerConfiguration {
+        "evest@lucas.gager" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
 
           modules = [
