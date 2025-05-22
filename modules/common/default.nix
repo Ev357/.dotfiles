@@ -1,0 +1,6 @@
+{
+  imports = [
+    ./home-manager
+    ./nixpkgs
+  ];
+}

@@ -4,11 +4,10 @@
     ./swaync
     ./stylix
     ./ags
-    ./home-manager
     ./shell
     ./applications
     ./games
-    ./nixpkgs
     ./electron-flags
+    ./common
   ];
 }
