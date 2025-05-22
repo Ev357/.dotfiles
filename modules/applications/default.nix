@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./applications
+    ./general
     ./ghostty
     ./mpv
     ./rofi
@@ -18,7 +18,7 @@
   config = lib.mkIf config.modules.applications.enable {
     modules = {
       applications = {
-        applications.enable = lib.mkDefault true;
+        general.enable = lib.mkDefault true;
         mpv.enable = lib.mkDefault true;
         opentabletdriver.enable = lib.mkDefault true;
       };
