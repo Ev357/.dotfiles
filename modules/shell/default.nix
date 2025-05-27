@@ -12,6 +12,7 @@
     ./yazi
     ./zoxide
     ./zsh
+    ./packages
   ];
 
   options.modules.shell = {
@@ -19,6 +20,7 @@
   };
 
   config = lib.mkIf config.modules.shell.enable {
+    modules.shell.packages.enable = lib.mkDefault true;
     programs = {
       bat.enable = lib.mkDefault true;
       btop.enable = lib.mkDefault true;

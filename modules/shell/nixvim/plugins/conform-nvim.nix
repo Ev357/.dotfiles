@@ -34,6 +34,10 @@
 
       format_on_save = /*lua*/ ''
         function(bufnr)
+          if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+            return
+          end
+
           local disable_filetypes = { c = true, cpp = true }
           local lsp_format_opt
           if disable_filetypes[vim.bo[bufnr].filetype] then
