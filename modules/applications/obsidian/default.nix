@@ -5,6 +5,7 @@ let
     obsidian-vim-yank-highlight = pkgs.callPackage ./plugins/obsidian-vim-yank-highlight { };
     obsidian-scroll-offset = pkgs.callPackage ./plugins/obsidian-scroll-offset { };
     obsidian-relative-line-numbers = pkgs.callPackage ./plugins/obsidian-relative-line-numbers { };
+    obsidian-vimrc-support = pkgs.callPackage ./plugins/obsidian-vimrc-support { };
   };
 in
 {
@@ -37,6 +38,9 @@ in
         }
         {
           pkg = obsidian-plugins.obsidian-relative-line-numbers;
+        }
+        {
+          pkg = obsidian-plugins.obsidian-vimrc-support;
         }
       ];
       cssSnippets = [
