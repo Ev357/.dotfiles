@@ -19,6 +19,7 @@
     hyprlock.package = null;
     ghostty.package = null;
     zed-editor.package = pkgs.emptyDirectory;
+    obsidian.package = pkgs.emptyDirectory;
   };
 
   services.swaync.enable = true;

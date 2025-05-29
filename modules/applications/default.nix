@@ -9,6 +9,7 @@
     ./zed-editor
     ./zen-browser
     ./opentabletdriver
+    ./obsidian
   ];
 
   options.modules.applications = {
@@ -30,6 +31,7 @@
       rofi.enable = lib.mkDefault true;
       zed-editor.enable = lib.mkDefault true;
       zen-browser.enable = lib.mkDefault true;
+      obsidian.enable = lib.mkDefault true;
     };
 
     stylix.enable = true;
