@@ -15,6 +15,10 @@
       settings = builtins.fromJSON (builtins.readFile ./obsidian-git/data.json);
     }
     {
+      pkg = pkgs.callPackage ./obsidian-hider/package { };
+      settings = builtins.fromJSON (builtins.readFile ./obsidian-hider/data.json);
+    }
+    {
       pkg = pkgs.callPackage ./obsidian-relative-line-numbers/package { };
     }
     {
