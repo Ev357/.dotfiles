@@ -1,14 +1,8 @@
-{ pkgs, ... }:
-
-let
-  obsidian-plugins = {
-    obsidian-vim-yank-highlight = pkgs.callPackage ./plugins/obsidian-vim-yank-highlight { };
-    obsidian-scroll-offset = pkgs.callPackage ./plugins/obsidian-scroll-offset { };
-    obsidian-relative-line-numbers = pkgs.callPackage ./plugins/obsidian-relative-line-numbers { };
-    obsidian-vimrc-support = pkgs.callPackage ./plugins/obsidian-vimrc-support { };
-  };
-in
 {
+  imports = [
+    ./plugins
+  ];
+
   programs.obsidian = {
     vaults = {
       Obsidian = {
@@ -29,20 +23,6 @@ in
         showRibbon = false;
         nativeMenus = false;
       };
-      communityPlugins = [
-        {
-          pkg = obsidian-plugins.obsidian-vim-yank-highlight;
-        }
-        {
-          pkg = obsidian-plugins.obsidian-scroll-offset;
-        }
-        {
-          pkg = obsidian-plugins.obsidian-relative-line-numbers;
-        }
-        {
-          pkg = obsidian-plugins.obsidian-vimrc-support;
-        }
-      ];
       cssSnippets = [
         {
           name = "stop-blinking-cursor";
