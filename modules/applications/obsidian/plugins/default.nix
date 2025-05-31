@@ -11,6 +11,10 @@
       settings = builtins.fromJSON (builtins.readFile ./obsidian-excalidraw-plugin/data.json);
     }
     {
+      pkg = pkgs.callPackage ./obsidian-git/package { };
+      settings = builtins.fromJSON (builtins.readFile ./obsidian-git/data.json);
+    }
+    {
       pkg = pkgs.callPackage ./obsidian-relative-line-numbers/package { };
     }
     {
