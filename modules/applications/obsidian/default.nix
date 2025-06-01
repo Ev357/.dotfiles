@@ -2,6 +2,7 @@
   imports = [
     ./plugins
     ./theme
+    ./patch
   ];
 
   programs.obsidian = {
@@ -39,6 +40,10 @@
           target = "../.obsidian.vimrc";
         };
       };
+    };
+
+    extraSettings = {
+      frame = "native";
     };
   };
 }
