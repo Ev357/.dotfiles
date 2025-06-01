@@ -1,6 +1,7 @@
 {
   imports = [
     ./plugins
+    ./theme
   ];
 
   programs.obsidian = {
