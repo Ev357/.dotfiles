@@ -24,6 +24,9 @@
         showRibbon = false;
         nativeMenus = false;
       };
+      hotkeys = {
+        "editor:delete-paragraph" = [ ];
+      };
       cssSnippets = [
         {
           name = "stop-blinking-cursor";
