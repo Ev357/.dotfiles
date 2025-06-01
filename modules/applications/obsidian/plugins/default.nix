@@ -25,6 +25,10 @@
       pkg = pkgs.callPackage ./obsidian-scroll-offset/package { };
     }
     {
+      pkg = pkgs.callPackage ./obsidian-style-settings/package { };
+      settings = builtins.fromJSON (builtins.readFile ./obsidian-style-settings/data.json);
+    }
+    {
       pkg = pkgs.callPackage ./obsidian-vim-yank-highlight/package { };
     }
     {
