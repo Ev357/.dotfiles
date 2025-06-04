@@ -1,6 +1,7 @@
 {
   imports = [
     ./applications
+    ./cachix-agent
     ./common
     ./electron-flags
     ./games

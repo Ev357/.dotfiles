@@ -7,7 +7,7 @@ pkgs.buildNpmPackage rec {
   src = pkgs.fetchFromGitHub {
     owner = "catppuccin";
     repo = "obsidian";
-    rev = "main";
+    rev = "aed52f97ed682dd071131540c9f2f94282135bc8";
     sha256 = "sha256-bjjOUVftKMImqZe8qr6K7KIFGFadWhWT/6lWFLDUQL4=";
   };
 

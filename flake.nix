@@ -24,9 +24,14 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    cachix-deploy-flake = {
+      url = "github:cachix/cachix-deploy-flake";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs = { nixpkgs, cachix-deploy-flake, home-manager, ... }@inputs:
     {
       homeConfigurations = {
         "evest@nixos" = home-manager.lib.homeManagerConfiguration {
@@ -63,5 +68,37 @@
           extraSpecialArgs = { inherit inputs; };
         };
       };
+
+      packages =
+        let
+          mkCachixDeploy = system:
+            let
+              pkgs = nixpkgs.legacyPackages.${system};
+              cachix-deploy-lib = cachix-deploy-flake.lib pkgs;
+            in
+            cachix-deploy-lib.spec {
+              agents = {
+                agent = cachix-deploy-lib.homeManager
+                  {
+                    extraSpecialArgs = { inherit inputs; };
+                  }
+                  {
+                    imports = [
+                      ./hosts/cachix/home.nix
+                    ];
+
+                    home = {
+                      username = "evest";
+                      homeDirectory = "/home/evest";
+                      stateVersion = "24.11";
+                    };
+                  };
+              };
+            };
+        in
+        {
+          "x86_64-linux".cachix = mkCachixDeploy "x86_64-linux";
+          "aarch64-linux".cachix = mkCachixDeploy "aarch64-linux";
+        };
     };
 }
