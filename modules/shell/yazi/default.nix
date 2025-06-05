@@ -8,7 +8,7 @@
   programs.yazi = {
     enableZshIntegration = true;
     keymap = {
-      manager.prepend_keymap = [
+      mgr.prepend_keymap = [
         {
           on = [ "g" "c" ];
           run = [ "cd ~/.config" "hidden show" ];
