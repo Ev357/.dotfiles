@@ -28,10 +28,10 @@
     };
     plugins = {
       compress = pkgs.fetchFromGitHub {
-        owner = "Ev357";
+        owner = "KKV9";
         repo = "compress.yazi";
-        rev = "main";
-        sha256 = "0xpasrxs6dv19k8j0vdga4g3a3bwkcc51aldnp1rfsdcw88ghr8c";
+        rev = "0.5";
+        sha256 = "sha256-/A2pGc0PtKYXjRWBpbZ7uSoux1+q7mNYOaKjW5viuts=";
       };
     };
   };
