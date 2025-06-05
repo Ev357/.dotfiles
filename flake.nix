@@ -67,6 +67,23 @@
 
           extraSpecialArgs = { inherit inputs; };
         };
+
+        "nix-on-droid" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."aarch64-linux";
+
+          modules = [
+            ./hosts/nix-on-droid/home.nix
+            {
+              home = {
+                username = "nix-on-droid";
+                homeDirectory = "/data/data/com.termux.nix/files/home";
+                stateVersion = "24.05";
+              };
+            }
+          ];
+
+          extraSpecialArgs = { inherit inputs; };
+        };
       };
 
       packages =
