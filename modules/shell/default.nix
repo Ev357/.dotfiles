@@ -9,6 +9,7 @@
     ./git
     ./nixvim
     ./starship
+    ./ssh
     ./yazi
     ./zoxide
     ./zsh
@@ -29,6 +30,7 @@
       fzf.enable = lib.mkDefault true;
       git.enable = lib.mkDefault true;
       nixvim.enable = lib.mkDefault true;
+      ssh.enable = lib.mkDefault true;
       starship.enable = lib.mkDefault true;
       yazi.enable = lib.mkDefault true;
       zoxide.enable = lib.mkDefault true;
