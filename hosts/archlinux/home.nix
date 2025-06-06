@@ -17,7 +17,10 @@
 
   modules = {
     shell.enable = true;
-    applications.enable = true;
+    applications = {
+      enable = true;
+      other.disableOpenGLApps = true;
+    };
     games = {
       enable = true;
       osu.noInstall = true;

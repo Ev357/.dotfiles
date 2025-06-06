@@ -3,6 +3,7 @@
 {
   options.modules.applications.other = {
     enable = lib.mkEnableOption "enables other applications";
+    disableOpenGLApps = lib.mkEnableOption "disables OpenGL applications.";
   };
 
   config = lib.mkIf config.modules.applications.other.enable {
@@ -13,6 +14,12 @@
       fragments
       evolutionWithPlugins
       beekeeper-studio
+    ] ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [
+      anki-bin
+    ];
+
+    wayland.windowManager.hyprland.settings.env = [
+      "ANKI_WAYLAND,1"
     ];
   };
 }
