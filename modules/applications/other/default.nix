@@ -16,6 +16,7 @@
       beekeeper-studio
       session-desktop
       libreoffice-qt6-fresh
+      pidgin
     ] ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [
       anki-bin
     ];
