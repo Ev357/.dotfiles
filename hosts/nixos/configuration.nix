@@ -20,6 +20,7 @@
 
   modules = {
     packages.enable = true;
+    fonts.enable = true;
   };
 
   programs = {

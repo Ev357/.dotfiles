@@ -14,6 +14,7 @@
       fragments
       evolutionWithPlugins
       beekeeper-studio
+      session-desktop
     ] ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [
       anki-bin
     ];

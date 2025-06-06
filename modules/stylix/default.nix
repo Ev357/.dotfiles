@@ -7,6 +7,7 @@
 
   home.packages = with pkgs; [
     nerd-fonts.geist-mono
+    noto-fonts-cjk-sans
   ];
 
   stylix = {
