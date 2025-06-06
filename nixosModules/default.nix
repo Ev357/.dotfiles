@@ -3,5 +3,6 @@
     ./common
     ./hyprland
     ./packages
+    ./services
   ];
 }

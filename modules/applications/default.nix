@@ -41,5 +41,10 @@
     };
 
     stylix.enable = true;
+
+    services.gnome-keyring = {
+      enable = lib.mkDefault true;
+      components = [ "secrets" ];
+    };
   };
 }

@@ -29,12 +29,17 @@
   };
 
   services = {
+    fwupd.enable = true;
     openssh.enable = true;
     gvfs.enable = true;
     udisks2.enable = true;
     tailscale.enable = true;
+    gnome.evolution-data-server.enable = true;
+
     xserver.xkb.layout = "cz";
   };
+
+  security.pam.services.login.enableGnomeKeyring = true;
 
   hardware.opentabletdriver.enable = true;
 
