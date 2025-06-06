@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./chromium
     ./ghostty
     ./keepassxc
     ./mpv
@@ -31,6 +32,7 @@
       electron-flags.enable = true;
     };
     programs = {
+      chromium.enable = lib.mkDefault true;
       ghostty.enable = lib.mkDefault true;
       rofi.enable = lib.mkDefault true;
       keepassxc.enable = lib.mkDefault true;
