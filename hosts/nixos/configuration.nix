@@ -7,12 +7,15 @@
     ../../nixosModules
   ];
 
-  boot.loader = {
-    systemd-boot = {
-      enable = true;
-      configurationLimit = 2;
+  boot = {
+    loader = {
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 2;
+      };
+      efi.canTouchEfiVariables = true;
     };
-    efi.canTouchEfiVariables = true;
+    binfmt.emulatedSystems = [ "aarch64-linux" ];
   };
 
   modules = {
