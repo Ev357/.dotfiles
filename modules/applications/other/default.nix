@@ -15,6 +15,7 @@
       evolutionWithPlugins
       beekeeper-studio
       session-desktop
+      libreoffice-qt6-fresh
     ] ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [
       anki-bin
     ];
