@@ -45,4 +45,11 @@
       size = 24;
     };
   };
+
+  gtk = {
+    iconTheme = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita";
+    };
+  };
 }

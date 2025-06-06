@@ -11,6 +11,7 @@
         sdk_6_0
         sdk_8_0
       ])
+      openvpn
     ];
 
     nixpkgs.config.permittedInsecurePackages = [

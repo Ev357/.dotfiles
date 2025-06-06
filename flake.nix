@@ -25,6 +25,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     cachix-deploy-flake = {
       url = "github:cachix/cachix-deploy-flake";
       inputs.home-manager.follows = "home-manager";
@@ -83,6 +85,17 @@
           ];
 
           extraSpecialArgs = { inherit inputs; };
+        };
+      };
+
+
+      nixosConfigurations = {
+        "nixos" = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/nixos/configuration.nix
+          ];
+          specialArgs = { inherit inputs; };
         };
       };
 

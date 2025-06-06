@@ -3,6 +3,14 @@
     ../../modules
   ];
 
+  wayland.windowManager.hyprland = rec {
+    mainMonitorName = "eDP-1";
+    settings.monitor = [
+      "${mainMonitorName}, preferred, auto, 2"
+      ", preferred, auto-up, 1"
+    ];
+  };
+
   modules = {
     hyprland.enable = true;
     shell.enable = true;

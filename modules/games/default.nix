@@ -13,5 +13,9 @@
     modules.games.osu.enable = lib.mkDefault true;
 
     modules.electron-flags.enable = true;
+
+    wayland.windowManager.hyprland.settings.env = [
+      "SDL_VIDEODRIVER,wayland"
+    ];
   };
 }

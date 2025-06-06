@@ -2,12 +2,15 @@
 
 {
   imports = [
-    ./general
     ./ghostty
+    ./keepassxc
     ./mpv
     ./rofi
     ./zed-editor
+    ./other
     ./zen-browser
+    ./teams-fox-linux
+    ./vesktop
     ./opentabletdriver
     ./obsidian
   ];
@@ -19,9 +22,10 @@
   config = lib.mkIf config.modules.applications.enable {
     modules = {
       applications = {
-        general.enable = lib.mkDefault true;
+        other.enable = lib.mkDefault true;
         mpv.enable = lib.mkDefault true;
         opentabletdriver.enable = lib.mkDefault true;
+        teams-fox-linux.enable = lib.mkDefault true;
       };
 
       electron-flags.enable = true;
@@ -29,7 +33,9 @@
     programs = {
       ghostty.enable = lib.mkDefault true;
       rofi.enable = lib.mkDefault true;
+      keepassxc.enable = lib.mkDefault true;
       zed-editor.enable = lib.mkDefault true;
+      vesktop.enable = lib.mkDefault true;
       zen-browser.enable = lib.mkDefault true;
       obsidian.enable = lib.mkDefault true;
     };
