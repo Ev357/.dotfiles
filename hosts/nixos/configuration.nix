@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
+    ../../nixosModules
   ];
 
   boot.loader = {
@@ -14,20 +15,35 @@
     efi.canTouchEfiVariables = true;
   };
 
-  networking = {
-    hostName = "nixos";
-    networkmanager.enable = true;
+  modules = {
+    packages.enable = true;
   };
 
   programs = {
-    hyprland = {
-      enable = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-      withUWSM = true;
-    };
+    hyprland.enable = true;
     zsh.enable = true;
     nix-ld.enable = true;
+  };
+
+  services = {
+    openssh.enable = true;
+    gvfs.enable = true;
+    udisks2.enable = true;
+    tailscale.enable = true;
+    xserver.xkb.layout = "cz";
+  };
+
+  hardware.opentabletdriver.enable = true;
+
+  users.users.evest = {
+    isNormalUser = true;
+    extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
+  };
+
+  networking = {
+    hostName = "nixos";
+    networkmanager.enable = true;
   };
 
   time.timeZone = "Europe/Prague";
@@ -48,56 +64,6 @@
   };
 
   console.keyMap = "cz";
-
-  users.users.evest = {
-    isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
-  };
-
-  nixpkgs.config.allowUnfree = true;
-
-  nix = {
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-      extra-substituters = [
-        "https://ev357.cachix.org"
-        "https://nix-community.cachix.org"
-        "https://hyprland.cachix.org"
-      ];
-      extra-trusted-public-keys = [
-        "ev357.cachix.org-1:bI65rULXWJ8IMM+tosc/Z+9W53nL6uj4+5FLXX6BN3Q="
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-      ];
-      auto-optimise-store = true;
-    };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 1w";
-    };
-  };
-
-  environment.systemPackages = with pkgs; [
-    vim
-    wl-clipboard
-    usbutils
-    udiskie
-    udisks
-    networkmanagerapplet
-    waybar
-  ];
-
-  hardware.opentabletdriver.enable = true;
-
-  services = {
-    openssh.enable = true;
-    gvfs.enable = true;
-    udisks2.enable = true;
-    tailscale.enable = true;
-    xserver.xkb.layout = "cz";
-  };
 
   system.stateVersion = "25.05";
 }
