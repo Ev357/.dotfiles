@@ -13,10 +13,12 @@
       remmina
       fragments
       evolutionWithPlugins
+      easytag
       beekeeper-studio
       session-desktop
       libreoffice-qt6-fresh
       pidgin
+      dbeaver-bin
     ] ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [
       anki-bin
     ];

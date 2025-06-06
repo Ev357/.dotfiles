@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, config, pkgs, ... }:
 
 {
   imports = [
@@ -11,6 +11,10 @@
 
   config = lib.mkIf config.modules.games.enable {
     modules.games.osu.enable = lib.mkDefault true;
+
+    home.packages = with pkgs; [
+      lunar-client
+    ];
 
     modules.electron-flags.enable = true;
 
