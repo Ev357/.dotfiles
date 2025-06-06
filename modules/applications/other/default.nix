@@ -11,6 +11,7 @@
       loupe
       remmina
       fragments
+      beekeeper-studio
     ];
   };
 }
