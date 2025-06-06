@@ -19,6 +19,7 @@
       libreoffice-qt6-fresh
       pidgin
       dbeaver-bin
+      krita
     ] ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [
       anki-bin
     ];

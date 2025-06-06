@@ -7,10 +7,15 @@
     enable = true;
     mainMonitorName = "eDP-1";
     mainMonitorScaling = 2;
-    settings.monitor = [
-      "${mainMonitorName}, preferred, auto, ${builtins.toString mainMonitorScaling}"
-      ", preferred, auto-up, 1"
-    ];
+    settings = {
+      monitor = [
+        "${mainMonitorName}, preferred, auto, ${builtins.toString mainMonitorScaling}"
+        ", preferred, auto-up, 1"
+      ];
+      env = [
+        "QT_SCALE_FACTOR,${builtins.toString mainMonitorScaling}"
+      ];
+    };
   };
 
   modules = {
