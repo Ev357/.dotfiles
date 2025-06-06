@@ -12,6 +12,7 @@
         sdk_8_0
       ])
       openvpn
+      cachix
     ];
   };
 }
