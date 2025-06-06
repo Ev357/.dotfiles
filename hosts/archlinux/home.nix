@@ -8,8 +8,9 @@
   wayland.windowManager.hyprland = rec {
     enable = true;
     mainMonitorName = "eDP-1";
+    mainMonitorScaling = 1;
     settings.monitor = [
-      "${mainMonitorName}, preferred, auto, 1"
+      "${mainMonitorName}, preferred, auto, ${builtins.toString mainMonitorScaling}"
       ", preferred, auto-up, 1"
     ];
   };

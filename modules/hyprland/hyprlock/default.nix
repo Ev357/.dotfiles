@@ -1,3 +1,9 @@
+{ config, ... }:
+
+let
+  cfg = config.wayland.windowManager.hyprland;
+in
+
 {
   programs.hyprlock.settings = {
     "source" = "$HOME/.config/hypr/hyprland/colors.conf";
@@ -12,14 +18,12 @@
     };
 
     background = {
-      monitor = "";
       blur_passes = 0;
       color = "$base";
     };
 
     input-field = {
-      monitor = "";
-      size = "240, 48";
+      size = "${builtins.toString (240 * cfg.mainMonitorScaling)}, ${builtins.toString (48 * cfg.mainMonitorScaling)}";
       outline_thickness = 4;
       dots_size = 0.2;
       dots_spacing = 0.2;
@@ -36,6 +40,10 @@
       capslock_color = "$yellow";
       halign = "center";
       valign = "center";
+    };
+
+    auth = {
+      "fingerprint:enabled" = true;
     };
   };
 }
