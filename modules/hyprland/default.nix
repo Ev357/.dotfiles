@@ -9,11 +9,7 @@
     ./hyprpaper
   ];
 
-  options.modules.hyprland = {
-    enable = lib.mkEnableOption "enables hyprland";
-  };
-
-  config = lib.mkIf config.modules.hyprland.enable {
+  config = lib.mkIf config.wayland.windowManager.hyprland.enable {
     modules.hyprland.hyprcursor.enable = lib.mkDefault true;
     programs.hyprlock.enable = lib.mkDefault true;
     services = {
@@ -21,6 +17,5 @@
       hyprpaper.enable = lib.mkDefault true;
       hyprpolkitagent.enable = lib.mkDefault true;
     };
-    wayland.windowManager.hyprland.enable = lib.mkDefault true;
   };
 }

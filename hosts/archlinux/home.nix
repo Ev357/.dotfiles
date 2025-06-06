@@ -6,6 +6,7 @@
   ];
 
   wayland.windowManager.hyprland = rec {
+    enable = true;
     mainMonitorName = "eDP-1";
     settings.monitor = [
       "${mainMonitorName}, preferred, auto, 1"
@@ -14,7 +15,6 @@
   };
 
   modules = {
-    hyprland.enable = true;
     shell.enable = true;
     applications.enable = true;
     games = {
