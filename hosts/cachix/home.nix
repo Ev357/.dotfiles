@@ -1,10 +1,15 @@
+{ pkgs, ... }:
+
 {
   imports = [
     ../../modules
   ];
 
   programs = {
-    obsidian.enable = true;
+    obsidian = {
+      enable = true;
+      package = pkgs.emptyDirectory;
+    };
     ags.enable = true;
   };
 
