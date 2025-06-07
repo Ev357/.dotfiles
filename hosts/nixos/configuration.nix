@@ -39,7 +39,10 @@
     gnome.evolution-data-server.enable = true;
     printing.enable = true;
 
-    xserver.xkb.layout = "cz";
+    xserver = {
+      xkb.layout = "cz";
+      videoDrivers = [ "amdgpu" ];
+    };
   };
 
   security.pam.services.login.enableGnomeKeyring = true;

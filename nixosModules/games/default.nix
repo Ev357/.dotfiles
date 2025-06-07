@@ -16,5 +16,7 @@
       steam.enable = lib.mkDefault true;
       gamemode.enable = lib.mkDefault true;
     };
+
+    services.xserver.videoDrivers = [ "amdgpu" ];
   };
 }

@@ -14,6 +14,7 @@
 
     home.packages = with pkgs; [
       lunar-client
+      heroic
     ];
 
     modules.electron-flags.enable = true;
