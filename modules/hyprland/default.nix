@@ -7,6 +7,7 @@
     ./hyprland
     ./hyprlock
     ./hyprpaper
+    ./hyprsunset
   ];
 
   config = lib.mkIf config.wayland.windowManager.hyprland.enable {
@@ -16,6 +17,7 @@
       hypridle.enable = lib.mkDefault true;
       hyprpaper.enable = lib.mkDefault true;
       hyprpolkitagent.enable = lib.mkDefault true;
+      hyprsunset.enable = lib.mkDefault true;
     };
   };
 }
