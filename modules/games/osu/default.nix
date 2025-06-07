@@ -9,6 +9,7 @@
   config = lib.mkIf config.modules.games.osu.enable {
     home.packages = lib.mkIf (!config.modules.games.osu.noInstall) (with pkgs; [
       osu-lazer-bin
+      wootility
     ]);
 
     modules.applications.opentabletdriver.enable = true;

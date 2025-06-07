@@ -21,6 +21,7 @@
   modules = {
     packages.enable = true;
     fonts.enable = true;
+    games.enable = true;
   };
 
   programs = {
