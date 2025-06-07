@@ -5,6 +5,7 @@
     ./games
     ./hyprland
     ./packages
+    ./programs
     ./services
   ];
 }
