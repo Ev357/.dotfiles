@@ -37,6 +37,7 @@
     udisks2.enable = true;
     tailscale.enable = true;
     gnome.evolution-data-server.enable = true;
+    printing.enable = true;
 
     xserver.xkb.layout = "cz";
   };

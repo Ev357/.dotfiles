@@ -20,6 +20,7 @@
       pidgin
       dbeaver-bin
       krita
+      system-config-printer
     ] ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [
       anki-bin
     ];
