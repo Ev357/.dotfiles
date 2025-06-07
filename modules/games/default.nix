@@ -15,6 +15,11 @@
     home.packages = with pkgs; [
       lunar-client
       heroic
+      lutris
+
+      dwarfs
+      fuse-overlayfs
+      bubblewrap
     ];
 
     modules.electron-flags.enable = true;
