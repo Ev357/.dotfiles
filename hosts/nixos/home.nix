@@ -14,7 +14,7 @@
       ];
       env = [
         "QT_SCALE_FACTOR,${builtins.toString mainMonitorScaling}"
-        "GDK_SCALE=${builtins.toString mainMonitorScaling}"
+        "GDK_SCALE,${builtins.toString mainMonitorScaling}"
       ];
     };
   };

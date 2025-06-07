@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./steam
     ./wootility
   ];
 
@@ -11,5 +12,9 @@
 
   config = lib.mkIf config.modules.games.enable {
     modules.games.wootility.enable = lib.mkDefault true;
+    programs = {
+      steam.enable = lib.mkDefault true;
+      gamemode.enable = lib.mkDefault true;
+    };
   };
 }
