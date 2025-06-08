@@ -4,6 +4,8 @@
   ];
 
   services.hyprsunset = {
+    extraArgs = [ "--identity" ];
+
     transitions = {
       night-start = {
         calendar = "*-*-* 00:00:00";

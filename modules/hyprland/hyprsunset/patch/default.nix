@@ -8,6 +8,11 @@ in
 
   options.services.hyprsunset = {
     enable = lib.mkEnableOption "Hyprsunset, Hyprland's blue-light filter";
+    extraArgs = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      default = [ ];
+      description = "Additional command-line arguments to pass to `hyprsunset`.";
+    };
     transitions = lib.mkOption {
       type = lib.types.attrsOf (
         lib.types.submodule {
@@ -74,7 +79,7 @@ in
             };
 
             Service = {
-              ExecStart = "${lib.getExe pkgs.hyprsunset}";
+              ExecStart = "${lib.getExe pkgs.hyprsunset} ${lib.escapeShellArgs cfg.extraArgs}";
               Restart = "always";
               RestartSec = "10";
             };
