@@ -20,6 +20,7 @@
       dwarfs
       fuse-overlayfs
       bubblewrap
+      wine-staging
     ];
 
     modules.electron-flags.enable = true;
