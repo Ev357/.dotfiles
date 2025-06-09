@@ -1,32 +1,24 @@
 {
-  description = "Home Manager configuration of evest";
+  description = "Ev357's dotfiles";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
+    hyprland.url = "github:hyprwm/Hyprland";
+    stylix.url = "github:danth/stylix";
+    ags.url = "github:aylur/ags";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    hyprland.url = "github:hyprwm/Hyprland";
-
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    stylix.url = "github:danth/stylix";
-
-    ags.url = "github:aylur/ags";
-
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
     cachix-deploy-flake = {
       url = "github:cachix/cachix-deploy-flake";
       inputs.home-manager.follows = "home-manager";
