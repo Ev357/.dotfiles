@@ -48,7 +48,10 @@
 
   security.pam.services.login.enableGnomeKeyring = true;
 
-  hardware.opentabletdriver.enable = true;
+  hardware = {
+    opentabletdriver.enable = true;
+    bluetooth.enable = true;
+  };
 
   users.users.evest = {
     isNormalUser = true;
