@@ -11,9 +11,12 @@
     packages.enable = true;
   };
 
+  programs = {
+    zsh.enable = true;
+  };
+
   services = {
     openssh.enable = true;
-    zsh.enable = true;
   };
 
   users.users = {
