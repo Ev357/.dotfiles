@@ -13,6 +13,7 @@
 
   services = {
     openssh.enable = true;
+    zsh.enable = true;
   };
 
   users.users = {
