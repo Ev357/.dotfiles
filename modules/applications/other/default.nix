@@ -10,15 +10,10 @@
     home.packages = with pkgs; [
       nautilus
       loupe
-      remmina
       fragments
-      evolutionWithPlugins
       easytag
-      beekeeper-studio
       session-desktop
       libreoffice-qt6-fresh
-      pidgin
-      dbeaver-bin
       krita
       system-config-printer
     ] ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [

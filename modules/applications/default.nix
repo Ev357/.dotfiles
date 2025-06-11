@@ -4,13 +4,11 @@
   imports = [
     ./chromium
     ./ghostty
-    ./keepassxc
     ./mpv
     ./rofi
     ./zed-editor
     ./other
     ./zen-browser
-    ./teams-fox-linux
     ./vesktop
     ./opentabletdriver
     ./obsidian
@@ -26,7 +24,6 @@
         other.enable = lib.mkDefault true;
         mpv.enable = lib.mkDefault true;
         opentabletdriver.enable = lib.mkDefault true;
-        teams-fox-linux.enable = lib.mkDefault true;
       };
 
       electron-flags.enable = true;
@@ -35,7 +32,6 @@
       chromium.enable = lib.mkDefault true;
       ghostty.enable = lib.mkDefault true;
       rofi.enable = lib.mkDefault true;
-      keepassxc.enable = lib.mkDefault true;
       zed-editor.enable = lib.mkDefault true;
       vesktop.enable = lib.mkDefault true;
       zen-browser.enable = lib.mkDefault true;

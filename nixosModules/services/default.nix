@@ -1,5 +1,0 @@
-{
-  imports = [
-    ./evolution-data-server
-  ];
-}
