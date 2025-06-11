@@ -52,7 +52,7 @@
     bluetooth.enable = true;
   };
 
-  users.users.evest = {
+  users.users."evest" = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;

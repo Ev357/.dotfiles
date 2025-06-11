@@ -6,11 +6,13 @@
       "https://ev357.cachix.org"
       "https://nix-community.cachix.org"
       "https://hyprland.cachix.org"
+      "https://nixos-raspberrypi.cachix.org"
     ];
     extra-trusted-public-keys = [
       "ev357.cachix.org-1:bI65rULXWJ8IMM+tosc/Z+9W53nL6uj4+5FLXX6BN3Q="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI="
     ];
   };
 
@@ -20,6 +22,7 @@
     stylix.url = "github:danth/stylix";
     ags.url = "github:aylur/ags";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,7 +41,7 @@
     };
   };
 
-  outputs = { nixpkgs, cachix-deploy-flake, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, cachix-deploy-flake, nixos-raspberrypi, home-manager, ... }@inputs:
     {
       homeConfigurations = {
         "evest@nixos" = home-manager.lib.homeManagerConfiguration {
@@ -102,6 +105,12 @@
           ];
           specialArgs = { inherit inputs; };
         };
+        "raspberrypi" = nixos-raspberrypi.lib.nixosSystem {
+          modules = [
+            ./hosts/raspberrypi/configuration.nix
+          ];
+          specialArgs = { inherit nixos-raspberrypi inputs; };
+        };
       };
 
       packages =
@@ -135,5 +144,7 @@
           "x86_64-linux".cachix = mkCachixDeploy "x86_64-linux";
           "aarch64-linux".cachix = mkCachixDeploy "aarch64-linux";
         };
+
+      raspberryImage = self.nixosConfigurations."raspberrypi".config.system.build.sdImage;
     };
 }
