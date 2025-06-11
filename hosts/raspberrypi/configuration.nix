@@ -16,21 +16,17 @@
   };
 
   services = {
-    openssh.enable = true;
+    openssh = {
+      enable = true;
+      settings.PermitRootLogin = "yes";
+    };
   };
 
-  users.users = {
-    "evest" = {
-      isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" ];
-      shell = pkgs.zsh;
-      initialPassword = "12345678";
-    };
-    "root" = {
-      openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP26vuM5GVmxiOzpH51hJYhXLgzhOgqS4MWe8hKUMiG8 evest@nixos"
-      ];
-    };
+  users.users."evest" = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" ];
+    shell = pkgs.zsh;
+    initialPassword = "12345678";
   };
 
   networking = {
