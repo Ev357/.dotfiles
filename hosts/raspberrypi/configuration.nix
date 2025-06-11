@@ -40,6 +40,8 @@
 
   time.timeZone = "Europe/Prague";
 
+  environment.enableAllTerminfo = true;
+
   system.nixos.tags =
     let
       cfg = config.boot.loader.raspberryPi;
