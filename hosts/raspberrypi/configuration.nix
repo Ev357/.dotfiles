@@ -1,4 +1,4 @@
-{ nixos-raspberrypi, config, ... }:
+{ nixos-raspberrypi, config, pkgs, ... }:
 
 {
   imports = [
@@ -19,6 +19,7 @@
     "evest" = {
       isNormalUser = true;
       extraGroups = [ "wheel" "networkmanager" ];
+      shell = pkgs.zsh;
       initialPassword = "12345678";
     };
     "root" = {

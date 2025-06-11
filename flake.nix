@@ -61,6 +61,23 @@
           extraSpecialArgs = { inherit inputs; };
         };
 
+        "evest@raspberrypi" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."aarch64-linux";
+
+          modules = [
+            ./hosts/raspberrypi/home.nix
+            {
+              home = {
+                username = "evest";
+                homeDirectory = "/home/evest";
+                stateVersion = "25.05";
+              };
+            }
+          ];
+
+          extraSpecialArgs = { inherit inputs; };
+        };
+
         "evest@lucas.gager" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
 
@@ -95,7 +112,6 @@
           extraSpecialArgs = { inherit inputs; };
         };
       };
-
 
       nixosConfigurations = {
         "nixos" = nixpkgs.lib.nixosSystem {
