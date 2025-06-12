@@ -38,6 +38,7 @@
         };
       };
     };
+    jellyfin.enable = true;
   };
 
   users.users."evest" = {
