@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   programs.zsh = {
@@ -24,7 +24,7 @@
       }
     ];
 
-    profileExtra = /* bash */ ''
+    profileExtra = lib.mkIf config.wayland.windowManager.hyprland.enable /* bash */ ''
       if uwsm check may-start; then
           exec uwsm start hyprland-uwsm.desktop
       fi
