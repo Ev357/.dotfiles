@@ -39,6 +39,7 @@
       };
     };
     jellyfin.enable = true;
+    nextcloud.enable = true;
   };
 
   users.users."evest" = {

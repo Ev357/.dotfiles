@@ -2,5 +2,6 @@
   imports = [
     ./cloudflared
     ./jellyfin
+    ./nextcloud
   ];
 }
