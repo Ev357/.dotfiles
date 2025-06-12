@@ -3,5 +3,6 @@
     ./cloudflared
     ./jellyfin
     ./nextcloud
+    ./vaultwarden
   ];
 }

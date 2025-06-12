@@ -40,6 +40,7 @@
     };
     jellyfin.enable = true;
     nextcloud.enable = true;
+    vaultwarden.enable = true;
   };
 
   users.users."evest" = {
