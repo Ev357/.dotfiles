@@ -6,5 +6,6 @@
     ./hyprland
     ./packages
     ./programs
+    ./services
   ];
 }
