@@ -4,6 +4,7 @@
   imports = [
     ./btop
     ./direnv
+    ./bun
     ./eza
     ./fzf
     ./git
@@ -23,8 +24,9 @@
   config = lib.mkIf config.modules.shell.enable {
     modules.shell.packages.enable = lib.mkDefault true;
     programs = {
-      bat.enable = lib.mkDefault true;
       btop.enable = lib.mkDefault true;
+      bun.enable = lib.mkDefault true;
+      bat.enable = lib.mkDefault true;
       direnv.enable = lib.mkDefault true;
       eza.enable = lib.mkDefault true;
       fzf.enable = lib.mkDefault true;
