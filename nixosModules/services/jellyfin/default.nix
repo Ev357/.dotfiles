@@ -1,6 +1,10 @@
 { lib, config, pkgs, ... }:
 
 {
+  imports = [
+    ./patch
+  ];
+
   config = lib.mkIf config.services.jellyfin.enable {
     services.jellyfin = {
       openFirewall = true;
