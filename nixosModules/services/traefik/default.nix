@@ -57,7 +57,7 @@
             };
 
             traefik = {
-              rule = "Host(`traefik.local.evest.dev`)";
+              rule = "Host(`traefik.local.evest.dev`) || Host(`local.evest.dev`)";
               service = "traefik";
               tls.certResolver = "letsencrypt";
             };
