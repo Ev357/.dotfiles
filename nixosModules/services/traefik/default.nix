@@ -61,6 +61,12 @@
               service = "traefik";
               tls.certResolver = "letsencrypt";
             };
+
+            home-assistant = {
+              rule = "Host(`home.local.evest.dev`)";
+              service = "home-assistant";
+              tls.certResolver = "letsencrypt";
+            };
           };
           services = {
             jellyfin = {
@@ -84,6 +90,12 @@
             traefik = {
               loadBalancer.servers = [
                 { url = "http://localhost:8080"; }
+              ];
+            };
+
+            home-assistant = {
+              loadBalancer.servers = [
+                { url = "http://localhost:8123"; }
               ];
             };
           };

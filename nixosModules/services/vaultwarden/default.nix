@@ -2,7 +2,9 @@
 
 {
   config = lib.mkIf config.services.vaultwarden.enable {
-    networking.firewall.allowedTCPPorts = [ 8222 ];
+    networking.firewall.allowedTCPPorts = [
+      config.services.vaultwarden.config.ROCKET_PORT
+    ];
 
     services.vaultwarden.config = {
       ROCKET_ADDRESS = "::1";

@@ -44,6 +44,7 @@
     anki-sync-server.enable = true;
     anki-api.enable = true;
     traefik.enable = true;
+    home-assistant.enable = true;
   };
 
   users = {
