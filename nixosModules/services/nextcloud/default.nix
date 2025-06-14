@@ -15,7 +15,10 @@
           adminpassFile = "/etc/nextcloud-admin-pass";
         };
         settings = {
-          trusted_domains = [ "nextcloud.evest.dev" ];
+          trusted_domains = [
+            "nextcloud.evest.dev"
+            "nextcloud.local.evest.dev"
+          ];
         };
         extraApps = {
           theming_customcss = pkgs.fetchNextcloudApp {

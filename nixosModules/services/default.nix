@@ -5,6 +5,7 @@
     ./cloudflared
     ./jellyfin
     ./nextcloud
+    ./traefik
     ./vaultwarden
   ];
 }

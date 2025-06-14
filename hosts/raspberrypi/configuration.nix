@@ -43,6 +43,7 @@
     vaultwarden.enable = true;
     anki-sync-server.enable = true;
     anki-api.enable = true;
+    traefik.enable = true;
   };
 
   users = {
