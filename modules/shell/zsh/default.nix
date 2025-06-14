@@ -7,6 +7,7 @@
     shellAliases = {
       "ls" = "eza --icons";
       "la" = "eza -lAhg --icons";
+      "date" = "date +\"%F %T\"";
     };
 
     history = {
