@@ -6,7 +6,7 @@
 
     shellAliases = {
       "ls" = "eza --icons";
-      "la" = "eza -lAh --icons";
+      "la" = "eza -lAhg --icons";
     };
 
     history = {
