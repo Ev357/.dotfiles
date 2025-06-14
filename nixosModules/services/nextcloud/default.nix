@@ -7,7 +7,8 @@
 
   config = lib.mkIf config.services.nextcloud.enable {
     services.nextcloud = {
-      hostName = "localhost";
+      https = true;
+      hostName = "nextcloud";
       config = {
         dbtype = "sqlite";
         adminpassFile = "/etc/nextcloud-admin-pass";
@@ -24,6 +25,12 @@
       };
     };
 
-    networking.firewall.allowedTCPPorts = [ 80 ];
+    services.nginx.virtualHosts.${config.services.nextcloud.hostName} = {
+      listen = [
+        { addr = "0.0.0.0"; port = 3080; }
+      ];
+    };
+
+    networking.firewall.allowedTCPPorts = [ 3080 ];
   };
 }
