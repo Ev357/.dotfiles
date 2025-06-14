@@ -12,10 +12,6 @@
         "${mainMonitorName}, preferred, auto, ${builtins.toString mainMonitorScaling}"
         ", preferred, auto-up, 1"
       ];
-      env = [
-        "QT_SCALE_FACTOR,${builtins.toString mainMonitorScaling}"
-        "GDK_SCALE,${builtins.toString mainMonitorScaling}"
-      ];
     };
   };
 

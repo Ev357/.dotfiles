@@ -41,13 +41,20 @@
     jellyfin.enable = true;
     nextcloud.enable = true;
     vaultwarden.enable = true;
+    anki-sync-server.enable = true;
+    anki-api.enable = true;
   };
 
-  users.users."evest" = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
-    shell = pkgs.zsh;
-    initialPassword = "12345678";
+  users = {
+    users."evest" = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" "networkmanager" "media" ];
+      shell = pkgs.zsh;
+      initialPassword = "12345678";
+    };
+    groups = {
+      media = { };
+    };
   };
 
   networking = {
@@ -58,6 +65,12 @@
   time.timeZone = "Europe/Prague";
 
   environment.enableAllTerminfo = true;
+
+  fileSystems."/data" = {
+    device = "/dev/sda1";
+    fsType = "ext4";
+    options = [ "defaults" "rw" "noatime" ];
+  };
 
   system.nixos.tags =
     let

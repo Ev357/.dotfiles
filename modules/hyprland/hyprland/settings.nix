@@ -120,10 +120,6 @@ in
       sensitivity = -0.5;
     };
 
-    xwayland = {
-      force_zero_scaling = true;
-    };
-
     "$mainMod" = "SUPER";
 
     bind = [

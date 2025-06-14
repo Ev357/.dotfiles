@@ -7,7 +7,7 @@ in
   options.programs.obsidian = {
     extraSettings = lib.mkOption {
       description = "Additional settings to include in obsidian.json.";
-      type = with lib.types; attrsOf anything;
+      type = lib.types.attrsOf lib.types.anything;
       default = { };
     };
   };

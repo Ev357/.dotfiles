@@ -14,6 +14,7 @@
       udisks
       networkmanagerapplet
       waybar
+      openvpn
     ];
   };
 }

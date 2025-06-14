@@ -1,6 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
+  imports = [
+    ./patch
+  ];
+
   config = lib.mkIf config.services.nextcloud.enable {
     services.nextcloud = {
       hostName = "localhost";
