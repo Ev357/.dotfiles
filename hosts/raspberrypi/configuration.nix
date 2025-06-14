@@ -45,6 +45,7 @@
     anki-api.enable = true;
     traefik.enable = true;
     home-assistant.enable = true;
+    tailscale.enable = true;
   };
 
   users = {
