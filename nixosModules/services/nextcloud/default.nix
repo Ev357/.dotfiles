@@ -8,7 +8,6 @@
   config = lib.mkIf config.services.nextcloud.enable {
     services = {
       nextcloud = {
-        https = true;
         hostName = "nextcloud";
         config = {
           dbtype = "sqlite";
@@ -18,6 +17,7 @@
           trusted_domains = [
             "nextcloud.evest.dev"
             "nextcloud.local.evest.dev"
+            "raspberrypi"
           ];
         };
         extraApps = {
