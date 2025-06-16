@@ -11,4 +11,6 @@
     enable = true;
     package = pkgs.emptyDirectory;
   };
+
+  dconf.enable = false;
 }
