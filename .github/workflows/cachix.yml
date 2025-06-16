@@ -16,4 +16,4 @@ jobs:
       with:
         name: ev357
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-    - run: nix build .#cachix
+    - run: nix build .#cachix --accept-flake-config
