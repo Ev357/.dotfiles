@@ -124,13 +124,13 @@ in
 
     bind = [
       "$mainMod, Q, exec, $terminal"
-      "$mainMod, C, killactive,"
-      "$mainMod, M, exit,"
+      "$mainMod, C, killactive"
+      "$mainMod, M, exit"
       "$mainMod, E, exec, $fileManager"
-      "$mainMod, V, togglefloating,"
+      "$mainMod, V, togglefloating"
       "$mainMod, R, exec, $menu"
-      "$mainMod, P, pseudo, # dwindle"
-      "$mainMod, T, togglesplit, # dwindle"
+      "$mainMod, P, pseudo"
+      "$mainMod, T, togglesplit"
       "$mainMod, F, fullscreen"
       "$mainMod SHIFT, l, exec, hyprlock"
       "$mainMod SHIFT, p, exec, shutdown now"
