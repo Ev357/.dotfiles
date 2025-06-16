@@ -12,7 +12,6 @@
         sdk_8_0
       ])
       openvpn
-      comma
     ];
   };
 }

@@ -1,7 +1,8 @@
-{ lib, config, ... }:
+{ lib, config, inputs, ... }:
 
 {
   imports = [
+    inputs.nix-index-database.hmModules.nix-index
     ./btop
     ./direnv
     ./bun
@@ -37,6 +38,7 @@
       yazi.enable = lib.mkDefault true;
       zoxide.enable = lib.mkDefault true;
       zsh.enable = lib.mkDefault true;
+      nix-index-database.comma.enable = true;
     };
 
     stylix.enable = true;
