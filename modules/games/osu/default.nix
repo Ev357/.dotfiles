@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, system, ... }:
 
 {
   options.modules.games.osu = {
@@ -8,7 +8,7 @@
 
   config = lib.mkIf config.modules.games.osu.enable {
     home.packages = lib.mkIf (!config.modules.games.osu.noInstall) (with pkgs; [
-      osu-lazer-bin
+      inputs.nix-gaming.packages.${system}.osu-lazer-bin
       wootility
     ]);
 

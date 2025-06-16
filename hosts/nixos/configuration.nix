@@ -8,6 +8,7 @@
   ];
 
   boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       systemd-boot = {
         enable = true;
@@ -29,6 +30,7 @@
     zsh.enable = true;
     nix-ld.enable = true;
     light.enable = true;
+    virt-manager.enable = true;
   };
 
   services = {
@@ -47,6 +49,8 @@
 
   security.pam.services.login.enableGnomeKeyring = true;
 
+  virtualisation.libvirtd.enable = true;
+
   hardware = {
     opentabletdriver.enable = true;
     bluetooth.enable = true;
@@ -54,7 +58,7 @@
 
   users.users."evest" = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     shell = pkgs.zsh;
   };
 
