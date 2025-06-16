@@ -2,16 +2,16 @@
 
 pkgs.buildNpmPackage rec {
   pname = "cmdr";
-  version = "0.5.2";
+  version = "0.5.4";
 
   src = pkgs.fetchFromGitHub {
     owner = "phibr0";
     repo = "obsidian-commander";
     rev = version;
-    sha256 = "sha256-JR7sKwhVKkdBQ0fruAs/cPBNpSrVeSNF01ktu/JPeqg=";
+    sha256 = "sha256-ROC21Rytve+FAy24lN+w697sAFvamUVIe6Uf+wo6yuI=";
   };
 
-  npmDepsHash = "sha256-E/XxgLFQZaowYwYujdBszbfb2MDonAfZUnMVTo8gN3I=";
+  npmDepsHash = "sha256-Gr3PzgSY4Tae6PWMvCsLtzcQu9SO8UUy2rU+8tWQbOs=";
 
   postPatch = /* bash */ ''
     cp ${./package.json} package.json

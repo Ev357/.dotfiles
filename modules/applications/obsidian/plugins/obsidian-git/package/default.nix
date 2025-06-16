@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "obsidian-git";
-  version = "2.33.0";
+  version = "2.34.0";
 
   src = pkgs.fetchFromGitHub {
     owner = "Vinzent03";
     repo = "obsidian-git";
     rev = version;
-    sha256 = "sha256-yR9QpuAgc0JdinRNxEo0pMjhJXOA5fFTt4OeFolg01Y=";
+    sha256 = "sha256-VSJil4Fv5g/UnosEsqVgU88a1jDXMg9UrYjomYa73Wo=";
   };
 
   nativeBuildInputs = with pkgs; [
@@ -36,7 +36,7 @@ stdenv.mkDerivation rec {
 
   meta = {
     description = "Integrate Git version control with automatic backup and other advanced features.";
-    homepage = "https://github.com/Vinzent03/obsidian-git/tree/master";
+    homepage = "https://github.com/Vinzent03/obsidian-git";
     changelog = "https://github.com/Vinzent03/obsidian-git/releases/tag/${version}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [
