@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../nixosModules
+    ../../nixosModules/droid
   ];
 
   droidModules = {
