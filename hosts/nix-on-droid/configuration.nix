@@ -10,7 +10,10 @@
     packages.enable = true;
   };
 
-  environment.etcBackupExtension = ".bak";
+  environment = {
+    etcBackupExtension = ".bak";
+    enableAllTerminfo = true;
+  };
 
   user.shell = "${pkgs.zsh}/bin/zsh";
 
