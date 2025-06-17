@@ -16,7 +16,7 @@
         preloadindex = true;
       };
       status.showUntrackedFiles = "all";
-      safe.directory = "/etc/nixos";
+      safe.directory = "/storage/emulated/0/Documents/Obsidian";
     };
   };
 }

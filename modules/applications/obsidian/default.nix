@@ -1,5 +1,3 @@
-{ lib, ... }:
-
 {
   imports = [
     ./plugins
@@ -11,7 +9,7 @@
     vaults = {
       Obsidian = {
         enable = true;
-        target = lib.mkDefault "Documents/Obsidian";
+        target = "Documents/Obsidian";
       };
     };
 

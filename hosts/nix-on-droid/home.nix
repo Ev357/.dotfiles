@@ -10,10 +10,15 @@
   programs.obsidian = {
     enable = true;
     package = pkgs.emptyDirectory;
-    vaults = {
-      Obsidian.target = "../../../../../storage/emulated/0/Documents/Obsidian";
-    };
   };
 
   dconf.enable = false;
+
+  home.activation = {
+    obsidian = /* bash */ ''
+      cd /storage/emulated/0/Documents/Obsidian
+      ${pkgs.git}/bin/git clean -fdX
+      cp -aL $HOME/Documents/Obsidian/. .
+    '';
+  };
 }
