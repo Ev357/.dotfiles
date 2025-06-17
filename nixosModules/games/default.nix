@@ -3,7 +3,6 @@
 {
   imports = [
     inputs.nix-gaming.nixosModules.pipewireLowLatency
-    inputs.nix-gaming.nixosModules.ntsync
     inputs.nix-gaming.nixosModules.platformOptimizations
     ./steam
     ./wootility
@@ -19,7 +18,6 @@
       steam.enable = lib.mkDefault true;
       steam.platformOptimizations.enable = lib.mkDefault true;
       gamemode.enable = lib.mkDefault true;
-      wine.ntsync.enable = lib.mkDefault true;
     };
 
     services = {
