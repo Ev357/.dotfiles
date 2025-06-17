@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, config, ... }:
 
 {
   options.environment.enableAllTerminfo = lib.mkOption {
@@ -10,7 +10,7 @@
   };
 
   config = {
-    environment.systemPackages = lib.mkIf config.environment.enableAllTerminfo (
+    environment.packages = lib.mkIf config.environment.enableAllTerminfo (
       map (x: x.terminfo) (
         with pkgs.pkgsBuildBuild;
         [
