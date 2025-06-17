@@ -116,6 +116,10 @@
       stylua
       csharpier
       imagemagick
+      (pkgs.texlive.combine {
+        inherit (pkgs.texlive) scheme-gust standalone varwidth preview mathtools xcolor;
+      })
+      ghostscript
     ];
 
     extraPlugins = with pkgs.vimPlugins; [
