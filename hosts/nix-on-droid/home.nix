@@ -18,7 +18,7 @@
     obsidian = /* bash */ ''
       cd /storage/emulated/0/Documents/Obsidian
       ${pkgs.git}/bin/git clean -fdX
-      cp -aL $HOME/Documents/Obsidian/. .
+      cp -aL $HOME/Documents/obsidian/. .
     '';
   };
 }
