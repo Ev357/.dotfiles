@@ -32,6 +32,7 @@
       };
       inccommand = "split";
       scrolloff = 16;
+      conceallevel = 1;
     };
     globals = {
       mapleader = " ";
@@ -55,6 +56,8 @@
       treesitter.enable = true;
       oil.enable = true;
       neogit.enable = true;
+      obsidian.enable = true;
+      snacks.enable = true;
       mini.enable = true;
       which-key.enable = true;
       lsp.enable = true;
@@ -112,6 +115,7 @@
       prettierd
       stylua
       csharpier
+      imagemagick
     ];
 
     extraPlugins = with pkgs.vimPlugins; [

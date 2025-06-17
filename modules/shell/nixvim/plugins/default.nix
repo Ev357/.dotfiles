@@ -10,7 +10,9 @@
     ./lsp.nix
     ./mini.nix
     ./neogit.nix
+    ./obsidian.nix
     ./oil.nix
+    ./snacks.nix
     ./telescope.nix
     ./todo-comments.nix
     ./treesitter.nix
