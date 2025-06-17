@@ -11,7 +11,6 @@
     ./git
     ./nixvim
     ./starship
-    ./ssh
     ./yazi
     ./zoxide
     ./zsh
