@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, ... }:
 
 {
   imports = [
@@ -6,8 +6,4 @@
     ./packages
     ./sshd
   ];
-
-  options.droidModules = {
-    enable = lib.mkEnableOption "droid modules";
-  };
 }

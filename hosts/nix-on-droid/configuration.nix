@@ -6,7 +6,6 @@
   ];
 
   droidModules = {
-    enable = true;
     sshd.enable = true;
     packages.enable = true;
   };
