@@ -9,7 +9,7 @@
     vaults = {
       Obsidian = {
         enable = true;
-        target = "Documents/Obsidian";
+        target = "Documents/obsidian";
       };
     };
 

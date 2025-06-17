@@ -4,7 +4,7 @@
       workspaces = [
         {
           name = "Obsidian";
-          path = "~/Documents/Obsidian";
+          path = "~/Documents/obsidian";
         }
       ];
       completion = {
