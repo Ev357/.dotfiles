@@ -6,7 +6,7 @@
   };
 
   config = lib.mkIf config.droidModules.packages.enable {
-    environment.systemPackages = with pkgs; [
+    environment.packages = with pkgs; [
       file
       acl
       attr

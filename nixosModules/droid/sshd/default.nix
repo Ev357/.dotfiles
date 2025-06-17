@@ -12,7 +12,7 @@
       pathToPubKey = "${config.user.home}/.ssh/id_rsa.pub";
       port = 8022;
     in
-    lib.mkIf config.modules.sshd.enable {
+    lib.mkIf config.droidModules.sshd.enable {
       environment.packages = with pkgs; [
         openssh
         (pkgs.writeScriptBin "sshd-start" /* bash */ ''
