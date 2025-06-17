@@ -150,6 +150,7 @@
             modules = [
               ./hosts/nix-on-droid/configuration.nix
             ];
+            specialArgs = { inherit inputs; };
           };
       };
 
