@@ -5,14 +5,14 @@
     enable = lib.mkEnableOption "enables sshd";
   };
 
-  config =
+  config = lib.mkIf config.droidModules.sshd.enable (
     let
       sshdTmpDirectory = "${config.user.home}/.sshd-tmp";
       sshdDirectory = "${config.user.home}/.sshd";
       pathToPubKey = "${config.user.home}/.ssh/id_rsa.pub";
       port = 8022;
     in
-    lib.mkIf config.droidModules.sshd.enable {
+    {
       environment.packages = with pkgs; [
         openssh
         (pkgs.writeScriptBin "sshd-start" /* bash */ ''
@@ -40,6 +40,7 @@
           $DRY_RUN_CMD mv $VERBOSE_ARG "${sshdTmpDirectory}" "${sshdDirectory}"
         fi
       '';
-    };
+    }
+  );
 }
 
