@@ -12,7 +12,7 @@ in
     "$menu" = "rofi -show drun";
 
     env = [
-      "HYPRSHOT_DIR,$HOME/Pictures/Screenshots"
+      "HYPRSHOT_DIR,$HOME/Pictures/screenshots"
       "ELECTRON_OZONE_PLATFORM_HINT,wayland"
       "NIXOS_OZONE_WL,1"
     ];
