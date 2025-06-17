@@ -11,7 +11,7 @@
     enable = true;
     package = pkgs.emptyDirectory;
     vaults = {
-      Obsidian.target = "/storage/emulated/0/Documents/Obsidian";
+      Obsidian.target = "../../../../../storage/emulated/0/Documents/Obsidian";
     };
   };
 
