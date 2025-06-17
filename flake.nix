@@ -48,7 +48,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, cachix-deploy-flake, nixos-raspberrypi, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, cachix-deploy-flake, nixos-raspberrypi, nix-on-droid, home-manager, ... }@inputs:
     {
       homeConfigurations = {
         "evest@nixos" = home-manager.lib.homeManagerConfiguration {
@@ -134,6 +134,19 @@
           ];
           specialArgs = { inherit nixos-raspberrypi inputs; };
         };
+      };
+
+      nixOnDroidConfigurations = {
+        default =
+          let
+            pkgs = import nixpkgs { system = "aarch64-linux"; };
+          in
+          nix-on-droid.lib.nixOnDroidConfiguration {
+            inherit pkgs;
+            modules = [
+              ./hosts/nix-on-droid/configuration.nix
+            ];
+          };
       };
 
       packages =

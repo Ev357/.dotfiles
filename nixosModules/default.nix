@@ -1,6 +1,7 @@
 {
   imports = [
     ./common
+    ./droid
     ./fonts
     ./games
     ./hyprland
