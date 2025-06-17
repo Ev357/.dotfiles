@@ -2,6 +2,8 @@
 
 {
   imports = [
+    inputs.nix-gaming.nixosModules.pipewireLowLatency
+    inputs.nix-gaming.nixosModules.platformOptimizations
     ./steam
     ./wootility
   ];
@@ -11,11 +13,6 @@
   };
 
   config = lib.mkIf config.modules.games.enable {
-    imports = [
-      inputs.nix-gaming.nixosModules.pipewireLowLatency
-      inputs.nix-gaming.nixosModules.platformOptimizations
-    ];
-
     modules.games.wootility.enable = lib.mkDefault true;
     programs = {
       steam.enable = lib.mkDefault true;
