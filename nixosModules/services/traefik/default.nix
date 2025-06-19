@@ -67,6 +67,12 @@
               service = "home-assistant";
               tls.certResolver = "letsencrypt";
             };
+
+            forgejo = {
+              rule = "Host(`git.local.evest.dev`) || Host(`git.ts.evest.dev`)";
+              service = "forgejo";
+              tls.certResolver = "letsencrypt";
+            };
           };
           services = {
             jellyfin = {
@@ -96,6 +102,12 @@
             home-assistant = {
               loadBalancer.servers = [
                 { url = "http://localhost:8123"; }
+              ];
+            };
+
+            forgejo = {
+              loadBalancer.servers = [
+                { url = "http://localhost:3081"; }
               ];
             };
           };

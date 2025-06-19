@@ -46,6 +46,7 @@
     traefik.enable = true;
     home-assistant.enable = true;
     tailscale.enable = true;
+    forgejo.enable = true;
   };
 
   users = {
