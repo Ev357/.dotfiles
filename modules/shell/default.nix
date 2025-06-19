@@ -12,6 +12,7 @@
     ./nixvim
     ./starship
     ./yazi
+    ./zellij
     ./zoxide
     ./zsh
     ./packages
@@ -38,6 +39,7 @@
       zoxide.enable = lib.mkDefault true;
       zsh.enable = lib.mkDefault true;
       nix-index-database.comma.enable = true;
+      zellij.enable = true;
     };
 
     stylix.enable = true;
