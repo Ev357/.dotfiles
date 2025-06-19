@@ -17,6 +17,7 @@
           trusted_domains = [
             "nextcloud.evest.dev"
             "nextcloud.local.evest.dev"
+            "nextcloud.ts.evest.dev"
             "raspberrypi"
           ];
         };

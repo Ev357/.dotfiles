@@ -39,31 +39,31 @@
         http = {
           routers = {
             jellyfin = {
-              rule = "Host(`jellyfin.local.evest.dev`)";
+              rule = "Host(`jellyfin.local.evest.dev`) || Host(`jellyfin.ts.evest.dev`)";
               service = "jellyfin";
               tls.certResolver = "letsencrypt";
             };
 
             nextcloud = {
-              rule = "Host(`nextcloud.local.evest.dev`)";
+              rule = "Host(`nextcloud.local.evest.dev`) || Host(`nextcloud.ts.evest.dev`)";
               service = "nextcloud";
               tls.certResolver = "letsencrypt";
             };
 
             vaultwarden = {
-              rule = "Host(`vaultwarden.local.evest.dev`)";
+              rule = "Host(`vaultwarden.local.evest.dev`) || Host(`vaultwarden.ts.evest.dev`)";
               service = "vaultwarden";
               tls.certResolver = "letsencrypt";
             };
 
             traefik = {
-              rule = "Host(`traefik.local.evest.dev`) || Host(`local.evest.dev`)";
+              rule = "Host(`traefik.local.evest.dev`) || Host(`traefik.ts.evest.dev`) || Host(`local.evest.dev`)";
               service = "traefik";
               tls.certResolver = "letsencrypt";
             };
 
             home-assistant = {
-              rule = "Host(`home.local.evest.dev`)";
+              rule = "Host(`home.local.evest.dev`) || Host(`home.ts.evest.dev`)";
               service = "home-assistant";
               tls.certResolver = "letsencrypt";
             };
