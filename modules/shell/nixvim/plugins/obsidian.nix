@@ -3,8 +3,16 @@
     settings = {
       workspaces = [
         {
-          name = "Obsidian";
-          path = "~/Documents/obsidian";
+          name = "no-vault";
+          path.__raw = /* lua */ ''
+            function()
+              return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))
+            end
+          '';
+          overrides = {
+            new_notes_location = "current_dir";
+            disable_frontmatter = true;
+          };
         }
       ];
       completion = {
