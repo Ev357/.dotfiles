@@ -1,0 +1,44 @@
+@import "macchiato.css";
+
+* {
+  font-family: GeistMono Nerd Font;
+  font-size: 16px;
+}
+
+#waybar {
+  background: transparent;
+  color: @text;
+}
+
+#workspaces {
+  border-radius: 14px;
+  background-color: @surface0;
+  padding: 4px;
+}
+
+#workspaces button {
+  padding-left: 4px;
+}
+
+#cava {
+  border-radius: 14px;
+}
+
+#cava,
+#power-profiles-daemon,
+#battery,
+#tray,
+#clock {
+  background-color: @surface0;
+  padding: 4px 10px;
+}
+
+#power-profiles-daemon {
+  border-radius: 14px 0px 0px 14px;
+  padding-left: 14px;
+}
+
+#clock {
+  border-radius: 0px 14px 14px 0px;
+  padding-right: 14px;
+}

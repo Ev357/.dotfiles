@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 let
   cfg = config.wayland.windowManager.hyprland;
@@ -149,7 +149,7 @@ in
       "$mainMod, k, movefocus, u"
       "$mainMod, l, movefocus, r"
 
-      "$mainMod, b, exec, hyprpanel quit || (killall -9 swaync & hyprpanel)"
+      "$mainMod, b, exec, ${pkgs.busybox}/bin/killall -SIGUSR1 waybar"
 
       "$mainMod, 10, workspace, 1"
       "$mainMod, 11, workspace, 2"

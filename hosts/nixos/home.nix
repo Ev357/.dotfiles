@@ -22,5 +22,5 @@
   };
 
   services.swaync.enable = true;
-  programs.ags.enable = true;
+  programs.waybar.enable = true;
 }

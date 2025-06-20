@@ -13,8 +13,8 @@
       udiskie
       udisks
       networkmanagerapplet
-      waybar
       openvpn
+      bluetuith
     ];
   };
 }
