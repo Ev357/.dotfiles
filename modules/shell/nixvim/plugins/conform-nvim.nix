@@ -10,6 +10,7 @@
             nix = { 'nixpkgs_fmt' },
             html = { 'prettierd' },
             htmlangular = { 'prettierd' },
+            markdown = { 'injected' },
           }
 
           local formatters = { 'biome', 'prettierd' }
