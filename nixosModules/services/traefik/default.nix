@@ -18,6 +18,9 @@
             address = ":443";
             asDefault = true;
             http.tls.certResolver = "letsencrypt";
+            transport.respondingTimeouts = {
+              readTimeout = "300s";
+            };
           };
         };
         certificatesResolvers.letsencrypt.acme = {
