@@ -7,6 +7,10 @@
       settings = builtins.fromJSON (builtins.readFile ./cmdr/data.json);
     }
     {
+      pkg = pkgs.callPackage ./folder-notes/package { };
+      settings = builtins.fromJSON (builtins.readFile ./cmdr/data.json);
+    }
+    {
       pkg = pkgs.callPackage ./obsidian-excalidraw-plugin/package { };
       settings = builtins.fromJSON (builtins.readFile ./obsidian-excalidraw-plugin/data.json);
     }
