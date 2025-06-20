@@ -138,12 +138,6 @@
       require('dap').listeners.before.event_exited['dapui_config'] = require('dapui').close
 
       require("vim.treesitter.query").set(
-        "markdown",
-        "highlights",
-        "(fenced_code_block_delimiter) @punctuation.delimiter"
-      )
-
-      require("vim.treesitter.query").set(
         "json",
         "highlights", 
         [[
