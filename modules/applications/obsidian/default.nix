@@ -18,12 +18,14 @@
         vimMode = true;
         spellcheck = false;
         showLineNumber = true;
+        propertiesInDocument = "hidden";
       };
       appearance = {
         cssTheme = "Catppuccin";
         theme = "obsidian";
         showRibbon = false;
         nativeMenus = false;
+        showInlineTitle = false;
       };
       hotkeys = {
         "editor:delete-paragraph" = [ ];
