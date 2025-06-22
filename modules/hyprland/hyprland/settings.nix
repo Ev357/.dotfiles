@@ -178,6 +178,8 @@ in
 
       "$mainMod, mouse_down, workspace, e+1"
       "$mainMod, mouse_up, workspace, e-1"
+
+      "ALT, q, pass, class:^(com\.mitchellh\.ghostty)$"
     ];
 
     bindl = [
