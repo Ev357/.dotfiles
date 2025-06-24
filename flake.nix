@@ -54,7 +54,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, cachix-deploy-flake, nixos-raspberrypi, nix-on-droid, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, cachix-deploy-flake, nixos-raspberrypi, nix-on-droid, home-manager, nixvim, ... }@inputs:
     {
       homeConfigurations = {
         "evest@nixos" = home-manager.lib.homeManagerConfiguration {
@@ -182,10 +182,19 @@
                   };
               };
             };
+
+          mkNixvim = system: nixvim.legacyPackages.${system}.makeNixvimWithModule {
+            module = import ./modules/shell/nixvim/standalone.nix;
+            extraSpecialArgs = { inherit inputs; };
+          };
         in
         {
           "x86_64-linux".cachix = mkCachixDeploy "x86_64-linux";
           "aarch64-linux".cachix = mkCachixDeploy "aarch64-linux";
+
+          "x86_64-linux".nixvim = mkNixvim "x86_64-linux";
+          "aarch64-linux".nixvim = mkNixvim "aarch64-linux";
+          "aarch64-darwin".nixvim = mkNixvim "aarch64-darwin";
         };
 
       raspberryImage = self.nixosConfigurations."raspberrypi".config.system.build.sdImage;

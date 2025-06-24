@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.treesitter.settings = {
+  plugins.treesitter.settings = {
     highlight.enable = true;
   };
 }

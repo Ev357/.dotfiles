@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.obsidian = {
+  plugins.obsidian = {
     settings = {
       workspaces = [
         {

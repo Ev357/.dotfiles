@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.todo-comments.settings = {
+  plugins.todo-comments.settings = {
     signs = false;
   };
 }

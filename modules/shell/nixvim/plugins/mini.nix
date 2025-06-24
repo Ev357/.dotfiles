@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.mini = {
+  plugins.mini = {
     mockDevIcons = true;
     modules = {
       ai.enable = true;

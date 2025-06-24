@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.blink-cmp.settings = {
+  plugins.blink-cmp.settings = {
     snippets.preset = "mini_snippets";
     sources.default = [
       "lsp"

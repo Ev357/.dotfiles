@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.fidget.settings = {
+  plugins.fidget.settings = {
     notification.window.winblend = 0;
   };
 }

@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.which-key.settings = {
+  plugins.which-key.settings = {
     spec = [
       {
         __unkeyed = "<leader>c";

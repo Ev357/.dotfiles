@@ -1,5 +1,5 @@
 {
-  programs.nixvim.plugins.snacks.settings = {
+  plugins.snacks.settings = {
     image.enabled = true;
   };
 }
