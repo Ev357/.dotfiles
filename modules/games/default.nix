@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./minecraft
     ./osu
   ];
 
@@ -10,7 +11,10 @@
   };
 
   config = lib.mkIf config.modules.games.enable {
-    modules.games.osu.enable = lib.mkDefault true;
+    modules.games = {
+      osu.enable = lib.mkDefault true;
+      minecraft.enable = lib.mkDefault true;
+    };
 
     home.packages = with pkgs; [
       lunar-client
