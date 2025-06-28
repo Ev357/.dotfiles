@@ -28,6 +28,9 @@
         installRustc = true;
         cargoPackage = inputs.fenix.packages.${pkgs.system}.complete.cargo;
         rustcPackage = inputs.fenix.packages.${pkgs.system}.complete.rustc;
+        settings = {
+          check.command = "clippy";
+        };
       };
       nixd = {
         enable = true;
@@ -43,6 +46,10 @@
       };
     };
   };
+
+  extraPackages = [
+    inputs.fenix.packages.${pkgs.system}.complete.clippy
+  ];
 
   keymaps = [
     {
