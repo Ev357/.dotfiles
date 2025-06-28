@@ -1,3 +1,5 @@
+{ pkgs, inputs, ... }:
+
 {
   plugins.lsp = {
     inlayHints = true;
@@ -22,8 +24,10 @@
 
       rust_analyzer = {
         enable = true;
-        installCargo = false;
-        installRustc = false;
+        installCargo = true;
+        installRustc = true;
+        cargoPackage = inputs.fenix.packages.${pkgs.system}.complete.cargo;
+        rustcPackage = inputs.fenix.packages.${pkgs.system}.complete.rustc;
       };
       nixd = {
         enable = true;

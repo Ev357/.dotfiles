@@ -52,6 +52,10 @@
       url = "github:nix-community/nix-on-droid/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, cachix-deploy-flake, nixos-raspberrypi, nix-on-droid, home-manager, nixvim, ... }@inputs:
@@ -62,13 +66,6 @@
 
           modules = [
             ./hosts/nixos/home.nix
-            {
-              home = {
-                username = "evest";
-                homeDirectory = "/home/evest";
-                stateVersion = "24.11";
-              };
-            }
           ];
 
           extraSpecialArgs = { inherit inputs; };
@@ -79,13 +76,6 @@
 
           modules = [
             ./hosts/raspberrypi/home.nix
-            {
-              home = {
-                username = "evest";
-                homeDirectory = "/home/evest";
-                stateVersion = "25.05";
-              };
-            }
           ];
 
           extraSpecialArgs = { inherit inputs; };
@@ -96,13 +86,6 @@
 
           modules = [
             ./hosts/archlinux/home.nix
-            {
-              home = {
-                username = "evest";
-                homeDirectory = "/home/evest";
-                stateVersion = "24.11";
-              };
-            }
           ];
 
           extraSpecialArgs = { inherit inputs; };
@@ -113,13 +96,6 @@
 
           modules = [
             ./hosts/nix-on-droid/home.nix
-            {
-              home = {
-                username = "nix-on-droid";
-                homeDirectory = "/data/data/com.termux.nix/files/home";
-                stateVersion = "24.05";
-              };
-            }
           ];
 
           extraSpecialArgs = { inherit inputs; };
@@ -173,12 +149,6 @@
                     imports = [
                       ./hosts/cachix/home.nix
                     ];
-
-                    home = {
-                      username = "evest";
-                      homeDirectory = "/home/evest";
-                      stateVersion = "24.11";
-                    };
                   };
               };
             };

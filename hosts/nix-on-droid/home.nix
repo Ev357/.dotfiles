@@ -5,6 +5,12 @@
     ../../modules
   ];
 
+  home = {
+    username = "nix-on-droid";
+    homeDirectory = "/data/data/com.termux.nix/files/home";
+    stateVersion = "24.05";
+  };
+
   modules.shell.enable = true;
 
   programs.obsidian = {

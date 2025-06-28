@@ -5,6 +5,12 @@
     ../../modules
   ];
 
+  home = {
+    username = "evest";
+    homeDirectory = "/home/evest";
+    stateVersion = "24.11";
+  };
+
   wayland.windowManager.hyprland = rec {
     enable = true;
     mainMonitorName = "eDP-1";
