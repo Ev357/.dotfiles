@@ -14,9 +14,9 @@
       easytag
       session-desktop
       libreoffice-qt6-fresh
-      krita
       system-config-printer
     ] ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [
+      krita
       anki-bin
     ];
 
