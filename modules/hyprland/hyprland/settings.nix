@@ -7,8 +7,15 @@ in
   wayland.windowManager.hyprland.settings = {
     source = "~/.config/hypr/hyprland/colors.conf";
 
-    "$terminal" = "${pkgs.glib}/bin/gdbus call --session --dest com.mitchellh.ghostty --object-path /com/mitchellh/ghostty --method org.gtk.Actions.Activate new-window [] []";
-    "$fileManager" = "ghostty --launched-from=desktop -e yazi";
+    "$terminal" =
+      if config.programs.ghostty.package != null
+      then "${pkgs.glib}/bin/gdbus call --session --dest com.mitchellh.ghostty --object-path /com/mitchellh/ghostty --method org.gtk.Actions.Activate new-window [] []"
+      else "ghostty";
+    "$fileManager" =
+      if config.programs.ghostty.package != null
+      then "ghostty --launched-from=desktop -e yazi"
+      else "ghostty -e yazi";
+
     "$menu" = "rofi -show drun";
 
     env = [
