@@ -11,14 +11,13 @@
       font-family-bold = "GeistMono NF SemiBold";
       font-family-italic = "GeistMono NF Light";
       font-size = 12;
-      gtk-tabs-location = "hidden";
+      window-show-tab-bar = "never";
       window-theme = "ghostty";
       mouse-hide-while-typing = true;
       confirm-close-surface = false;
       window-new-tab-position = "end";
       focus-follows-mouse = true;
       copy-on-select = "clipboard";
-      app-notifications = "no-clipboard-copy";
 
       keybind = [
         "ctrl+alt+h=goto_split:left"

@@ -7,8 +7,8 @@ in
   wayland.windowManager.hyprland.settings = {
     source = "~/.config/hypr/hyprland/colors.conf";
 
-    "$terminal" = "ghostty";
-    "$fileManager" = "ghostty -e yazi";
+    "$terminal" = "${pkgs.glib}/bin/gdbus call --session --dest com.mitchellh.ghostty --object-path /com/mitchellh/ghostty --method org.gtk.Actions.Activate new-window [] []";
+    "$fileManager" = "ghostty --launched-from=desktop -e yazi";
     "$menu" = "rofi -show drun";
 
     env = [
@@ -213,5 +213,7 @@ in
     ];
 
     windowrulev2 = [ "suppressevent maximize, class:.*" "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0" ];
+
+    "debug:disable_logs" = false;
   };
 }

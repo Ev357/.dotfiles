@@ -8,7 +8,10 @@
 
   config = lib.mkIf config.modules.games.osu.enable {
     home.packages = lib.mkIf (!config.modules.games.osu.noInstall) (with pkgs; [
-      inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
+      (inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin.override {
+        releaseStream = "tachyon";
+        pipewire_latency = "512/48000";
+      })
       wootility
     ]);
 

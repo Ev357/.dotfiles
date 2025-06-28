@@ -22,5 +22,9 @@
   };
 
   services.swaync.enable = true;
-  programs.waybar.enable = true;
+  programs = {
+    waybar.enable = true;
+    # until https://github.com/nix-community/home-manager/issues/7327 is fixed
+    zed-editor.enable = false;
+  };
 }
