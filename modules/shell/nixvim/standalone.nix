@@ -152,5 +152,12 @@
         "}" @punctuation.bracket
       ]]
     )
+
+    local hover = vim.lsp.buf.hover
+    vim.lsp.buf.hover = function()
+      return hover({
+        border = "rounded",
+      })
+    end
   '';
 }

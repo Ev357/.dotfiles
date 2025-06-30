@@ -7,5 +7,17 @@
       "snippets"
       "buffer"
     ];
+    completion = {
+      menu = {
+        border = "rounded";
+        winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:BlinkCmpMenuSelection,Search:None";
+      };
+      documentation = {
+        window = {
+          border = "rounded";
+          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:BlinkCmpMenuSelection,Search:None";
+        };
+      };
+    };
   };
 }
