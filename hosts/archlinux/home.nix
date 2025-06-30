@@ -27,16 +27,16 @@
       enable = true;
       other.disableOpenGLApps = true;
     };
-    games = {
-      enable = true;
-      osu.noInstall = true;
-    };
   };
 
   programs = {
     hyprlock.package = null;
     ghostty.package = null;
-    zed-editor.package = pkgs.emptyDirectory;
+    zed-editor = {
+      # until https://github.com/nix-community/home-manager/issues/7327 is fixed
+      enable = false;
+      package = pkgs.emptyDirectory;
+    };
     obsidian.package = pkgs.emptyDirectory;
   };
 

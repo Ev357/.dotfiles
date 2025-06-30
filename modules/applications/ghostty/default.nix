@@ -1,8 +1,8 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, lib, ... }:
 
 {
   programs.ghostty = {
-    package = inputs.ghostty.packages.${pkgs.system}.default;
+    package = lib.mkDefault inputs.ghostty.packages.${pkgs.system}.default;
     settings = {
       theme = "catppuccin-macchiato";
       gtk-titlebar = false;
