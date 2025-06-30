@@ -30,6 +30,7 @@
   };
 
   programs = {
+    waybar.enable = true;
     hyprlock.package = null;
     ghostty.package = null;
     zed-editor = {
