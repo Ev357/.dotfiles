@@ -28,6 +28,7 @@
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
     nix-gaming.url = "github:fufexan/nix-gaming";
     ghostty.url = "github:ghostty-org/ghostty";
+    tuisic.url = "github:Ev357/tuisic";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

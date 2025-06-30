@@ -11,6 +11,7 @@
     ./git
     ./nixvim
     ./starship
+    ./tuisic
     ./yazi
     ./zellij
     ./zoxide
@@ -38,8 +39,9 @@
       yazi.enable = lib.mkDefault true;
       zoxide.enable = lib.mkDefault true;
       zsh.enable = lib.mkDefault true;
-      nix-index-database.comma.enable = true;
-      zellij.enable = true;
+      nix-index-database.comma.enable = lib.mkDefault true;
+      zellij.enable = lib.mkDefault true;
+      tuisic.enable = lib.mkDefault true;
     };
 
     stylix.enable = true;
