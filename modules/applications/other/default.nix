@@ -15,6 +15,7 @@
       session-desktop
       libreoffice-qt6-fresh
       system-config-printer
+      bitwarden-desktop
     ] ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [
       krita
       anki-bin
