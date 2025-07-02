@@ -9,6 +9,7 @@
       "https://nixos-raspberrypi.cachix.org"
       "https://nix-gaming.cachix.org"
       "https://ghostty.cachix.org"
+      "https://tuisic.cachix.org"
     ];
     extra-trusted-public-keys = [
       "ev357.cachix.org-1:bI65rULXWJ8IMM+tosc/Z+9W53nL6uj4+5FLXX6BN3Q="
@@ -17,6 +18,7 @@
       "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI="
       "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
       "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="
+      "tuisic.cachix.org-1:XEafqLtuNhcRjCZERfPbKp+xSAqDC9Gfd0O7gzFpaSY="
     ];
   };
 
