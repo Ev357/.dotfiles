@@ -1786,11 +1786,11 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1751292477,
-        "narHash": "sha256-MZt045hHkiue0PJInDMdQwnKUrJc8v1ObwnukRDgtzk=",
+        "lastModified": 1751415037,
+        "narHash": "sha256-1T+Bp2yPUHoXXd4smQMUs9VUfF/srvPgiaxAWaj3U0Q=",
         "owner": "Ev357",
         "repo": "tuisic",
-        "rev": "e43265655e02c9e45cd1d179180219f996bdb3fe",
+        "rev": "e8f4ade3999603d1a86135048b310579de01e5db",
         "type": "github"
       },
       "original": {
