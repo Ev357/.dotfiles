@@ -11,5 +11,10 @@
 
   modules.shell.enable = true;
 
+  programs.nixvim.configNames = {
+    homeManager = "evest@raspberrypi";
+    nixos = "raspberrypi";
+  };
+
   dconf.enable = false;
 }

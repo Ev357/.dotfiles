@@ -4,6 +4,7 @@
   imports = [
     ./plugins
     ./keymaps.nix
+    ./config-names.nix
   ];
 
   opts = {

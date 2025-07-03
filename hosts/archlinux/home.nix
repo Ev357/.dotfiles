@@ -35,6 +35,7 @@
     ghostty.package = null;
     zed-editor.package = pkgs.emptyDirectory;
     obsidian.package = pkgs.emptyDirectory;
+    nixvim.configNames.homeManager = "evest@lucas.gager";
   };
 
   services.swaync.enable = true;

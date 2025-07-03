@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, config, ... }:
 
 {
   plugins.lsp = {
@@ -36,8 +36,20 @@
         enable = true;
 
         settings = {
-          formatting.command = [ "nixpkgs-fmt" ];
           nixpkgs.expr = "import <nixpkgs> {}";
+          formatting.command = [ "nixpkgs-fmt" ];
+          options = {
+            nixos = {
+              expr = /* nix */ ''
+                (builtins.getFlake (builtins.toString ./.)).nixosConfigurations."${config.configNames.nixos}".options
+              '';
+            };
+            home_manager = {
+              expr = /* nix */ ''
+                (builtins.getFlake (builtins.toString ./.)).homeConfigurations."${config.configNames.homeManager}".options
+              '';
+            };
+          };
         };
       };
       yamlls = {
