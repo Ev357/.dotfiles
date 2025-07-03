@@ -33,11 +33,7 @@
     waybar.enable = true;
     hyprlock.package = null;
     ghostty.package = null;
-    zed-editor = {
-      # until https://github.com/nix-community/home-manager/issues/7327 is fixed
-      enable = false;
-      package = pkgs.emptyDirectory;
-    };
+    zed-editor.package = pkgs.emptyDirectory;
     obsidian.package = pkgs.emptyDirectory;
   };
 
