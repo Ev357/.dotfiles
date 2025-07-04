@@ -2,6 +2,7 @@
   plugins.neogit.settings = {
     kind = "replace";
     disable_context_highlighting = true;
+    integrations.diffview = true;
   };
 
   keymaps = [
