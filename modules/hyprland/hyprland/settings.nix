@@ -18,12 +18,6 @@ in
 
     "$menu" = "rofi -show drun";
 
-    env = [
-      "HYPRSHOT_DIR,$HOME/Pictures/screenshots"
-      "ELECTRON_OZONE_PLATFORM_HINT,wayland"
-      "NIXOS_OZONE_WL,1"
-    ];
-
     general = {
       gaps_in = 6;
       gaps_out = 10;
@@ -92,9 +86,7 @@ in
       preserve_split = true;
     };
 
-    master = {
-      new_status = "master";
-    };
+    master.new_status = "master";
 
     misc = {
       force_default_wallpaper = 1;
@@ -118,14 +110,14 @@ in
       };
     };
 
-    gestures = {
-      workspace_swipe = true;
-    };
+    gestures.workspace_swipe = true;
 
     device = {
       name = "epic-mouse-v1";
       sensitivity = -0.5;
     };
+
+    xwayland.force_zero_scaling = true;
 
     "$mainMod" = "SUPER";
 

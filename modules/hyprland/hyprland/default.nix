@@ -1,35 +1,44 @@
 { lib, config, pkgs, ... }:
 
+let
+  cfg = config.wayland.windowManager.hyprland;
+in
 {
   imports = [
+    ./patch
     ./settings.nix
   ];
 
-  options.wayland.windowManager.hyprland = {
-    mainMonitorName = lib.mkOption {
-      type = lib.types.str;
-      default = "eDP-1";
-      description = "The name of the main monitor.";
-    };
-    mainMonitorScaling = lib.mkOption {
-      type = lib.types.int;
-      default = 1;
-      description = "The scaling of the main monitor.";
-    };
-  };
-
-  config = lib.mkIf config.wayland.windowManager.hyprland.enable {
+  config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
       package = null;
       portalPackage = null;
       systemd.enable = false;
+
+      environmentVariables = {
+        GDK_BACKEND = "wayland,x11,*";
+        QT_QPA_PLATFORM = "wayland;xcb";
+        SDL_VIDEODRIVER = "wayland";
+        CLUTTER_BACKEND = "wayland";
+
+        QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+        QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+        QT_QPA_PLATFORMTHEME = "qt5ct";
+
+        HYPRSHOT_DIR = "$HOME/Pictures/screenshots";
+        ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+        NIXOS_OZONE_WL = "1";
+
+        GDK_SCALE = toString cfg.mainMonitorScaling;
+        QT_SCALE_FACTOR = toString cfg.mainMonitorScaling;
+        XCURSOR_SIZE = toString (cfg.mainMonitorScaling * 16);
+      };
     };
 
-    home = {
-      file.".config/hypr/hyprland/colors.conf".source = ./colors.conf;
-      packages = with pkgs; [
-        hyprshot
-      ];
-    };
+    xdg.configFile. "hypr/hyprland/colors.conf".source = ./colors.conf;
+
+    home.packages = with pkgs; [
+      hyprshot
+    ];
   };
 }

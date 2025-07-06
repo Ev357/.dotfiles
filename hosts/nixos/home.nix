@@ -15,7 +15,7 @@
     mainMonitorScaling = 2;
     settings = {
       monitor = [
-        "${mainMonitorName}, preferred, auto, ${builtins.toString mainMonitorScaling}"
+        "${mainMonitorName}, highres, auto, ${toString mainMonitorScaling}"
         ", preferred, auto-up, 1"
       ];
     };
