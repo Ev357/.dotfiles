@@ -31,7 +31,6 @@ in
 
         GDK_SCALE = toString cfg.mainMonitorScaling;
         QT_SCALE_FACTOR = toString cfg.mainMonitorScaling;
-        XCURSOR_SIZE = toString (cfg.mainMonitorScaling * 16);
       };
     };
 
