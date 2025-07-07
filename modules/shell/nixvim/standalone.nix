@@ -34,6 +34,7 @@
   globals = {
     mapleader = " ";
     maplocalleader = " ";
+    omni_sql_default_compl_type = "syntax";
   };
   colorschemes.catppuccin = {
     enable = true;
@@ -118,6 +119,7 @@
       inherit (pkgs.texlive) scheme-gust standalone varwidth preview mathtools xcolor;
     })
     ghostscript
+    sql-formatter
   ];
 
   extraPlugins = with pkgs.vimPlugins; [

@@ -10,6 +10,7 @@
           html = { 'prettierd' },
           htmlangular = { 'prettierd' },
           markdown = { 'injected' },
+          sql = { 'sql_formatter' },
         }
 
         local formatters = { 'biome', 'prettierd' }
