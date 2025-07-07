@@ -21,6 +21,7 @@
       jsonls.enable = true;
       omnisharp.enable = true;
       tinymist.enable = true;
+      sqls.enable = true;
 
       rust_analyzer = {
         enable = true;
