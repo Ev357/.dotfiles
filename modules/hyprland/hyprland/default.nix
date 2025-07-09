@@ -22,15 +22,15 @@ in
         CLUTTER_BACKEND = "wayland";
 
         QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+        QT_ENABLE_HIGHDPI_SCALING = "1";
         QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
         QT_QPA_PLATFORMTHEME = "qt5ct";
 
-        HYPRSHOT_DIR = "$HOME/Pictures/screenshots";
-        ELECTRON_OZONE_PLATFORM_HINT = "wayland";
         NIXOS_OZONE_WL = "1";
 
-        GDK_SCALE = toString cfg.mainMonitorScaling;
-        QT_SCALE_FACTOR = toString cfg.mainMonitorScaling;
+        HYPRSHOT_DIR = "$HOME/Pictures/screenshots";
+        ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+        ANKI_WAYLAND = "1";
       };
     };
 

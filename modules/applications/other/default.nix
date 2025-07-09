@@ -20,9 +20,5 @@
       krita
       anki-bin
     ];
-
-    wayland.windowManager.hyprland.settings.env = [
-      "ANKI_WAYLAND,1"
-    ];
   };
 }
