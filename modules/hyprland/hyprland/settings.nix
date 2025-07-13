@@ -31,7 +31,8 @@ in
       shadow.color = "rgba(1a1a1aee)";
       blur = {
         size = 20;
-        passes = 3;
+        passes = 2;
+        brightness = 0.75;
       };
     };
     animations = {
