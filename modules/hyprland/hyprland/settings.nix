@@ -73,7 +73,10 @@ in
       kb_layout = "cz, us";
       kb_variant = "qwerty";
       kb_options = "grp:alt_shift_toggle";
-      touchpad. natural_scroll = true;
+      touchpad = {
+        natural_scroll = true;
+        drag_lock = 0;
+      };
     };
     gestures.workspace_swipe = true;
 
