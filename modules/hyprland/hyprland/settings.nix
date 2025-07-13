@@ -21,41 +21,19 @@ in
     general = {
       gaps_in = 6;
       gaps_out = 10;
-
-      border_size = 1;
-
       "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
       "col.inactive_border" = "rgba(595959aa)";
-
       resize_on_border = true;
-
       allow_tearing = true;
-
-      layout = "dwindle";
     };
-
     decoration = {
       rounding = 14;
-
-      active_opacity = "1.0";
-      inactive_opacity = "1.0";
-
-      shadow = {
-        enabled = true;
-        range = 4;
-        render_power = 3;
-        color = "rgba(1a1a1aee)";
-      };
-
+      shadow.color = "rgba(1a1a1aee)";
       blur = {
-        enabled = true;
-        size = 3;
-        passes = 1;
-
-        vibrancy = "0.1696";
+        size = 20;
+        passes = 3;
       };
     };
-
     animations = {
       enabled = "yes, please :)";
 
@@ -80,42 +58,23 @@ in
         "workspacesOut, 1, 1.94, almostLinear, fade"
       ];
     };
-
     dwindle = {
       pseudotile = true;
       preserve_split = true;
     };
-
-    master.new_status = "master";
-
     misc = {
       force_default_wallpaper = 1;
       disable_hyprland_logo = true;
       mouse_move_enables_dpms = true;
       key_press_enables_dpms = true;
     };
-
     input = {
       kb_layout = "cz, us";
       kb_variant = "qwerty";
       kb_options = "grp:alt_shift_toggle";
-
-      follow_mouse = 1;
-
-      sensitivity = 0;
-
-      touchpad = {
-        natural_scroll = true;
-        scroll_factor = 1;
-      };
+      touchpad. natural_scroll = true;
     };
-
     gestures.workspace_swipe = true;
-
-    device = {
-      name = "epic-mouse-v1";
-      sensitivity = -0.5;
-    };
 
     "$mainMod" = "SUPER";
 
