@@ -6,7 +6,7 @@
     settings = {
       theme = "catppuccin-macchiato";
       gtk-titlebar = false;
-      background-opacity = 0.95;
+      background-opacity = 0.97;
       font-family = "GeistMono NF Medium";
       font-family-bold = "GeistMono NF SemiBold";
       font-family-italic = "GeistMono NF Light";
