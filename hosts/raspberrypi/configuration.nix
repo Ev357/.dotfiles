@@ -71,9 +71,9 @@
   environment.enableAllTerminfo = true;
 
   fileSystems."/data" = {
-    device = "/dev/sda1";
-    fsType = "ext4";
-    options = [ "defaults" "rw" "noatime" ];
+    device = "/dev/nvme0n1";
+    fsType = "btrfs";
+    options = [ "compress=zstd" "noatime" ];
   };
 
   system.nixos.tags =
