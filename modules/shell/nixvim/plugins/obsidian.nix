@@ -25,6 +25,7 @@
         blink = true;
         min_chars = 2;
       };
+      legacy_commands = false;
     };
   };
 }
