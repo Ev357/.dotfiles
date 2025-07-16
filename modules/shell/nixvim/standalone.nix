@@ -70,6 +70,7 @@
     dap-virtual-text.enable = true;
     fidget.enable = true;
     diffview.enable = true;
+    avante.enable = true;
   };
 
   autoCmd = [
@@ -124,6 +125,7 @@
 
   extraPlugins = with pkgs.vimPlugins; [
     supermaven-nvim
+    blink-cmp-avante
   ];
 
   extraConfigLua = /*lua*/ ''

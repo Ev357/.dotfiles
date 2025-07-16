@@ -1,12 +1,21 @@
 {
   plugins.blink-cmp.settings = {
     snippets.preset = "mini_snippets";
-    sources.default = [
-      "lsp"
-      "path"
-      "snippets"
-      "buffer"
-    ];
+    sources = {
+      default = [
+        "lsp"
+        "path"
+        "snippets"
+        "buffer"
+        "avante"
+      ];
+      providers = {
+        avante = {
+          module = "blink-cmp-avante";
+          name = "Avante";
+        };
+      };
+    };
     completion = {
       menu = {
         border = "rounded";

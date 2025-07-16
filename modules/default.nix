@@ -1,5 +1,6 @@
 {
   imports = [
+    ./ai
     ./applications
     ./cachix-agent
     ./common

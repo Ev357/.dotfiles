@@ -25,6 +25,7 @@
     shell.enable = true;
     applications.enable = true;
     games.enable = true;
+    ai.enable = true;
   };
 
   services.swaync.enable = true;

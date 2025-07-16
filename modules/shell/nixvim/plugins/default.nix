@@ -1,5 +1,6 @@
 {
   imports = [
+    ./avante.nix
     ./blink-cmp.nix
     ./conform-nvim.nix
     ./dap-ui.nix
