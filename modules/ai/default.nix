@@ -9,7 +9,7 @@
     enable = lib.mkEnableOption "enables ai";
   };
 
-  config = lib.mkIf config.modules.shell.enable {
+  config = lib.mkIf config.modules.ai.enable {
     services.ollama.enable = lib.mkDefault true;
   };
 }
