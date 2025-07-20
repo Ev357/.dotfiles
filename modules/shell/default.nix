@@ -11,7 +11,7 @@
     ./git
     ./nixvim
     ./starship
-    ./tuisic
+    ./tano
     ./yazi
     ./zellij
     ./zoxide

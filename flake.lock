@@ -206,7 +206,7 @@
     "fenix_2": {
       "inputs": {
         "nixpkgs": [
-          "tuisic",
+          "tano",
           "nixpkgs"
         ],
         "rust-analyzer-src": "rust-analyzer-src_2"
@@ -1405,7 +1405,7 @@
         "nixpkgs": "nixpkgs_6",
         "nixvim": "nixvim",
         "stylix": "stylix",
-        "tuisic": "tuisic",
+        "tano": "tano",
         "zen-browser": "zen-browser"
       }
     },
@@ -1566,6 +1566,26 @@
         "type": "github"
       }
     },
+    "tano": {
+      "inputs": {
+        "fenix": "fenix_2",
+        "flake-parts": "flake-parts_5",
+        "nixpkgs": "nixpkgs_8"
+      },
+      "locked": {
+        "lastModified": 1751817657,
+        "narHash": "sha256-ktqAEqH2PZmOEZ/oGgatLQSRdpjLUR/6CGa3srBnFXM=",
+        "owner": "Ev357",
+        "repo": "tano",
+        "rev": "09853030710e701782539a02bead71c332a0bcbf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Ev357",
+        "repo": "tano",
+        "type": "github"
+      }
+    },
     "tinted-foot": {
       "flake": false,
       "locked": {
@@ -1666,26 +1686,6 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "type": "github"
-      }
-    },
-    "tuisic": {
-      "inputs": {
-        "fenix": "fenix_2",
-        "flake-parts": "flake-parts_5",
-        "nixpkgs": "nixpkgs_8"
-      },
-      "locked": {
-        "lastModified": 1751817657,
-        "narHash": "sha256-ktqAEqH2PZmOEZ/oGgatLQSRdpjLUR/6CGa3srBnFXM=",
-        "owner": "Ev357",
-        "repo": "tuisic",
-        "rev": "09853030710e701782539a02bead71c332a0bcbf",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Ev357",
-        "repo": "tuisic",
         "type": "github"
       }
     },

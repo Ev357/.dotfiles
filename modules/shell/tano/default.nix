@@ -2,7 +2,7 @@
 
 {
   imports = [
-    inputs.tuisic.homeManagerModules.default
+    inputs.tano.homeManagerModules.default
   ];
 
   programs.tuisic = { };
