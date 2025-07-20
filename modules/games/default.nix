@@ -18,7 +18,11 @@
 
     home.packages = with pkgs; [
       lunar-client
-      heroic
+      (heroic.override {
+        extraPkgs = pkgs: with pkgs; [
+          gamescope
+        ];
+      })
       lutris
 
       dwarfs

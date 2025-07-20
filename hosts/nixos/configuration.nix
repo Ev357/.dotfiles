@@ -40,6 +40,7 @@
     udisks2.enable = true;
     tailscale.enable = true;
     printing.enable = true;
+    blueman.enable = true;
 
     xserver = {
       xkb.layout = "cz";

@@ -1,8 +1,9 @@
-{ lib, config, inputs, ... }:
+{ lib, config, inputs, pkgs, ... }:
 
 {
   imports = [
     inputs.nix-gaming.nixosModules.pipewireLowLatency
+    inputs.nix-gaming.nixosModules.ntsync
     ./steam
     ./wootility
   ];
@@ -16,6 +17,16 @@
     programs = {
       steam.enable = lib.mkDefault true;
       gamemode.enable = lib.mkDefault true;
+      wine.ntsync.enable = lib.mkDefault true;
+    };
+
+    hardware.graphics = {
+      extraPackages = with pkgs; [
+        amdvlk
+      ];
+      extraPackages32 = with pkgs; [
+        driversi686Linux.amdvlk
+      ];
     };
 
     services = {

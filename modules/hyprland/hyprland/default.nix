@@ -27,6 +27,7 @@ in
         QT_QPA_PLATFORMTHEME = "qt5ct";
 
         NIXOS_OZONE_WL = "1";
+        AMD_VULKAN_ICD = "RADV";
 
         HYPRSHOT_DIR = "$HOME/Pictures/screenshots";
         ELECTRON_OZONE_PLATFORM_HINT = "wayland";
