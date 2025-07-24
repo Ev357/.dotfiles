@@ -30,4 +30,6 @@
 
   services.swaync.enable = true;
   programs.waybar.enable = true;
+
+  i18n.inputMethod.enable = true;
 }

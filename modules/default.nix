@@ -7,6 +7,7 @@
     ./electron-flags
     ./games
     ./hyprland
+    ./i18n
     ./shell
     ./stylix
     ./widgets
