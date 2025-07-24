@@ -3,7 +3,7 @@
 {
   imports = [
     inputs.nix-gaming.nixosModules.pipewireLowLatency
-    inputs.nix-gaming.nixosModules.ntsync
+    inputs.nix-gaming.nixosModules.wine
     ./steam
     ./wootility
   ];

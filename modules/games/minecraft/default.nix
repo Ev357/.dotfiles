@@ -9,12 +9,5 @@
     home.packages = with pkgs; [
       prismlauncher
     ];
-
-    # jdk8 is not cached for some reason
-    nixpkgs.overlays = [
-      (final: prev: {
-        jdk8 = final.openjdk8-bootstrap;
-      })
-    ];
   };
 }
