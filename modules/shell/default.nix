@@ -42,6 +42,7 @@
       nix-index-database.comma.enable = lib.mkDefault true;
       zellij.enable = lib.mkDefault true;
       tuisic.enable = lib.mkDefault true;
+      cava.enable = lib.mkDefault true;
     };
 
     stylix.enable = true;
