@@ -17,7 +17,8 @@
       hypridle.enable = lib.mkDefault true;
       hyprpaper.enable = lib.mkDefault true;
       hyprpolkitagent.enable = lib.mkDefault true;
-      hyprsunset.enable = lib.mkDefault true;
+      # https://github.com/nix-community/home-manager/issues/7484
+      # hyprsunset.enable = lib.mkDefault true;
     };
   };
 }
