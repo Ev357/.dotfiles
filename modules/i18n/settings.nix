@@ -1,6 +1,24 @@
 {
   addons = {
-    classicui.globalSection.Theme = "catppuccin-macchiato-lavender";
+    classicui.globalSection = {
+      "Vertical Candidate List" = "False";
+      WheelForPaging = "True";
+      Font = "\"Geist 10\"";
+      MenuFont = "\"Geist 10\"";
+      TrayFont = "\"Geist 10\"";
+      TrayOutlineColor = "#000000";
+      TrayTextColor = "#ffffff";
+      PreferTextIcon = "False";
+      ShowLayoutNameInIcon = "True";
+      UseInputMethodLanguageToDisplayText = "True";
+      Theme = "catppuccin-macchiato-lavender";
+      DarkTheme = "catppuccin-macchiato-lavender";
+      UseDarkTheme = "False";
+      UseAccentColor = "True";
+      PerScreenDPI = "False";
+      ForceWaylandDPI = "0";
+      EnableFractionalScale = "True";
+    };
     keyboard = {
       globalSection = {
         PageSize = 5;
@@ -29,15 +47,13 @@
         };
       };
     };
-    mozc = {
-      globalSection = {
-        InitialMode = "Hiragana";
-        InputState = "\"Follow Global Configuration\"";
-        Vertical = "True";
-        ExpandMode = "\"On Focus\"";
-        PreeditCursorPositionAtBeginning = "False";
-        ExpandKey = "";
-      };
+    mozc.globalSection = {
+      InitialMode = "Hiragana";
+      InputState = "\"Follow Global Configuration\"";
+      Vertical = "True";
+      ExpandMode = "\"On Focus\"";
+      PreeditCursorPositionAtBeginning = "False";
+      ExpandKey = "";
     };
   };
 
