@@ -38,7 +38,7 @@
 
         settings = {
           nixpkgs.expr = "import <nixpkgs> {}";
-          formatting.command = [ "nixpkgs-fmt" ];
+          formatting.command = [ "nixfmt" ];
           options = {
             nixos = {
               expr = /* nix */ ''
@@ -62,6 +62,7 @@
 
   extraPackages = [
     inputs.fenix.packages.${pkgs.system}.complete.clippy
+    pkgs.nixfmt-rfc-style
   ];
 
   keymaps = [
