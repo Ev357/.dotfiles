@@ -24,6 +24,7 @@
       wayland.windowManager.hyprland.environmentVariables = {
         XMODIFIERS = "@im=fcitx";
         QT_IM_MODULE = "fcitx";
+        GTK_IM_MODULE = "wayland";
         QT_IM_MODULES = "wayland;fcitx;ibus";
         SDL_IM_MODULE = "fcitx";
       };

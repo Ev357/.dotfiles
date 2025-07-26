@@ -5,9 +5,9 @@
     ./cachix-agent
     ./common
     ./electron-flags
+    ./fcitx5
     ./games
     ./hyprland
-    ./i18n
     ./shell
     ./stylix
     ./widgets
