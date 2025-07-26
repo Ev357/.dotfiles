@@ -35,7 +35,7 @@ in
       };
     };
 
-    xdg.configFile. "hypr/hyprland/colors.conf".source = ./colors.conf;
+    xdg.configFile."hypr/hyprland/colors.conf".source = ./colors.conf;
 
     home.packages = with pkgs; [
       hyprshot

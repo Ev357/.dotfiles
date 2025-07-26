@@ -1,4 +1,46 @@
 {
+  addons = {
+    classicui.globalSection.Theme = "catppuccin-macchiato-lavender";
+    keyboard = {
+      globalSection = {
+        PageSize = 5;
+        EnableEmoji = "True";
+        EnableQuickPhraseEmoji = "True";
+        "Choose Modifier" = "Alt";
+        EnableHintByDefault = "False";
+        "Hint Trigger" = "";
+        UseNewComposeBehavior = "True";
+        EnableLongPress = "False";
+      };
+
+      sections = {
+        PrevCandidate = {
+          "0" = "Shift+Tab";
+        };
+        NextCandidate = {
+          "0" = "Tab";
+        };
+        "One Time Hint Trigger" = {
+          "0" = "Control+Alt+J";
+        };
+        LongPressBlocklist = {
+          "0" = "konsole";
+          "1" = "org.kde.konsole";
+        };
+      };
+    };
+    mozc = {
+      globalSection = {
+        InitialMode = "Hiragana";
+        InputState = "\"Follow Global Configuration\"";
+        Vertical = "True";
+        ExpandMode = "\"On Focus\"";
+        PreeditCursorPositionAtBeginning = "False";
+        ExpandKey = "";
+      };
+    };
+  };
+
   inputMethod = {
     GroupOrder."0" = "Default";
 
