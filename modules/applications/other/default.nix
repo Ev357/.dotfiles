@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   options.modules.applications.other = {
@@ -7,18 +12,21 @@
   };
 
   config = lib.mkIf config.modules.applications.other.enable {
-    home.packages = with pkgs; [
-      nautilus
-      loupe
-      fragments
-      easytag
-      session-desktop
-      libreoffice-qt6-fresh
-      system-config-printer
-      bitwarden-desktop
-    ] ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [
-      krita
-      anki-bin
-    ];
+    home.packages =
+      with pkgs;
+      [
+        cosmic-files
+        loupe
+        fragments
+        easytag
+        session-desktop
+        libreoffice-qt6-fresh
+        system-config-printer
+        bitwarden-desktop
+      ]
+      ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [
+        krita
+        anki-bin
+      ];
   };
 }
