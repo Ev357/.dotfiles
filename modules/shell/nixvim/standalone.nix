@@ -77,11 +77,12 @@
     {
       event = "TextYankPost";
       desc = "Highlight when yanking (copying) text";
-      callback.__raw = /*lua*/ ''
-        function()
-          vim.highlight.on_yank()
-        end
-      '';
+      callback.__raw = # lua
+        ''
+          function()
+            vim.highlight.on_yank()
+          end
+        '';
     }
   ];
 
@@ -89,25 +90,27 @@
     FormatDisable = {
       bang = true;
       desc = "Disable autoformat-on-save";
-      command.__raw = /*lua*/ ''
-        function(args)
-          if args.bang then
-            vim.b.disable_autoformat = true
-          else
-            vim.g.disable_autoformat = true
+      command.__raw = # lua
+        ''
+          function(args)
+            if args.bang then
+              vim.b.disable_autoformat = true
+            else
+              vim.g.disable_autoformat = true
+            end
           end
-        end
-      '';
+        '';
     };
 
     FormatEnable = {
       desc = "Re-enable autoformat-on-save";
-      command.__raw = /*lua*/ ''
-        function()
-          vim.b.disable_autoformat = false
-          vim.g.disable_autoformat = false
-        end
-      '';
+      command.__raw = # lua
+        ''
+          function()
+            vim.b.disable_autoformat = false
+            vim.g.disable_autoformat = false
+          end
+        '';
     };
   };
 
@@ -117,7 +120,14 @@
     csharpier
     imagemagick
     (pkgs.texlive.combine {
-      inherit (pkgs.texlive) scheme-gust standalone varwidth preview mathtools xcolor;
+      inherit (pkgs.texlive)
+        scheme-gust
+        standalone
+        varwidth
+        preview
+        mathtools
+        xcolor
+        ;
     })
     ghostscript
     sql-formatter
@@ -128,42 +138,48 @@
     blink-cmp-avante
   ];
 
-  extraConfigLua = /*lua*/ ''
-    require('mini.statusline').section_location = function()
-      return '%2l:%-2v'
-    end
+  extraConfigLua = # lua
+    ''
+      require('mini.statusline').section_location = function()
+        return '%2l:%-2v'
+      end
 
-    require('supermaven-nvim').setup({ log_level = 'off' })
-
-    require('dap').listeners.after.event_initialized['dapui_config'] = require('dapui').open
-    require('dap').listeners.before.event_terminated['dapui_config'] = require('dapui').close
-    require('dap').listeners.before.event_exited['dapui_config'] = require('dapui').close
-
-    require("vim.treesitter.query").set(
-      "json",
-      "highlights", 
-      [[
-        (true) @boolean
-        (false) @boolean
-        (null) @constant.builtin
-        (number) @number
-        (pair key: (string) @label)
-        (pair value: (string) @string)
-        (array (string) @string)
-        (ERROR) @error
-        "," @punctuation.delimiter
-        "[" @punctuation.bracket
-        "]" @punctuation.bracket
-        "{" @punctuation.bracket
-        "}" @punctuation.bracket
-      ]]
-    )
-
-    local hover = vim.lsp.buf.hover
-    vim.lsp.buf.hover = function()
-      return hover({
-        border = "rounded",
+      require('supermaven-nvim').setup({ 
+        log_level = 'off',
+        api = {
+          use_free_version = true
+        }
       })
-    end
-  '';
+
+      require('dap').listeners.after.event_initialized['dapui_config'] = require('dapui').open
+      require('dap').listeners.before.event_terminated['dapui_config'] = require('dapui').close
+      require('dap').listeners.before.event_exited['dapui_config'] = require('dapui').close
+
+      require("vim.treesitter.query").set(
+        "json",
+        "highlights", 
+        [[
+          (true) @boolean
+          (false) @boolean
+          (null) @constant.builtin
+          (number) @number
+          (pair key: (string) @label)
+          (pair value: (string) @string)
+          (array (string) @string)
+          (ERROR) @error
+          "," @punctuation.delimiter
+          "[" @punctuation.bracket
+          "]" @punctuation.bracket
+          "{" @punctuation.bracket
+          "}" @punctuation.bracket
+        ]]
+      )
+
+      local hover = vim.lsp.buf.hover
+      vim.lsp.buf.hover = function()
+        return hover({
+          border = "rounded",
+        })
+      end
+    '';
 }
