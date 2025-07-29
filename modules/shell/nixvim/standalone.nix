@@ -144,12 +144,25 @@
         return '%2l:%-2v'
       end
 
-      require('supermaven-nvim').setup({ 
-        log_level = 'off',
-        api = {
-          use_free_version = true
-        }
-      })
+      local binary_handler = require("supermaven-nvim.binary.binary_handler")
+      local original_open_popup = binary_handler.open_popup
+
+      local using_free_version = false
+      function binary_handler:open_popup(message, include_free)
+        if using_free_version then
+          return
+        end
+
+        if include_free then
+          using_free_version = true
+          self:use_free_version()
+          return
+        end
+
+        original_open_popup(self, message, include_free)
+      end
+
+      require('supermaven-nvim').setup({ log_level = 'off' })
 
       require('dap').listeners.after.event_initialized['dapui_config'] = require('dapui').open
       require('dap').listeners.before.event_terminated['dapui_config'] = require('dapui').close
