@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -8,7 +13,8 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    # https://github.com/NixOS/nixos-hardware/commit/a872d985392ee5b19d8409bfcc3f106de2070070
+    kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
     loader = {
       systemd-boot = {
         enable = true;
@@ -59,7 +65,11 @@
 
   users.users."evest" = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "libvirtd"
+    ];
     shell = pkgs.zsh;
   };
 

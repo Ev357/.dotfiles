@@ -29,7 +29,11 @@
   };
 
   services.swaync.enable = true;
-  programs.waybar.enable = true;
+  programs = {
+    waybar.enable = true;
+    # in this nix version, zed is not cached
+    zed-editor.enable = false;
+  };
 
   i18n.inputMethod.enable = true;
 }

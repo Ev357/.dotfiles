@@ -15,18 +15,19 @@
     home.packages =
       with pkgs;
       [
-        cosmic-files
         loupe
         fragments
         easytag
         session-desktop
         libreoffice-qt6-fresh
         system-config-printer
+        gnome-console
         bitwarden-desktop
       ]
       ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [
         krita
         anki-bin
+        cosmic-files
       ];
   };
 }

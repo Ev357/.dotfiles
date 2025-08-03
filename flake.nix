@@ -23,7 +23,8 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # https://github.com/NixOS/nixpkgs/pull/425387
+    nixpkgs.url = "github:nixos/nixpkgs/7379d27cddb838c205119f9eede242810cd299a7";
     hyprland.url = "github:hyprwm/Hyprland";
     stylix.url = "github:danth/stylix";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -61,7 +62,17 @@
     };
   };
 
-  outputs = { self, nixpkgs, cachix-deploy-flake, nixos-raspberrypi, nix-on-droid, home-manager, nixvim, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      cachix-deploy-flake,
+      nixos-raspberrypi,
+      nix-on-droid,
+      home-manager,
+      nixvim,
+      ...
+    }@inputs:
     {
       homeConfigurations = {
         "evest@nixos" = home-manager.lib.homeManagerConfiguration {
@@ -137,29 +148,33 @@
 
       packages =
         let
-          mkCachixDeploy = system:
+          mkCachixDeploy =
+            system:
             let
               pkgs = nixpkgs.legacyPackages.${system};
               cachix-deploy-lib = cachix-deploy-flake.lib pkgs;
             in
             cachix-deploy-lib.spec {
               agents = {
-                agent = cachix-deploy-lib.homeManager
-                  {
-                    extraSpecialArgs = { inherit inputs; };
-                  }
-                  {
-                    imports = [
-                      ./hosts/cachix/home.nix
-                    ];
-                  };
+                agent =
+                  cachix-deploy-lib.homeManager
+                    {
+                      extraSpecialArgs = { inherit inputs; };
+                    }
+                    {
+                      imports = [
+                        ./hosts/cachix/home.nix
+                      ];
+                    };
               };
             };
 
-          mkNixvim = system: nixvim.legacyPackages.${system}.makeNixvimWithModule {
-            module = import ./modules/shell/nixvim/standalone.nix;
-            extraSpecialArgs = { inherit inputs; };
-          };
+          mkNixvim =
+            system:
+            nixvim.legacyPackages.${system}.makeNixvimWithModule {
+              module = import ./modules/shell/nixvim/standalone.nix;
+              extraSpecialArgs = { inherit inputs; };
+            };
         in
         {
           "x86_64-linux".cachix = mkCachixDeploy "x86_64-linux";
