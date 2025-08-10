@@ -2,7 +2,7 @@
 
 {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeModules.nixvim
   ];
 
   programs.nixvim = (import ./standalone.nix { inherit pkgs; }) // {

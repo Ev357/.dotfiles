@@ -23,15 +23,18 @@
   };
 
   inputs = {
-    # https://github.com/NixOS/nixpkgs/pull/425387
-    nixpkgs.url = "github:nixos/nixpkgs/7379d27cddb838c205119f9eede242810cd299a7";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
     stylix.url = "github:danth/stylix";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
     nix-gaming.url = "github:fufexan/nix-gaming";
-    ghostty.url = "github:ghostty-org/ghostty";
     tano.url = "github:Ev357/tano";
+    # https://github.com/ghostty-org/ghostty/discussions/8163
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
