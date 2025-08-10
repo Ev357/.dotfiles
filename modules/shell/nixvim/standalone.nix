@@ -41,6 +41,7 @@
     settings = {
       flavour = "macchiato";
       transparent_background = true;
+      float.transparent = true;
     };
   };
   clipboard.register = "unnamedplus";
