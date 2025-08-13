@@ -23,6 +23,7 @@
         system-config-printer
         gnome-console
         bitwarden-desktop
+        dbeaver-bin
       ]
       ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [
         krita
