@@ -1,6 +1,8 @@
-{ config, lib, ... }:
-
 {
+  config,
+  lib,
+  ...
+}: {
   config = lib.mkIf config.services.vaultwarden.enable {
     services.vaultwarden.config = {
       ROCKET_ADDRESS = "::1";

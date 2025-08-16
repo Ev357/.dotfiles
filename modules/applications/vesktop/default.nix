@@ -12,7 +12,7 @@
         macchiato = ./macchiato.theme.css;
       };
       settings = {
-        enabledThemes = [ "macchiato.css" ];
+        enabledThemes = ["macchiato.css"];
       };
     };
   };

@@ -1,6 +1,9 @@
-{ lib, config, pkgs, ... }:
-
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   options.modules.packages = {
     enable = lib.mkEnableOption "enables packages";
   };

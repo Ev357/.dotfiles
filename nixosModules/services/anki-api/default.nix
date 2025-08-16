@@ -1,6 +1,9 @@
-{ pkgs, config, lib, ... }:
-
 {
+  pkgs,
+  config,
+  lib,
+  ...
+}: {
   options.services.anki-api = {
     enable = lib.mkEnableOption "enables anki-api";
   };
@@ -8,8 +11,8 @@
   config = lib.mkIf config.services.anki-api.enable {
     systemd.services.anki-api = {
       description = "anki-api";
-      after = [ "network.target" ];
-      wantedBy = [ "multi-user.target" ];
+      after = ["network.target"];
+      wantedBy = ["multi-user.target"];
       serviceConfig = {
         ExecStart = "${pkgs.bun}/bin/bun /var/lib/anki-api/.output/server/index.mjs";
         Restart = "always";
@@ -24,6 +27,6 @@
       group = "media";
     };
 
-    networking.firewall.allowedTCPPorts = [ 3000 ];
+    networking.firewall.allowedTCPPorts = [3000];
   };
 }

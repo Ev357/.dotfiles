@@ -1,6 +1,6 @@
 {
   programs.zoxide = {
     enableZshIntegration = true;
-    options = [ "--cmd cd" ];
+    options = ["--cmd cd"];
   };
 }

@@ -3,23 +3,21 @@
   config,
   pkgs,
   ...
-}:
-
-let
+}: let
   cfg = config.i18n.inputMethod;
-in
-{
+in {
   config = lib.mkIf cfg.enable {
     nixpkgs.overlays = [
       (final: prev: {
         libsForQt5 = prev.libsForQt5.overrideScope (
           nfinal: nprev: {
-            fcitx5-with-addons = pkgs.callPackage ./fcitx5-with-addons { };
+            fcitx5-with-addons = pkgs.callPackage ./fcitx5-with-addons {};
           }
         );
 
         catppuccin-fcitx5 = prev.catppuccin-fcitx5.overrideAttrs {
-          installPhase = # bash
+          installPhase =
+            # bash
             ''
               runHook preInstall
 

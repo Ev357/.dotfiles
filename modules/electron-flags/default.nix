@@ -1,6 +1,8 @@
-{ lib, config, ... }:
-
 {
+  lib,
+  config,
+  ...
+}: {
   options.modules.electron-flags = {
     enable = lib.mkEnableOption "enables electron flags";
   };

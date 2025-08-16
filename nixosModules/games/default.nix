@@ -1,6 +1,10 @@
-{ lib, config, inputs, pkgs, ... }:
-
 {
+  lib,
+  config,
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     inputs.nix-gaming.nixosModules.pipewireLowLatency
     inputs.nix-gaming.nixosModules.wine
@@ -32,7 +36,7 @@
     services = {
       pipewire.lowLatency.enable = lib.mkDefault true;
 
-      xserver.videoDrivers = [ "amdgpu" ];
+      xserver.videoDrivers = ["amdgpu"];
     };
 
     security.rtkit.enable = lib.mkDefault true;

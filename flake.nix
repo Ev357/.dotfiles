@@ -65,129 +65,121 @@
     };
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      cachix-deploy-flake,
-      nixos-raspberrypi,
-      nix-on-droid,
-      home-manager,
-      nixvim,
-      ...
-    }@inputs:
-    {
-      homeConfigurations = {
-        "evest@nixos" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+  outputs = {
+    self,
+    nixpkgs,
+    cachix-deploy-flake,
+    nixos-raspberrypi,
+    nix-on-droid,
+    home-manager,
+    nixvim,
+    ...
+  } @ inputs: {
+    homeConfigurations = {
+      "evest@nixos" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
 
-          modules = [
-            ./hosts/nixos/home.nix
-          ];
+        modules = [
+          ./hosts/nixos/home.nix
+        ];
 
-          extraSpecialArgs = { inherit inputs; };
-        };
-
-        "evest@raspberrypi" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."aarch64-linux";
-
-          modules = [
-            ./hosts/raspberrypi/home.nix
-          ];
-
-          extraSpecialArgs = { inherit inputs; };
-        };
-
-        "evest@lucas.gager" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."x86_64-linux";
-
-          modules = [
-            ./hosts/archlinux/home.nix
-          ];
-
-          extraSpecialArgs = { inherit inputs; };
-        };
-
-        "nix-on-droid" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages."aarch64-linux";
-
-          modules = [
-            ./hosts/nix-on-droid/home.nix
-          ];
-
-          extraSpecialArgs = { inherit inputs; };
-        };
+        extraSpecialArgs = {inherit inputs;};
       };
 
-      nixosConfigurations = {
-        "nixos" = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            ./hosts/nixos/configuration.nix
-          ];
-          specialArgs = { inherit inputs; };
-        };
-        "raspberrypi" = nixos-raspberrypi.lib.nixosSystem {
-          modules = [
-            ./hosts/raspberrypi/configuration.nix
-          ];
-          specialArgs = { inherit nixos-raspberrypi inputs; };
-        };
+      "evest@raspberrypi" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages."aarch64-linux";
+
+        modules = [
+          ./hosts/raspberrypi/home.nix
+        ];
+
+        extraSpecialArgs = {inherit inputs;};
       };
 
-      nixOnDroidConfigurations = {
-        default =
-          let
-            pkgs = import nixpkgs { system = "aarch64-linux"; };
-          in
-          nix-on-droid.lib.nixOnDroidConfiguration {
-            inherit pkgs;
-            modules = [
-              ./hosts/nix-on-droid/configuration.nix
-            ];
-            extraSpecialArgs = { inherit inputs; };
-          };
+      "evest@lucas.gager" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+
+        modules = [
+          ./hosts/archlinux/home.nix
+        ];
+
+        extraSpecialArgs = {inherit inputs;};
       };
 
-      packages =
-        let
-          mkCachixDeploy =
-            system:
-            let
-              pkgs = nixpkgs.legacyPackages.${system};
-              cachix-deploy-lib = cachix-deploy-flake.lib pkgs;
-            in
-            cachix-deploy-lib.spec {
-              agents = {
-                agent =
-                  cachix-deploy-lib.homeManager
-                    {
-                      extraSpecialArgs = { inherit inputs; };
-                    }
-                    {
-                      imports = [
-                        ./hosts/cachix/home.nix
-                      ];
-                    };
-              };
-            };
+      "nix-on-droid" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages."aarch64-linux";
 
-          mkNixvim =
-            system:
-            nixvim.legacyPackages.${system}.makeNixvimWithModule {
-              module = import ./modules/shell/nixvim/standalone.nix;
-              extraSpecialArgs = { inherit inputs; };
-            };
-        in
-        {
-          "x86_64-linux".cachix = mkCachixDeploy "x86_64-linux";
-          "aarch64-linux".cachix = mkCachixDeploy "aarch64-linux";
+        modules = [
+          ./hosts/nix-on-droid/home.nix
+        ];
 
-          "x86_64-linux".nixvim = mkNixvim "x86_64-linux";
-          "aarch64-linux".nixvim = mkNixvim "aarch64-linux";
-          "aarch64-darwin".nixvim = mkNixvim "aarch64-darwin";
-        };
-
-      raspberryImage = self.nixosConfigurations."raspberrypi".config.system.build.sdImage;
+        extraSpecialArgs = {inherit inputs;};
+      };
     };
+
+    nixosConfigurations = {
+      "nixos" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/nixos/configuration.nix
+        ];
+        specialArgs = {inherit inputs;};
+      };
+      "raspberrypi" = nixos-raspberrypi.lib.nixosSystem {
+        modules = [
+          ./hosts/raspberrypi/configuration.nix
+        ];
+        specialArgs = {inherit nixos-raspberrypi inputs;};
+      };
+    };
+
+    nixOnDroidConfigurations = {
+      default = let
+        pkgs = import nixpkgs {system = "aarch64-linux";};
+      in
+        nix-on-droid.lib.nixOnDroidConfiguration {
+          inherit pkgs;
+          modules = [
+            ./hosts/nix-on-droid/configuration.nix
+          ];
+          extraSpecialArgs = {inherit inputs;};
+        };
+    };
+
+    packages = let
+      mkCachixDeploy = system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+        cachix-deploy-lib = cachix-deploy-flake.lib pkgs;
+      in
+        cachix-deploy-lib.spec {
+          agents = {
+            agent =
+              cachix-deploy-lib.homeManager
+              {
+                extraSpecialArgs = {inherit inputs;};
+              }
+              {
+                imports = [
+                  ./hosts/cachix/home.nix
+                ];
+              };
+          };
+        };
+
+      mkNixvim = system:
+        nixvim.legacyPackages.${system}.makeNixvimWithModule {
+          module = import ./modules/shell/nixvim/standalone.nix;
+          extraSpecialArgs = {inherit inputs;};
+        };
+    in {
+      "x86_64-linux".cachix = mkCachixDeploy "x86_64-linux";
+      "aarch64-linux".cachix = mkCachixDeploy "aarch64-linux";
+
+      "x86_64-linux".nixvim = mkNixvim "x86_64-linux";
+      "aarch64-linux".nixvim = mkNixvim "aarch64-linux";
+      "aarch64-darwin".nixvim = mkNixvim "aarch64-darwin";
+    };
+
+    raspberryImage = self.nixosConfigurations."raspberrypi".config.system.build.sdImage;
+  };
 }

@@ -1,6 +1,9 @@
-{ pkgs, lib, config, ... }:
-
 {
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   programs.zsh = {
     syntaxHighlighting.enable = true;
 
@@ -30,16 +33,22 @@
       }
     ];
 
-    initContent = lib.mkOrder 1500 /* bash */ ''
-      function zvm_after_init() {
-        bindkey '^R' fzf-history-widget
-      }
-    '';
+    initContent =
+      lib.mkOrder 1500
+      # bash
+      ''
+        function zvm_after_init() {
+          bindkey '^R' fzf-history-widget
+        }
+      '';
 
-    profileExtra = lib.mkIf config.wayland.windowManager.hyprland.enable /* bash */ ''
-      if uwsm check may-start; then
-          exec uwsm start hyprland-uwsm.desktop
-      fi
-    '';
+    profileExtra =
+      lib.mkIf config.wayland.windowManager.hyprland.enable
+      # bash
+      ''
+        if uwsm check may-start; then
+            exec uwsm start hyprland-uwsm.desktop
+        fi
+      '';
   };
 }

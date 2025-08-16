@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     ./plugins
     ./keymaps.nix
@@ -78,7 +76,8 @@
     {
       event = "TextYankPost";
       desc = "Highlight when yanking (copying) text";
-      callback.__raw = # lua
+      callback.__raw =
+        # lua
         ''
           function()
             vim.highlight.on_yank()
@@ -91,7 +90,8 @@
     FormatDisable = {
       bang = true;
       desc = "Disable autoformat-on-save";
-      command.__raw = # lua
+      command.__raw =
+        # lua
         ''
           function(args)
             if args.bang then
@@ -105,7 +105,8 @@
 
     FormatEnable = {
       desc = "Re-enable autoformat-on-save";
-      command.__raw = # lua
+      command.__raw =
+        # lua
         ''
           function()
             vim.b.disable_autoformat = false
@@ -121,7 +122,8 @@
     csharpier
     imagemagick
     (pkgs.texlive.combine {
-      inherit (pkgs.texlive)
+      inherit
+        (pkgs.texlive)
         scheme-gust
         standalone
         varwidth
@@ -132,6 +134,7 @@
     })
     ghostscript
     sql-formatter
+    alejandra
   ];
 
   extraPlugins = with pkgs.vimPlugins; [
@@ -139,7 +142,8 @@
     blink-cmp-avante
   ];
 
-  extraConfigLua = # lua
+  extraConfigLua =
+    # lua
     ''
       require('mini.statusline').section_location = function()
         return '%2l:%-2v'
@@ -171,7 +175,7 @@
 
       require("vim.treesitter.query").set(
         "json",
-        "highlights", 
+        "highlights",
         [[
           (true) @boolean
           (false) @boolean

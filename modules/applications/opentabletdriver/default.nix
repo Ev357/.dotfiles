@@ -1,6 +1,8 @@
-{ lib, config, ... }:
-
 {
+  lib,
+  config,
+  ...
+}: {
   options.modules.applications.opentabletdriver = {
     enable = lib.mkEnableOption "enables opentabletdriver";
   };

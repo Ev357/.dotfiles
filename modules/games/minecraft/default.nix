@@ -1,6 +1,9 @@
-{ lib, config, pkgs, ... }:
-
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   options.modules.games.minecraft = {
     enable = lib.mkEnableOption "enables minecraft";
   };

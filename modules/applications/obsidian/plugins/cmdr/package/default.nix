@@ -1,5 +1,8 @@
-{ lib, pkgs, ... }:
-
+{
+  lib,
+  pkgs,
+  ...
+}:
 pkgs.buildNpmPackage rec {
   pname = "cmdr";
   version = "0.5.4";
@@ -13,15 +16,19 @@ pkgs.buildNpmPackage rec {
 
   npmDepsHash = "sha256-Gr3PzgSY4Tae6PWMvCsLtzcQu9SO8UUy2rU+8tWQbOs=";
 
-  postPatch = /* bash */ ''
-    cp ${./package.json} package.json
-    cp ${./package-lock.json} package-lock.json
-  '';
+  postPatch =
+    # bash
+    ''
+      cp ${./package.json} package.json
+      cp ${./package-lock.json} package-lock.json
+    '';
 
-  installPhase = /* bash */ ''
-    mkdir -p $out/
-    cp main.js manifest.json styles.css $out/
-  '';
+  installPhase =
+    # bash
+    ''
+      mkdir -p $out/
+      cp main.js manifest.json styles.css $out/
+    '';
 
   meta = {
     description = "Customize your workspace by adding commands everywhere, create Macros and supercharge your mobile toolbar.";

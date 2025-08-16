@@ -1,5 +1,9 @@
-{ stdenv, lib, pkgs, ... }:
-
+{
+  stdenv,
+  lib,
+  pkgs,
+  ...
+}:
 stdenv.mkDerivation rec {
   pname = "obsidian-git";
   version = "2.34.0";
@@ -16,18 +20,22 @@ stdenv.mkDerivation rec {
     pnpm.configHook
   ];
 
-  buildPhase = /* bash */ ''
-    runHook preBuild
+  buildPhase =
+    # bash
+    ''
+      runHook preBuild
 
-    pnpm run build
+      pnpm run build
 
-    runHook postBuild
-  '';
+      runHook postBuild
+    '';
 
-  installPhase = /* bash */ ''
-    mkdir -p $out/
-    cp main.js manifest.json styles.css $out/
-  '';
+  installPhase =
+    # bash
+    ''
+      mkdir -p $out/
+      cp main.js manifest.json styles.css $out/
+    '';
 
   pnpmDeps = pkgs.pnpm.fetchDeps {
     fetcherVersion = 2;

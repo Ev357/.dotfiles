@@ -3,9 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-
-{
+}: {
   imports = [
     ../../nixosModules
     ./hardware-configuration.nix
@@ -22,7 +20,7 @@
       };
       efi.canTouchEfiVariables = true;
     };
-    binfmt.emulatedSystems = [ "aarch64-linux" ];
+    binfmt.emulatedSystems = ["aarch64-linux"];
   };
 
   modules = {
@@ -50,7 +48,7 @@
 
     xserver = {
       xkb.layout = "cz";
-      videoDrivers = [ "amdgpu" ];
+      videoDrivers = ["amdgpu"];
     };
   };
 

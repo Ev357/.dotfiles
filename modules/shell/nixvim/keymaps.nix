@@ -45,12 +45,12 @@
     }
 
     {
-      mode = [ "n" "v" ];
+      mode = ["n" "v"];
       key = "<S-Up>";
       action = "k";
     }
     {
-      mode = [ "n" "v" ];
+      mode = ["n" "v"];
       key = "<S-Down>";
       action = "j";
     }

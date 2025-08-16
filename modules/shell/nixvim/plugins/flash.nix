@@ -5,43 +5,53 @@
 
   keymaps = [
     {
-      mode = [ "n" "x" "o" ];
+      mode = ["n" "x" "o"];
       key = "s";
-      action.__raw = /*lua*/ ''
-        require("flash").jump
-      '';
+      action.__raw =
+        # lua
+        ''
+          require("flash").jump
+        '';
       options.desc = "Flash";
     }
     {
-      mode = [ "n" "x" "o" ];
+      mode = ["n" "x" "o"];
       key = "S";
-      action.__raw = /*lua*/ ''
-        require("flash").treesitter
-      '';
+      action.__raw =
+        # lua
+        ''
+          require("flash").treesitter
+        '';
       options.desc = "Flash Treesitter";
     }
     {
       mode = "o";
       key = "r";
-      action.__raw = /*lua*/ ''
-        require("flash").remote
-      '';
+      action.__raw =
+        # lua
+        ''
+          require("flash").remote
+        '';
       options.desc = "Remote Flash";
     }
     {
-      mode = [ "o" "x" ];
+      mode = ["o" "x"];
       key = "R";
-      action.__raw = /*lua*/ ''
-        require("flash").treesitter_search
-      '';
+      action.__raw =
+        # lua
+        ''
+          require("flash").treesitter_search
+        '';
       options.desc = "Treesitter Search";
     }
     {
       mode = "c";
       key = "<c-s>";
-      action.__raw = /*lua*/ ''
-        require("flash").toggle
-      '';
+      action.__raw =
+        # lua
+        ''
+          require("flash").toggle
+        '';
       options.desc = "Toggle Flash Search";
     }
   ];

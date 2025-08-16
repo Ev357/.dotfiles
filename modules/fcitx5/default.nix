@@ -3,9 +3,7 @@
   lib,
   config,
   ...
-}:
-
-{
+}: {
   imports = [
     ./patch
   ];
@@ -34,7 +32,8 @@
     };
 
     gtk = {
-      gtk2.extraConfig = # ini
+      gtk2.extraConfig =
+        # ini
         ''
           gtk-im-module="fcitx"
         '';

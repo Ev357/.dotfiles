@@ -4,7 +4,7 @@
       {
         __unkeyed = "<leader>c";
         group = "[C]ode";
-        mode = [ "n" "x" ];
+        mode = ["n" "x"];
       }
       {
         __unkeyed = "<leader>r";
@@ -21,7 +21,7 @@
       {
         __unkeyed = "<leader>h";
         group = "Git [H]unk";
-        mode = [ "n" "v" ];
+        mode = ["n" "v"];
       }
     ];
   };

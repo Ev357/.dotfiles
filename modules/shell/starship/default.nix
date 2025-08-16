@@ -1,6 +1,8 @@
-{ lib, config, ... }:
-
 {
+  lib,
+  config,
+  ...
+}: {
   config = lib.mkIf config.programs.starship.enable {
     programs.starship = {
       enableZshIntegration = true;

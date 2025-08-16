@@ -1,6 +1,8 @@
-{ lib, config, ... }:
-
 {
+  lib,
+  config,
+  ...
+}: {
   imports = [
     ./chromium
     ./ghostty
@@ -42,7 +44,7 @@
 
     services.gnome-keyring = {
       enable = lib.mkDefault true;
-      components = [ "secrets" ];
+      components = ["secrets"];
     };
   };
 }

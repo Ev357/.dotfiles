@@ -1,9 +1,11 @@
-{ config, lib, ... }:
-
 {
+  config,
+  lib,
+  ...
+}: {
   config = lib.mkIf config.services.traefik.enable {
     services.traefik = {
-      environmentFiles = [ "/etc/traefik/secrets/traefik.env" ];
+      environmentFiles = ["/etc/traefik/secrets/traefik.env"];
       staticConfigOptions = {
         entryPoints = {
           web = {
@@ -80,37 +82,37 @@
           services = {
             jellyfin = {
               loadBalancer.servers = [
-                { url = "http://localhost:8096"; }
+                {url = "http://localhost:8096";}
               ];
             };
 
             nextcloud = {
               loadBalancer.servers = [
-                { url = "http://localhost:3080"; }
+                {url = "http://localhost:3080";}
               ];
             };
 
             vaultwarden = {
               loadBalancer.servers = [
-                { url = "http://localhost:8222"; }
+                {url = "http://localhost:8222";}
               ];
             };
 
             traefik = {
               loadBalancer.servers = [
-                { url = "http://localhost:8080"; }
+                {url = "http://localhost:8080";}
               ];
             };
 
             home-assistant = {
               loadBalancer.servers = [
-                { url = "http://localhost:8123"; }
+                {url = "http://localhost:8123";}
               ];
             };
 
             forgejo = {
               loadBalancer.servers = [
-                { url = "http://localhost:3081"; }
+                {url = "http://localhost:3081";}
               ];
             };
           };
@@ -118,6 +120,6 @@
       };
     };
 
-    networking.firewall.allowedTCPPorts = [ 8080 80 443 ];
+    networking.firewall.allowedTCPPorts = [8080 80 443];
   };
 }

@@ -24,6 +24,6 @@
       };
     };
 
-    extensions = [ "catppuccin" ];
+    extensions = ["catppuccin"];
   };
 }

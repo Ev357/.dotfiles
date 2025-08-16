@@ -1,7 +1,7 @@
 {
   programs.chromium = {
     extensions = [
-      { id = "ddkjiahejlhfcafbddmgiahcphecmpfh"; }
+      {id = "ddkjiahejlhfcafbddmgiahcphecmpfh";}
     ];
   };
 }

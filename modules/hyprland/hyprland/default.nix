@@ -1,9 +1,11 @@
-{ lib, config, pkgs, ... }:
-
-let
-  cfg = config.wayland.windowManager.hyprland;
-in
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
+  cfg = config.wayland.windowManager.hyprland;
+in {
   imports = [
     ./patch
     ./settings.nix

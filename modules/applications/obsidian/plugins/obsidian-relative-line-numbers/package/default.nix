@@ -1,5 +1,8 @@
-{ lib, pkgs, ... }:
-
+{
+  lib,
+  pkgs,
+  ...
+}:
 pkgs.buildNpmPackage rec {
   pname = "obsidian-relative-line-numbers";
   version = "3.1.0";
@@ -11,16 +14,20 @@ pkgs.buildNpmPackage rec {
     sha256 = "sha256-ZBfBWmAIuaJlD4VKLn/2k0jWtzI5j+ewsSzpjJaCnAY=";
   };
 
-  postPatch = /* bash */ ''
-    cp ${./package-lock.json} package-lock.json
-  '';
+  postPatch =
+    # bash
+    ''
+      cp ${./package-lock.json} package-lock.json
+    '';
 
   npmDepsHash = "sha256-asv7sRJi7kjsyHhXbdxrTD+KnxRhhEUSOVT8CmGcOg8=";
 
-  installPhase = /* bash */ ''
-    mkdir -p $out/
-    cp main.js manifest.json styles.css $out/
-  '';
+  installPhase =
+    # bash
+    ''
+      mkdir -p $out/
+      cp main.js manifest.json styles.css $out/
+    '';
 
   meta = {
     description = "Enables relative line numbers in editor mode";

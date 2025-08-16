@@ -1,6 +1,9 @@
-{ lib, config, pkgs, ... }:
-
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./minecraft
     ./osu
@@ -19,9 +22,10 @@
     home.packages = with pkgs; [
       lunar-client
       (heroic.override {
-        extraPkgs = pkgs: with pkgs; [
-          gamescope
-        ];
+        extraPkgs = pkgs:
+          with pkgs; [
+            gamescope
+          ];
       })
       lutris
 

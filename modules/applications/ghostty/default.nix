@@ -1,6 +1,9 @@
-{ pkgs, inputs, lib, ... }:
-
 {
+  pkgs,
+  inputs,
+  lib,
+  ...
+}: {
   programs.ghostty = {
     package = lib.mkDefault inputs.ghostty.packages.${pkgs.system}.default;
     settings = {

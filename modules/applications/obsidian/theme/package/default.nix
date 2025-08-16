@@ -1,5 +1,8 @@
-{ lib, pkgs, ... }:
-
+{
+  lib,
+  pkgs,
+  ...
+}:
 pkgs.buildNpmPackage rec {
   pname = "catppuccin-obsidian";
   version = "2.0.3";
@@ -13,11 +16,13 @@ pkgs.buildNpmPackage rec {
 
   npmDepsHash = "sha256-Tj5zgt2DxKmNCKPPLqfCylKGtHuofU3GJNaRjQWe5FE=";
 
-  installPhase = /* bash */ ''
-    mkdir -p $out/
-    cp manifest.json $out/
-    cp dist/catppuccin.css $out/theme.css
-  '';
+  installPhase =
+    # bash
+    ''
+      mkdir -p $out/
+      cp manifest.json $out/
+      cp dist/catppuccin.css $out/theme.css
+    '';
 
   meta = {
     description = "Catppuccin for Obsidian";

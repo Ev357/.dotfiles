@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
     ./patch
   ];
@@ -32,11 +35,14 @@
 
       nginx.virtualHosts.${config.services.nextcloud.hostName} = {
         listen = [
-          { addr = "0.0.0.0"; port = 3080; }
+          {
+            addr = "0.0.0.0";
+            port = 3080;
+          }
         ];
       };
     };
 
-    networking.firewall.allowedTCPPorts = [ 3080 ];
+    networking.firewall.allowedTCPPorts = [3080];
   };
 }

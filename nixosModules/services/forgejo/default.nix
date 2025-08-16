@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   cfg = config.services.forgejo;
   srv = cfg.settings.server;
 
@@ -9,8 +12,7 @@ let
     sha256 = "sha256-rZHLORwLUfIFcB6K9yhrzr+UwdPNQVSadsw6rg8Q7gs=";
     stripRoot = false;
   };
-in
-{
+in {
   config = lib.mkIf config.services.forgejo.enable {
     services.forgejo = {
       database.type = "postgres";
@@ -33,12 +35,15 @@ in
       };
     };
 
-    systemd.services.forgejo.preStart = lib.mkAfter /* bash */ ''
-      rm -rf ${cfg.stateDir}/custom/public/assets
-      mkdir -p ${cfg.stateDir}/custom/public/assets
-      ln -sf ${theme} ${cfg.stateDir}/custom/public/assets/css
-    '';
+    systemd.services.forgejo.preStart =
+      lib.mkAfter
+      # bash
+      ''
+        rm -rf ${cfg.stateDir}/custom/public/assets
+        mkdir -p ${cfg.stateDir}/custom/public/assets
+        ln -sf ${theme} ${cfg.stateDir}/custom/public/assets/css
+      '';
 
-    networking.firewall.allowedTCPPorts = [ srv.HTTP_PORT ];
+    networking.firewall.allowedTCPPorts = [srv.HTTP_PORT];
   };
 }

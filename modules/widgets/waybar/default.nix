@@ -1,6 +1,8 @@
-{ config, lib, ... }:
-
 {
+  config,
+  lib,
+  ...
+}: {
   config = lib.mkIf config.programs.waybar.enable {
     programs.waybar = {
       settings = {
@@ -9,9 +11,9 @@
 
           layer = "top";
           position = "top";
-          modules-left = [ "hyprland/workspaces" ];
-          modules-center = [ "cava" ];
-          modules-right = [ "power-profiles-daemon" "battery" "tray" "clock" ];
+          modules-left = ["hyprland/workspaces"];
+          modules-center = ["cava"];
+          modules-right = ["power-profiles-daemon" "battery" "tray" "clock"];
 
           margin-top = 10;
           margin-left = 10;
@@ -36,7 +38,7 @@
             bar_delimiter = 0;
             monstercat = true;
             waves = true;
-            format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
+            format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
           };
 
           power-profiles-daemon = {
@@ -53,7 +55,7 @@
           battery = {
             format-charging = "󰂄";
             format = "{icon}";
-            format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+            format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
             tooltip-format = "{capacity}%";
           };
 
@@ -76,10 +78,6 @@
       style = builtins.readFile ./style.css;
     };
 
-
     xdg.configFile."waybar/macchiato.css".text = builtins.readFile ./macchiato.css;
   };
 }
-
-
-

@@ -1,6 +1,9 @@
-{ nixos-raspberrypi, config, pkgs, ... }:
-
 {
+  nixos-raspberrypi,
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     nixos-raspberrypi.nixosModules.raspberry-pi-5.base
     nixos-raspberrypi.nixosModules.sd-image
@@ -52,12 +55,12 @@
   users = {
     users."evest" = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "media" ];
+      extraGroups = ["wheel" "networkmanager" "media"];
       shell = pkgs.zsh;
       initialPassword = "12345678";
     };
     groups = {
-      media = { };
+      media = {};
     };
   };
 
@@ -73,18 +76,16 @@
   fileSystems."/data" = {
     device = "/dev/nvme0n1";
     fsType = "btrfs";
-    options = [ "compress=zstd" "noatime" ];
+    options = ["compress=zstd" "noatime"];
   };
 
-  system.nixos.tags =
-    let
-      cfg = config.boot.loader.raspberryPi;
-    in
-    [
-      "raspberry-pi-${cfg.variant}"
-      cfg.bootloader
-      config.boot.kernelPackages.kernel.version
-    ];
+  system.nixos.tags = let
+    cfg = config.boot.loader.raspberryPi;
+  in [
+    "raspberry-pi-${cfg.variant}"
+    cfg.bootloader
+    config.boot.kernelPackages.kernel.version
+  ];
 
   system.stateVersion = config.system.nixos.release;
 }

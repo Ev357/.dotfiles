@@ -1,10 +1,6 @@
-{ config, ... }:
-
-let
+{config, ...}: let
   cfg = config.wayland.windowManager.hyprland;
-in
-
-{
+in {
   programs.hyprlock.settings = {
     "source" = "$HOME/.config/hypr/hyprland/colors.conf";
 

@@ -1,6 +1,8 @@
-{ lib, config, ... }:
-
 {
+  lib,
+  config,
+  ...
+}: {
   options.modules.hyprland.hyprcursor = {
     enable = lib.mkEnableOption "enables hyprcursor";
   };

@@ -1,5 +1,8 @@
-{ lib, pkgs, ... }:
-
+{
+  lib,
+  pkgs,
+  ...
+}:
 pkgs.buildNpmPackage rec {
   pname = "obsidian-hider";
   version = "1.5.1";
@@ -13,14 +16,18 @@ pkgs.buildNpmPackage rec {
 
   npmDepsHash = "sha256-8PCGvttYFOvJL8MOaRvBbVpqVjdjsnxIWYFeJTTGYQM=";
 
-  postPatch = /* bash */ ''
-    cp ${./package-lock.json} package-lock.json
-  '';
+  postPatch =
+    # bash
+    ''
+      cp ${./package-lock.json} package-lock.json
+    '';
 
-  installPhase = /* bash */ ''
-    mkdir -p $out/
-    cp main.js manifest.json styles.css $out/
-  '';
+  installPhase =
+    # bash
+    ''
+      mkdir -p $out/
+      cp main.js manifest.json styles.css $out/
+    '';
 
   meta = {
     description = "Hide UI elements such as tooltips, status, titlebar and more";

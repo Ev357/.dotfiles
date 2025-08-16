@@ -3,8 +3,7 @@ let
   settings = nixConfig.nix.settings;
 
   experimentalFeatures = builtins.concatStringsSep " " settings.experimental-features;
-in
-{
+in {
   nix = {
     extraOptions = ''
       experimental-features = ${experimentalFeatures}

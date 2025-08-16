@@ -1,6 +1,9 @@
-{ pkgs, lib, config, ... }:
-
 {
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   imports = [
     ./theme.nix
   ];
@@ -11,17 +14,17 @@
       keymap = {
         mgr.prepend_keymap = [
           {
-            on = [ "g" "c" ];
-            run = [ "cd ~/.config" "hidden show" ];
+            on = ["g" "c"];
+            run = ["cd ~/.config" "hidden show"];
             desc = "Goto ~/.config";
           }
           {
-            on = [ "g" "w" ];
+            on = ["g" "w"];
             run = "cd ~/work";
             desc = "Goto ~/work";
           }
           {
-            on = [ "c" "a" ];
+            on = ["c" "a"];
             run = "plugin compress";
             desc = "Archive selected files";
           }

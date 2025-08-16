@@ -1,13 +1,14 @@
-{ config, lib, ... }:
-
-let
-  cfg = config.services.anki-sync-server;
-in
 {
+  config,
+  lib,
+  ...
+}: let
+  cfg = config.services.anki-sync-server;
+in {
   options.services.anki-sync-server = {
     environment = lib.mkOption {
       type = lib.types.attrsOf lib.types.str;
-      default = { };
+      default = {};
       description = "Additional environment variables.";
     };
   };

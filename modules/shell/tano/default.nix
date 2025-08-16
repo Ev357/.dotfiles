@@ -1,9 +1,7 @@
-{ inputs, ... }:
-
-{
+{inputs, ...}: {
   imports = [
     inputs.tano.homeManagerModules.default
   ];
 
-  programs.tuisic = { };
+  programs.tuisic = {};
 }

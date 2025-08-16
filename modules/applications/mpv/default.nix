@@ -1,6 +1,9 @@
-{ lib, config, pkgs, ... }:
-
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   options.modules.applications.mpv = {
     enable = lib.mkEnableOption "enables mpv";
   };

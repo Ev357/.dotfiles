@@ -1,7 +1,7 @@
 {
   nix = {
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = ["nix-command" "flakes"];
       extra-substituters = [
         "https://ev357.cachix.org"
         "https://nix-community.cachix.org"

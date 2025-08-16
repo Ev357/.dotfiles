@@ -1,9 +1,10 @@
-{ lib, config, ... }:
-
-let
-  cfg = config.wayland.windowManager.hyprland;
-in
 {
+  lib,
+  config,
+  ...
+}: let
+  cfg = config.wayland.windowManager.hyprland;
+in {
   options.wayland.windowManager.hyprland = {
     mainMonitorName = lib.mkOption {
       type = lib.types.str;
@@ -17,17 +18,16 @@ in
     };
     environmentVariables = lib.mkOption {
       type = lib.types.attrsOf lib.types.str;
-      default = { };
+      default = {};
       description = "Environment variables to export in uwsm/env config file";
     };
   };
 
   config = lib.mkIf cfg.enable {
-    xdg.configFile."uwsm/env".text =
-      let
-        envVars = cfg.environmentVariables;
-        exportLines = lib.mapAttrsToList (name: value: "export ${name}=\"${value}\"") envVars;
-      in
+    xdg.configFile."uwsm/env".text = let
+      envVars = cfg.environmentVariables;
+      exportLines = lib.mapAttrsToList (name: value: "export ${name}=\"${value}\"") envVars;
+    in
       lib.concatStringsSep "\n" exportLines + "\n";
   };
 }

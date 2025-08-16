@@ -9,9 +9,11 @@
     {
       mode = "n";
       key = "<leader>u";
-      action.__raw = /*lua*/ ''
-        vim.cmd.UndotreeToggle
-      '';
+      action.__raw =
+        # lua
+        ''
+          vim.cmd.UndotreeToggle
+        '';
       options.desc = "[U]ndo tree";
     }
   ];

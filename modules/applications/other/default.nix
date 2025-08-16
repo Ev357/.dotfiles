@@ -3,17 +3,14 @@
   config,
   pkgs,
   ...
-}:
-
-{
+}: {
   options.modules.applications.other = {
     enable = lib.mkEnableOption "enables other applications";
     disableOpenGLApps = lib.mkEnableOption "disables OpenGL applications.";
   };
 
   config = lib.mkIf config.modules.applications.other.enable {
-    home.packages =
-      with pkgs;
+    home.packages = with pkgs;
       [
         loupe
         fragments

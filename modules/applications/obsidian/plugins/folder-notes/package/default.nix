@@ -1,5 +1,8 @@
-{ lib, pkgs, ... }:
-
+{
+  lib,
+  pkgs,
+  ...
+}:
 pkgs.buildNpmPackage rec {
   pname = "folder-notes";
   version = "1.8.5-2-beta";
@@ -16,11 +19,13 @@ pkgs.buildNpmPackage rec {
 
   npmBuildScript = "fn-build";
 
-  installPhase = /* bash */ ''
-    mkdir -p $out/
-    cp main.js styles.css $out/
-    cp manifest-beta.json $out/manifest.json
-  '';
+  installPhase =
+    # bash
+    ''
+      mkdir -p $out/
+      cp main.js styles.css $out/
+      cp manifest-beta.json $out/manifest.json
+    '';
 
   env = {
     ELECTRON_SKIP_BINARY_DOWNLOAD = 1;

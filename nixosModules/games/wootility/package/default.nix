@@ -1,5 +1,4 @@
-{ stdenv, ... }:
-
+{stdenv, ...}:
 stdenv.mkDerivation {
   name = "wooting-udev-rules";
 
@@ -8,8 +7,10 @@ stdenv.mkDerivation {
   dontBuild = true;
   dontConfigure = true;
 
-  installPhase = /* bash */ ''
-    mkdir -p $out/lib/udev/rules.d
-    cp 70-wooting.rules $out/lib/udev/rules.d/
-  '';
+  installPhase =
+    # bash
+    ''
+      mkdir -p $out/lib/udev/rules.d
+      cp 70-wooting.rules $out/lib/udev/rules.d/
+    '';
 }

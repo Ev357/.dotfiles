@@ -1,9 +1,7 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.obsidian.defaultSettings.themes = [
     {
-      pkg = pkgs.callPackage ./package { };
+      pkg = pkgs.callPackage ./package {};
     }
   ];
 }

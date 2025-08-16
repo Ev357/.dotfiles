@@ -28,7 +28,7 @@
         showInlineTitle = false;
       };
       hotkeys = {
-        "editor:delete-paragraph" = [ ];
+        "editor:delete-paragraph" = [];
       };
       cssSnippets = [
         {

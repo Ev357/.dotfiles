@@ -1,9 +1,10 @@
-{ config, pkgs, ... }:
-
-let
-  cfg = config.wayland.windowManager.hyprland;
-in
 {
+  config,
+  pkgs,
+  ...
+}: let
+  cfg = config.wayland.windowManager.hyprland;
+in {
   wayland.windowManager.hyprland.settings = {
     source = "~/.config/hypr/hyprland/colors.conf";
 
@@ -38,7 +39,7 @@ in
     animations = {
       enabled = "yes, please :)";
 
-      bezier = [ "easeOutQuint,0.23,1,0.32,1" "easeInOutCubic,0.65,0.05,0.36,1" "linear,0,0,1,1" "almostLinear,0.5,0.5,0.75,1.0" "quick,0.15,0,0.1,1" ];
+      bezier = ["easeOutQuint,0.23,1,0.32,1" "easeInOutCubic,0.65,0.05,0.36,1" "linear,0,0,1,1" "almostLinear,0.5,0.5,0.75,1.0" "quick,0.15,0,0.1,1"];
 
       animation = [
         "global, 1, 10, default"
@@ -172,7 +173,7 @@ in
       ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
     ];
 
-    windowrulev2 = [ "suppressevent maximize, class:.*" "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0" ];
+    windowrulev2 = ["suppressevent maximize, class:.*" "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"];
 
     "debug:disable_logs" = false;
   };

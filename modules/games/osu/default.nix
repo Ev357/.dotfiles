@@ -1,6 +1,10 @@
-{ lib, config, pkgs, inputs, ... }:
-
 {
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   options.modules.games.osu = {
     enable = lib.mkEnableOption "enables osu";
     noInstall = lib.mkEnableOption "doesn't install osu";

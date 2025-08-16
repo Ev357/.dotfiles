@@ -1,5 +1,8 @@
-{ lib, pkgs, ... }:
-
+{
+  lib,
+  pkgs,
+  ...
+}:
 pkgs.buildNpmPackage rec {
   pname = "obsidian-vim-yank-highlight";
   version = "1.0.8";
@@ -13,10 +16,12 @@ pkgs.buildNpmPackage rec {
 
   npmDepsHash = "sha256-qFfX55HWRkLlJyKbbWwB1sV253YxblnR/1BORT22sns=";
 
-  installPhase = /* bash */ ''
-    mkdir -p $out/
-    cp main.js manifest.json styles.css $out/
-  '';
+  installPhase =
+    # bash
+    ''
+      mkdir -p $out/
+      cp main.js manifest.json styles.css $out/
+    '';
 
   meta = {
     description = "Highlight yanked text in Vim mode. Enjoy that subtle animation you've missed so much.";

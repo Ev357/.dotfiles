@@ -1,6 +1,4 @@
-{ lib, ... }:
-
-{
+{lib, ...}: {
   options = {
     configNames = {
       homeManager = lib.mkOption {

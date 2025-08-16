@@ -1,5 +1,8 @@
-{ lib, pkgs, ... }:
-
+{
+  lib,
+  pkgs,
+  ...
+}:
 pkgs.buildNpmPackage rec {
   pname = "obsidian-excalidraw-plugin";
   version = "2.12.4";
@@ -15,10 +18,12 @@ pkgs.buildNpmPackage rec {
 
   npmBuildScript = "build:all";
 
-  installPhase = /* bash */ ''
-    mkdir -p $out/
-    cp dist/main.js dist/manifest.json dist/styles.css $out/
-  '';
+  installPhase =
+    # bash
+    ''
+      mkdir -p $out/
+      cp dist/main.js dist/manifest.json dist/styles.css $out/
+    '';
 
   meta = {
     description = "An Obsidian plugin to edit and view Excalidraw drawings";

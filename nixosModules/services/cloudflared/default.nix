@@ -1,7 +1,5 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   services.cloudflared = {
-    package = pkgs.callPackage ./package { };
+    package = pkgs.callPackage ./package {};
   };
 }
