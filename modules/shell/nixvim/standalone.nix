@@ -27,7 +27,6 @@
     };
     inccommand = "split";
     scrolloff = 16;
-    conceallevel = 2;
   };
   globals = {
     mapleader = " ";
@@ -171,26 +170,6 @@
       require('dap').listeners.after.event_initialized['dapui_config'] = require('dapui').open
       require('dap').listeners.before.event_terminated['dapui_config'] = require('dapui').close
       require('dap').listeners.before.event_exited['dapui_config'] = require('dapui').close
-
-      require("vim.treesitter.query").set(
-        "json",
-        "highlights",
-        [[
-          (true) @boolean
-          (false) @boolean
-          (null) @constant.builtin
-          (number) @number
-          (pair key: (string) @label)
-          (pair value: (string) @string)
-          (array (string) @string)
-          (ERROR) @error
-          "," @punctuation.delimiter
-          "[" @punctuation.bracket
-          "]" @punctuation.bracket
-          "{" @punctuation.bracket
-          "}" @punctuation.bracket
-        ]]
-      )
 
       local hover = vim.lsp.buf.hover
       vim.lsp.buf.hover = function()
