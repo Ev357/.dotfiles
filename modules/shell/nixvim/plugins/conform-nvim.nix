@@ -21,12 +21,12 @@
             if vim.fs.find({
               '.prettierrc',
             }, { upward = true, stop = vim.loop.os_homedir() })[1] then
-              return { 'prettierd', 'biome' }
+              return { 'prettierd', 'biome', lsp_format = 'fallback', stop_after_first = true }
             end
             return formatters
           end
 
-          for _, lang in ipairs { 'javascript', 'typescript', 'vue', 'css', 'scss', 'json', 'typescriptreact', 'yaml' } do
+          for _, lang in ipairs { 'javascript', 'typescript', 'vue', 'css', 'scss', 'json', 'jsonc', 'typescriptreact', 'yaml' } do
             config[lang] = reorder_formatters()
             config[lang].stop_after_first = true
           end
