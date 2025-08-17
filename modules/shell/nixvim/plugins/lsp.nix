@@ -41,7 +41,7 @@
 
         settings = {
           nixpkgs.expr = "import <nixpkgs> {}";
-          formatting.command = ["alejandra"];
+          formatting.command = ["nix" "fmt" "--" "--"];
           options = {
             nixos = {
               expr =

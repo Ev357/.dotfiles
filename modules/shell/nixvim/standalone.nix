@@ -134,7 +134,6 @@
     })
     ghostscript
     sql-formatter
-    alejandra
   ];
 
   extraPlugins = with pkgs.vimPlugins; [

@@ -8,7 +8,6 @@
             lua = { 'stylua' },
             arduino = { 'clang-format' },
             cs = { 'csharpier' },
-            nix = { 'alejandra' },
             html = { 'prettierd' },
             htmlangular = { 'prettierd' },
             markdown = { 'injected' },

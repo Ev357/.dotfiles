@@ -146,6 +146,14 @@
         };
     };
 
+    formatter = let
+      mkFormatter = system: nixpkgs.legacyPackages.${system}.alejandra;
+    in {
+      "x86_64-linux" = mkFormatter "x86_64-linux";
+      "aarch64-linux" = mkFormatter "aarch64-linux";
+      "aarch64-darwin" = mkFormatter "aarch64-darwin";
+    };
+
     packages = let
       mkCachixDeploy = system: let
         pkgs = nixpkgs.legacyPackages.${system};
