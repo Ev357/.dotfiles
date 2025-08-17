@@ -21,7 +21,7 @@
             if vim.fs.find({
               '.prettierrc',
             }, { upward = true, stop = vim.loop.os_homedir() })[1] then
-              return { 'prettierd', 'biome', lsp_format = 'fallback', stop_after_first = true }
+              return { 'prettierd', 'biome', lsp_format = 'fallback' }
             end
             return formatters
           end
