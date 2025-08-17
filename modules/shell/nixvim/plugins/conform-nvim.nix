@@ -8,6 +8,7 @@
             lua = { 'stylua' },
             arduino = { 'clang-format' },
             cs = { 'csharpier' },
+            nix = { 'nix' },
             html = { 'prettierd' },
             htmlangular = { 'prettierd' },
             markdown = { 'injected' },
@@ -52,6 +53,14 @@
           return { timeout_ms = 10000, lsp_format = lsp_format_opt }
         end
       '';
+
+    formatters = {
+      nix = {
+        command = "nix";
+        args = ["fmt" "$FILENAME"];
+        stdin = false;
+      };
+    };
   };
 
   keymaps = [
