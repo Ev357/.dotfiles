@@ -25,6 +25,7 @@
       omnisharp.enable = true;
       tinymist.enable = true;
       sqls.enable = true;
+      eslint.enable = true;
 
       rust_analyzer = {
         enable = true;
