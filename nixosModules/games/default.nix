@@ -40,5 +40,11 @@
     };
 
     security.rtkit.enable = lib.mkDefault true;
+
+    nixpkgs.overlays = [
+      (final: prev: {
+        mesa = inputs.working-mesa-nixpkgs.legacyPackages.${prev.system}.mesa;
+      })
+    ];
   };
 }
