@@ -29,5 +29,18 @@ in {
       exportLines = lib.mapAttrsToList (name: value: "export ${name}=\"${value}\"") envVars;
     in
       lib.concatStringsSep "\n" exportLines + "\n";
+
+    nixpkgs.overlays = [
+      (final: prev: {
+        hyprshot = prev.hyprshot.overrideAttrs {
+          src = prev.fetchFromGitHub {
+            owner = "Gustash";
+            repo = "hyprshot";
+            rev = "f95068db7765b85a2bbae0f083e29074d7bee027";
+            hash = "sha256-9vsBNe6qTvbw2rgf1y5MIxN1eZzdCtimMvEXF8M36cQ=";
+          };
+        };
+      })
+    ];
   };
 }
