@@ -35,6 +35,7 @@
     nix-ld.enable = true;
     light.enable = true;
     virt-manager.enable = true;
+    winbox.enable = true;
   };
 
   services = {

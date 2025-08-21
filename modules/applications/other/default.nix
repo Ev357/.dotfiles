@@ -21,6 +21,7 @@
         gnome-console
         bitwarden-desktop
         dbeaver-bin
+        winbox4
       ]
       ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [
         krita
