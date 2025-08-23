@@ -124,30 +124,32 @@
     nixosConfigurations = {
       "nixos" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+
         modules = [
           ./hosts/nixos/configuration.nix
         ];
         specialArgs = {inherit inputs;};
       };
+
       "raspberrypi" = nixos-raspberrypi.lib.nixosSystem {
         modules = [
           ./hosts/raspberrypi/configuration.nix
         ];
+
         specialArgs = {inherit nixos-raspberrypi inputs;};
       };
     };
 
     nixOnDroidConfigurations = {
-      default = let
-        pkgs = import nixpkgs {system = "aarch64-linux";};
-      in
-        nix-on-droid.lib.nixOnDroidConfiguration {
-          inherit pkgs;
-          modules = [
-            ./hosts/nix-on-droid/configuration.nix
-          ];
-          extraSpecialArgs = {inherit inputs;};
-        };
+      default = nix-on-droid.lib.nixOnDroidConfiguration {
+        pkgs = nixpkgs.legacyPackages."aarch64-linux";
+
+        modules = [
+          ./hosts/nix-on-droid/configuration.nix
+        ];
+
+        extraSpecialArgs = {inherit inputs;};
+      };
     };
 
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
