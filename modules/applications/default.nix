@@ -6,6 +6,7 @@
   imports = [
     ./chromium
     ./ghostty
+    ./hayase
     ./mpv
     ./rofi
     ./zed-editor
@@ -26,6 +27,7 @@
         other.enable = lib.mkDefault true;
         mpv.enable = lib.mkDefault true;
         opentabletdriver.enable = lib.mkDefault true;
+        hayase.enable = lib.mkDefault true;
       };
 
       electron-flags.enable = true;
