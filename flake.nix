@@ -76,7 +76,9 @@
     home-manager,
     nixvim,
     ...
-  } @ inputs: {
+  } @ inputs: let
+    forAllSystems = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed;
+  in {
     homeConfigurations = {
       "evest@nixos" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
@@ -148,47 +150,31 @@
         };
     };
 
-    formatter = let
-      mkFormatter = system: nixpkgs.legacyPackages.${system}.alejandra;
+    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+
+    packages = forAllSystems (system: let
+      cachix-deploy-lib = cachix-deploy-flake.lib nixpkgs.legacyPackages.${system};
     in {
-      "x86_64-linux" = mkFormatter "x86_64-linux";
-      "aarch64-linux" = mkFormatter "aarch64-linux";
-      "aarch64-darwin" = mkFormatter "aarch64-darwin";
-    };
+      nixvim = nixvim.legacyPackages.${system}.makeNixvimWithModule {
+        module = import ./modules/shell/nixvim/standalone.nix;
+        extraSpecialArgs = {inherit inputs system;};
+      };
 
-    packages = let
-      mkCachixDeploy = system: let
-        pkgs = nixpkgs.legacyPackages.${system};
-        cachix-deploy-lib = cachix-deploy-flake.lib pkgs;
-      in
-        cachix-deploy-lib.spec {
-          agents = {
-            agent =
-              cachix-deploy-lib.homeManager
-              {
-                extraSpecialArgs = {inherit inputs;};
-              }
-              {
-                imports = [
-                  ./hosts/cachix/home.nix
-                ];
-              };
-          };
+      cachix = cachix-deploy-lib.spec {
+        agents = {
+          agent =
+            cachix-deploy-lib.homeManager
+            {
+              extraSpecialArgs = {inherit inputs system;};
+            }
+            {
+              imports = [
+                ./hosts/cachix/home.nix
+              ];
+            };
         };
-
-      mkNixvim = system:
-        nixvim.legacyPackages.${system}.makeNixvimWithModule {
-          module = import ./modules/shell/nixvim/standalone.nix;
-          extraSpecialArgs = {inherit inputs;};
-        };
-    in {
-      "x86_64-linux".cachix = mkCachixDeploy "x86_64-linux";
-      "aarch64-linux".cachix = mkCachixDeploy "aarch64-linux";
-
-      "x86_64-linux".nixvim = mkNixvim "x86_64-linux";
-      "aarch64-linux".nixvim = mkNixvim "aarch64-linux";
-      "aarch64-darwin".nixvim = mkNixvim "aarch64-darwin";
-    };
+      };
+    });
 
     raspberryImage = self.nixosConfigurations."raspberrypi".config.system.build.sdImage;
   };

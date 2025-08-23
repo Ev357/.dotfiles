@@ -22,6 +22,7 @@
         bitwarden-desktop
         dbeaver-bin
         winbox4
+        nautilus
       ]
       ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [
         krita
