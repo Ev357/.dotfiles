@@ -8,7 +8,7 @@
   ];
 
   programs.nixvim =
-    (import ./standalone.nix {inherit pkgs;})
+    (import ./standalone.nix {inherit pkgs inputs;})
     // {
       defaultEditor = true;
 

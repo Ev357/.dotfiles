@@ -1,9 +1,15 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ./plugins
     ./keymaps.nix
     ./config-names.nix
   ];
+
+  package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
 
   opts = {
     number = true;

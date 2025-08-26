@@ -31,6 +31,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
     nix-gaming.url = "github:fufexan/nix-gaming";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     tano.url = "github:Ev357/tano";
     # https://github.com/ghostty-org/ghostty/discussions/8163
     ghostty = {
