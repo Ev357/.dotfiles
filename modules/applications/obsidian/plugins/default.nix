@@ -1,40 +1,40 @@
 {pkgs, ...}: {
   programs.obsidian.defaultSettings.communityPlugins = [
     {
-      pkg = pkgs.callPackage ./cmdr/package {};
+      pkg = pkgs.nur.repos.Ev357.cmdr;
       settings = builtins.fromJSON (builtins.readFile ./cmdr/data.json);
     }
     {
-      pkg = pkgs.callPackage ./folder-notes/package {};
+      pkg = pkgs.nur.repos.Ev357.folder-notes;
       settings = builtins.fromJSON (builtins.readFile ./folder-notes/data.json);
     }
     {
-      pkg = pkgs.callPackage ./obsidian-excalidraw-plugin/package {};
+      pkg = pkgs.nur.repos.Ev357.obsidian-excalidraw-plugin;
       settings = builtins.fromJSON (builtins.readFile ./obsidian-excalidraw-plugin/data.json);
     }
     {
-      pkg = pkgs.callPackage ./obsidian-git/package {};
+      pkg = pkgs.nur.repos.Ev357.obsidian-git;
       settings = builtins.fromJSON (builtins.readFile ./obsidian-git/data.json);
     }
     {
-      pkg = pkgs.callPackage ./obsidian-hider/package {};
+      pkg = pkgs.nur.repos.Ev357.obsidian-hider;
       settings = builtins.fromJSON (builtins.readFile ./obsidian-hider/data.json);
     }
     {
-      pkg = pkgs.callPackage ./obsidian-relative-line-numbers/package {};
+      pkg = pkgs.nur.repos.Ev357.obsidian-relative-line-numbers;
     }
     {
-      pkg = pkgs.callPackage ./obsidian-scroll-offset/package {};
+      pkg = pkgs.nur.repos.Ev357.obsidian-scroll-offset;
     }
     {
-      pkg = pkgs.callPackage ./obsidian-style-settings/package {};
+      pkg = pkgs.nur.repos.Ev357.obsidian-style-settings;
       settings = builtins.fromJSON (builtins.readFile ./obsidian-style-settings/data.json);
     }
     {
-      pkg = pkgs.callPackage ./obsidian-vim-yank-highlight/package {};
+      pkg = pkgs.nur.repos.Ev357.obsidian-vim-yank-highlight;
     }
     {
-      pkg = pkgs.callPackage ./obsidian-vimrc-support/package {};
+      pkg = pkgs.nur.repos.Ev357.obsidian-vimrc-support;
     }
   ];
 }

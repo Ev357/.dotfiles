@@ -23,6 +23,7 @@
         dbeaver-bin
         winbox4
         nautilus
+        nur.repos.Ev357.hayase
       ]
       ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [
         krita
