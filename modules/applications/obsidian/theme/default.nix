@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.obsidian.defaultSettings.themes = [
     {
-      pkg = pkgs.callPackage ./package {};
+      pkg = pkgs.nur.repos.Ev357.catppuccin-obsidian;
     }
   ];
 }
