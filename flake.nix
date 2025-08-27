@@ -51,10 +51,6 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    cachix-deploy-flake = {
-      url = "github:cachix/cachix-deploy-flake";
-      inputs.home-manager.follows = "home-manager";
-    };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -72,7 +68,6 @@
   outputs = {
     self,
     nixpkgs,
-    cachix-deploy-flake,
     nixos-raspberrypi,
     nix-on-droid,
     home-manager,
@@ -156,27 +151,10 @@
 
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
-    packages = forAllSystems (system: let
-      cachix-deploy-lib = cachix-deploy-flake.lib nixpkgs.legacyPackages.${system};
-    in {
+    packages = forAllSystems (system: {
       nixvim = nixvim.legacyPackages.${system}.makeNixvimWithModule {
         module = import ./modules/shell/nixvim/standalone.nix;
         extraSpecialArgs = {inherit inputs system;};
-      };
-
-      cachix = cachix-deploy-lib.spec {
-        agents = {
-          agent =
-            cachix-deploy-lib.homeManager
-            {
-              extraSpecialArgs = {inherit inputs system;};
-            }
-            {
-              imports = [
-                ./hosts/cachix/home.nix
-              ];
-            };
-        };
       };
     });
 
