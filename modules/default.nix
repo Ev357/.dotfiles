@@ -2,7 +2,6 @@
   imports = [
     ./ai
     ./applications
-    ./cachix-agent
     ./common
     ./electron-flags
     ./fcitx5
