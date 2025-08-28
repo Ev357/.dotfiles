@@ -40,7 +40,7 @@ in {
     xdg.configFile."hypr/hyprland/colors.conf".source = ./colors.conf;
 
     home.packages = with pkgs; [
-      hyprshot
+      nur.repos.Ev357.hyprshot
     ];
   };
 }
