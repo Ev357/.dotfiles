@@ -37,7 +37,10 @@
       fzf.enable = lib.mkDefault true;
       git.enable = lib.mkDefault true;
       nixvim.enable = lib.mkDefault true;
-      ssh.enable = lib.mkDefault true;
+      ssh = {
+        enable = lib.mkDefault true;
+        enableDefaultConfig = lib.mkDefault false;
+      };
       starship.enable = lib.mkDefault true;
       yazi.enable = lib.mkDefault true;
       zoxide.enable = lib.mkDefault true;

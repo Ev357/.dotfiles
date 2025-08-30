@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }: let
   cfg = config.wayland.windowManager.hyprland;
@@ -31,16 +30,11 @@ in {
         NIXOS_OZONE_WL = "1";
         AMD_VULKAN_ICD = "RADV";
 
-        HYPRSHOT_DIR = "$HOME/Pictures/screenshots";
         ELECTRON_OZONE_PLATFORM_HINT = "wayland";
         ANKI_WAYLAND = "1";
       };
     };
 
     xdg.configFile."hypr/hyprland/colors.conf".source = ./colors.conf;
-
-    home.packages = with pkgs; [
-      nur.repos.Ev357.hyprshot
-    ];
   };
 }
