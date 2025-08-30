@@ -7,19 +7,20 @@
   imports = [
     inputs.nix-index-database.homeModules.nix-index
     ./btop
-    ./direnv
     ./bun
+    ./direnv
     ./eza
     ./fzf
     ./git
     ./nixvim
+    ./packages
+    ./ssh
     ./starship
     ./tano
     ./yazi
     ./zellij
     ./zoxide
     ./zsh
-    ./packages
   ];
 
   options.modules.shell = {
@@ -37,10 +38,7 @@
       fzf.enable = lib.mkDefault true;
       git.enable = lib.mkDefault true;
       nixvim.enable = lib.mkDefault true;
-      ssh = {
-        enable = lib.mkDefault true;
-        enableDefaultConfig = lib.mkDefault false;
-      };
+      ssh.enable = lib.mkDefault true;
       starship.enable = lib.mkDefault true;
       yazi.enable = lib.mkDefault true;
       zoxide.enable = lib.mkDefault true;
