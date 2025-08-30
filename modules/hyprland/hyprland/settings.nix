@@ -79,7 +79,10 @@ in {
         drag_lock = 0;
       };
     };
-    gestures.workspace_swipe = true;
+
+    gesture = [
+      "3, horizontal, workspace"
+    ];
 
     "$mainMod" = "SUPER";
 
