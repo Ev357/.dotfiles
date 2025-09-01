@@ -26,7 +26,8 @@
         nur.repos.Ev357.hayase
       ]
       ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [
-        krita
+        # krita not cached in this version
+        # krita
         anki-bin
         cosmic-files
       ];
