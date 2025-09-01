@@ -23,7 +23,8 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # https://github.com/NixOS/nixpkgs/issues/294170 ??
+    nixpkgs.url = "github:nixos/nixpkgs/81b728b3eb6c9a03663ac98d0dee6df9a86cd6e5";
     # https://github.com/NixOS/nixpkgs/pull/425843
     working-mesa-nixpkgs.url = "github:nixos/nixpkgs/50e2b34ef0bf14f9288238effdebe7150806d096";
     hyprland.url = "github:hyprwm/Hyprland";
