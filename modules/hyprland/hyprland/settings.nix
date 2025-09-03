@@ -104,9 +104,9 @@ in {
       "$mainMod SHIFT, m, exec, hyprctl keyword monitor \", preferred, auto-up, 1, mirror, ${cfg.mainMonitorName}\""
       "$mainMod SHIFT, e, exec, hyprctl keyword monitor \", preferred, auto-up, 1\""
 
-      "$mainMod, PRINT, exec, hyprshot -m window"
-      ", PRINT, exec, hyprshot -m output"
-      "SHIFT, PRINT, exec, hyprshot -m region"
+      "$mainMod, PRINT, exec, hyprshot -m window -z"
+      ", PRINT, exec, hyprshot -m output -z"
+      "SHIFT, PRINT, exec, hyprshot -m region -z"
 
       "$mainMod, h, movefocus, l"
       "$mainMod, j, movefocus, d"
