@@ -11,12 +11,13 @@
 
   modules.shell.enable = true;
 
-  programs.obsidian = {
-    enable = true;
-    package = pkgs.emptyDirectory;
+  programs = {
+    obsidian = {
+      enable = true;
+      package = pkgs.emptyDirectory;
+    };
     nixvim.configNames.homeManager = "nix-on-droid";
   };
-
   dconf.enable = false;
 
   home.activation = {
