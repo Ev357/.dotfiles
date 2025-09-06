@@ -1,8 +1,6 @@
 {
   lib,
   config,
-  pkgs,
-  inputs,
   ...
 }: let
   cfg = config.wayland.windowManager.hyprland;
@@ -14,8 +12,8 @@ in {
 
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-      portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+      package = null;
+      portalPackage = null;
       systemd.enable = false;
 
       environmentVariables = {

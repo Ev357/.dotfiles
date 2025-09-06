@@ -1,4 +1,8 @@
 {
+  imports = [
+    ./patch
+  ];
+
   services.hyprsunset.settings = {
     profile = [
       {
