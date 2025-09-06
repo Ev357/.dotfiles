@@ -9,6 +9,7 @@
     ./hyprland
     ./shell
     ./stylix
+    ./uwsm
     ./widgets
   ];
 }

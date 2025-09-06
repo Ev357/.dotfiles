@@ -23,7 +23,7 @@
 
     home.file.".local/share/fcitx5/themes".source = "${pkgs.catppuccin-fcitx5}/share/fcitx5/themes";
 
-    wayland.windowManager.hyprland.environmentVariables = {
+    modules.uwsm.environmentVariables = {
       XMODIFIERS = "@im=fcitx";
       QT_IM_MODULE = "fcitx";
       GTK_IM_MODULE = "wayland";
