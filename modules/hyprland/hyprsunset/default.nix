@@ -1,25 +1,15 @@
 {
-  imports = [
-    ./patch
-  ];
-
-  services.hyprsunset = {
-    extraArgs = ["--identity"];
-
-    transitions = {
-      night-start = {
-        calendar = "*-*-* 00:00:00";
-        requests = [
-          ["temperature" "3500"]
-        ];
-      };
-
-      night-end = {
-        calendar = "*-*-* 06:00:00";
-        requests = [
-          ["identity"]
-        ];
-      };
-    };
+  services.hyprsunset.settings = {
+    profile = [
+      {
+        time = "6:00";
+        identity = true;
+      }
+      {
+        time = "00:00";
+        temperature = 3500;
+        gamma = 0.4;
+      }
+    ];
   };
 }
