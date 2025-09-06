@@ -24,8 +24,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # https://github.com/NixOS/nixpkgs/pull/425843
-    working-mesa-nixpkgs.url = "github:nixos/nixpkgs/50e2b34ef0bf14f9288238effdebe7150806d096";
     hyprland.url = "github:hyprwm/Hyprland";
     stylix.url = "github:danth/stylix";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";

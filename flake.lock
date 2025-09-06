@@ -1488,7 +1488,6 @@
         "nur": "nur",
         "stylix": "stylix",
         "tano": "tano",
-        "working-mesa-nixpkgs": "working-mesa-nixpkgs",
         "zen-browser": "zen-browser"
       }
     },
@@ -1768,22 +1767,6 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "type": "github"
-      }
-    },
-    "working-mesa-nixpkgs": {
-      "locked": {
-        "lastModified": 1754504359,
-        "narHash": "sha256-RiUMPcnlB/SWKh8FJg4Hu2SfeoPwbWXuvNI7t5IeJWo=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "50e2b34ef0bf14f9288238effdebe7150806d096",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "50e2b34ef0bf14f9288238effdebe7150806d096",
         "type": "github"
       }
     },
