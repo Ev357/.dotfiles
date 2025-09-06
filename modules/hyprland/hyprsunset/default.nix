@@ -1,4 +1,5 @@
 {
+  # https://github.com/nix-community/home-manager/pull/7783
   imports = [
     ./patch
   ];
