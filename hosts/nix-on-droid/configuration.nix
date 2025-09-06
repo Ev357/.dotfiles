@@ -10,7 +10,7 @@
 
   environment.etcBackupExtension = ".bak";
 
-  user.shell = "${pkgs.zsh}/bin/zsh";
+  user.shell = "${pkgs.nushell}/bin/nu";
 
   time.timeZone = "Europe/Prague";
 

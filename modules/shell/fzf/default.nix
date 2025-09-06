@@ -1,5 +1,0 @@
-{
-  programs.fzf = {
-    enableZshIntegration = true;
-  };
-}

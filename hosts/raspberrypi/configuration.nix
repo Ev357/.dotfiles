@@ -15,7 +15,7 @@
   };
 
   programs = {
-    zsh.enable = true;
+    nushell.enable = true;
   };
 
   services = {
@@ -56,7 +56,7 @@
     users."evest" = {
       isNormalUser = true;
       extraGroups = ["wheel" "networkmanager" "media"];
-      shell = pkgs.zsh;
+      shell = pkgs.nushell;
       initialPassword = "12345678";
     };
     groups = {

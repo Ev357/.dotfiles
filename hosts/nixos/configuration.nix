@@ -69,7 +69,7 @@
       "wheel"
       "libvirtd"
     ];
-    shell = pkgs.zsh;
+    shell = pkgs.nushell;
   };
 
   networking = {

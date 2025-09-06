@@ -10,7 +10,7 @@
 
   config = lib.mkIf config.programs.yazi.enable {
     programs.yazi = {
-      enableZshIntegration = true;
+      enableNushellIntegration = true;
       keymap = {
         mgr.prepend_keymap = [
           {
