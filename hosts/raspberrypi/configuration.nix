@@ -14,10 +14,6 @@
     packages.enable = true;
   };
 
-  programs = {
-    nushell.enable = true;
-  };
-
   services = {
     openssh = {
       enable = true;
