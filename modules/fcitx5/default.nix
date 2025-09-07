@@ -12,6 +12,7 @@
     i18n.inputMethod = {
       type = "fcitx5";
       fcitx5 = {
+        fcitx5-with-addons = pkgs.callPackage ./patch/fcitx5-with-addons {};
         addons = with pkgs; [
           fcitx5-mozc
           fcitx5-gtk
