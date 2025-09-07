@@ -8,6 +8,7 @@
     inputs.nix-index-database.homeModules.nix-index
     ./btop
     ./bun
+    ./carapace
     ./direnv
     ./git
     ./nixvim
@@ -30,6 +31,7 @@
     programs = {
       btop.enable = lib.mkDefault true;
       bun.enable = lib.mkDefault true;
+      carapace.enable = lib.mkDefault true;
       bat.enable = lib.mkDefault true;
       direnv.enable = lib.mkDefault true;
       fzf.enable = lib.mkDefault true;
