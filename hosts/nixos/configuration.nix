@@ -61,6 +61,10 @@
     bluetooth.enable = true;
   };
 
+  environment.shells = with pkgs; [
+    nushell
+  ];
+
   users.users."evest" = {
     isNormalUser = true;
     extraGroups = [
