@@ -77,8 +77,7 @@ in {
         # nu
         ''
           if (uwsm check may-start | complete | get exit_code) == 0 {
-              uwsm start hyprland-uwsm.desktop
-              exit
+              exec uwsm start hyprland-uwsm.desktop
           }
         '';
     };
