@@ -40,20 +40,6 @@ in {
 
           $env.config.menus ++= [
               {
-                  name: history_menu
-                  only_buffer_difference: true
-                  marker: "? "
-                  type: {
-                      layout: list
-                      page_size: 20
-                  }
-                  style: {
-                      text: $theme.text
-                      selected_text: { bg: $theme.lavender fg: $theme.base }
-                      description_text: $theme.text
-                  }
-              }
-              {
                   name: completion_menu
                   only_buffer_difference: false
                   marker: "| "

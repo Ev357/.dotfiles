@@ -46,6 +46,7 @@
     home-assistant.enable = true;
     tailscale.enable = true;
     forgejo.enable = true;
+    atuin.enable = true;
   };
 
   environment.shells = with pkgs; [

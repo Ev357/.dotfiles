@@ -78,6 +78,12 @@
               service = "forgejo";
               tls.certResolver = "letsencrypt";
             };
+
+            atuin = {
+              rule = "Host(`atuin.local.evest.dev`) || Host(`atuin.ts.evest.dev`)";
+              service = "atuin";
+              tls.certResolver = "letsencrypt";
+            };
           };
           services = {
             jellyfin = {
@@ -113,6 +119,12 @@
             forgejo = {
               loadBalancer.servers = [
                 {url = "http://localhost:3081";}
+              ];
+            };
+
+            atuin = {
+              loadBalancer.servers = [
+                {url = "http://localhost:8888";}
               ];
             };
           };

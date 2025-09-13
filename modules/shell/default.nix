@@ -6,6 +6,7 @@
 }: {
   imports = [
     inputs.nix-index-database.homeModules.nix-index
+    ./atuin
     ./btop
     ./bun
     ./carapace
@@ -29,6 +30,7 @@
   config = lib.mkIf config.modules.shell.enable {
     modules.shell.packages.enable = lib.mkDefault true;
     programs = {
+      atuin.enable = lib.mkDefault true;
       btop.enable = lib.mkDefault true;
       bun.enable = lib.mkDefault true;
       carapace.enable = lib.mkDefault true;
