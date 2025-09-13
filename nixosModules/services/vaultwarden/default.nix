@@ -1,10 +1,14 @@
 {
   config,
   lib,
+  inputs,
+  pkgs,
   ...
 }: {
   config = lib.mkIf config.services.vaultwarden.enable {
     services.vaultwarden = {
+      package = inputs.nixpkgs.legacyPackages.${pkgs.system}.vaultwarden;
+
       config = {
         ROCKET_ADDRESS = "::1";
         ROCKET_PORT = 8222;

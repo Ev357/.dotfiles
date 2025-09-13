@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
@@ -11,6 +12,7 @@
   config = lib.mkIf config.services.nextcloud.enable {
     services = {
       nextcloud = {
+        package = inputs.nixpkgs.legacyPackages.${pkgs.system}.nextcloud31;
         hostName = "nextcloud";
         config = {
           dbtype = "sqlite";

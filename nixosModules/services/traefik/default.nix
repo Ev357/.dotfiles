@@ -1,10 +1,13 @@
 {
   config,
   lib,
+  pkgs,
+  inputs,
   ...
 }: {
   config = lib.mkIf config.services.traefik.enable {
     services.traefik = {
+      package = inputs.nixpkgs.legacyPackages.${pkgs.system}.traefik;
       environmentFiles = ["/etc/traefik/secrets/traefik.env"];
       staticConfigOptions = {
         entryPoints = {
