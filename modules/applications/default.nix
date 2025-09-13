@@ -6,14 +6,15 @@
   imports = [
     ./chromium
     ./ghostty
+    ./gnome-keyring
     ./mpv
-    ./rofi
-    ./zed-editor
-    ./other
-    ./zen-browser
-    ./vesktop
-    ./opentabletdriver
     ./obsidian
+    ./opentabletdriver
+    ./other
+    ./rofi
+    ./vesktop
+    ./zed-editor
+    ./zen-browser
   ];
 
   options.modules.applications = {
@@ -30,6 +31,7 @@
 
       electron-flags.enable = true;
     };
+
     programs = {
       chromium.enable = lib.mkDefault true;
       ghostty.enable = lib.mkDefault true;
@@ -40,11 +42,10 @@
       obsidian.enable = lib.mkDefault true;
     };
 
-    stylix.enable = true;
-
-    services.gnome-keyring = {
-      enable = lib.mkDefault true;
-      components = ["secrets"];
+    services = {
+      gnome-keyring.enable = lib.mkDefault true;
     };
+
+    stylix.enable = true;
   };
 }

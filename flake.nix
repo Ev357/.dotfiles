@@ -79,7 +79,7 @@
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
 
         modules = [
-          ./hosts/nixos/home.nix
+          ./hosts/nixos/home
         ];
 
         extraSpecialArgs = {inherit inputs;};
@@ -121,7 +121,7 @@
         system = "x86_64-linux";
 
         modules = [
-          ./hosts/nixos/configuration.nix
+          ./hosts/nixos/configuration
         ];
         specialArgs = {inherit inputs;};
       };

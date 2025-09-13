@@ -3,10 +3,6 @@
   config,
   ...
 }: {
-  imports = [
-    ./ollama
-  ];
-
   options.modules.ai = {
     enable = lib.mkEnableOption "enables ai";
   };
