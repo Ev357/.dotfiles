@@ -1,7 +1,6 @@
 {
   imports = [
-    ../../../modules
-    ./services
+    ../../modules
   ];
 
   home = {
@@ -29,7 +28,13 @@
     ai.enable = true;
   };
 
-  services.swaync.enable = true;
+  services = {
+    swaync.enable = true;
+    ollama = {
+      acceleration = "rocm";
+    };
+  };
+
   programs.waybar.enable = true;
 
   i18n.inputMethod.enable = true;

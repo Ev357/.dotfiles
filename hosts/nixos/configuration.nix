@@ -5,10 +5,9 @@
   ...
 }: {
   imports = [
-    ../../../nixosModules
+    ../../nixosModules
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
-    ./games
   ];
 
   boot = {
@@ -60,6 +59,14 @@
   hardware = {
     opentabletdriver.enable = true;
     bluetooth.enable = true;
+    graphics = {
+      extraPackages = with pkgs; [
+        amdvlk
+      ];
+      extraPackages32 = with pkgs; [
+        driversi686Linux.amdvlk
+      ];
+    };
   };
 
   environment.shells = with pkgs; [
