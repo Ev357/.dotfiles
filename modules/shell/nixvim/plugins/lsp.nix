@@ -65,6 +65,10 @@
         enable = true;
         filetypes = ["yaml"];
       };
+      hls = {
+        enable = true;
+        installGhc = true;
+      };
     };
   };
 
