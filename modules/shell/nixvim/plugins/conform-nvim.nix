@@ -13,6 +13,7 @@
             htmlangular = { 'prettierd' },
             markdown = { 'injected' },
             sql = { 'sql_formatter' },
+            python = { 'isort', 'black' },
           }
 
           local formatters = { 'biome', 'prettierd' }

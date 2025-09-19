@@ -139,6 +139,8 @@
     })
     ghostscript
     sql-formatter
+    black
+    isort
   ];
 
   extraPlugins = with pkgs.vimPlugins; [

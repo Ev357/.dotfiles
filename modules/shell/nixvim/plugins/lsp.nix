@@ -26,6 +26,7 @@
       tinymist.enable = true;
       sqls.enable = true;
       eslint.enable = true;
+      pyright.enable = true;
 
       rust_analyzer = {
         enable = true;
