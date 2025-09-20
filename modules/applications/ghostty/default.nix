@@ -7,7 +7,7 @@
   programs.ghostty = {
     package = lib.mkDefault inputs.ghostty.packages.${pkgs.system}.default;
     settings = {
-      theme = "catppuccin-macchiato";
+      theme = "Catppuccin Macchiato";
       gtk-titlebar = false;
       background-opacity = 0.95;
       font-family = "GeistMono NF Medium";
