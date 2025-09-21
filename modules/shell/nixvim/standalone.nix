@@ -74,7 +74,6 @@
     dap-virtual-text.enable = true;
     fidget.enable = true;
     diffview.enable = true;
-    avante.enable = true;
   };
 
   autoCmd = [
