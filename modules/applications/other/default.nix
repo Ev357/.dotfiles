@@ -22,6 +22,7 @@
         bitwarden-desktop
         dbeaver-bin
         winbox4
+        localsend
         nautilus
         gimp3
         nur.repos.Ev357.hayase
