@@ -44,6 +44,7 @@
 
     services = {
       gnome-keyring.enable = lib.mkDefault true;
+      easyeffects.enable = lib.mkDefault true;
     };
 
     stylix.enable = true;
