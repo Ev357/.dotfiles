@@ -184,5 +184,29 @@
           border = "rounded",
         })
       end
+
+      -- https://github.com/neovim/neovim/issues/34731#issuecomment-3169771547
+      vim.lsp.config("pyright", {
+        handlers = {
+          [vim.lsp.protocol.Methods.textDocument_rename] = function(err, result, ctx)
+            if err then
+              vim.notify('Pyright rename failed: ' .. err.message, vim.log.levels.ERROR)
+              return
+            end
+
+            ---@cast result lsp.WorkspaceEdit
+            for _, change in ipairs(result.documentChanges or {}) do
+              for _, edit in ipairs(change.edits or {}) do
+                if edit.annotationId then
+                  edit.annotationId = nil
+                end
+              end
+            end
+
+            local client = assert(vim.lsp.get_client_by_id(ctx.client_id))
+            vim.lsp.util.apply_workspace_edit(result, client.offset_encoding)
+          end,
+        },
+      })
     '';
 }
