@@ -9,7 +9,7 @@
 
     servers = {
       gopls.enable = true;
-      volar.enable = true;
+      vue_ls.enable = true;
       ts_ls.enable = true;
       angularls.enable = true;
       tailwindcss.enable = true;
