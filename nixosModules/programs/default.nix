@@ -1,6 +1,7 @@
 {
   imports = [
     ./light
+    ./localsend
     ./winbox
   ];
 }

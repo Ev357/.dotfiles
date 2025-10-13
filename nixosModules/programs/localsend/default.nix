@@ -1,0 +1,5 @@
+{
+  programs.localsend = {
+    openFirewall = true;
+  };
+}

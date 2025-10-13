@@ -35,6 +35,10 @@
     light.enable = true;
     virt-manager.enable = true;
     winbox.enable = true;
+    localsend = {
+      enable = true;
+      package = pkgs.emptyDirectory;
+    };
   };
 
   services = {
