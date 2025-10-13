@@ -25,7 +25,8 @@
     shell.enable = true;
     applications.enable = true;
     games.enable = true;
-    ai.enable = true;
+    # https://github.com/NixOS/nixpkgs/issues/449880
+    ai.enable = false;
   };
 
   services = {
