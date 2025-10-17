@@ -27,6 +27,7 @@
       sqls.enable = true;
       eslint.enable = true;
       pyright.enable = true;
+      qmlls.enable = true;
 
       rust_analyzer = {
         enable = true;
