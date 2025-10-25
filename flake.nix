@@ -24,6 +24,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # https://github.com/NixOS/nixpkgs/issues/454887
+    nixpkgs-fcitx5.url = "github:nixos/nixpkgs/cb82756ecc37fa623f8cf3e88854f9bf7f64af93";
     hyprland.url = "github:hyprwm/Hyprland";
     stylix.url = "github:danth/stylix";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -32,7 +34,6 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nur.url = "github:nix-community/NUR";
     tano.url = "github:Ev357/tano";
-    # https://github.com/ghostty-org/ghostty/discussions/8163
     ghostty = {
       url = "github:ghostty-org/ghostty";
       inputs.nixpkgs.follows = "nixpkgs";

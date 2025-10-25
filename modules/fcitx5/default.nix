@@ -2,17 +2,14 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }: {
-  imports = [
-    ./patch
-  ];
-
   config = lib.mkIf config.i18n.inputMethod.enable {
     i18n.inputMethod = {
       type = "fcitx5";
       fcitx5 = {
-        fcitx5-with-addons = pkgs.callPackage ./patch/fcitx5-with-addons {};
+        fcitx5-with-addons = pkgs.callPackage ./patch/fcitx5-with-addons {inherit inputs;};
         addons = with pkgs; [
           fcitx5-mozc
           fcitx5-gtk
@@ -22,7 +19,11 @@
       };
     };
 
-    home.file.".local/share/fcitx5/themes".source = "${pkgs.catppuccin-fcitx5}/share/fcitx5/themes";
+    home.file.".local/share/fcitx5/themes".source = let
+      catppuccin-fcitx5 = pkgs.catppuccin-fcitx5.override {
+        withRoundedCorners = true;
+      };
+    in "${catppuccin-fcitx5}/share/fcitx5/themes";
 
     modules.uwsm.environmentVariables = {
       XMODIFIERS = "@im=fcitx";
