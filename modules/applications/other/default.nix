@@ -25,9 +25,7 @@
         localsend
         nautilus
         gimp3
-        # DMCA takedown
-        # nur.repos.Ev357.hayase
-        nur.repos.Ev357.shiru
+        nur.repos.Ev357.hayase
       ]
       ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [
         krita
