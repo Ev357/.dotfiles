@@ -24,8 +24,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # https://github.com/NixOS/nixpkgs/issues/454887
-    nixpkgs-fcitx5.url = "github:nixos/nixpkgs/cb82756ecc37fa623f8cf3e88854f9bf7f64af93";
     hyprland.url = "github:hyprwm/Hyprland";
     stylix.url = "github:danth/stylix";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
