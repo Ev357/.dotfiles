@@ -16,7 +16,7 @@ pkgs.symlinkJoin {
       fcitx5-gtk
     ]
     ++ lib.optionals withConfigtool [
-      fcitx5-configtool
+      qt6Packages.fcitx5-configtool
     ]
     ++ addons;
 

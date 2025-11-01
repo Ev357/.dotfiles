@@ -7,7 +7,7 @@
 }: {
   config = lib.mkIf config.services.vaultwarden.enable {
     services.vaultwarden = {
-      package = inputs.nixpkgs.legacyPackages.${pkgs.system}.vaultwarden;
+      package = inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.vaultwarden;
 
       config = {
         ROCKET_ADDRESS = "::1";

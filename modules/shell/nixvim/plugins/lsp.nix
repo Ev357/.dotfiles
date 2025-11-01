@@ -33,8 +33,8 @@
         enable = true;
         installCargo = true;
         installRustc = true;
-        cargoPackage = inputs.fenix.packages.${pkgs.system}.complete.cargo;
-        rustcPackage = inputs.fenix.packages.${pkgs.system}.complete.rustc;
+        cargoPackage = inputs.fenix.packages.${pkgs.stdenv.hostPlatform.system}.complete.cargo;
+        rustcPackage = inputs.fenix.packages.${pkgs.stdenv.hostPlatform.system}.complete.rustc;
         settings = {
           check.command = "clippy";
         };
@@ -75,7 +75,7 @@
   };
 
   extraPackages = [
-    inputs.fenix.packages.${pkgs.system}.complete.clippy
+    inputs.fenix.packages.${pkgs.stdenv.hostPlatform.system}.complete.clippy
     pkgs.nixfmt-rfc-style
   ];
 

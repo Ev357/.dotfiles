@@ -7,7 +7,7 @@
 }: {
   config = lib.mkIf config.services.traefik.enable {
     services.traefik = {
-      package = inputs.nixpkgs.legacyPackages.${pkgs.system}.traefik;
+      package = inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.traefik;
       environmentFiles = ["/etc/traefik/secrets/traefik.env"];
       staticConfigOptions = {
         entryPoints = {

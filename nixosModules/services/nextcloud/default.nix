@@ -12,7 +12,7 @@
   config = lib.mkIf config.services.nextcloud.enable {
     services = {
       nextcloud = {
-        package = inputs.nixpkgs.legacyPackages.${pkgs.system}.nextcloud32;
+        package = inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.nextcloud32;
         hostName = "nextcloud";
         config = {
           dbtype = "sqlite";

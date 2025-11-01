@@ -8,7 +8,7 @@
   ];
 
   services.atuin = {
-    package = inputs.nixpkgs.legacyPackages.${pkgs.system}.atuin;
+    package = inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.atuin;
     openFirewall = true;
     database = {
       createLocally = false;

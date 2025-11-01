@@ -5,7 +5,7 @@
   ...
 }: {
   programs.ghostty = {
-    package = lib.mkDefault inputs.ghostty.packages.${pkgs.system}.default;
+    package = lib.mkDefault inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.default;
     settings = {
       theme = "Catppuccin Macchiato";
       gtk-titlebar = false;
