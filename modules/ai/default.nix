@@ -9,5 +9,6 @@
 
   config = lib.mkIf config.modules.ai.enable {
     services.ollama.enable = lib.mkDefault true;
+    programs.gemini-cli.enable = lib.mkDefault true;
   };
 }

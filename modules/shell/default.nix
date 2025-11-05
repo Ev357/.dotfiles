@@ -11,6 +11,7 @@
     ./bun
     ./carapace
     ./direnv
+    ./gemini-cli
     ./git
     ./nixvim
     ./nushell
