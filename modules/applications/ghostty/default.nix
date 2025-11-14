@@ -21,6 +21,8 @@
       window-new-tab-position = "end";
       focus-follows-mouse = true;
       copy-on-select = "clipboard";
+      quit-after-last-window-closed = true;
+      quit-after-last-window-closed-delay = "5m";
 
       keybind = [
         "ctrl+alt+h=goto_split:left"

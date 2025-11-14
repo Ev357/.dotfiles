@@ -8,7 +8,7 @@ in {
   wayland.windowManager.hyprland.settings = {
     source = "~/.config/hypr/hyprland/colors.conf";
 
-    "$terminal" = "ghostty";
+    "$terminal" = "ghostty +new-window";
     "$fileManager" = "ghostty -e yazi";
     "$menu" = "rofi -show drun";
 
