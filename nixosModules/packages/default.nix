@@ -17,7 +17,6 @@
       udisks
       networkmanagerapplet
       openvpn
-      bluetuith
     ];
   };
 }

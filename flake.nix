@@ -32,6 +32,7 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nur.url = "github:nix-community/NUR";
     tano.url = "github:Ev357/tano";
+    template-manager.url = "github:Ev357/template-manager";
     ghostty = {
       url = "github:ghostty-org/ghostty";
       inputs.nixpkgs.follows = "nixpkgs";
