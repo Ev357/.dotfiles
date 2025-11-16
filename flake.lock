@@ -1636,11 +1636,11 @@
         "nixpkgs": "nixpkgs_10"
       },
       "locked": {
-        "lastModified": 1763319472,
-        "narHash": "sha256-2bqDiPm6BUTUOnUA92iDbYyb80H6QZlbMeJ43BpGVP0=",
+        "lastModified": 1763321594,
+        "narHash": "sha256-N9Wmj8AEEnEplBWU2kUDQYdoztyDSKaBuFf3idFb9VA=",
         "owner": "Ev357",
         "repo": "template-manager",
-        "rev": "ec670df64f333d69c7226c36065a7a2742bad39e",
+        "rev": "248a4e1be01bdba8c1739525ebf516d2ec7ac373",
         "type": "github"
       },
       "original": {
