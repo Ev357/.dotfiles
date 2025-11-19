@@ -169,7 +169,23 @@ in {
       ",XF86MonBrightnessDown, exec, brightnessctl s 10%-"
     ];
 
-    windowrulev2 = ["suppressevent maximize, class:.*" "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"];
+    windowrule = [
+      {
+        name = "suppress-maximize-events";
+        "match:class" = ".*";
+        suppress_event = "maximize";
+      }
+      {
+        name = "fix-xwayland-drags";
+        "match:class" = "^$";
+        "match:title" = "^$";
+        "match:xwayland" = true;
+        "match:float" = true;
+        "match:fullscreen" = false;
+        "match:pin" = false;
+        no_focus = true;
+      }
+    ];
 
     debug.disable_logs = false;
     misc.enable_anr_dialog = false;
