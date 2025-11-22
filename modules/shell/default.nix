@@ -13,6 +13,7 @@
     ./direnv
     ./gemini-cli
     ./git
+    ./nh
     ./nixvim
     ./nushell
     ./packages
@@ -40,6 +41,7 @@
       direnv.enable = lib.mkDefault true;
       fzf.enable = lib.mkDefault true;
       git.enable = lib.mkDefault true;
+      nh.enable = lib.mkDefault true;
       nixvim.enable = lib.mkDefault true;
       ssh.enable = lib.mkDefault true;
       starship.enable = lib.mkDefault true;
