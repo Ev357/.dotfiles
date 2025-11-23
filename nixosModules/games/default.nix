@@ -25,7 +25,11 @@
     };
 
     services = {
-      pipewire.lowLatency.enable = lib.mkDefault true;
+      pipewire.lowLatency = {
+        enable = lib.mkDefault true;
+        quantum = 512;
+        rate = 48000;
+      };
     };
 
     security.rtkit.enable = lib.mkDefault true;
