@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./chromium
+    ./easyeffects
     ./ghostty
     ./gnome-keyring
     ./mpv

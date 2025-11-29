@@ -2,14 +2,12 @@
   pkgs,
   lib,
   config,
-  inputs,
   ...
 }: {
   config = lib.mkIf config.i18n.inputMethod.enable {
     i18n.inputMethod = {
       type = "fcitx5";
       fcitx5 = {
-        fcitx5-with-addons = pkgs.callPackage ./patch/fcitx5-with-addons {inherit inputs;};
         addons = with pkgs; [
           fcitx5-mozc
           fcitx5-gtk
