@@ -14,7 +14,6 @@
     ./oil.nix
     ./snacks.nix
     ./telescope.nix
-    ./todo-comments.nix
     ./treesitter.nix
     ./undotree.nix
     ./which-key.nix

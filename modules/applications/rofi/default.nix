@@ -17,7 +17,7 @@
       grey = mkLiteral "#6e738d";
 
       width = 600;
-      font = "GeistMono Nerd Font 14";
+      font = "Maple Mono NF CN 14";
     };
 
     "element-text, element-icon, mode-switcher" = {

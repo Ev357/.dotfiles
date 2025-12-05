@@ -8,8 +8,7 @@
   ];
 
   home.packages = with pkgs; [
-    nerd-fonts.geist-mono
-    noto-fonts-cjk-sans
+    maple-mono.NF-CN-unhinted
   ];
 
   stylix = {
@@ -25,20 +24,20 @@
     };
     fonts = with pkgs; {
       serif = {
-        package = geist-font;
-        name = "Geist";
+        package = maple-mono.NF-CN-unhinted;
+        name = "Maple Mono NF CN";
       };
       sansSerif = {
-        package = geist-font;
-        name = "Geist";
+        package = maple-mono.NF-CN-unhinted;
+        name = "Maple Mono NF CN";
       };
       monospace = {
-        package = nerd-fonts.geist-mono;
-        name = "GeistMono Nerd Font";
+        package = maple-mono.NF-CN-unhinted;
+        name = "Maple Mono NF CN";
       };
       emoji = {
-        package = nerd-fonts.geist-mono;
-        name = "GeistMono Nerd Font";
+        package = maple-mono.NF-CN-unhinted;
+        name = "Maple Mono NF CN";
       };
     };
 

@@ -10,9 +10,7 @@
       theme = "Catppuccin Macchiato";
       gtk-titlebar = false;
       background-opacity = 0.95;
-      font-family = "GeistMono NF Medium";
-      font-family-bold = "GeistMono NF SemiBold";
-      font-family-italic = "GeistMono NF Light";
+      font-family = "Maple Mono NF CN";
       font-size = 12;
       window-show-tab-bar = "never";
       window-theme = "ghostty";

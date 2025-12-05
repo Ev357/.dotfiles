@@ -6,7 +6,7 @@ in {
 
     "$accent" = "$mauve";
     "$accentAlpha" = "$mauveAlpha";
-    "$font" = "GeistMono Nerd Font";
+    "$font" = "Maple Mono NF CN";
 
     general = {
       disable_loading_bar = true;

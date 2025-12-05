@@ -67,7 +67,6 @@
     conform-nvim.enable = true;
     flash.enable = true;
     gitsigns.enable = true;
-    todo-comments.enable = true;
     undotree.enable = true;
     dap.enable = true;
     dap-ui.enable = true;
@@ -121,6 +120,7 @@
   };
 
   extraPackages = with pkgs; [
+    ripgrep
     prettierd
     stylua
     csharpier

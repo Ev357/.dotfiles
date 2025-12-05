@@ -3,9 +3,9 @@
     classicui.globalSection = {
       "Vertical Candidate List" = "False";
       WheelForPaging = "True";
-      Font = "\"Geist 10\"";
-      MenuFont = "\"Geist 10\"";
-      TrayFont = "\"Geist 10\"";
+      Font = "\"Maple Mono NF CN 10\"";
+      MenuFont = "\"Maple Mono NF CN 10\"";
+      TrayFont = "\"Maple Mono NF CN 10\"";
       TrayOutlineColor = "#000000";
       TrayTextColor = "#ffffff";
       PreferTextIcon = "False";
