@@ -11,7 +11,7 @@
       gtk-titlebar = false;
       background-opacity = 0.95;
       font-family = "Maple Mono NF CN";
-      font-size = 12;
+      font-size = 14;
       window-show-tab-bar = "never";
       window-theme = "ghostty";
       mouse-hide-while-typing = true;
