@@ -7,6 +7,7 @@
     ./hyprcursor
     ./hypridle
     ./hyprland
+    ./hyprlauncher
     ./hyprlock
     ./hyprpaper
     ./hyprshot
@@ -21,6 +22,7 @@
     };
     services = {
       hypridle.enable = lib.mkDefault true;
+      hyprlauncher.enable = lib.mkDefault true;
       hyprpaper.enable = lib.mkDefault true;
       hyprpolkitagent.enable = lib.mkDefault true;
       hyprsunset.enable = lib.mkDefault true;

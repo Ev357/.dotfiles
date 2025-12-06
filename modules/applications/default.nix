@@ -12,7 +12,6 @@
     ./obsidian
     ./opentabletdriver
     ./other
-    ./rofi
     ./vesktop
     ./zed-editor
     ./zen-browser
@@ -36,7 +35,6 @@
     programs = {
       chromium.enable = lib.mkDefault true;
       ghostty.enable = lib.mkDefault true;
-      rofi.enable = lib.mkDefault true;
       zed-editor.enable = lib.mkDefault true;
       vesktop.enable = lib.mkDefault true;
       zen-browser.enable = lib.mkDefault true;

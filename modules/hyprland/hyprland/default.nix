@@ -19,6 +19,9 @@ in {
 
     modules.uwsm.enable = true;
 
-    xdg.configFile."hypr/hyprland/colors.conf".source = ./colors.conf;
+    xdg.configFile = {
+      "hypr/hyprland/colors.conf".source = ./colors.conf;
+      "hypr/hyprtoolkit.conf".source = ./hyprtoolkit.conf;
+    };
   };
 }

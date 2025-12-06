@@ -10,7 +10,7 @@ in {
 
     "$terminal" = "ghostty +new-window";
     "$fileManager" = "ghostty -e yazi";
-    "$menu" = "rofi -show drun";
+    "$menu" = "hyprlauncher";
 
     general = {
       gaps_in = 6;
@@ -184,6 +184,12 @@ in {
         "match:fullscreen" = false;
         "match:pin" = false;
         no_focus = true;
+      }
+      {
+        name = "move-hyprland-run";
+        "match:class" = "hyprland-run";
+        move = "20 monitor_h-120";
+        float = "yes";
       }
     ];
 
