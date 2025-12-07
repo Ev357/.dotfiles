@@ -26,6 +26,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
     hyprlauncher.url = "github:hyprwm/hyprlauncher";
+    hyprshutdown.url = "github:hyprwm/hyprshutdown";
     stylix.url = "github:nix-community/stylix";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";

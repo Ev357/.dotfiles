@@ -82,7 +82,7 @@ in {
     bind = [
       "$mainMod, Q, exec, $terminal"
       "$mainMod, C, killactive"
-      "$mainMod, M, exit"
+      "$mainMod, M, exec, hyprshutdown"
       "$mainMod, E, exec, $fileManager"
       "$mainMod, V, togglefloating"
       "$mainMod, R, exec, $menu"
@@ -90,8 +90,8 @@ in {
       "$mainMod, T, togglesplit"
       "$mainMod, F, fullscreen"
       "$mainMod SHIFT, l, exec, hyprlock"
-      "$mainMod SHIFT, p, exec, shutdown now"
-      "$mainMod SHIFT, r, exec, reboot"
+      "$mainMod SHIFT, p, exec, hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown now'"
+      "$mainMod SHIFT, r, exec, hyprshutdown -t 'Restarting...' --post-cmd 'reboot'"
       "$mainMod SHIFT, h, exec, systemctl suspend"
 
       "$mainMod SHIFT, m, exec, hyprctl keyword monitor \", preferred, auto-up, 1, mirror, ${cfg.mainMonitorName}\""

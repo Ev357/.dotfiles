@@ -11,6 +11,7 @@
     ./hyprlock
     ./hyprpaper
     ./hyprshot
+    ./hyprshutdown
     ./hyprsunset
   ];
 
@@ -19,6 +20,7 @@
     programs = {
       hyprlock.enable = lib.mkDefault true;
       hyprshot.enable = lib.mkDefault true;
+      hyprshutdown.enable = lib.mkDefault true;
     };
     services = {
       hypridle.enable = lib.mkDefault true;
