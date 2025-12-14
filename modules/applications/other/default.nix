@@ -25,6 +25,7 @@
         localsend
         nautilus
         gimp3
+        grayjay
         nur.repos.Ev357.hayase
       ]
       ++ lib.optionals (!config.modules.applications.other.disableOpenGLApps) [
