@@ -2152,11 +2152,11 @@
         "nixpkgs": "nixpkgs_11"
       },
       "locked": {
-        "lastModified": 1764418678,
-        "narHash": "sha256-9pfp8QGboVBcIOOBaSGRe96jRfsLoq6K8Zj7xuQjdmQ=",
+        "lastModified": 1765980411,
+        "narHash": "sha256-Q1QwY75EdxJY8IqHBPwpQ0gyTL7S37DwTVNgHDe+kBA=",
         "owner": "Ev357",
         "repo": "template-manager",
-        "rev": "9d4a77a2c7619a01d8507ee659c8bdbc308e7323",
+        "rev": "7e51aafd3f976344587643566b42804b27532539",
         "type": "github"
       },
       "original": {
