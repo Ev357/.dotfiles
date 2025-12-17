@@ -13,6 +13,7 @@
     ./opentabletdriver
     ./other
     ./vesktop
+    ./xdg
     ./zed-editor
     ./zen-browser
   ];
@@ -47,5 +48,7 @@
     };
 
     stylix.enable = true;
+
+    xdg.mimeApps.enable = true;
   };
 }
