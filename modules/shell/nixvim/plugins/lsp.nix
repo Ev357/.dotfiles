@@ -11,7 +11,23 @@
       gopls.enable = true;
       vue_ls.enable = true;
       ts_ls.enable = true;
-      angularls.enable = true;
+      angularls = {
+        enable = true;
+        extraOptions = {
+          root_dir.__raw =
+            # lua
+            ''
+              function(bufnr, on_dir)
+                local markers = { 'angular.json', 'nx.json' }
+                local root = vim.fs.root(bufnr, markers)
+
+                if root then
+                  on_dir(root)
+                end
+              end
+            '';
+        };
+      };
       tailwindcss.enable = true;
       biome.enable = true;
       cssls.enable = true;
