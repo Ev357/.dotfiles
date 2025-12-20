@@ -15,7 +15,6 @@
       (inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-lazer-bin.override {
         releaseStream = "tachyon";
         pipewire_latency = "512/48000";
-        osu-mime = pkgs.callPackage ./osu-mime.nix {inherit inputs;};
       })
       wootility
     ]);
