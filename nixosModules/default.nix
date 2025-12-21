@@ -1,7 +1,6 @@
 {
   imports = [
     ./common
-    ./fonts
     ./games
     ./hardware
     ./hyprland

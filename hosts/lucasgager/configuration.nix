@@ -23,6 +23,10 @@
     binfmt.emulatedSystems = ["aarch64-linux"];
   };
 
+  modules = {
+    packages.enable = true;
+  };
+
   programs = {
     hyprland.enable = true;
     nix-ld.enable = true;
@@ -47,6 +51,7 @@
     tailscale.enable = true;
     printing.enable = true;
     blueman.enable = true;
+    power-profiles-daemon.enable = true;
 
     xserver = {
       xkb.layout = "cz";
@@ -57,6 +62,7 @@
   security.pam.services.login.enableGnomeKeyring = true;
 
   hardware.bluetooth.enable = true;
+  powerManagement.enable = true;
 
   environment.shells = with pkgs; [
     nushell

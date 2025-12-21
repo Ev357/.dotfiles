@@ -25,7 +25,6 @@
 
   modules = {
     packages.enable = true;
-    fonts.enable = true;
     games.enable = true;
   };
 
@@ -64,6 +63,8 @@
     opentabletdriver.enable = true;
     bluetooth.enable = true;
   };
+
+  powerManagement.enable = true;
 
   environment.shells = with pkgs; [
     nushell
