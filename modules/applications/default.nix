@@ -8,10 +8,14 @@
     ./easyeffects
     ./ghostty
     ./gnome-keyring
+    ./gnome-keyring
+    ./keepassxc
     ./mpv
     ./obsidian
     ./opentabletdriver
     ./other
+    ./remmina
+    ./teams-for-linux
     ./vesktop
     ./xdg
     ./zed-editor
@@ -49,6 +53,9 @@
 
     stylix.enable = true;
 
-    xdg.mimeApps.enable = true;
+    xdg = {
+      mimeApps.enable = true;
+      autostart.enable = true;
+    };
   };
 }

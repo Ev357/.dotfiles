@@ -31,6 +31,12 @@
       enable = true;
       package = pkgs.emptyDirectory;
     };
+    evolution = {
+      enable = true;
+      plugins = with pkgs; [
+        evolution-ews
+      ];
+    };
   };
 
   services = {

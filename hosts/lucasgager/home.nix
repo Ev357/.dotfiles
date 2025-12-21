@@ -1,4 +1,8 @@
 {
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     ../../modules
   ];
@@ -21,17 +25,30 @@
 
   modules = {
     shell.enable = true;
-    applications.enable = true;
+    applications = {
+      enable = true;
+      teams-for-linux.enable = true;
+    };
   };
+
+  home.packages = with pkgs; [
+    dbeaver-bin
+  ];
 
   programs = {
     waybar.enable = true;
     gemini-cli.enable = true;
+    keepassxc.enable = true;
+    pidgin.enable = true;
     nixvim.configNames = {
       homeManager = "evest@lucasgager";
       nixos = "lucasgager";
     };
   };
 
-  services.swaync.enable = true;
+  services = {
+    swaync.enable = true;
+    gnome-keyring.enable = true;
+    remmina.enable = true;
+  };
 }

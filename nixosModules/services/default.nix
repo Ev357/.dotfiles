@@ -4,6 +4,7 @@
     ./anki-sync-server
     ./atuin
     ./cloudflared
+    ./evolution-data-server
     ./forgejo
     ./home-assistant
     ./jellyfin
