@@ -63,6 +63,10 @@
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -97,11 +101,11 @@
         extraSpecialArgs = {inherit inputs;};
       };
 
-      "evest@lucas.gager" = home-manager.lib.homeManagerConfiguration {
+      "evest@lucasgager" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
 
         modules = [
-          ./hosts/archlinux/home.nix
+          ./hosts/lucasgager/home.nix
         ];
 
         extraSpecialArgs = {inherit inputs;};
@@ -134,6 +138,14 @@
         ];
 
         specialArgs = {inherit nixos-raspberrypi inputs;};
+      };
+
+      "lucasgager" = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./hosts/lucasgager/configuration.nix
+        ];
+
+        specialArgs = {inherit inputs;};
       };
     };
 

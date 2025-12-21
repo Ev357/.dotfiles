@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{
   imports = [
     ../../modules
   ];
@@ -6,7 +6,7 @@
   home = {
     username = "evest";
     homeDirectory = "/home/evest";
-    stateVersion = "24.11";
+    stateVersion = "25.11";
   };
 
   wayland.windowManager.hyprland = rec {
@@ -21,19 +21,16 @@
 
   modules = {
     shell.enable = true;
-    applications = {
-      enable = true;
-      other.disableOpenGLApps = true;
-    };
+    applications.enable = true;
   };
 
   programs = {
     waybar.enable = true;
-    hyprlock.package = null;
-    ghostty.package = null;
-    zed-editor.package = pkgs.emptyDirectory;
-    obsidian.package = pkgs.emptyDirectory;
-    nixvim.configNames.homeManager = "evest@lucas.gager";
+    gemini-cli.enable = true;
+    nixvim.configNames = {
+      homeManager = "evest@lucasgager";
+      nixos = "lucasgager";
+    };
   };
 
   services.swaync.enable = true;
