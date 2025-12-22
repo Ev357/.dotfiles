@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   imports = [
     ../../modules
   ];
@@ -27,6 +27,10 @@
     games.enable = true;
     ai.enable = true;
   };
+
+  home.packages = with pkgs; [
+    blender-hip
+  ];
 
   services = {
     swaync.enable = true;
