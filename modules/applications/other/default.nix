@@ -25,7 +25,7 @@
       gimp3
       grayjay
       nur.repos.Ev357.hayase
-      krita
+      nur.repos.Ev357.krita
       anki-bin
       cosmic-files
     ];
