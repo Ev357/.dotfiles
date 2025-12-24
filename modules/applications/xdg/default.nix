@@ -20,6 +20,8 @@
       "x-scheme-handler/wootwoot" = "wootility.desktop";
       "x-scheme-handler/web+wootwoot" = "wootility.desktop";
       "image/png" = "org.gnome.Loupe.desktop";
+      "image/jpeg" = "org.gnome.Loupe.desktop";
+      "image/webp" = "org.gnome.Loupe.desktop";
       "x-scheme-handler/hayase" = "hayase.desktop";
     };
     autostart.readOnly = true;
