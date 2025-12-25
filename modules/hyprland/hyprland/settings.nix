@@ -69,6 +69,7 @@ in {
       kb_options = "grp:alt_shift_toggle";
       touchpad = {
         natural_scroll = true;
+        disable_while_typing = false;
         drag_lock = 0;
       };
     };
