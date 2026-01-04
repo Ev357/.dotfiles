@@ -24,6 +24,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # https://github.com/NixOS/nixpkgs/issues/476039, vesktop
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     hyprland.url = "github:hyprwm/Hyprland";
     hyprlauncher.url = "github:hyprwm/hyprlauncher";
     hyprshutdown.url = "github:hyprwm/hyprshutdown";

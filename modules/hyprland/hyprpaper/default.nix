@@ -2,7 +2,12 @@
   home.file.".config/backgrounds/".source = ./backgrounds;
 
   services.hyprpaper.settings = {
-    preload = "~/.config/backgrounds/wall2.png";
-    wallpaper = ", ~/.config/backgrounds/wall2.png";
+    splash = false;
+    wallpaper = [
+      {
+        monitor = "";
+        path = "~/.config/backgrounds/wall2.png";
+      }
+    ];
   };
 }

@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  inputs,
   ...
 }: {
   options.modules.applications.other = {
@@ -12,7 +13,7 @@
     home.packages = with pkgs; [
       loupe
       fragments
-      easytag
+      inputs.nixpkgs-stable.legacyPackages.${stdenv.hostPlatform.system}.easytag
       session-desktop
       libreoffice-qt6-fresh
       system-config-printer
@@ -23,7 +24,8 @@
       localsend
       nautilus
       gimp3
-      grayjay
+      # Grayjay is broken now for some reason
+      # grayjay
       nur.repos.Ev357.hayase
       nur.repos.Ev357.krita
       anki-bin

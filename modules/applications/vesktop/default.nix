@@ -1,10 +1,13 @@
 {
   lib,
   config,
+  pkgs,
+  inputs,
   ...
 }: {
   config = lib.mkIf config.programs.vesktop.enable {
     programs.vesktop = {
+      package = inputs.nixpkgs-stable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.vesktop;
       settings = {
         discordBranch = "canary";
         minimizeToTray = false;
