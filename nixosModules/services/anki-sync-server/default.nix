@@ -11,7 +11,9 @@
 
   config = lib.mkIf config.services.anki-sync-server.enable {
     services.anki-sync-server = {
-      package = inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.anki-sync-server;
+      # The current version does not compile
+      # package = inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.anki-sync-server;
+      package = inputs.nixpkgs-stable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.anki-sync-server;
       address = "0.0.0.0";
       openFirewall = true;
       baseDirectory = "/data/anki";
