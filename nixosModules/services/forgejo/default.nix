@@ -17,6 +17,8 @@ in {
     services.forgejo = {
       database.type = "postgres";
       lfs.enable = true;
+      group = "media";
+      repositoryRoot = "/data/services/forgejo";
       settings = {
         server = {
           DOMAIN = "git.ts.evest.dev";
