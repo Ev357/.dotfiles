@@ -7,6 +7,7 @@
     ./evolution-data-server
     ./forgejo
     ./home-assistant
+    ./immich
     ./jellyfin
     ./nextcloud
     ./traefik

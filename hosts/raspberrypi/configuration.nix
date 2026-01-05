@@ -47,6 +47,7 @@
     tailscale.enable = true;
     forgejo.enable = true;
     atuin.enable = true;
+    immich.enable = true;
   };
 
   environment.shells = with pkgs; [

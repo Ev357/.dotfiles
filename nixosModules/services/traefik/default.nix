@@ -87,6 +87,12 @@
               service = "atuin";
               tls.certResolver = "letsencrypt";
             };
+
+            immich = {
+              rule = "Host(`immich.local.evest.dev`) || Host(`immich.ts.evest.dev`)";
+              service = "immich";
+              tls.certResolver = "letsencrypt";
+            };
           };
           services = {
             jellyfin = {
@@ -128,6 +134,12 @@
             atuin = {
               loadBalancer.servers = [
                 {url = "http://localhost:8888";}
+              ];
+            };
+
+            immich = {
+              loadBalancer.servers = [
+                {url = "http://localhost:2283";}
               ];
             };
           };
