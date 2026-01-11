@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
 }: {
   options.modules.applications.other = {
@@ -13,7 +12,7 @@
     home.packages = with pkgs; [
       loupe
       fragments
-      inputs.nixpkgs-stable.legacyPackages.${stdenv.hostPlatform.system}.easytag
+      easytag
       session-desktop
       libreoffice-qt6-fresh
       system-config-printer

@@ -28,8 +28,10 @@
     ai.enable = true;
   };
 
+  nixpkgs.config.rocmSupport = true;
+
   home.packages = with pkgs; [
-    blender-hip
+    blender
   ];
 
   services = {

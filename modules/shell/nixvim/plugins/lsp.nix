@@ -92,7 +92,7 @@
 
   extraPackages = [
     inputs.fenix.packages.${pkgs.stdenv.hostPlatform.system}.complete.clippy
-    pkgs.nixfmt-rfc-style
+    pkgs.nixfmt
   ];
 
   keymaps = [

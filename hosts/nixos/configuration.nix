@@ -28,6 +28,8 @@
     games.enable = true;
   };
 
+  nixpkgs.config.rocmSupport = true;
+
   programs = {
     hyprland.enable = true;
     nix-ld.enable = true;
