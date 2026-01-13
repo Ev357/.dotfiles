@@ -27,7 +27,6 @@
     # zed-editor
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprlauncher.url = "github:hyprwm/hyprlauncher";
     hyprshutdown.url = "github:hyprwm/hyprshutdown";
     stylix.url = "github:nix-community/stylix";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
