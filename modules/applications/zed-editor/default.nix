@@ -1,11 +1,5 @@
 {
-  pkgs,
-  inputs,
-  ...
-}: {
   programs.zed-editor = {
-    # Zed is not cached for some reason
-    package = inputs.nixpkgs-stable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.zed-editor;
     userSettings = {
       ui_font_size = 16;
       buffer_font_size = 16;

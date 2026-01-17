@@ -24,8 +24,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # zed-editor
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     hyprland.url = "github:hyprwm/Hyprland";
     hyprshutdown.url = "github:hyprwm/hyprshutdown";
     stylix.url = "github:nix-community/stylix";
