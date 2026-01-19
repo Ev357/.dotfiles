@@ -23,8 +23,7 @@
       localsend
       nautilus
       gimp3
-      # Grayjay is broken now for some reason
-      # grayjay
+      grayjay
       nur.repos.Ev357.hayase
       nur.repos.Ev357.krita
       anki-bin
