@@ -32,6 +32,7 @@
 
   home.packages = with pkgs; [
     blender
+    eduvpn-client
   ];
 
   services = {
