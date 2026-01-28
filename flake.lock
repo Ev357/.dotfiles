@@ -1840,11 +1840,11 @@
         "nixpkgs": "nixpkgs_9"
       },
       "locked": {
-        "lastModified": 1769559434,
-        "narHash": "sha256-aa1oSgAhtfQjHEJa5tTOj1DUqRqaP3guJT8am7qa/xk=",
+        "lastModified": 1769560711,
+        "narHash": "sha256-pBFA4VwlmP7AtuEUW/RAeYYEBH6AV9BcVDRJpUA0/w8=",
         "owner": "Ev357",
         "repo": "tano",
-        "rev": "5e31abe8de9532b6f29f9d0be25a81717bcb86bf",
+        "rev": "2d84fe36dd66d0a08f3d8b43905e3f0bd9c3e7af",
         "type": "github"
       },
       "original": {
