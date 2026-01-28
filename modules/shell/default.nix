@@ -51,7 +51,7 @@
       nushell.enable = lib.mkDefault true;
       nix-index-database.comma.enable = lib.mkDefault true;
       zellij.enable = lib.mkDefault true;
-      tuisic.enable = lib.mkDefault false;
+      tano.enable = lib.mkDefault true;
       cava.enable = lib.mkDefault true;
       fd.enable = lib.mkDefault true;
       bluetuith.enable = lib.mkDefault true;
