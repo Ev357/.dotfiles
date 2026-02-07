@@ -5,8 +5,8 @@
   ...
 }: {
   imports = [
-    ./minecraft
     ./osu
+    ./prismlauncher
   ];
 
   options.modules.games = {
@@ -16,7 +16,10 @@
   config = lib.mkIf config.modules.games.enable {
     modules.games = {
       osu.enable = lib.mkDefault true;
-      minecraft.enable = lib.mkDefault true;
+    };
+
+    programs = {
+      prismlauncher.enable = lib.mkDefault true;
     };
 
     home.packages = with pkgs; [
@@ -25,6 +28,7 @@
         extraPkgs = pkgs:
           with pkgs; [
             gamescope
+            vlc
           ];
       })
       lutris

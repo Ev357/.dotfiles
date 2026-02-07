@@ -63,7 +63,8 @@ in {
         # nu
         ''
           if (uwsm check may-start | complete | get exit_code) == 0 {
-              exec uwsm start -e -D Hyprland hyprland-uwsm.desktop
+              # https://github.com/NixOS/nixpkgs/issues/485123
+              exec uwsm start -F -e -D Hyprland -- /run/current-system/sw/bin/start-hyprland
           }
         '';
     };

@@ -10,8 +10,8 @@
   };
 
   config = lib.mkIf config.programs.hyprshutdown.enable {
-    home.packages = [
-      inputs.hyprshutdown.packages.${pkgs.stdenv.hostPlatform.system}.default
+    home.packages = with pkgs; [
+      hyprshutdown
     ];
   };
 }

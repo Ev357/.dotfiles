@@ -4,10 +4,6 @@
   config,
   ...
 }: {
-  imports = [
-    ./theme.nix
-  ];
-
   config = lib.mkIf config.programs.yazi.enable {
     programs.yazi = {
       enableNushellIntegration = true;
@@ -30,13 +26,24 @@
           }
         ];
       };
-      plugins = {
-        compress = pkgs.fetchFromGitHub {
-          owner = "KKV9";
-          repo = "compress.yazi";
-          rev = "0.5";
-          sha256 = "sha256-/A2pGc0PtKYXjRWBpbZ7uSoux1+q7mNYOaKjW5viuts=";
+      theme = {
+        flavor = {
+          dark = "catppuccin-macchiato";
+          light = "catppuccin-macchiato";
         };
+      };
+      plugins = {
+        compress = pkgs.yaziPlugins.compress;
+      };
+      flavors = let
+        yazi-flavors = pkgs.fetchFromGitHub {
+          owner = "yazi-rs";
+          repo = "flavors";
+          rev = "9e053d0686a7d54a125d67bdd3aabaa5116d6e99";
+          sha256 = "sha256-B9b6T9/RkJDkehMC5/MxqnkjxWj5LZg4jehAn6aeamE=";
+        };
+      in {
+        catppuccin-macchiato = "${yazi-flavors}/catppuccin-macchiato.yazi/";
       };
     };
 

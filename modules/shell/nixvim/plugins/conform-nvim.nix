@@ -9,20 +9,20 @@
             arduino = { 'clang-format' },
             cs = { 'csharpier' },
             nix = { 'nix' },
-            html = { 'prettierd' },
+            html = { 'oxfmt', 'prettierd' },
             htmlangular = { 'prettierd' },
             markdown = { 'injected' },
             sql = { 'sql_formatter' },
             python = { 'isort', 'black' },
           }
 
-          local formatters = { 'biome', 'prettierd' }
+          local formatters = { 'oxfmt', 'biome', 'prettierd' }
 
           local function reorder_formatters()
             if vim.fs.find({
               '.prettierrc',
             }, { upward = true, stop = vim.loop.os_homedir() })[1] then
-              return { 'prettierd', 'biome', lsp_format = 'fallback' }
+              return { 'prettierd', 'oxfmt', 'biome', lsp_format = 'fallback' }
             end
             return formatters
           end

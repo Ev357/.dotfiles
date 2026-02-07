@@ -29,6 +29,7 @@
         };
       };
       tailwindcss.enable = true;
+      oxlint.enable = true;
       biome.enable = true;
       cssls.enable = true;
       emmet_language_server.enable = true;
