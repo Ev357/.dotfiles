@@ -42,7 +42,10 @@
     };
   };
 
-  programs.waybar.enable = true;
+  programs = {
+    waybar.enable = true;
+    vicinae.enable = true;
+  };
 
   i18n.inputMethod.enable = true;
 }

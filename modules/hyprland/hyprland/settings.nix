@@ -10,7 +10,7 @@ in {
 
     "$terminal" = "ghostty +new-window";
     "$fileManager" = "ghostty -e yazi";
-    "$menu" = "hyprlauncher";
+    "$menu" = "vicinae toggle";
 
     general = {
       gaps_in = 6;
@@ -73,6 +73,20 @@ in {
         drag_lock = 0;
       };
     };
+
+    layerrule = [
+      {
+        name = "vicinae-blur";
+        blur = "on";
+        ignore_alpha = 0;
+        "match:namespace" = "vicinae";
+      }
+      {
+        name = "vicinae-no-animation";
+        no_anim = "on";
+        "match:namespace" = "vicinae";
+      }
+    ];
 
     gesture = [
       "3, horizontal, workspace"

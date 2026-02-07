@@ -1,6 +1,7 @@
 {
   imports = [
     ./swaync
+    ./vicinae
     ./waybar
   ];
 }
