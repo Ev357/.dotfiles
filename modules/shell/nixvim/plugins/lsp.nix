@@ -54,6 +54,7 @@
         rustcPackage = inputs.fenix.packages.${pkgs.stdenv.hostPlatform.system}.complete.rustc;
         settings = {
           check.command = "clippy";
+          cargo.targetDir = true;
         };
       };
       nixd = {
