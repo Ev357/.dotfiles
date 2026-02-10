@@ -12,7 +12,13 @@
   config = lib.mkIf config.services.nextcloud.enable {
     services = {
       nextcloud = {
-        package = inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.nextcloud32;
+        package = let
+          nextcloud = inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.nextcloud32;
+        in
+          nextcloud
+          // {
+            override = args: nextcloud.override (removeAttrs args ["caBundle"]);
+          };
         hostName = "nextcloud";
         config = {
           dbtype = "sqlite";
