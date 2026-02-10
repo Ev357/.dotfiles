@@ -2,15 +2,14 @@
   lib,
   config,
   pkgs,
+  inputs,
   ...
 }: {
-  imports = [
-    ./patch
-  ];
-
   config = lib.mkIf config.services.jellyfin.enable {
     services.jellyfin = {
+      package = inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.jellyfin;
       openFirewall = true;
+      group = "media";
     };
 
     environment.systemPackages = with pkgs; [

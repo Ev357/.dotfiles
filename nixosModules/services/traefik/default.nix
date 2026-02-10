@@ -93,6 +93,24 @@
               service = "immich";
               tls.certResolver = "letsencrypt";
             };
+
+            jellyseerr = {
+              rule = "Host(`jellyseerr.local.evest.dev`) || Host(`jellyseerr.ts.evest.dev`)";
+              service = "jellyseerr";
+              tls.certResolver = "letsencrypt";
+            };
+
+            radarr = {
+              rule = "Host(`radarr.local.evest.dev`) || Host(`radarr.ts.evest.dev`)";
+              service = "radarr";
+              tls.certResolver = "letsencrypt";
+            };
+
+            sonarr = {
+              rule = "Host(`sonarr.local.evest.dev`) || Host(`sonarr.ts.evest.dev`)";
+              service = "sonarr";
+              tls.certResolver = "letsencrypt";
+            };
           };
           services = {
             jellyfin = {
@@ -140,6 +158,24 @@
             immich = {
               loadBalancer.servers = [
                 {url = "http://localhost:2283";}
+              ];
+            };
+
+            jellyseerr = {
+              loadBalancer.servers = [
+                {url = "http://localhost:5055";}
+              ];
+            };
+
+            radarr = {
+              loadBalancer.servers = [
+                {url = "http://localhost:7878";}
+              ];
+            };
+
+            sonarr = {
+              loadBalancer.servers = [
+                {url = "http://localhost:8989";}
               ];
             };
           };

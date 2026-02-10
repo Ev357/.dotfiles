@@ -48,6 +48,9 @@
     forgejo.enable = true;
     atuin.enable = true;
     immich.enable = true;
+    jellyseerr.enable = true;
+    radarr.enable = true;
+    sonarr.enable = true;
   };
 
   environment.shells = with pkgs; [

@@ -9,7 +9,10 @@
     ./home-assistant
     ./immich
     ./jellyfin
+    ./jellyseerr
     ./nextcloud
+    ./radarr
+    ./sonarr
     ./traefik
     ./vaultwarden
   ];

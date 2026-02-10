@@ -1,10 +1,14 @@
 {
   config,
   lib,
+  pkgs,
+  inputs,
   ...
 }: {
   config = lib.mkIf config.services.home-assistant.enable {
     services.home-assistant = {
+      package = inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.home-assistant;
+      openFirewall = true;
       extraComponents = [
         "analytics"
         "google_translate"
@@ -21,9 +25,5 @@
         default_config = {};
       };
     };
-
-    networking.firewall.allowedTCPPorts = [
-      config.services.home-assistant.config.http.server_port
-    ];
   };
 }

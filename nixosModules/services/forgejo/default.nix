@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }: let
   cfg = config.services.forgejo;
@@ -15,6 +16,7 @@
 in {
   config = lib.mkIf config.services.forgejo.enable {
     services.forgejo = {
+      package = inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.forgejo;
       database.type = "postgres";
       lfs.enable = true;
       group = "media";
