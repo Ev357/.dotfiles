@@ -117,6 +117,12 @@
               service = "prowlarr";
               tls.certResolver = "letsencrypt";
             };
+
+            qbittorrent = {
+              rule = "Host(`qbittorrent.local.evest.dev`) || Host(`qbittorrent.ts.evest.dev`)";
+              service = "qbittorrent";
+              tls.certResolver = "letsencrypt";
+            };
           };
           services = {
             jellyfin = {
@@ -188,6 +194,12 @@
             prowlarr = {
               loadBalancer.servers = [
                 {url = "http://localhost:9696";}
+              ];
+            };
+
+            qbittorrent = {
+              loadBalancer.servers = [
+                {url = "http://localhost:8087";}
               ];
             };
           };

@@ -5,6 +5,7 @@
     ./atuin
     ./cloudflared
     ./prowlarr
+    ./qbittorrent
     ./evolution-data-server
     ./flaresolverr
     ./forgejo

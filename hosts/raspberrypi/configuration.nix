@@ -53,6 +53,7 @@
     sonarr.enable = true;
     prowlarr.enable = true;
     flaresolverr.enable = true;
+    qbittorrent.enable = true;
   };
 
   environment.shells = with pkgs; [
