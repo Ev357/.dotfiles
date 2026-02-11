@@ -52,6 +52,7 @@
     radarr.enable = true;
     sonarr.enable = true;
     prowlarr.enable = true;
+    flaresolverr.enable = true;
   };
 
   environment.shells = with pkgs; [

@@ -6,6 +6,7 @@
     ./cloudflared
     ./prowlarr
     ./evolution-data-server
+    ./flaresolverr
     ./forgejo
     ./home-assistant
     ./immich
