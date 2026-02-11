@@ -111,6 +111,12 @@
               service = "sonarr";
               tls.certResolver = "letsencrypt";
             };
+
+            prowlarr = {
+              rule = "Host(`prowlarr.local.evest.dev`) || Host(`prowlarr.ts.evest.dev`)";
+              service = "prowlarr";
+              tls.certResolver = "letsencrypt";
+            };
           };
           services = {
             jellyfin = {
@@ -176,6 +182,12 @@
             sonarr = {
               loadBalancer.servers = [
                 {url = "http://localhost:8989";}
+              ];
+            };
+
+            prowlarr = {
+              loadBalancer.servers = [
+                {url = "http://localhost:9696";}
               ];
             };
           };

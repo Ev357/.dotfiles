@@ -51,6 +51,7 @@
     jellyseerr.enable = true;
     radarr.enable = true;
     sonarr.enable = true;
+    prowlarr.enable = true;
   };
 
   environment.shells = with pkgs; [
