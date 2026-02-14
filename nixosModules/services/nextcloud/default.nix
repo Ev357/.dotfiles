@@ -31,6 +31,7 @@
             "nextcloud.ts.evest.dev"
             "raspberrypi"
           ];
+          overwriteprotocol = "https";
         };
         extraApps = {
           theming_customcss = pkgs.fetchNextcloudApp {
