@@ -44,165 +44,49 @@
       };
 
       dynamicConfigOptions = {
-        http = {
-          routers = {
-            jellyfin = {
-              rule = "Host(`jellyfin.local.evest.dev`) || Host(`jellyfin.ts.evest.dev`)";
-              service = "jellyfin";
-              tls.certResolver = "letsencrypt";
-            };
+        http = let
+          scfg = config.services;
 
-            nextcloud = {
-              rule = "Host(`nextcloud.local.evest.dev`) || Host(`nextcloud.ts.evest.dev`)";
-              service = "nextcloud";
-              tls.certResolver = "letsencrypt";
-            };
-
-            vaultwarden = {
-              rule = "Host(`vaultwarden.local.evest.dev`) || Host(`vaultwarden.ts.evest.dev`)";
-              service = "vaultwarden";
-              tls.certResolver = "letsencrypt";
-            };
-
+          apps = {
+            jellyfin = {port = 8096;};
+            nextcloud = {port = 3080;};
+            vaultwarden = {port = scfg.vaultwarden.config.ROCKET_PORT;};
             traefik = {
-              rule = "Host(`traefik.local.evest.dev`) || Host(`traefik.ts.evest.dev`) || Host(`local.evest.dev`)";
-              service = "traefik";
-              tls.certResolver = "letsencrypt";
+              port = 8080;
+              extraRules = " || Host(`local.evest.dev`)";
             };
-
             home-assistant = {
-              rule = "Host(`home.local.evest.dev`) || Host(`home.ts.evest.dev`)";
-              service = "home-assistant";
-              tls.certResolver = "letsencrypt";
+              port = scfg.home-assistant.config.http.server_port;
+              host = "home";
             };
-
             forgejo = {
-              rule = "Host(`git.local.evest.dev`) || Host(`git.ts.evest.dev`)";
-              service = "forgejo";
-              tls.certResolver = "letsencrypt";
+              port = scfg.forgejo.settings.server.HTTP_PORT;
+              host = "git";
             };
-
-            atuin = {
-              rule = "Host(`atuin.local.evest.dev`) || Host(`atuin.ts.evest.dev`)";
-              service = "atuin";
-              tls.certResolver = "letsencrypt";
-            };
-
-            immich = {
-              rule = "Host(`immich.local.evest.dev`) || Host(`immich.ts.evest.dev`)";
-              service = "immich";
-              tls.certResolver = "letsencrypt";
-            };
-
-            jellyseerr = {
-              rule = "Host(`jellyseerr.local.evest.dev`) || Host(`jellyseerr.ts.evest.dev`)";
-              service = "jellyseerr";
-              tls.certResolver = "letsencrypt";
-            };
-
-            radarr = {
-              rule = "Host(`radarr.local.evest.dev`) || Host(`radarr.ts.evest.dev`)";
-              service = "radarr";
-              tls.certResolver = "letsencrypt";
-            };
-
-            sonarr = {
-              rule = "Host(`sonarr.local.evest.dev`) || Host(`sonarr.ts.evest.dev`)";
-              service = "sonarr";
-              tls.certResolver = "letsencrypt";
-            };
-
-            prowlarr = {
-              rule = "Host(`prowlarr.local.evest.dev`) || Host(`prowlarr.ts.evest.dev`)";
-              service = "prowlarr";
-              tls.certResolver = "letsencrypt";
-            };
-
-            qbittorrent = {
-              rule = "Host(`qbittorrent.local.evest.dev`) || Host(`qbittorrent.ts.evest.dev`)";
-              service = "qbittorrent";
-              tls.certResolver = "letsencrypt";
-            };
+            atuin = {port = scfg.atuin.port;};
+            immich = {port = scfg.immich.port;};
+            jellyseerr = {port = scfg.jellyseerr.port;};
+            radarr = {port = scfg.radarr.settings.server.port;};
+            sonarr = {port = scfg.sonarr.settings.server.port;};
+            prowlarr = {port = scfg.prowlarr.settings.server.port;};
+            bazarr = {port = scfg.bazarr.listenPort;};
+            qbittorrent = {port = scfg.qbittorrent.webuiPort;};
           };
-          services = {
-            jellyfin = {
-              loadBalancer.servers = [
-                {url = "http://localhost:8096";}
-              ];
-            };
 
-            nextcloud = {
-              loadBalancer.servers = [
-                {url = "http://localhost:3080";}
-              ];
-            };
-
-            vaultwarden = {
-              loadBalancer.servers = [
-                {url = "http://localhost:8222";}
-              ];
-            };
-
-            traefik = {
-              loadBalancer.servers = [
-                {url = "http://localhost:8080";}
-              ];
-            };
-
-            home-assistant = {
-              loadBalancer.servers = [
-                {url = "http://localhost:8123";}
-              ];
-            };
-
-            forgejo = {
-              loadBalancer.servers = [
-                {url = "http://localhost:3081";}
-              ];
-            };
-
-            atuin = {
-              loadBalancer.servers = [
-                {url = "http://localhost:8888";}
-              ];
-            };
-
-            immich = {
-              loadBalancer.servers = [
-                {url = "http://localhost:2283";}
-              ];
-            };
-
-            jellyseerr = {
-              loadBalancer.servers = [
-                {url = "http://localhost:5055";}
-              ];
-            };
-
-            radarr = {
-              loadBalancer.servers = [
-                {url = "http://localhost:7878";}
-              ];
-            };
-
-            sonarr = {
-              loadBalancer.servers = [
-                {url = "http://localhost:8989";}
-              ];
-            };
-
-            prowlarr = {
-              loadBalancer.servers = [
-                {url = "http://localhost:9696";}
-              ];
-            };
-
-            qbittorrent = {
-              loadBalancer.servers = [
-                {url = "http://localhost:8087";}
-              ];
-            };
+          mkRouter = name: cfg: let
+            hostPrefix = cfg.host or name;
+          in {
+            rule = "Host(`${hostPrefix}.local.evest.dev`) || Host(`${hostPrefix}.ts.evest.dev`)${cfg.extraRules or ""}";
+            service = name;
+            tls.certResolver = "letsencrypt";
           };
+
+          mkService = name: cfg: {
+            loadBalancer.servers = [{url = "http://localhost:${toString cfg.port}";}];
+          };
+        in {
+          routers = lib.mapAttrs mkRouter apps;
+          services = lib.mapAttrs mkService apps;
         };
       };
     };

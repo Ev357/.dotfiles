@@ -52,6 +52,7 @@
     radarr.enable = true;
     sonarr.enable = true;
     prowlarr.enable = true;
+    bazarr.enable = true;
     flaresolverr.enable = true;
     qbittorrent.enable = true;
   };

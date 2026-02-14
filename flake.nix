@@ -24,6 +24,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # TODO: remove later today
+    nixpkgs-latest.url = "github:nixos/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
     stylix.url = "github:nix-community/stylix";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -33,6 +35,10 @@
     nur.url = "github:nix-community/NUR";
     tano.url = "github:Ev357/tano";
     template-manager.url = "github:Ev357/template-manager";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
     ghostty = {
       url = "github:ghostty-org/ghostty";
       inputs.nixpkgs.follows = "nixpkgs";

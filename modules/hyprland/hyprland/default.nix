@@ -1,6 +1,8 @@
 {
   lib,
   config,
+  pkgs,
+  inputs,
   ...
 }: let
   cfg = config.wayland.windowManager.hyprland;
@@ -15,6 +17,9 @@ in {
       package = null;
       portalPackage = null;
       systemd.enable = false;
+      plugins = [
+        inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprscrolling
+      ];
     };
 
     modules.uwsm.enable = true;
