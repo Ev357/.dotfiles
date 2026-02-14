@@ -24,8 +24,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # TODO: remove later today
-    nixpkgs-latest.url = "github:nixos/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
     stylix.url = "github:nix-community/stylix";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
