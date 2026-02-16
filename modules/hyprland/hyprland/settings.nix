@@ -13,7 +13,7 @@ in {
     "$menu" = "vicinae toggle";
 
     general = {
-      # layout = "scrolling";
+      layout = "scrolling";
       gaps_in = 6;
       gaps_out = 10;
       "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
@@ -109,28 +109,39 @@ in {
       "$mainMod, M, exec, hyprshutdown"
       "$mainMod, E, exec, $fileManager"
       "$mainMod, V, togglefloating"
-      "$mainMod, R, exec, $menu"
-      "$mainMod, P, pseudo"
-      "$mainMod, T, togglesplit"
       "$mainMod, F, fullscreen"
-      "$mainMod SHIFT, l, exec, hyprlock"
-      "$mainMod SHIFT, p, exec, hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown now'"
-      "$mainMod SHIFT, r, exec, hyprshutdown -t 'Restarting...' --post-cmd 'systemctl reboot'"
-      "$mainMod SHIFT, h, exec, systemctl suspend"
+      "$mainMod, R, exec, $menu"
+      "$mainMod, b, exec, ${pkgs.busybox}/bin/killall -SIGUSR1 waybar"
 
-      "$mainMod SHIFT, m, exec, hyprctl keyword monitor \", preferred, auto-up, 1, mirror, ${cfg.mainMonitorName}\""
-      "$mainMod SHIFT, e, exec, hyprctl keyword monitor \", preferred, auto-up, 1\""
+      "$mainMod CONTROL, l, exec, hyprlock"
+      "$mainMod CONTROL, h, exec, systemctl suspend"
+      "$mainMod CONTROL, p, exec, hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown now'"
+      "$mainMod CONTROL, r, exec, hyprshutdown -t 'Restarting...' --post-cmd 'systemctl reboot'"
+      "$mainMod CONTROL, m, exec, hyprctl keyword monitor \", preferred, auto-up, 1, mirror, ${cfg.mainMonitorName}\""
+      "$mainMod CONTROL, e, exec, hyprctl keyword monitor \", preferred, auto-up, 1\""
+
+      "$mainMod, h, layoutmsg, move -col"
+      "$mainMod, j, movefocus, d"
+      "$mainMod, k, movefocus, u"
+      "$mainMod, l, layoutmsg, move +col"
+
+      "$mainMod SHIFT, h, layoutmsg, movewindowto l"
+      "$mainMod SHIFT, j, layoutmsg, movewindowto d"
+      "$mainMod SHIFT, k, layoutmsg, movewindowto u"
+      "$mainMod SHIFT, l, layoutmsg, movewindowto r"
+
+      "$mainMod SHIFT, o, layoutmsg, swapcol r"
+      "$mainMod SHIFT, i, layoutmsg, swapcol l"
+
+      "$mainMod, o, layoutmsg, colresize +conf"
+      "$mainMod, i, layoutmsg, colresize -conf"
+
+      "$mainMod, p, layoutmsg, promote"
+      "$mainMod, t, layoutmsg, togglefit"
 
       "$mainMod, PRINT, exec, hyprshot -m window -z"
       ", PRINT, exec, hyprshot -m output -z"
       "SHIFT, PRINT, exec, hyprshot -m region -z"
-
-      "$mainMod, h, movefocus, l"
-      "$mainMod, j, movefocus, d"
-      "$mainMod, k, movefocus, u"
-      "$mainMod, l, movefocus, r"
-
-      "$mainMod, b, exec, ${pkgs.busybox}/bin/killall -SIGUSR1 waybar"
 
       "$mainMod, 10, workspace, 1"
       "$mainMod, 11, workspace, 2"
@@ -173,10 +184,8 @@ in {
     ];
 
     binde = [
-      "$mainMod CONTROL, h, resizeactive, -20 0"
-      "$mainMod CONTROL, j, resizeactive, 0 20"
-      "$mainMod CONTROL, k, resizeactive, 0 -20"
-      "$mainMod CONTROL, l, resizeactive, 20 0"
+      "$mainMod, plus, layoutmsg, colresize +0.1"
+      "$mainMod, minus, layoutmsg, colresize -0.1"
     ];
 
     bindm = [
