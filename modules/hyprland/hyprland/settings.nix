@@ -26,7 +26,7 @@ in {
         column_width = 0.7;
         focus_fit_method = 1;
         fullscreen_on_one_column = true;
-        follow_debounce_ms = 200;
+        follow_focus = false;
       };
     };
     decoration = {
