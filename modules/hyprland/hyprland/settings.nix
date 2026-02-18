@@ -103,6 +103,8 @@ in {
 
     gesture = [
       "3, vertical, workspace"
+      "3, left, dispatcher, layoutmsg, move +col"
+      "3, right, dispatcher, layoutmsg, move -col"
     ];
 
     "$mainMod" = "SUPER";
