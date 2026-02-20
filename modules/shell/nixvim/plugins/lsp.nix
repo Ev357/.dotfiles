@@ -45,6 +45,7 @@
       eslint.enable = true;
       pyright.enable = true;
       qmlls.enable = true;
+      clangd.enable = true;
 
       rust_analyzer = {
         enable = true;

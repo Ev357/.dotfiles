@@ -50,6 +50,7 @@
     tailscale.enable = true;
     printing.enable = true;
     blueman.enable = true;
+    lact.enable = true;
 
     xserver = {
       xkb.layout = "cz";
