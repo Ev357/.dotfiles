@@ -27,7 +27,6 @@
       jellyfin-desktop
       nur.repos.Ev357.hayase
       nur.repos.Ev357.krita
-      anki-bin
       cosmic-files
     ];
   };

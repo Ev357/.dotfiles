@@ -1,12 +1,4 @@
-{
-  lib,
-  config,
-  ...
-}: {
-  imports = [
-    ./patch
-  ];
-
+{config, ...}: {
   programs.nh = {
     flake = "${config.home.homeDirectory}/.config/home-manager";
 

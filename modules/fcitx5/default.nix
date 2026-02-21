@@ -17,18 +17,20 @@
       };
     };
 
-    home.file.".local/share/fcitx5/themes".source = let
-      catppuccin-fcitx5 = pkgs.catppuccin-fcitx5.override {
-        withRoundedCorners = true;
-      };
-    in "${catppuccin-fcitx5}/share/fcitx5/themes";
+    home = {
+      file.".local/share/fcitx5/themes".source = let
+        catppuccin-fcitx5 = pkgs.catppuccin-fcitx5.override {
+          withRoundedCorners = true;
+        };
+      in "${catppuccin-fcitx5}/share/fcitx5/themes";
 
-    modules.uwsm.environmentVariables = {
-      XMODIFIERS = "@im=fcitx";
-      QT_IM_MODULE = "fcitx";
-      GTK_IM_MODULE = "wayland";
-      QT_IM_MODULES = "wayland;fcitx;ibus";
-      SDL_IM_MODULE = "fcitx";
+      sessionVariables = {
+        XMODIFIERS = "@im=fcitx";
+        QT_IM_MODULE = "fcitx";
+        GTK_IM_MODULE = "wayland";
+        QT_IM_MODULES = "wayland;fcitx;ibus";
+        SDL_IM_MODULE = "fcitx";
+      };
     };
 
     gtk = {

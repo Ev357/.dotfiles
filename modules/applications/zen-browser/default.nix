@@ -15,6 +15,7 @@
         DisableAppUpdate = true;
         DisableTelemetry = true;
       };
+      suppressXdgMigrationWarning = true;
     };
 
     xdg.mimeApps = let

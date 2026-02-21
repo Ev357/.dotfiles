@@ -4,6 +4,7 @@
   ...
 }: {
   imports = [
+    ./anki
     ./chromium
     ./easyeffects
     ./ghostty
@@ -38,6 +39,7 @@
     };
 
     programs = {
+      anki.enable = lib.mkDefault true;
       chromium.enable = lib.mkDefault true;
       ghostty.enable = lib.mkDefault true;
       zed-editor.enable = lib.mkDefault true;

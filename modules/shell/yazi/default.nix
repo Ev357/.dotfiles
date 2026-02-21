@@ -6,7 +6,7 @@
 }: {
   config = lib.mkIf config.programs.yazi.enable {
     programs.yazi = {
-      enableNushellIntegration = true;
+      shellWrapperName = "y";
       keymap = {
         mgr.prepend_keymap = [
           {
