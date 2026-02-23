@@ -26,6 +26,7 @@
     updatetime = 250;
     timeoutlen = 300;
     list = true;
+    ls = 0;
     listchars = {
       tab = "» ";
       trail = "·";
@@ -150,10 +151,6 @@
   extraConfigLua =
     # lua
     ''
-      require('mini.statusline').section_location = function()
-        return '%2l:%-2v'
-      end
-
       local binary_handler = require("supermaven-nvim.binary.binary_handler")
       local original_open_popup = binary_handler.open_popup
 
