@@ -63,7 +63,6 @@
     obsidian.enable = true;
     snacks.enable = true;
     mini.enable = true;
-    which-key.enable = true;
     lsp.enable = true;
     blink-cmp.enable = true;
     conform-nvim.enable = true;

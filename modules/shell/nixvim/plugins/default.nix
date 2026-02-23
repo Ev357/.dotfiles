@@ -16,6 +16,5 @@
     ./telescope.nix
     ./treesitter.nix
     ./undotree.nix
-    ./which-key.nix
   ];
 }
