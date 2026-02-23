@@ -49,6 +49,18 @@
       float.transparent = true;
     };
   };
+  diagnostic.settings = {
+    update_in_insert = false;
+    severity_sort = true;
+    float = {
+      border = "rounded";
+      source = "if_many";
+    };
+    underline = {severity.__raw = "vim.diagnostic.severity.ERROR";};
+    virtual_text = true;
+    virtual_lines = false;
+    jump = {float = true;};
+  };
   clipboard.register = "unnamedplus";
   performance.byteCompileLua.enable = true;
   vimAlias = true;
