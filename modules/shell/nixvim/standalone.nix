@@ -26,7 +26,8 @@
     updatetime = 250;
     timeoutlen = 300;
     list = true;
-    ls = 0;
+    laststatus = 0;
+    ruler = false;
     listchars = {
       tab = "» ";
       trail = "·";
@@ -85,6 +86,19 @@
         ''
           function()
             vim.highlight.on_yank()
+          end
+        '';
+    }
+    {
+      event = "CmdlineLeave";
+      desc = "Clear command line message after it's displayed";
+      callback.__raw =
+        # lua
+        ''
+          function()
+            vim.defer_fn(function()
+              vim.cmd("echon \'\'")
+            end, 1000)
           end
         '';
     }
