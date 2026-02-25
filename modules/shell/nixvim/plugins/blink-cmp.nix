@@ -28,5 +28,9 @@
         };
       };
     };
+    keymap = {
+      "<C-space>" = false;
+      "<C-m>" = ["show" "show_documentation" "hide_documentation"];
+    };
   };
 }
