@@ -41,6 +41,10 @@
           source = ./.obsidian.vimrc;
           target = "../.obsidian.vimrc";
         };
+        "excalidraw-startup-script.md" = {
+          source = ./excalidraw-startup-script.md;
+          target = "excalidraw-startup-script.md";
+        };
       };
     };
 

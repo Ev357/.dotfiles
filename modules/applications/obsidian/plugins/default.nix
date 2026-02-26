@@ -9,7 +9,9 @@
       settings = builtins.fromJSON (builtins.readFile ./folder-notes/data.json);
     }
     {
-      pkg = pkgs.nur.repos.Ev357.obsidian-excalidraw-plugin;
+      pkg = pkgs.nur.repos.Ev357.obsidian-excalidraw-plugin.override {
+        enableHiddenScriptPatch = true;
+      };
       settings = builtins.fromJSON (builtins.readFile ./obsidian-excalidraw-plugin/data.json);
     }
     {
