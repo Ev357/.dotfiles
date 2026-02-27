@@ -10,6 +10,14 @@
       theme = "dark";
       style = "anki";
       minimalistMode = true;
+      sync = {
+        url = "https://anki.ts.evest.dev/";
+        keyFile = "${config.home.homeDirectory}/.config/anki/sync-key";
+        autoSync = true;
+        syncMedia = true;
+        autoSyncMediaMinutes = 15;
+        networkTimeout = 60;
+      };
       addons = with pkgs.ankiAddons; [
         anki-connect
         passfail2

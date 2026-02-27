@@ -71,6 +71,7 @@
             prowlarr = {port = scfg.prowlarr.settings.server.port;};
             bazarr = {port = scfg.bazarr.listenPort;};
             qbittorrent = {port = scfg.qbittorrent.webuiPort;};
+            anki = {port = scfg.anki-sync-server.port;};
           };
 
           mkRouter = name: cfg: let
