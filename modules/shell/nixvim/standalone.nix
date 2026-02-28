@@ -73,7 +73,8 @@
     oil.enable = true;
     neogit.enable = true;
     obsidian.enable = true;
-    snacks.enable = true;
+    # ghostty crashes for some reason, needs a fix
+    # snacks.enable = true;
     mini.enable = true;
     lsp.enable = true;
     blink-cmp.enable = true;

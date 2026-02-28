@@ -26,7 +26,7 @@
       grayjay
       jellyfin-desktop
       nur.repos.Ev357.hayase
-      nur.repos.Ev357.krita
+      # nur.repos.Ev357.krita
       cosmic-files
     ];
   };

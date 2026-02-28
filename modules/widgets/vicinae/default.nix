@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{
   programs.vicinae = {
     settings = {
       theme = {
@@ -7,8 +7,8 @@
       };
     };
     systemd.enable = true;
-    extensions = with pkgs; [
-      nur.repos.Ev357.bitwarden
-    ];
+    # extensions = with pkgs; [
+    #   nur.repos.Ev357.bitwarden
+    # ];
   };
 }
