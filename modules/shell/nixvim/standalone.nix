@@ -40,6 +40,15 @@
     mapleader = " ";
     maplocalleader = " ";
     omni_sql_default_compl_type = "syntax";
+    clipboard.__raw =
+      # lua
+      ''
+        (function()
+          if os.getenv('SSH_TTY') or os.getenv('SSH_CONNECTION') then
+            return "osc52"
+          end
+        end)()
+      '';
   };
   colorschemes.catppuccin = {
     enable = true;
