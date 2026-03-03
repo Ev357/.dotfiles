@@ -14,6 +14,7 @@
             markdown = { 'injected' },
             sql = { 'sql_formatter' },
             python = { 'isort', 'black' },
+            tex = { 'tex-fmt' },
           }
 
           local formatters = { 'oxfmt', 'biome', 'prettierd' }

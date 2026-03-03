@@ -176,6 +176,7 @@
     sql-formatter
     black
     isort
+    tex-fmt
   ];
 
   extraPlugins = with pkgs.vimPlugins; [
