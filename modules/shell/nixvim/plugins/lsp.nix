@@ -47,6 +47,7 @@
       qmlls.enable = true;
       clangd.enable = true;
       bashls.enable = true;
+      texlab.enable = true;
 
       rust_analyzer = {
         enable = true;
