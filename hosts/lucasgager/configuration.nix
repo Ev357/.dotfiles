@@ -30,7 +30,6 @@
   programs = {
     hyprland.enable = true;
     nix-ld.enable = true;
-    light.enable = true;
     localsend = {
       enable = true;
       package = pkgs.emptyDirectory;
