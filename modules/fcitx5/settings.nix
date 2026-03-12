@@ -27,6 +27,7 @@
         "Choose Modifier" = "Alt";
         EnableHintByDefault = "False";
         "Hint Trigger" = "";
+        "One Time Hint Trigger" = "";
         UseNewComposeBehavior = "True";
         EnableLongPress = "False";
       };
@@ -37,9 +38,6 @@
         };
         NextCandidate = {
           "0" = "Tab";
-        };
-        "One Time Hint Trigger" = {
-          "0" = "Control+Alt+J";
         };
         LongPressBlocklist = {
           "0" = "konsole";
