@@ -32,12 +32,6 @@
           ];
       })
       lutris
-
-      # https://github.com/NixOS/nixpkgs/issues/494561
-      # dwarfs
-      fuse-overlayfs
-      bubblewrap
-      wine-staging
     ];
 
     modules.electron-flags.enable = true;
