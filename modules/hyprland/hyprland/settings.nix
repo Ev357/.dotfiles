@@ -21,13 +21,9 @@ in {
       resize_on_border = true;
       allow_tearing = true;
     };
-    plugin = {
-      hyprscrolling = {
-        column_width = 0.7;
-        focus_fit_method = 1;
-        fullscreen_on_one_column = true;
-        follow_focus = false;
-      };
+    scrolling = {
+      column_width = 0.7;
+      follow_focus = false;
     };
     decoration = {
       rounding = 14;

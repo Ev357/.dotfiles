@@ -33,10 +33,6 @@
     nur.url = "github:nix-community/NUR";
     tano.url = "github:Ev357/tano";
     template-manager.url = "github:Ev357/template-manager";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
     ghostty = {
       url = "github:ghostty-org/ghostty";
       inputs.nixpkgs.follows = "nixpkgs";

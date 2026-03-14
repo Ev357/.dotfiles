@@ -51,10 +51,8 @@
 
       rust_analyzer = {
         enable = true;
-        installCargo = true;
-        installRustc = true;
-        cargoPackage = inputs.fenix.packages.${pkgs.stdenv.hostPlatform.system}.complete.cargo;
-        rustcPackage = inputs.fenix.packages.${pkgs.stdenv.hostPlatform.system}.complete.rustc;
+        installCargo = false;
+        installRustc = false;
         settings = {
           check.command = "clippy";
           cargo.targetDir = true;
