@@ -10,7 +10,9 @@ $git_branch\
 $git_state\
 $git_status\
 $cmd_duration\
-$character"""
+$shlvl\
+$character
+"""
 
 add_newline = false
 
@@ -21,6 +23,14 @@ style = "blue"
 success_symbol = "[❯](purple)"
 error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
+
+[shlvl]
+disabled = false
+format = "[$symbol]($style)"
+style = "purple"
+symbol = "❯"
+repeat = true
+repeat_offset = 1
 
 [git_branch]
 format = "[$branch]($style)"
@@ -44,7 +54,6 @@ style = "bright-black"
 [cmd_duration]
 format = "[$duration]($style) "
 style = "yellow"
-
 
 [palettes.catppuccin_macchiato]
 rosewater = "#f4dbd6"
