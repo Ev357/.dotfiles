@@ -7,6 +7,7 @@
     systemd.services.atuin.serviceConfig = {
       User = "atuin";
       DynamicUser = lib.mkForce false;
+      ExecStart = lib.mkForce "${lib.getExe' config.services.atuin.package "atuin-server"} start";
     };
 
     users.users."atuin" = {
