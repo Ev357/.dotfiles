@@ -4,6 +4,7 @@
     ./anki-sync-server
     ./atuin
     ./bazarr
+    ./cloudflare-warp
     ./cloudflared
     ./prowlarr
     ./qbittorrent

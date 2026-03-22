@@ -55,6 +55,7 @@
     bazarr.enable = true;
     flaresolverr.enable = true;
     qbittorrent.enable = true;
+    cloudflare-warp.enable = true;
   };
 
   environment.shells = with pkgs; [
