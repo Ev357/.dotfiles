@@ -24,6 +24,7 @@ in {
     scrolling = {
       column_width = 0.7;
       follow_focus = false;
+      focus_fit_method = 0;
     };
     decoration = {
       rounding = 14;
@@ -127,10 +128,10 @@ in {
       "$mainMod, k, movefocus, u"
       "$mainMod, l, layoutmsg, move +col"
 
-      "$mainMod SHIFT, h, layoutmsg, movewindowto l"
-      "$mainMod SHIFT, j, layoutmsg, movewindowto d"
-      "$mainMod SHIFT, k, layoutmsg, movewindowto u"
-      "$mainMod SHIFT, l, layoutmsg, movewindowto r"
+      "$mainMod SHIFT, h, movewindow, l"
+      "$mainMod SHIFT, j, movewindow, d"
+      "$mainMod SHIFT, k, movewindow, u"
+      "$mainMod SHIFT, l, movewindow, r"
 
       "$mainMod SHIFT, o, layoutmsg, swapcol r"
       "$mainMod SHIFT, i, layoutmsg, swapcol l"
@@ -139,7 +140,6 @@ in {
       "$mainMod, i, layoutmsg, colresize -conf"
 
       "$mainMod, p, layoutmsg, promote"
-      "$mainMod, t, layoutmsg, togglefit"
 
       "$mainMod, PRINT, exec, hyprshot -m window -z"
       ", PRINT, exec, hyprshot -m output -z"
