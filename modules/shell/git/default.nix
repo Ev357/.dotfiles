@@ -20,5 +20,6 @@
       safe.directory = "/storage/emulated/0/Documents/Obsidian";
     };
     lfs.enable = true;
+    signing.format = null;
   };
 }
