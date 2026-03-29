@@ -1,4 +1,5 @@
 {
+  "Revision": "0.6.6.2",
   "Profiles": [
     {
       "Tablet": "Wacom CTL-472",
@@ -25,14 +26,14 @@
       ],
       "AbsoluteModeSettings": {
         "Display": {
-          "Width": 1920.0,
-          "Height": 1080.0,
-          "X": 960.0,
-          "Y": 540.0,
+          "Width": 1440.0,
+          "Height": 960.0,
+          "X": 720.0,
+          "Y": 480.0,
           "Rotation": 0.0
         },
         "Tablet": {
-          "Width": 152.0,
+          "Width": 142.5,
           "Height": 95.0,
           "X": 76.0,
           "Y": 47.5,
@@ -40,7 +41,7 @@
         },
         "EnableClipping": true,
         "EnableAreaLimiting": false,
-        "LockAspectRatio": false
+        "LockAspectRatio": true
       },
       "RelativeModeSettings": {
         "XSensitivity": 10.0,
@@ -87,7 +88,9 @@
         "AuxButtons": [],
         "MouseButtons": [],
         "MouseScrollUp": null,
-        "MouseScrollDown": null
+        "MouseScrollDown": null,
+        "DisablePressure": false,
+        "DisableTilt": false
       }
     }
   ],
