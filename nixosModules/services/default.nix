@@ -14,7 +14,7 @@
     ./home-assistant
     ./immich
     ./jellyfin
-    ./jellyseerr
+    ./seerr
     ./nextcloud
     ./radarr
     ./sonarr

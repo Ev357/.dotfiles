@@ -65,7 +65,7 @@
             };
             atuin = {port = scfg.atuin.port;};
             immich = {port = scfg.immich.port;};
-            jellyseerr = {port = scfg.jellyseerr.port;};
+            seerr = {port = scfg.seerr.port;};
             radarr = {port = scfg.radarr.settings.server.port;};
             sonarr = {port = scfg.sonarr.settings.server.port;};
             prowlarr = {port = scfg.prowlarr.settings.server.port;};

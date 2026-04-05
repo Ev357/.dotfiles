@@ -48,7 +48,7 @@
     forgejo.enable = true;
     atuin.enable = true;
     immich.enable = true;
-    jellyseerr.enable = true;
+    seerr.enable = true;
     radarr.enable = true;
     sonarr.enable = true;
     prowlarr.enable = true;
