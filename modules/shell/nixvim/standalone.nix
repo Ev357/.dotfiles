@@ -68,7 +68,20 @@
     underline = {severity.__raw = "vim.diagnostic.severity.ERROR";};
     virtual_text = true;
     virtual_lines = false;
-    jump = {float = true;};
+    jump = {
+      on_jump.__raw =
+        # lua
+        ''
+          function(_, bufnr)
+            vim.diagnostic.open_float({
+              bufnr = bufnr,
+              scope = 'cursor',
+              focus = false,
+              border = "rounded",
+            })
+          end
+        '';
+    };
   };
   clipboard.register = "unnamedplus";
   performance.byteCompileLua.enable = true;
