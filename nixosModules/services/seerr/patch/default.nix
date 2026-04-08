@@ -6,6 +6,8 @@
 }: let
   cfg = config.services.seerr;
 in {
+  disabledModules = ["services/misc/seerr.nix"];
+
   options.services.seerr = {
     enable = lib.mkEnableOption "Seerr, a requests manager for Jellyfin";
     package = lib.mkPackageOption pkgs "seerr" {};
