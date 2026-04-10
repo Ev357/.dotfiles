@@ -140,6 +140,7 @@ in {
       "$mainMod, i, layoutmsg, colresize -conf"
 
       "$mainMod, p, layoutmsg, promote"
+      "$mainMod, t, layoutmsg, fit visible"
 
       "$mainMod, PRINT, exec, hyprshot -m window -z"
       ", PRINT, exec, hyprshot -m output -z"
