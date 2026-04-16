@@ -40,6 +40,16 @@
 
     {
       mode = "n";
+      key = "<C-c>";
+      action = "<Esc>";
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+
+    {
+      mode = "n";
       key = "<Esc>";
       action = "<cmd>noh<CR>";
     }
