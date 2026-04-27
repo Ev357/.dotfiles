@@ -11,6 +11,7 @@
     ./evolution-data-server
     ./flaresolverr
     ./forgejo
+    ./geoclue2
     ./home-assistant
     ./immich
     ./jellyfin

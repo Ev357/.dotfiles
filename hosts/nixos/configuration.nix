@@ -50,6 +50,7 @@
     printing.enable = true;
     blueman.enable = true;
     lact.enable = true;
+    geoclue2.enable = true;
 
     xserver = {
       xkb.layout = "cz";
@@ -67,6 +68,8 @@
   };
 
   powerManagement.enable = true;
+
+  location.provider = "geoclue2";
 
   environment.shells = with pkgs; [
     nushell

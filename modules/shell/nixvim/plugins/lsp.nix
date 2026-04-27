@@ -10,7 +10,7 @@
     servers = {
       gopls.enable = true;
       vue_ls.enable = true;
-      ts_ls.enable = true;
+      tsgo.enable = true;
       angularls = {
         enable = true;
         extraOptions = {
