@@ -25,6 +25,7 @@
       gimp3
       grayjay
       jellyfin-desktop
+      inkscape
       nur.repos.Ev357.hayase
       nur.repos.Ev357.krita
       cosmic-files
