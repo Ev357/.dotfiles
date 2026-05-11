@@ -38,6 +38,7 @@
 
   services = {
     swaync.enable = true;
+    mpris-proxy.enable = true;
     ollama = {
       acceleration = "rocm";
     };
