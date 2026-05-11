@@ -31,7 +31,6 @@
     modules = {
       applications = {
         other.enable = lib.mkDefault true;
-        mpv.enable = lib.mkDefault true;
         opentabletdriver.enable = lib.mkDefault true;
       };
 
@@ -42,6 +41,7 @@
       anki.enable = lib.mkDefault true;
       chromium.enable = lib.mkDefault true;
       ghostty.enable = lib.mkDefault true;
+      mpv.enable = true;
       zed-editor.enable = lib.mkDefault true;
       vesktop.enable = lib.mkDefault true;
       zen-browser.enable = lib.mkDefault true;

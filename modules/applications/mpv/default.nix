@@ -1,9 +1,4 @@
-{
-  lib,
-  config,
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   catppuccin-mpv = pkgs.fetchFromGitHub {
     owner = "catppuccin";
     repo = "mpv";
@@ -11,15 +6,12 @@
     sha256 = "sha256-oUheJNWk2R6gNEmkK8H6PWX0iofx2KMGDoFWtnr420A=";
   };
 in {
-  options.modules.applications.mpv = {
-    enable = lib.mkEnableOption "enables mpv";
-  };
-
-  config = lib.mkIf config.modules.applications.mpv.enable {
-    home.packages = with pkgs; [
-      mpv
+  programs.mpv = {
+    scripts = with pkgs.mpvScripts; [
+      mpris
     ];
-
-    xdg.configFile."mpv/mpv.conf".source = "${catppuccin-mpv}/themes/macchiato/lavender.conf";
+    includes = [
+      "${catppuccin-mpv}/themes/macchiato/lavender.conf"
+    ];
   };
 }
