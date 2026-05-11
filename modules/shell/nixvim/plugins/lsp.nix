@@ -69,14 +69,14 @@
               expr =
                 # nix
                 ''
-                  (builtins.getFlake (builtins.toString ./.)).nixosConfigurations."${config.configNames.nixos}".options
+                  (builtins.getFlake (toString ./.)).nixosConfigurations."${config.configNames.nixos}".options
                 '';
             };
             home_manager = {
               expr =
                 # nix
                 ''
-                  (builtins.getFlake (builtins.toString ./.)).homeConfigurations."${config.configNames.homeManager}".options
+                  (builtins.getFlake (toString ./.)).homeConfigurations."${config.configNames.homeManager}".options
                 '';
             };
           };

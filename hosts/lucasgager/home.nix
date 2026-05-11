@@ -14,7 +14,7 @@
     mainMonitorName = "eDP-1";
     mainMonitorScaling = 1;
     settings.monitor = [
-      "${mainMonitorName}, preferred, auto, ${builtins.toString mainMonitorScaling}"
+      "${mainMonitorName}, preferred, auto, ${toString mainMonitorScaling}"
       ", preferred, auto-up, 1"
     ];
   };

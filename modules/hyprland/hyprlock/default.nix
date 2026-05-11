@@ -19,7 +19,7 @@ in {
     };
 
     input-field = {
-      size = "${builtins.toString (240 * cfg.mainMonitorScaling)}, ${builtins.toString (48 * cfg.mainMonitorScaling)}";
+      size = "${toString (240 * cfg.mainMonitorScaling)}, ${toString (48 * cfg.mainMonitorScaling)}";
       outline_thickness = 4;
       dots_size = 0.2;
       dots_spacing = 0.2;
