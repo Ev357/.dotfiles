@@ -9,7 +9,6 @@
     ./easyeffects
     ./ghostty
     ./gnome-keyring
-    ./gnome-keyring
     ./keepassxc
     ./mpv
     ./obsidian
