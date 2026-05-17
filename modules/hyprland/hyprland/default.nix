@@ -16,6 +16,7 @@ in {
       package = null;
       portalPackage = null;
       systemd.enable = false;
+      configType = "hyprlang"; # TODO Change to lua
     };
 
     home = {

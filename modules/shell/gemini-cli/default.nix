@@ -3,8 +3,8 @@
     general = {
       preferredEditor = "nvim";
       vimMode = true;
-      disableAutoUpdate = true;
-      disableUpdateNag = true;
+      enableAutoUpdate = false;
+      enableAutoUpdateNotification = false;
     };
     ui = {
       hideBanner = true;
