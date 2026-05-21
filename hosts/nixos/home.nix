@@ -39,6 +39,7 @@
   services = {
     swaync.enable = true;
     mpris-proxy.enable = true;
+    blueman-applet.enable = true;
     ollama = {
       acceleration = "rocm";
     };

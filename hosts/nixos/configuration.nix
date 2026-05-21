@@ -1,6 +1,5 @@
 {
   inputs,
-  lib,
   pkgs,
   ...
 }: {
@@ -11,8 +10,8 @@
   ];
 
   boot = {
-    # https://github.com/NixOS/nixos-hardware/commit/a872d985392ee5b19d8409bfcc3f106de2070070
-    kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
+    # https://github.com/NixOS/nixpkgs/issues/521528
+    kernelPackages = pkgs.nur.repos.Ev357.linux-patched;
     loader = {
       systemd-boot = {
         enable = true;

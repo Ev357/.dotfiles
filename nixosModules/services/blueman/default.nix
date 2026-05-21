@@ -1,0 +1,5 @@
+{
+  services.blueman = {
+    withApplet = false;
+  };
+}

@@ -4,6 +4,7 @@
     ./anki-sync-server
     ./atuin
     ./bazarr
+    ./blueman
     ./cloudflare-warp
     ./cloudflared
     ./prowlarr
