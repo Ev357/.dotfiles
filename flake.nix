@@ -32,6 +32,7 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nur.url = "github:nix-community/NUR";
+    nixvim.url = "github:nix-community/nixvim";
     tano.url = "github:Ev357/tano";
     template-manager.url = "github:Ev357/template-manager";
     ghostty = {
@@ -40,10 +41,6 @@
     };
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nixvim = {
-      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser = {

@@ -10,8 +10,7 @@
   ];
 
   boot = {
-    # https://github.com/NixOS/nixpkgs/issues/521528
-    kernelPackages = pkgs.nur.repos.Ev357.linux-patched;
+    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       systemd-boot = {
         enable = true;
