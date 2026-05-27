@@ -12,7 +12,6 @@ in {
       "--disable-up-arrow"
     ];
     settings = {
-      sync_frequency = "5m";
       sync_address = "https://atuin.ts.evest.dev";
       theme.name = "catppuccin-macchiato-lavender";
       keymap_mode = "vim-insert";
