@@ -7,7 +7,7 @@
   };
 in {
   programs.atuin = {
-    enableNushellIntegration = true;
+    daemon.enable = true;
     flags = [
       "--disable-up-arrow"
     ];

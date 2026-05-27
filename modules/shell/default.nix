@@ -9,7 +9,6 @@
     ./atuin
     ./btop
     ./bun
-    ./carapace
     ./direnv
     ./gemini-cli
     ./git
