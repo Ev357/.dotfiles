@@ -15,6 +15,11 @@ in {
       sync_frequency = "5m";
       sync_address = "https://atuin.ts.evest.dev";
       theme.name = "catppuccin-macchiato-lavender";
+      keymap_mode = "vim-insert";
+      keymap_cursor = {
+        vim_insert = "steady-bar";
+        vim_normal = "steady-block";
+      };
     };
     themes = {
       "catppuccin-macchiato-lavender" = builtins.readFile "${catppuccin-atuin}/themes/macchiato/catppuccin-macchiato-lavender.toml";
