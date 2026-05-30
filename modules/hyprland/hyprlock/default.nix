@@ -2,7 +2,7 @@
   cfg = config.wayland.windowManager.hyprland;
 in {
   programs.hyprlock.settings = {
-    "source" = "$HOME/.config/hypr/hyprland/colors.conf";
+    source = "$XDG_CONFIG_HOME/hypr/colors.conf";
 
     "$accent" = "$mauve";
     "$accentAlpha" = "$mauveAlpha";

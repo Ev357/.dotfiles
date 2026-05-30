@@ -42,6 +42,7 @@ in {
     };
 
     xdg.configFile = {
+      "hypr/colors.conf".source = ./colors.conf;
       "hypr/hyprtoolkit.conf".source = ./hyprtoolkit.conf;
       "uwsm/env".source = "${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh";
     };

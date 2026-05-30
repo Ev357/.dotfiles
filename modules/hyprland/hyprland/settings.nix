@@ -81,7 +81,17 @@ in {
 
     permission = [
       {
-        binary = "${lib.getExe pkgs.hyprpicker}";
+        binary = lib.escapeRegex (lib.getExe pkgs.grim);
+        type = "screencopy";
+        mode = "allow";
+      }
+      {
+        binary = lib.escapeRegex (lib.getExe pkgs.hyprpicker);
+        type = "screencopy";
+        mode = "allow";
+      }
+      {
+        binary = lib.escapeRegex (lib.getExe config.programs.hyprlock.package);
         type = "screencopy";
         mode = "allow";
       }
