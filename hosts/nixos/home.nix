@@ -13,10 +13,20 @@
     enable = true;
     mainMonitorName = "eDP-1";
     mainMonitorScaling = 2;
-    settings = {
+    settings.config = {
       monitor = [
-        "${mainMonitorName}, highres, auto, ${toString mainMonitorScaling}"
-        ", preferred, auto-up, 1"
+        {
+          output = mainMonitorName;
+          mode = "highres";
+          position = "auto";
+          scale = mainMonitorScaling;
+        }
+        {
+          output = "";
+          mode = "preferred";
+          position = "auto-up";
+          scale = 1;
+        }
       ];
     };
   };

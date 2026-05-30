@@ -1,230 +1,454 @@
 {
+  lib,
   config,
   pkgs,
+  inputs,
   ...
 }: let
   cfg = config.wayland.windowManager.hyprland;
+  inline = lib.generators.mkLuaInline;
 in {
   wayland.windowManager.hyprland.settings = {
-    source = "~/.config/hypr/hyprland/colors.conf";
+    terminal._var = "ghostty +new-window";
+    fileManager._var = "ghostty -e yazi";
+    menu._var = "vicinae toggle";
+    mainMod._var = "SUPER";
 
-    "$terminal" = "ghostty +new-window";
-    "$fileManager" = "ghostty -e yazi";
-    "$menu" = "vicinae toggle";
+    config = {
+      ecosystem = {enforce_permissions = true;};
+      debug = {disable_logs = false;};
 
-    general = {
-      layout = "scrolling";
-      gaps_in = 6;
-      gaps_out = 10;
-      "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-      "col.inactive_border" = "rgba(595959aa)";
-      resize_on_border = true;
-      allow_tearing = true;
-    };
-    scrolling = {
-      column_width = 0.7;
-      follow_focus = false;
-      focus_fit_method = 0;
-    };
-    decoration = {
-      rounding = 14;
-      shadow.color = "rgba(1a1a1aee)";
-      blur = {
-        size = 20;
-        passes = 2;
-        brightness = 0.75;
+      general = {
+        allow_tearing = true;
+        gaps_in = 6;
+        gaps_out = 10;
+        layout = "scrolling";
+        resize_on_border = true;
+        col = {
+          active_border = {
+            colors = ["rgba(33ccffee)" "rgba(00ff99ee)"];
+            angle = 45;
+          };
+          inactive_border = "rgba(595959aa)";
+        };
       };
-    };
-    animations = {
-      enabled = "yes, please :)";
-      workspace_wraparound = true;
 
-      bezier = ["easeOutQuint,0.23,1,0.32,1" "easeInOutCubic,0.65,0.05,0.36,1" "linear,0,0,1,1" "almostLinear,0.5,0.5,0.75,1.0" "quick,0.15,0,0.1,1"];
+      decoration = {
+        rounding = 14;
+        blur = {
+          enabled = true;
+          brightness = 0.75;
+          passes = 2;
+          size = 20;
+        };
+        shadow = {
+          enabled = true;
+          color = inline "0xee1a1a1a";
+        };
+      };
 
-      animation = [
-        "global, 1, 10, default"
-        "border, 1, 5.39, easeOutQuint"
-        "windows, 1, 4.79, easeOutQuint"
-        "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
-        "windowsOut, 1, 1.49, linear, popin 87%"
-        "fadeIn, 1, 1.73, almostLinear"
-        "fadeOut, 1, 1.46, almostLinear"
-        "fade, 1, 3.03, quick"
-        "layers, 1, 3.81, easeOutQuint"
-        "layersIn, 1, 4, easeOutQuint, fade"
-        "layersOut, 1, 1.5, linear, fade"
-        "fadeLayersIn, 1, 1.79, almostLinear"
-        "fadeLayersOut, 1, 1.39, almostLinear"
-        "workspaces, 1, 5, almostLinear, slidefadevert"
-        "workspacesIn, 1, 1.21, almostLinear, slidefadevert"
-        "workspacesOut, 1, 1.94, almostLinear, slidefadevert"
-        "specialWorkspace, 1, 25, almostLinear, fade"
-        "specialWorkspaceIn, 1, 2.42, almostLinear, fade"
-        "specialWorkspaceOut, 1, 1.94, almostLinear, fade"
-      ];
-    };
-    misc = {
-      force_default_wallpaper = 1;
-      disable_hyprland_logo = true;
-      disable_splash_rendering = true;
-      mouse_move_enables_dpms = true;
-      key_press_enables_dpms = true;
-    };
-    input = {
-      kb_layout = "cz, us";
-      kb_variant = "qwerty";
-      kb_options = "grp:alt_shift_toggle";
-      touchpad = {
-        natural_scroll = true;
-        disable_while_typing = false;
-        drag_lock = 0;
+      animations = {
+        enabled = true;
+        workspace_wraparound = true;
+      };
+
+      scrolling = {
+        column_width = 0.7;
+        focus_fit_method = 0;
+        follow_focus = false;
+      };
+
+      misc = {
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
+        enable_anr_dialog = false;
+        force_default_wallpaper = 1;
+        key_press_enables_dpms = true;
+        mouse_move_enables_dpms = true;
+      };
+
+      input = {
+        kb_layout = "cz, us";
+        kb_options = "grp:alt_shift_toggle";
+        kb_variant = "qwerty";
+        touchpad = {
+          disable_while_typing = false;
+          drag_lock = 0;
+          natural_scroll = true;
+        };
       };
     };
 
-    layerrule = [
+    permission = [
+      {
+        binary = "${lib.getExe pkgs.hyprpicker}";
+        type = "screencopy";
+        mode = "allow";
+      }
+      {
+        binary = lib.escapeRegex "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland}/libexec/.xdg-desktop-portal-hyprland-wrapped";
+        type = "screencopy";
+        mode = "allow";
+      }
+    ];
+
+    curve = [
+      {
+        _args = [
+          "easeOutQuint"
+          {
+            type = "bezier";
+            points = [[0.23 1] [0.32 1]];
+          }
+        ];
+      }
+      {
+        _args = [
+          "easeInOutCubic"
+          {
+            type = "bezier";
+            points = [[0.65 0.05] [0.36 1]];
+          }
+        ];
+      }
+      {
+        _args = [
+          "linear"
+          {
+            type = "bezier";
+            points = [[0 0] [1 1]];
+          }
+        ];
+      }
+      {
+        _args = [
+          "almostLinear"
+          {
+            type = "bezier";
+            points = [[0.5 0.5] [0.75 1.0]];
+          }
+        ];
+      }
+      {
+        _args = [
+          "quick"
+          {
+            type = "bezier";
+            points = [[0.15 0] [0.1 1]];
+          }
+        ];
+      }
+    ];
+
+    animation = [
+      {
+        leaf = "global";
+        enabled = true;
+        speed = 10;
+        bezier = "default";
+      }
+      {
+        leaf = "border";
+        enabled = true;
+        speed = 5.39;
+        bezier = "easeOutQuint";
+      }
+      {
+        leaf = "windows";
+        enabled = true;
+        speed = 4.79;
+        bezier = "easeOutQuint";
+      }
+      {
+        leaf = "windowsIn";
+        enabled = true;
+        speed = 4.1;
+        bezier = "easeOutQuint";
+        style = "popin 87%";
+      }
+      {
+        leaf = "windowsOut";
+        enabled = true;
+        speed = 1.49;
+        bezier = "linear";
+        style = "popin 87%";
+      }
+      {
+        leaf = "fadeIn";
+        enabled = true;
+        speed = 1.73;
+        bezier = "almostLinear";
+      }
+      {
+        leaf = "fadeOut";
+        enabled = true;
+        speed = 1.46;
+        bezier = "almostLinear";
+      }
+      {
+        leaf = "fade";
+        enabled = true;
+        speed = 3.03;
+        bezier = "quick";
+      }
+      {
+        leaf = "layers";
+        enabled = true;
+        speed = 3.81;
+        bezier = "easeOutQuint";
+      }
+      {
+        leaf = "layersIn";
+        enabled = true;
+        speed = 4;
+        bezier = "easeOutQuint";
+        style = "fade";
+      }
+      {
+        leaf = "layersOut";
+        enabled = true;
+        speed = 1.5;
+        bezier = "linear";
+        style = "fade";
+      }
+      {
+        leaf = "fadeLayersIn";
+        enabled = true;
+        speed = 1.79;
+        bezier = "almostLinear";
+      }
+      {
+        leaf = "fadeLayersOut";
+        enabled = true;
+        speed = 1.39;
+        bezier = "almostLinear";
+      }
+      {
+        leaf = "workspaces";
+        enabled = true;
+        speed = 5;
+        bezier = "almostLinear";
+        style = "slidefadevert";
+      }
+      {
+        leaf = "workspacesIn";
+        enabled = true;
+        speed = 1.21;
+        bezier = "almostLinear";
+        style = "slidefadevert";
+      }
+      {
+        leaf = "workspacesOut";
+        enabled = true;
+        speed = 1.94;
+        bezier = "almostLinear";
+        style = "slidefadevert";
+      }
+      {
+        leaf = "specialWorkspace";
+        enabled = true;
+        speed = 25;
+        bezier = "almostLinear";
+        style = "fade";
+      }
+      {
+        leaf = "specialWorkspaceIn";
+        enabled = true;
+        speed = 2.42;
+        bezier = "almostLinear";
+        style = "fade";
+      }
+      {
+        leaf = "specialWorkspaceOut";
+        enabled = true;
+        speed = 1.94;
+        bezier = "almostLinear";
+        style = "fade";
+      }
+    ];
+
+    gesture = [
+      {
+        fingers = 3;
+        direction = "vertical";
+        action = "workspace";
+      }
+      {
+        fingers = 3;
+        direction = "horizontal";
+        action = "scroll_move";
+      }
+    ];
+
+    bind =
+      [
+        {_args = [(inline ''mainMod .. " + Q"'') (inline ''hl.dsp.exec_cmd(terminal)'')];}
+        {_args = [(inline ''mainMod .. " + C"'') (inline ''hl.dsp.window.close()'')];}
+        {_args = [(inline ''mainMod .. " + M"'') (inline ''hl.dsp.exec_cmd("hyprshutdown")'')];}
+        {_args = [(inline ''mainMod .. " + E"'') (inline ''hl.dsp.exec_cmd(fileManager)'')];}
+        {_args = [(inline ''mainMod .. " + V"'') (inline ''hl.dsp.window.float({ action = "toggle" })'')];}
+        {_args = [(inline ''mainMod .. " + F"'') (inline ''hl.dsp.window.fullscreen()'')];}
+        {_args = [(inline ''mainMod .. " + R"'') (inline ''hl.dsp.exec_cmd(menu)'')];}
+        {_args = [(inline ''mainMod .. " + B"'') (inline ''hl.dsp.exec_cmd("${pkgs.busybox}/bin/killall -SIGUSR1 waybar")'')];}
+
+        {_args = [(inline ''mainMod .. " + CONTROL + L"'') (inline ''hl.dsp.exec_cmd("hyprlock")'')];}
+        {_args = [(inline ''mainMod .. " + CONTROL + H"'') (inline ''hl.dsp.exec_cmd("systemctl suspend")'')];}
+        {_args = [(inline ''mainMod .. " + CONTROL + P"'') (inline ''hl.dsp.exec_cmd("hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown now'")'')];}
+        {_args = [(inline ''mainMod .. " + CONTROL + R"'') (inline ''hl.dsp.exec_cmd("hyprshutdown -t 'Restarting...' --post-cmd 'systemctl reboot'")'')];}
+        {_args = [(inline ''mainMod .. " + CONTROL + M"'') (inline ''hl.dsp.exec_cmd("hyprctl keyword monitor \", preferred, auto-up, 1, mirror, ${cfg.mainMonitorName}\"")'')];}
+        {_args = [(inline ''mainMod .. " + CONTROL + E"'') (inline ''hl.dsp.exec_cmd("hyprctl keyword monitor \", preferred, auto-up, 1\"")'')];}
+
+        {_args = [(inline ''mainMod .. " + H"'') (inline ''hl.dsp.layout("move -col")'')];}
+        {_args = [(inline ''mainMod .. " + J"'') (inline ''hl.dsp.focus({ direction = "d" })'')];}
+        {_args = [(inline ''mainMod .. " + K"'') (inline ''hl.dsp.focus({ direction = "u" })'')];}
+        {_args = [(inline ''mainMod .. " + L"'') (inline ''hl.dsp.layout("move +col")'')];}
+
+        {_args = [(inline ''mainMod .. " + SHIFT + H"'') (inline ''hl.dsp.window.move({ direction = "l" })'')];}
+        {_args = [(inline ''mainMod .. " + SHIFT + J"'') (inline ''hl.dsp.window.move({ direction = "d" })'')];}
+        {_args = [(inline ''mainMod .. " + SHIFT + K"'') (inline ''hl.dsp.window.move({ direction = "u" })'')];}
+        {_args = [(inline ''mainMod .. " + SHIFT + L"'') (inline ''hl.dsp.window.move({ direction = "r" })'')];}
+
+        {_args = [(inline ''mainMod .. " + SHIFT + O"'') (inline ''hl.dsp.layout("swapcol r")'')];}
+        {_args = [(inline ''mainMod .. " + SHIFT + I"'') (inline ''hl.dsp.layout("swapcol l")'')];}
+
+        {_args = [(inline ''mainMod .. " + O"'') (inline ''hl.dsp.layout("colresize +conf")'')];}
+        {_args = [(inline ''mainMod .. " + I"'') (inline ''hl.dsp.layout("colresize -conf")'')];}
+        {_args = [(inline ''mainMod .. " + P"'') (inline ''hl.dsp.layout("promote")'')];}
+        {_args = [(inline ''mainMod .. " + T"'') (inline ''hl.dsp.layout("fit visible")'')];}
+
+        {_args = [(inline ''mainMod .. " + PRINT"'') (inline ''hl.dsp.exec_cmd("hyprshot -m window -z")'')];}
+        {_args = ["PRINT" (inline ''hl.dsp.exec_cmd("hyprshot -m output -z")'')];}
+        {_args = ["SHIFT + PRINT" (inline ''hl.dsp.exec_cmd("hyprshot -m region -z")'')];}
+
+        {_args = ["ALT + Q" (inline ''hl.dsp.pass({ window = "class:^(com.mitchellh.ghostty)$" })'')];}
+
+        {_args = [(inline ''mainMod .. " + S"'') (inline ''hl.dsp.workspace.toggle_special("magic")'')];}
+        {_args = [(inline ''mainMod .. " + SHIFT + S"'') (inline ''hl.dsp.window.move({ workspace = "special:magic" })'')];}
+        {_args = [(inline ''mainMod .. " + mouse_down"'') (inline ''hl.dsp.focus({ workspace = "e+1" })'')];}
+        {_args = [(inline ''mainMod .. " + mouse_up"'') (inline ''hl.dsp.focus({ workspace = "e-1" })'')];}
+
+        {_args = [(inline ''mainMod .. " + mouse:272"'') (inline ''hl.dsp.window.drag()'') {mouse = true;}];}
+        {_args = [(inline ''mainMod .. " + mouse:273"'') (inline ''hl.dsp.window.resize()'') {mouse = true;}];}
+
+        {_args = [(inline ''mainMod .. " + plus"'') (inline ''hl.dsp.layout("colresize +0.1")'') {repeating = true;}];}
+        {_args = [(inline ''mainMod .. " + minus"'') (inline ''hl.dsp.layout("colresize -0.1")'') {repeating = true;}];}
+
+        {
+          _args = [
+            "XF86AudioRaiseVolume"
+            (inline ''hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+")'')
+            {
+              locked = true;
+              repeating = true;
+            }
+          ];
+        }
+        {
+          _args = [
+            "XF86AudioLowerVolume"
+            (inline ''hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-")'')
+            {
+              locked = true;
+              repeating = true;
+            }
+          ];
+        }
+        {
+          _args = [
+            "XF86AudioMute"
+            (inline ''hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")'')
+            {
+              locked = true;
+              repeating = true;
+            }
+          ];
+        }
+        {
+          _args = [
+            "XF86AudioMicMute"
+            (inline ''hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle")'')
+            {
+              locked = true;
+              repeating = true;
+            }
+          ];
+        }
+        {
+          _args = [
+            "XF86MonBrightnessUp"
+            (inline ''hl.dsp.exec_cmd("brightnessctl s 10%+")'')
+            {
+              locked = true;
+              repeating = true;
+            }
+          ];
+        }
+        {
+          _args = [
+            "XF86MonBrightnessDown"
+            (inline ''hl.dsp.exec_cmd("brightnessctl s 10%-")'')
+            {
+              locked = true;
+              repeating = true;
+            }
+          ];
+        }
+
+        {_args = ["switch:Lid Switch" (inline ''hl.dsp.exec_cmd("hyprlock")'') {locked = true;}];}
+        {_args = ["XF86AudioNext" (inline ''hl.dsp.exec_cmd("playerctl next")'') {locked = true;}];}
+        {_args = ["XF86AudioPause" (inline ''hl.dsp.exec_cmd("playerctl play-pause")'') {locked = true;}];}
+        {_args = ["XF86AudioPlay" (inline ''hl.dsp.exec_cmd("playerctl play-pause")'') {locked = true;}];}
+        {_args = ["XF86AudioPrev" (inline ''hl.dsp.exec_cmd("playerctl previous")'') {locked = true;}];}
+      ]
+      ++ builtins.concatLists (builtins.genList (
+          x: let
+            i = x + 10;
+            workspace = i - 9;
+          in [
+            {_args = [(inline ''mainMod .. " + code:${toString i}"'') (inline ''hl.dsp.focus({ workspace = ${toString workspace} })'')];}
+            {_args = [(inline ''mainMod .. " + SHIFT + code:${toString i}"'') (inline ''hl.dsp.window.move({ workspace = ${toString workspace} })'')];}
+          ]
+        )
+        10);
+
+    layer_rule = [
       {
         name = "vicinae-blur";
-        blur = "on";
+        match = {namespace = "^vicinae$";};
+        blur = true;
         ignore_alpha = 0;
-        "match:namespace" = "vicinae";
       }
       {
         name = "vicinae-no-animation";
-        no_anim = "on";
-        "match:namespace" = "vicinae";
+        match = {namespace = "^vicinae$";};
+        no_anim = true;
       }
     ];
-    gesture = [
-      "3, vertical, workspace"
-      "3, horizontal, scrollMove"
-    ];
 
-    "$mainMod" = "SUPER";
-
-    bind = [
-      "$mainMod, Q, exec, $terminal"
-      "$mainMod, C, killactive"
-      "$mainMod, M, exec, hyprshutdown"
-      "$mainMod, E, exec, $fileManager"
-      "$mainMod, V, togglefloating"
-      "$mainMod, F, fullscreen"
-      "$mainMod, R, exec, $menu"
-      "$mainMod, b, exec, ${pkgs.busybox}/bin/killall -SIGUSR1 waybar"
-
-      "$mainMod CONTROL, l, exec, hyprlock"
-      "$mainMod CONTROL, h, exec, systemctl suspend"
-      "$mainMod CONTROL, p, exec, hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown now'"
-      "$mainMod CONTROL, r, exec, hyprshutdown -t 'Restarting...' --post-cmd 'systemctl reboot'"
-      "$mainMod CONTROL, m, exec, hyprctl keyword monitor \", preferred, auto-up, 1, mirror, ${cfg.mainMonitorName}\""
-      "$mainMod CONTROL, e, exec, hyprctl keyword monitor \", preferred, auto-up, 1\""
-
-      "$mainMod, h, layoutmsg, move -col"
-      "$mainMod, j, movefocus, d"
-      "$mainMod, k, movefocus, u"
-      "$mainMod, l, layoutmsg, move +col"
-
-      "$mainMod SHIFT, h, movewindow, l"
-      "$mainMod SHIFT, j, movewindow, d"
-      "$mainMod SHIFT, k, movewindow, u"
-      "$mainMod SHIFT, l, movewindow, r"
-
-      "$mainMod SHIFT, o, layoutmsg, swapcol r"
-      "$mainMod SHIFT, i, layoutmsg, swapcol l"
-
-      "$mainMod, o, layoutmsg, colresize +conf"
-      "$mainMod, i, layoutmsg, colresize -conf"
-
-      "$mainMod, p, layoutmsg, promote"
-      "$mainMod, t, layoutmsg, fit visible"
-
-      "$mainMod, PRINT, exec, hyprshot -m window -z"
-      ", PRINT, exec, hyprshot -m output -z"
-      "SHIFT, PRINT, exec, hyprshot -m region -z"
-
-      "$mainMod, 10, workspace, 1"
-      "$mainMod, 11, workspace, 2"
-      "$mainMod, 12, workspace, 3"
-      "$mainMod, 13, workspace, 4"
-      "$mainMod, 14, workspace, 5"
-      "$mainMod, 15, workspace, 6"
-      "$mainMod, 16, workspace, 7"
-      "$mainMod, 17, workspace, 8"
-      "$mainMod, 18, workspace, 9"
-      "$mainMod, 19, workspace, 10"
-
-      "$mainMod SHIFT, 10, movetoworkspace, 1"
-      "$mainMod SHIFT, 11, movetoworkspace, 2"
-      "$mainMod SHIFT, 12, movetoworkspace, 3"
-      "$mainMod SHIFT, 13, movetoworkspace, 4"
-      "$mainMod SHIFT, 14, movetoworkspace, 5"
-      "$mainMod SHIFT, 15, movetoworkspace, 6"
-      "$mainMod SHIFT, 16, movetoworkspace, 7"
-      "$mainMod SHIFT, 17, movetoworkspace, 8"
-      "$mainMod SHIFT, 18, movetoworkspace, 9"
-      "$mainMod SHIFT, 19, movetoworkspace, 10"
-
-      "$mainMod, S, togglespecialworkspace, magic"
-      "$mainMod SHIFT, S, movetoworkspace, special:magic"
-
-      "$mainMod, mouse_down, workspace, e+1"
-      "$mainMod, mouse_up, workspace, e-1"
-
-      "ALT, q, pass, class:^(com\.mitchellh\.ghostty)$"
-    ];
-
-    bindl = [
-      ",switch:Lid Switch, exec, hyprlock"
-
-      ", XF86AudioNext, exec, playerctl next"
-      ", XF86AudioPause, exec, playerctl play-pause"
-      ", XF86AudioPlay, exec, playerctl play-pause"
-      ", XF86AudioPrev, exec, playerctl previous"
-    ];
-
-    binde = [
-      "$mainMod, plus, layoutmsg, colresize +0.1"
-      "$mainMod, minus, layoutmsg, colresize -0.1"
-    ];
-
-    bindm = [
-      "$mainMod, mouse:272, movewindow"
-      "$mainMod, mouse:273, resizewindow"
-    ];
-
-    bindel = [
-      ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-      ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-      ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-      ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-      ", XF86MonBrightnessUp, exec, brightnessctl s 10%+"
-      ", XF86MonBrightnessDown, exec, brightnessctl s 10%-"
-    ];
-
-    windowrule = [
+    window_rule = [
       {
         name = "suppress-maximize-events";
-        "match:class" = ".*";
+        match = {class = ".*";};
         suppress_event = "maximize";
       }
       {
         name = "fix-xwayland-drags";
-        "match:class" = "^$";
-        "match:title" = "^$";
-        "match:xwayland" = true;
-        "match:float" = true;
-        "match:fullscreen" = false;
-        "match:pin" = false;
+        match = {
+          class = "^$";
+          title = "^$";
+          xwayland = true;
+          float = true;
+          fullscreen = false;
+          pin = false;
+        };
         no_focus = true;
       }
       {
         name = "move-hyprland-run";
-        "match:class" = "hyprland-run";
+        match = {class = "hyprland-run";};
+        float = true;
         move = "20 monitor_h-120";
-        float = "yes";
       }
     ];
-
-    debug.disable_logs = false;
-    misc.enable_anr_dialog = false;
   };
 }

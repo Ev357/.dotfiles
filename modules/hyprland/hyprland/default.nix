@@ -16,7 +16,7 @@ in {
       package = null;
       portalPackage = null;
       systemd.enable = false;
-      configType = "hyprlang"; # TODO Change to lua
+      configType = "lua";
     };
 
     home = {
@@ -42,7 +42,6 @@ in {
     };
 
     xdg.configFile = {
-      "hypr/hyprland/colors.conf".source = ./colors.conf;
       "hypr/hyprtoolkit.conf".source = ./hyprtoolkit.conf;
       "uwsm/env".source = "${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh";
     };
