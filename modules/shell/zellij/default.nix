@@ -12,6 +12,7 @@
       simplified_ui = true;
       show_release_notes = false;
       show_startup_tips = false;
+      default_mode = "locked";
     };
   };
 }
