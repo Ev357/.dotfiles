@@ -45,7 +45,7 @@
 
   programs = {
     waybar.enable = true;
-    gemini-cli.enable = true;
+    antigravity-cli.enable = true;
     keepassxc.enable = true;
     pidgin.enable = true;
     nixvim.configNames = {

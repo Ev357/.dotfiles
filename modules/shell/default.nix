@@ -6,11 +6,11 @@
 }: {
   imports = [
     inputs.nix-index-database.homeModules.nix-index
+    ./antigravity-cli
     ./atuin
     ./btop
     ./bun
     ./direnv
-    ./gemini-cli
     ./git
     ./nh
     ./nixvim

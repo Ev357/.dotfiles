@@ -8,8 +8,7 @@
   };
 
   config = lib.mkIf config.modules.ai.enable {
-    # hipblast is not cached again...
-    # services.ollama.enable = lib.mkDefault true;
-    programs.gemini-cli.enable = lib.mkDefault true;
+    services.ollama.enable = lib.mkDefault true;
+    programs.antigravity-cli.enable = lib.mkDefault true;
   };
 }

@@ -17,7 +17,10 @@
       libreoffice-qt6-fresh
       system-config-printer
       gnome-console
-      bitwarden-desktop
+      # https://github.com/NixOS/nixpkgs/issues/526914
+      (bitwarden-desktop.override {
+        electron_39 = pkgs.electron_39-bin;
+      })
       dbeaver-bin
       winbox4
       localsend
