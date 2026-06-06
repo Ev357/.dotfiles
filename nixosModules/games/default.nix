@@ -8,6 +8,7 @@
     inputs.nix-gaming.nixosModules.pipewireLowLatency
     inputs.nix-gaming.nixosModules.wine
     ./steam
+    ./wine
     ./wootility
   ];
 
@@ -21,7 +22,7 @@
     programs = {
       steam.enable = lib.mkDefault true;
       gamemode.enable = lib.mkDefault true;
-      wine.ntsync.enable = lib.mkDefault true;
+      wine.enable = lib.mkDefault true;
     };
 
     services = {
