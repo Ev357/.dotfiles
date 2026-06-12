@@ -50,6 +50,7 @@
     swaync.enable = true;
     mpris-proxy.enable = true;
     blueman-applet.enable = true;
+    batsignal.enable = true;
     ollama = {
       acceleration = "rocm";
     };

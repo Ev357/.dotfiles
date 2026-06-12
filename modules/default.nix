@@ -7,6 +7,7 @@
     ./fcitx5
     ./games
     ./hyprland
+    ./services
     ./shell
     ./stylix
     ./widgets
