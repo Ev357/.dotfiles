@@ -26,10 +26,6 @@
         }
       ];
       ui.enable = false;
-      completion = {
-        blink = true;
-        min_chars = 2;
-      };
       legacy_commands = false;
       footer.enabled = false;
     };
