@@ -64,5 +64,24 @@
       key = "<S-Down>";
       action = "j";
     }
+    {
+      mode = "n";
+      key = "<leader>l";
+      action.__raw =
+        # lua
+        ''
+          function()
+            if vim.opt.list:get() then
+              vim.opt.list = false
+              vim.opt.linebreak = true
+              return
+            end
+
+            vim.opt.list = true
+            vim.opt.linebreak = false
+          end
+        '';
+      options.desc = "Toggle between list (whitespace) and linebreak (prose) mode";
+    }
   ];
 }
