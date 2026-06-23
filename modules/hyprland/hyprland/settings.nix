@@ -68,7 +68,8 @@ in {
       };
 
       input = {
-        kb_layout = "cz, us";
+        # kb_layout = "cz, us";
+        kb_layout = "cz";
         kb_options = "grp:alt_shift_toggle";
         kb_variant = "qwerty";
         touchpad = {
