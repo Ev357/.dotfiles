@@ -55,6 +55,10 @@
       xkb.layout = "cz";
       videoDrivers = ["amdgpu"];
     };
+    udev.extraHwdb = ''
+      evdev:name:FRMW0004:00 32AC:0006 Wireless Radio Control*
+        KEYBOARD_KEY_100c6=reserved
+    '';
   };
 
   security.pam.services.login.enableGnomeKeyring = true;
