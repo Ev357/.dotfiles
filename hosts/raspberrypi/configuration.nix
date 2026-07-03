@@ -56,6 +56,7 @@
     flaresolverr.enable = true;
     qbittorrent.enable = true;
     cloudflare-warp.enable = true;
+    minidlna.enable = true;
   };
 
   environment.shells = with pkgs; [
