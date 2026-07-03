@@ -104,9 +104,6 @@
     flash.enable = true;
     gitsigns.enable = true;
     undotree.enable = true;
-    dap.enable = true;
-    dap-ui.enable = true;
-    dap-virtual-text.enable = true;
     fidget.enable = true;
     diffview.enable = true;
   };
@@ -172,7 +169,6 @@
     ripgrep
     prettierd
     stylua
-    csharpier
     imagemagick
     (pkgs.texlive.combine {
       inherit
@@ -219,10 +215,6 @@
       end
 
       require('supermaven-nvim').setup({ log_level = 'off' })
-
-      require('dap').listeners.after.event_initialized['dapui_config'] = require('dapui').open
-      require('dap').listeners.before.event_terminated['dapui_config'] = require('dapui').close
-      require('dap').listeners.before.event_exited['dapui_config'] = require('dapui').close
 
       local hover = vim.lsp.buf.hover
       vim.lsp.buf.hover = function()

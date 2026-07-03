@@ -9,13 +9,10 @@
     ./easyeffects
     ./ghostty
     ./gnome-keyring
-    ./keepassxc
     ./mpv
     ./obsidian
     ./opentabletdriver
     ./other
-    ./remmina
-    ./teams-for-linux
     ./vesktop
     ./xdg
     ./zed-editor

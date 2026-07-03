@@ -7,10 +7,8 @@
           local config = {
             lua = { 'stylua' },
             arduino = { 'clang-format' },
-            cs = { 'csharpier' },
             nix = { 'nix' },
             html = { 'oxfmt', 'prettierd' },
-            htmlangular = { 'prettierd' },
             markdown = { 'injected' },
             sql = { 'sql_formatter' },
             python = { 'isort', 'black' },

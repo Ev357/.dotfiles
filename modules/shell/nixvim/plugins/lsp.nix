@@ -11,23 +11,6 @@
       gopls.enable = true;
       vue_ls.enable = true;
       tsgo.enable = true;
-      angularls = {
-        enable = true;
-        extraOptions = {
-          root_dir.__raw =
-            # lua
-            ''
-              function(bufnr, on_dir)
-                local markers = { 'angular.json', 'nx.json' }
-                local root = vim.fs.root(bufnr, markers)
-
-                if root then
-                  on_dir(root)
-                end
-              end
-            '';
-        };
-      };
       tailwindcss.enable = true;
       oxlint.enable = true;
       biome.enable = true;
@@ -39,7 +22,6 @@
       dockerls.enable = true;
       golangci_lint_ls.enable = true;
       jsonls.enable = true;
-      omnisharp.enable = true;
       tinymist.enable = true;
       sqls.enable = true;
       eslint.enable = true;
@@ -106,12 +88,6 @@
         # lua
         ''
           function()
-           local lsp_priority = {
-              rename = {
-                'angularls',
-              },
-            }
-
             local lsp_have_feature = {
               rename = function(client)
                 return client.supports_method 'textDocument/rename'
@@ -162,25 +138,8 @@
               vim.ui.select(client_names, { prompt = prompt }, on_choice)
             end
 
-            local function lsp_buf_rename_use_priority(fallback)
-              local client_names = get_lsp_client_names(lsp_have_feature.rename)
-              for _, client_priority_name in ipairs(lsp_priority.rename) do
-                for _, client_name in ipairs(client_names) do
-                  if client_priority_name == client_name then
-                    lsp_buf_rename(client_priority_name)
-                    return
-                  end
-                end
-              end
-              if fallback then
-                fallback()
-              end
-            end
-
             lsp_buf_rename_use_one(function()
-              lsp_buf_rename_use_priority(function()
-                lsp_buf_rename_use_select()
-              end)
+              lsp_buf_rename_use_select()
             end)
           end
         '';

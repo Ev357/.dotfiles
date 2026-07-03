@@ -2,8 +2,6 @@
   imports = [
     ./blink-cmp.nix
     ./conform-nvim.nix
-    ./dap-ui.nix
-    ./dap.nix
     ./fidget.nix
     ./flash.nix
     ./gitsigns.nix
