@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  inputs,
   ...
 }: {
   options.modules.applications.other = {
@@ -13,12 +14,12 @@
       loupe
       fragments
       easytag
-      session-desktop
+      inputs.nixpkgs-stable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.session-desktop
       libreoffice-qt6-fresh
       system-config-printer
       gnome-console
       # https://github.com/NixOS/nixpkgs/issues/526914
-      (bitwarden-desktop.override {
+      (inputs.nixpkgs-stable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.bitwarden-desktop.override {
         electron_39 = pkgs.electron_39-bin;
       })
       dbeaver-bin

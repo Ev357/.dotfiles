@@ -17,5 +17,10 @@
       jellyfin-web
       jellyfin-ffmpeg
     ];
+
+    # DLNA
+    networking.firewall.allowedUDPPorts = [
+      1900
+    ];
   };
 }

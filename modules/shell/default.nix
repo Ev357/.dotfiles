@@ -11,6 +11,7 @@
     ./btop
     ./bun
     ./direnv
+    ./fzf
     ./git
     ./nh
     ./nixvim
