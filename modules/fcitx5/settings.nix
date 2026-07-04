@@ -60,12 +60,12 @@
 
     "Groups/0" = {
       "Name" = "Default";
-      "Default Layout" = "us";
-      "DefaultIM" = "mozc";
+      "Default Layout" = "cz";
+      "DefaultIM" = "keyboard-cz-qwerty";
     };
 
     "Groups/0/Items/0" = {
-      "Name" = "keyboard-us";
+      "Name" = "keyboard-cz-qwerty";
       "Layout" = "";
     };
 

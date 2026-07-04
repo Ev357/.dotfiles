@@ -52,7 +52,10 @@
     geoclue2.enable = true;
 
     xserver = {
-      xkb.layout = "cz";
+      xkb = {
+        layout = "cz";
+        variant = "qwerty";
+      };
       videoDrivers = ["amdgpu"];
     };
     udev.extraHwdb = ''
