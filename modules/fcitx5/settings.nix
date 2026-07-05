@@ -53,6 +53,12 @@
       PreeditCursorPositionAtBeginning = "False";
       ExpandKey = "";
     };
+    xcb.globalSection = {
+      "Allow Overriding System XKB Settings" = "False";
+    };
+    wayland.globalSection = {
+      "Allow Overriding System XKB Settings" = "False";
+    };
   };
 
   inputMethod = {
@@ -66,7 +72,7 @@
 
     "Groups/0/Items/0" = {
       "Name" = "keyboard-cz-qwerty";
-      "Layout" = "";
+      "Layout" = "cz(qwerty)";
     };
 
     "Groups/0/Items/1" = {
