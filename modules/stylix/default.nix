@@ -7,9 +7,12 @@
     inputs.stylix.homeModules.stylix
   ];
 
-  home.packages = with pkgs; [
-    maple-mono.NF-CN-unhinted
-  ];
+  home = {
+    packages = with pkgs; [
+      maple-mono.NF-CN-unhinted
+    ];
+    pointerCursor.enable = true;
+  };
 
   stylix = {
     enableReleaseChecks = false;

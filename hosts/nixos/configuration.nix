@@ -10,8 +10,7 @@
   ];
 
   boot = {
-    # There is a wierd kernel panic https://community.frame.work/t/kernel-panics-on-fedora-42-6-17-7/77856
-    kernelPackages = pkgs.linuxPackages_7_0;
+    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       systemd-boot = {
         enable = true;

@@ -170,17 +170,17 @@
     prettierd
     stylua
     imagemagick
-    (pkgs.texlive.combine {
-      inherit
-        (pkgs.texlive)
-        scheme-gust
-        standalone
-        varwidth
-        preview
-        mathtools
-        xcolor
-        ;
-    })
+    (texliveGUST.withPackages (
+      ps:
+        with ps; [
+          scheme-gust
+          standalone
+          varwidth
+          preview
+          mathtools
+          xcolor
+        ]
+    ))
     ghostscript
     sql-formatter
     black
