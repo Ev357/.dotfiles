@@ -128,6 +128,15 @@
 
         specialArgs = {inherit nixos-raspberrypi inputs;};
       };
+
+      "sophie" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+
+        modules = [
+          ./hosts/sophie/configuration.nix
+        ];
+        specialArgs = {inherit inputs;};
+      };
     };
 
     nixOnDroidConfigurations = {
