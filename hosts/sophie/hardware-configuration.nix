@@ -17,6 +17,55 @@
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
 
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/bb4909a6-ba88-4788-b18a-a0afa7649d80";
+    fsType = "btrfs";
+    options = ["subvol=root" "compress=zstd" "noatime"];
+  };
+
+  fileSystems."/nix" = {
+    device = "/dev/disk/by-uuid/bb4909a6-ba88-4788-b18a-a0afa7649d80";
+    fsType = "btrfs";
+    options = ["subvol=nix" "compress=zstd" "noatime"];
+  };
+
+  fileSystems."/home" = {
+    device = "/dev/disk/by-uuid/bb4909a6-ba88-4788-b18a-a0afa7649d80";
+    fsType = "btrfs";
+    options = ["subvol=home" "compress=zstd" "noatime"];
+  };
+
+  fileSystems."/swap" = {
+    device = "/dev/disk/by-uuid/bb4909a6-ba88-4788-b18a-a0afa7649d80";
+    fsType = "btrfs";
+    options = ["subvol=swap" "noatime"];
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/5B01-EE5C";
+    fsType = "vfat";
+    options = ["fmask=0077" "dmask=0077"];
+  };
+
+  fileSystems."/data/ssd" = {
+    device = "/dev/disk/by-uuid/c15c16df-eaa2-4d24-8411-a937e6b0e755";
+    fsType = "btrfs";
+    options = ["compress=zstd" "noatime" "nofail"];
+  };
+
+  fileSystems."/data/hdd" = {
+    device = "/dev/disk/by-uuid/0d53b778-9af4-47c0-bdd1-464d33d73c04";
+    fsType = "btrfs";
+    options = ["compress=zstd" "noatime" "nofail"];
+  };
+
+  swapDevices = [
+    {
+      device = "/swap/swapfile";
+      size = 8192;
+    }
+  ];
+
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

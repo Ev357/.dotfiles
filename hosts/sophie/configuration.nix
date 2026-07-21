@@ -1,12 +1,6 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
-    inputs.disko.nixosModules.disko
     ./hardware-configuration.nix
-    ./disk-config.nix
     ./nixosModules
     ../../nixosModules
   ];
