@@ -45,6 +45,7 @@
           scfg = config.services;
 
           apps = {
+            jellyfin = {port = 8096;};
             nextcloud = {port = 3080;};
             traefik = {
               port = 8080;

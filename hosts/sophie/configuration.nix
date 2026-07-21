@@ -30,6 +30,7 @@
     immich.enable = true;
     traefik.enable = true;
     nextcloud.enable = true;
+    jellyfin.enable = true;
   };
 
   hardware.graphics.enable = true;
