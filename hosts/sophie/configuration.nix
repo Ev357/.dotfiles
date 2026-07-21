@@ -28,7 +28,11 @@
     fwupd.enable = true;
     tailscale.enable = true;
     immich.enable = true;
+    traefik.enable = true;
+    nextcloud.enable = true;
   };
+
+  hardware.graphics.enable = true;
 
   environment.shells = with pkgs; [
     nushell

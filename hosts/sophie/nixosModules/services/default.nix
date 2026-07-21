@@ -1,5 +1,7 @@
 {
   imports = [
     ./immich
+    ./nextcloud
+    ./traefik
   ];
 }
