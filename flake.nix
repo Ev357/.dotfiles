@@ -100,6 +100,16 @@
         extraSpecialArgs = {inherit inputs;};
       };
 
+      "evest@sophie" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+
+        modules = [
+          ./hosts/sophie/home.nix
+        ];
+
+        extraSpecialArgs = {inherit inputs;};
+      };
+
       "nix-on-droid" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."aarch64-linux";
 
