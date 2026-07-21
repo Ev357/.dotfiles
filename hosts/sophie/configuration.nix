@@ -55,6 +55,7 @@
   networking = {
     hostName = "sophie";
     networkmanager.enable = true;
+    interfaces.enp2s0.wakeOnLan.enable = true;
   };
 
   time.timeZone = "Europe/Prague";
