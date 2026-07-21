@@ -11,6 +11,11 @@ in {
       default = {};
       description = "Additional environment variables.";
     };
+    group = lib.mkOption {
+      type = lib.types.str;
+      default = "anki";
+      description = "The group anki sync server should run as.";
+    };
   };
 
   config = lib.mkIf config.services.anki-sync-server.enable {
@@ -24,7 +29,7 @@ in {
 
     users.users."anki" = {
       isSystemUser = true;
-      group = "media";
+      group = cfg.group;
     };
   };
 }

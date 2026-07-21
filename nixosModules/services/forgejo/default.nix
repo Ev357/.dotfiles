@@ -2,11 +2,9 @@
   config,
   lib,
   pkgs,
-  inputs,
   ...
 }: let
   cfg = config.services.forgejo;
-  srv = cfg.settings.server;
 
   theme = pkgs.fetchzip {
     url = "https://github.com/catppuccin/gitea/releases/download/v1.0.2/catppuccin-gitea.tar.gz";
@@ -14,20 +12,16 @@
     stripRoot = false;
   };
 in {
-  config = lib.mkIf config.services.forgejo.enable {
+  imports = [
+    ./patch
+  ];
+
+  config = lib.mkIf cfg.enable {
     services.forgejo = {
-      package = inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.forgejo;
+      openFirewall = true;
       database.type = "postgres";
       lfs.enable = true;
-      group = "media";
-      repositoryRoot = "/data/services/forgejo";
       settings = {
-        server = {
-          DOMAIN = "git.ts.evest.dev";
-          ROOT_URL = "https://${srv.DOMAIN}/";
-          HTTP_PORT = 3081;
-        };
-        service.DISABLE_REGISTRATION = true;
         actions = {
           ENABLED = true;
           DEFAULT_ACTIONS_URL = "github";
@@ -47,7 +41,5 @@ in {
         mkdir -p ${cfg.stateDir}/custom/public/assets
         ln -sf ${theme} ${cfg.stateDir}/custom/public/assets/css
       '';
-
-    networking.firewall.allowedTCPPorts = [srv.HTTP_PORT];
   };
 }

@@ -7,6 +7,7 @@
   imports = [
     nixos-raspberrypi.nixosModules.raspberry-pi-5.base
     nixos-raspberrypi.nixosModules.sd-image
+    ./nixosModules
     ../../nixosModules
   ];
 
@@ -15,28 +16,8 @@
   };
 
   services = {
-    openssh = {
-      enable = true;
-      settings = {
-        PermitRootLogin = "yes";
-
-        Macs = [
-          "hmac-sha2-512-etm@openssh.com"
-          "hmac-sha2-256-etm@openssh.com"
-          "umac-128-etm@openssh.com"
-          "hmac-sha2-512"
-        ];
-      };
-    };
-    cloudflared = {
-      enable = true;
-      tunnels = {
-        "00c6b9cc-fe15-4b75-aee9-a3ac9411bf9e" = {
-          credentialsFile = "/etc/cloudflared/00c6b9cc-fe15-4b75-aee9-a3ac9411bf9e.json";
-          default = "http_status:404";
-        };
-      };
-    };
+    openssh.enable = true;
+    cloudflared.enable = true;
     jellyfin.enable = true;
     nextcloud.enable = true;
     vaultwarden.enable = true;

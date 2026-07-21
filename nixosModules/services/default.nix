@@ -1,11 +1,9 @@
 {
   imports = [
-    ./anki-api
     ./anki-sync-server
     ./atuin
     ./bazarr
     ./cloudflare-warp
-    ./cloudflared
     ./prowlarr
     ./qbittorrent
     ./flaresolverr

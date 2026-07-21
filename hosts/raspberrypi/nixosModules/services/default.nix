@@ -1,0 +1,24 @@
+{
+  imports = [
+    ./anki-api
+    ./anki-sync-server
+    ./atuin
+    ./bazarr
+    ./cloudflare-warp
+    ./cloudflared
+    ./flaresolverr
+    ./forgejo
+    ./home-assistant
+    ./immich
+    ./jellyfin
+    ./nextcloud
+    ./openssh
+    ./prowlarr
+    ./qbittorrent
+    ./radarr
+    ./seerr
+    ./sonarr
+    ./traefik
+    ./vaultwarden
+  ];
+}
