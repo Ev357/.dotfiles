@@ -40,16 +40,38 @@
   ];
 
   users = {
-    users."evest" = {
-      isNormalUser = true;
-      extraGroups = ["wheel" "networkmanager" "media"];
-      shell = pkgs.nushell;
-      initialPassword = "12345678";
+    users = {
+      "evest" = {
+        isNormalUser = true;
+        extraGroups = ["wheel" "networkmanager" "media"];
+        shell = pkgs.nushell;
+        initialPassword = "12345678";
+      };
+      "hass-wol" = {
+        isSystemUser = true;
+        group = "hass-wol";
+        createHome = true;
+        home = "/home/hass-wol";
+        useDefaultShell = true;
+      };
     };
     groups = {
       media = {};
+      hass-wol = {};
     };
   };
+
+  security.sudo.extraRules = [
+    {
+      users = ["hass-wol"];
+      commands = [
+        {
+          command = "/run/current-system/sw/bin/poweroff";
+          options = ["NOPASSWD"];
+        }
+      ];
+    }
+  ];
 
   networking = {
     hostName = "sophie";
