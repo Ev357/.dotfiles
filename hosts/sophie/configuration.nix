@@ -31,6 +31,11 @@
     traefik.enable = true;
     nextcloud.enable = true;
     jellyfin.enable = true;
+    qbittorrent.enable = true;
+    sonarr.enable = true;
+    radarr.enable = true;
+    prowlarr.enable = true;
+    seerr.enable = true;
   };
 
   hardware.graphics.enable = true;

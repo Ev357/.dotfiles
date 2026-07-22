@@ -52,6 +52,11 @@
               extraRules = " || Host(`sophie-local.evest.dev`)";
             };
             immich = {port = scfg.immich.port;};
+            seerr = {port = scfg.seerr.port;};
+            radarr = {port = scfg.radarr.settings.server.port;};
+            sonarr = {port = scfg.sonarr.settings.server.port;};
+            prowlarr = {port = scfg.prowlarr.settings.server.port;};
+            qbittorrent = {port = scfg.qbittorrent.webuiPort;};
           };
 
           mkRouter = name: cfg: let
