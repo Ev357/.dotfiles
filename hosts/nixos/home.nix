@@ -44,6 +44,7 @@
     blender
     eduvpn-client
     slack
+    quickemu
   ];
 
   services = {
