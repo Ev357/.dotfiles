@@ -11,6 +11,8 @@
     ../../nixosModules
   ];
 
+  boot.zfs.forceImportRoot = false;
+
   modules = {
     packages.enable = true;
   };

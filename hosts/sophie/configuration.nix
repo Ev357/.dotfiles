@@ -10,6 +10,11 @@
     extraModulePackages = with pkgs; [
       nur.repos.Ev357.alx-wol
     ];
+    extraModprobeConfig = ''
+      options kvm_intel nested=1
+      options kvm_intel emulate_invalid_guest_state=0
+      options kvm ignore_msrs=1
+    '';
     loader = {
       systemd-boot = {
         enable = true;
@@ -17,6 +22,7 @@
       };
       efi.canTouchEfiVariables = true;
     };
+    binfmt.emulatedSystems = ["aarch64-linux"];
   };
 
   modules = {
@@ -38,6 +44,13 @@
     seerr.enable = true;
   };
 
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu.swtpm.enable = true;
+  };
+
+  systemd.tmpfiles.rules = ["L+ /var/lib/qemu/firmware - - - - ${pkgs.qemu}/share/qemu/firmware"];
+
   hardware.graphics.enable = true;
 
   environment.shells = with pkgs; [
@@ -48,7 +61,7 @@
     users = {
       "evest" = {
         isNormalUser = true;
-        extraGroups = ["wheel" "networkmanager" "media"];
+        extraGroups = ["wheel" "networkmanager" "media" "libvirtd"];
         shell = pkgs.nushell;
         initialPassword = "12345678";
       };

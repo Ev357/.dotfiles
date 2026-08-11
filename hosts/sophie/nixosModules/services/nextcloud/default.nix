@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   services = {
     nextcloud = {
-      package = pkgs.nextcloud33;
+      package = pkgs.nextcloud34;
       hostName = "nextcloud";
       config = {
         dbtype = "sqlite";

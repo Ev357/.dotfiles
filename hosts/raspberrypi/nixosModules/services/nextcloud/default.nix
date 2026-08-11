@@ -6,7 +6,7 @@
   services = {
     nextcloud = {
       package = let
-        nextcloud = inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.nextcloud32;
+        nextcloud = inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.nextcloud34;
       in
         nextcloud
         // {
