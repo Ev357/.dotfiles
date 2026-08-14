@@ -55,6 +55,7 @@
             seerr = {port = scfg.seerr.port;};
             radarr = {port = scfg.radarr.settings.server.port;};
             sonarr = {port = scfg.sonarr.settings.server.port;};
+            tdarr = {port = scfg.tdarr.server.webUIPort;};
             prowlarr = {port = scfg.prowlarr.settings.server.port;};
             qbittorrent = {port = scfg.qbittorrent.webuiPort;};
           };

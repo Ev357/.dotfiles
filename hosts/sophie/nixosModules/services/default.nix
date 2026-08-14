@@ -7,6 +7,7 @@
     ./qbittorrent
     ./radarr
     ./sonarr
+    ./tdarr
     ./traefik
   ];
 }

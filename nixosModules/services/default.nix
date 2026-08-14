@@ -16,6 +16,7 @@
     ./nextcloud
     ./radarr
     ./sonarr
+    ./tdarr
     ./traefik
     ./vaultwarden
   ];

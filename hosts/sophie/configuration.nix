@@ -42,6 +42,7 @@
     radarr.enable = true;
     prowlarr.enable = true;
     seerr.enable = true;
+    tdarr.enable = true;
   };
 
   virtualisation.libvirtd = {
