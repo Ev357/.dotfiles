@@ -186,6 +186,7 @@
     black
     isort
     tex-fmt
+    taplo
   ];
 
   extraPlugins = with pkgs.vimPlugins; [

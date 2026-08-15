@@ -56,7 +56,7 @@
               extraRules = " || Host(`local.evest.dev`)";
             };
             home-assistant = {
-              port = scfg.home-assistant.config.http.server_port;
+              port = 8123;
               host = "home";
             };
             forgejo = {

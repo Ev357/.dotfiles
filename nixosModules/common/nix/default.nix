@@ -2,6 +2,7 @@
   nix = {
     settings = {
       experimental-features = ["nix-command" "flakes"];
+      accept-flake-config = true;
       extra-substituters = [
         "https://ev357.cachix.org"
         "https://nix-community.cachix.org"
@@ -10,6 +11,7 @@
         "https://nix-gaming.cachix.org"
         "https://ghostty.cachix.org"
         "https://tano.cachix.org"
+        "https://fenix.cachix.org"
       ];
       extra-trusted-public-keys = [
         "ev357.cachix.org-1:bI65rULXWJ8IMM+tosc/Z+9W53nL6uj4+5FLXX6BN3Q="
@@ -19,6 +21,7 @@
         "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
         "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="
         "tano.cachix.org-1:Vi3qOkAzZY0PVB7ca3Kp03gURYrEFK7gNdX2thodn7I="
+        "fenix.cachix.org-1:ecJhr+RdYEdcVgUkjruiYhjbBloIEGov7bos90cZi0Q="
       ];
       auto-optimise-store = true;
     };

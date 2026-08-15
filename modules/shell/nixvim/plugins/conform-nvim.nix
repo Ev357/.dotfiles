@@ -13,6 +13,7 @@
             sql = { 'sql_formatter' },
             python = { 'isort', 'black' },
             tex = { 'tex-fmt' },
+            toml = { 'taplo' },
           }
 
           local formatters = { 'oxfmt', 'biome', 'prettierd' }
