@@ -39,8 +39,8 @@
         yazi-flavors = pkgs.fetchFromGitHub {
           owner = "yazi-rs";
           repo = "flavors";
-          rev = "9e053d0686a7d54a125d67bdd3aabaa5116d6e99";
-          sha256 = "sha256-B9b6T9/RkJDkehMC5/MxqnkjxWj5LZg4jehAn6aeamE=";
+          rev = "be0b21d0873092a63946cc2678dd700aac945902";
+          sha256 = "sha256-Dy73TfcrcbCXY9lwDszNgAKLiCAHf1KIwC4Q5U6k21E=";
         };
       in {
         catppuccin-macchiato = "${yazi-flavors}/catppuccin-macchiato.yazi/";

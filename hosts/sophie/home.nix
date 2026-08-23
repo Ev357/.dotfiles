@@ -11,10 +11,5 @@
 
   modules.shell.enable = true;
 
-  programs.nixvim.configNames = {
-    homeManager = "evest@sophie";
-    nixos = "sophie";
-  };
-
   dconf.enable = false;
 }

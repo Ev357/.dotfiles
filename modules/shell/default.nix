@@ -6,7 +6,6 @@
 }: {
   imports = [
     inputs.nix-index-database.homeModules.nix-index
-    ./antigravity-cli
     ./atuin
     ./btop
     ./bun
@@ -17,6 +16,7 @@
     ./nixvim
     ./nushell
     ./packages
+    ./pi-coding-agent
     ./ssh
     ./starship
     ./tano
@@ -51,7 +51,7 @@
       nushell.enable = lib.mkDefault true;
       nix-index-database.comma.enable = lib.mkDefault true;
       zellij.enable = lib.mkDefault true;
-      tano.enable = lib.mkDefault true;
+      # tano.enable = lib.mkDefault true;
       cava.enable = lib.mkDefault true;
       fd.enable = lib.mkDefault true;
       bluetuith.enable = lib.mkDefault true;

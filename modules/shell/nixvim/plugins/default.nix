@@ -3,7 +3,6 @@
     ./blink-cmp.nix
     ./conform-nvim.nix
     ./fidget.nix
-    ./flash.nix
     ./gitsigns.nix
     ./lsp.nix
     ./mini.nix

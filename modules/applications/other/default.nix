@@ -15,7 +15,7 @@
       fragments
       easytag
       inputs.nixpkgs-stable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.session-desktop
-      libreoffice-qt6-fresh
+      libreoffice-qt
       system-config-printer
       gnome-console
       bitwarden-desktop

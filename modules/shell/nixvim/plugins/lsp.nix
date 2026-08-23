@@ -46,22 +46,6 @@
         settings = {
           nixpkgs.expr = "import <nixpkgs> {}";
           formatting.command = ["nix" "fmt" "--" "--"];
-          options = {
-            nixos = {
-              expr =
-                # nix
-                ''
-                  (builtins.getFlake (toString ./.)).nixosConfigurations."${config.configNames.nixos}".options
-                '';
-            };
-            home_manager = {
-              expr =
-                # nix
-                ''
-                  (builtins.getFlake (toString ./.)).homeConfigurations."${config.configNames.homeManager}".options
-                '';
-            };
-          };
         };
       };
       yamlls = {

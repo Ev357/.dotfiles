@@ -16,7 +16,6 @@
       enable = true;
       package = pkgs.emptyDirectory;
     };
-    nixvim.configNames.homeManager = "nix-on-droid";
   };
   dconf.enable = false;
 

@@ -11,6 +11,9 @@
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
+    kernel.sysctl = {
+      "kernel.perf_event_paranoid" = 1;
+    };
     loader = {
       systemd-boot = {
         enable = true;

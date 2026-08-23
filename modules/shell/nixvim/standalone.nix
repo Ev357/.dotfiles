@@ -6,7 +6,6 @@
   imports = [
     ./plugins
     ./keymaps.nix
-    ./config-names.nix
   ];
 
   package = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
@@ -95,13 +94,11 @@
     oil.enable = true;
     neogit.enable = true;
     obsidian.enable = true;
-    # ghostty crashes for some reason, needs a fix
-    # snacks.enable = true;
+    snacks.enable = true;
     mini.enable = true;
     lsp.enable = true;
     blink-cmp.enable = true;
     conform-nvim.enable = true;
-    flash.enable = true;
     gitsigns.enable = true;
     undotree.enable = true;
     fidget.enable = true;
