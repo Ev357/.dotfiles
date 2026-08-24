@@ -45,8 +45,54 @@ in {
         "app.clipboard.pasteImage" = [];
       };
 
+      models.providers = {
+        fastflowlm = {
+          name = "FastFlowLM";
+          baseUrl = "http://127.0.0.1:52625/v1";
+          api = "openai-completions";
+          apiKey = "flm-local";
+          compat = {
+            supportsReasoningEffort = true;
+            supportsUsageInStreaming = true;
+            maxTokensField = "max_tokens";
+          };
+          models = [
+            {
+              id = "qwen3:8b";
+              name = "Qwen3-8B NPU2";
+              contextWindow = 16384;
+              maxTokens = 8192;
+              reasoning = true;
+              input = ["text"];
+              thinkingLevelMap = {
+                off = "none";
+                minimal = null;
+                low = "low";
+                medium = "medium";
+                high = "high";
+              };
+            }
+            {
+              id = "gemma4-it:e4b";
+              name = "Gemma4-E4B-IT NPU2";
+              contextWindow = 65536;
+              maxTokens = 8192;
+              reasoning = true;
+              input = ["text" "image"];
+              thinkingLevelMap = {
+                off = "none";
+                minimal = null;
+                low = "low";
+                medium = "medium";
+                high = "high";
+              };
+            }
+          ];
+        };
+      };
+
       extensions = {
-        "hide-footer.ts" = ./hide-footer.ts;
+        "hide-footer.ts" = ./extensions/hide-footer.ts;
       };
     };
 

@@ -73,6 +73,7 @@
   hardware = {
     opentabletdriver.enable = true;
     bluetooth.enable = true;
+    amd-npu.enable = true;
   };
 
   powerManagement.enable = true;
@@ -89,6 +90,8 @@
       "networkmanager"
       "wheel"
       "libvirtd"
+      "video"
+      "render"
     ];
     shell = pkgs.nushell;
   };

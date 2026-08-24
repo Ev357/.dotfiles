@@ -12,6 +12,7 @@
         "https://ghostty.cachix.org"
         "https://tano.cachix.org"
         "https://fenix.cachix.org"
+        "https://nix-amd-ai.cachix.org"
       ];
       extra-trusted-public-keys = [
         "ev357.cachix.org-1:bI65rULXWJ8IMM+tosc/Z+9W53nL6uj4+5FLXX6BN3Q="
@@ -22,6 +23,7 @@
         "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="
         "tano.cachix.org-1:Vi3qOkAzZY0PVB7ca3Kp03gURYrEFK7gNdX2thodn7I="
         "fenix.cachix.org-1:ecJhr+RdYEdcVgUkjruiYhjbBloIEGov7bos90cZi0Q="
+        "nix-amd-ai.cachix.org-1:F4OU4vw/lV2oiG6SBHZ+nqjl4EFJuqI4X9A7pvaBmhQ="
       ];
       auto-optimise-store = true;
     };
