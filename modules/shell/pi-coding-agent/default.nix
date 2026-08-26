@@ -27,6 +27,16 @@ in {
         enableInstallTelemetry = false;
         terminal.showTerminalProgress = true;
 
+        enabledModels =
+          [
+            cfg.settings.defaultModel
+          ]
+          ++ (
+            lib.concatMap
+            (provider: map (model: model.id) provider.models)
+            (lib.attrValues cfg.models.providers)
+          );
+
         packages = [
           "npm:pi-antigravity"
           "npm:pi-image-tools"
@@ -61,44 +71,43 @@ in {
             maxTokensField = "max_tokens";
           };
 
-          models =
-            map (model:
-              model
-              // {
-                thinkingLevelMap = {
-                  off = "none";
-                  minimal = null;
-                  low = "low";
-                  medium = "medium";
-                  high = "high";
-                };
-              })
-            [
-              {
-                id = "qwen3.8-distilled:9b";
-                name = "Qwen3.8-Distilled-9B-NPU2";
-                contextWindow = 32768;
-                maxTokens = 8192;
-                reasoning = true;
-                input = ["text" "image"];
-              }
-              {
-                id = "qwen3.5-claude-code:9b";
-                name = "Qwen3.5-9B-Claude-Code-NPU2";
-                contextWindow = 32768;
-                maxTokens = 8192;
-                reasoning = true;
-                input = ["text" "image"];
-              }
-              {
-                id = "gemma4-it:e4b";
-                name = "Gemma4-E4B-IT-NPU2";
-                contextWindow = 65536;
-                maxTokens = 8192;
-                reasoning = true;
-                input = ["text" "image"];
-              }
-            ];
+          models = let
+            thinkingLevelMap = {
+              off = "none";
+              minimal = null;
+              low = "low";
+              medium = "medium";
+              high = "high";
+            };
+          in [
+            {
+              id = "qwen3.8-distilled:9b";
+              name = "Qwen3.8-Distilled-9B-NPU2";
+              contextWindow = 32768;
+              maxTokens = 8192;
+              reasoning = true;
+              input = ["text" "image"];
+              inherit thinkingLevelMap;
+            }
+            {
+              id = "qwen3.5-claude-code:9b";
+              name = "Qwen3.5-9B-Claude-Code-NPU2";
+              contextWindow = 32768;
+              maxTokens = 8192;
+              reasoning = true;
+              input = ["text" "image"];
+              inherit thinkingLevelMap;
+            }
+            {
+              id = "gemma4-it:e4b";
+              name = "Gemma4-E4B-IT-NPU2";
+              contextWindow = 65536;
+              maxTokens = 8192;
+              reasoning = true;
+              input = ["text" "image"];
+              inherit thinkingLevelMap;
+            }
+          ];
         };
       };
 
