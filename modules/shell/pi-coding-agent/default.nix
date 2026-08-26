@@ -54,40 +54,51 @@ in {
           compat = {
             supportsReasoningEffort = true;
             supportsUsageInStreaming = true;
+            supportsDeveloperRole = false;
+            supportsFinishReason = false;
+            supportsStore = false;
+            supportsStrictMode = false;
             maxTokensField = "max_tokens";
           };
-          models = [
-            {
-              id = "qwen3:8b";
-              name = "Qwen3-8B NPU2";
-              contextWindow = 16384;
-              maxTokens = 8192;
-              reasoning = true;
-              input = ["text"];
-              thinkingLevelMap = {
-                off = "none";
-                minimal = null;
-                low = "low";
-                medium = "medium";
-                high = "high";
-              };
-            }
-            {
-              id = "gemma4-it:e4b";
-              name = "Gemma4-E4B-IT NPU2";
-              contextWindow = 65536;
-              maxTokens = 8192;
-              reasoning = true;
-              input = ["text" "image"];
-              thinkingLevelMap = {
-                off = "none";
-                minimal = null;
-                low = "low";
-                medium = "medium";
-                high = "high";
-              };
-            }
-          ];
+
+          models =
+            map (model:
+              model
+              // {
+                thinkingLevelMap = {
+                  off = "none";
+                  minimal = null;
+                  low = "low";
+                  medium = "medium";
+                  high = "high";
+                };
+              })
+            [
+              {
+                id = "qwen3.8-distilled:9b";
+                name = "Qwen3.8-Distilled-9B-NPU2";
+                contextWindow = 32768;
+                maxTokens = 8192;
+                reasoning = true;
+                input = ["text" "image"];
+              }
+              {
+                id = "qwen3.5-claude-code:9b";
+                name = "Qwen3.5-9B-Claude-Code-NPU2";
+                contextWindow = 32768;
+                maxTokens = 8192;
+                reasoning = true;
+                input = ["text" "image"];
+              }
+              {
+                id = "gemma4-it:e4b";
+                name = "Gemma4-E4B-IT-NPU2";
+                contextWindow = 65536;
+                maxTokens = 8192;
+                reasoning = true;
+                input = ["text" "image"];
+              }
+            ];
         };
       };
 
