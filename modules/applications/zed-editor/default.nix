@@ -15,8 +15,8 @@
       project_panel = {
         dock = "right";
       };
-      features = {
-        edit_prediction_provider = "supermaven";
+      edit_predictions = {
+        provider = "codestral";
       };
       telemetry = {
         diagnostics = false;
