@@ -96,6 +96,7 @@
     obsidian.enable = true;
     snacks.enable = true;
     mini.enable = true;
+    minuet.enable = true;
     lsp.enable = true;
     blink-cmp.enable = true;
     conform-nvim.enable = true;
@@ -186,34 +187,9 @@
     taplo
   ];
 
-  extraPlugins = with pkgs.vimPlugins; [
-    supermaven-nvim
-    blink-cmp-avante
-  ];
-
   extraConfigLua =
     # lua
     ''
-      local binary_handler = require("supermaven-nvim.binary.binary_handler")
-      local original_open_popup = binary_handler.open_popup
-
-      local using_free_version = false
-      function binary_handler:open_popup(message, include_free)
-        if using_free_version then
-          return
-        end
-
-        if include_free then
-          using_free_version = true
-          self:use_free_version()
-          return
-        end
-
-        original_open_popup(self, message, include_free)
-      end
-
-      require('supermaven-nvim').setup({ log_level = 'off' })
-
       local hover = vim.lsp.buf.hover
       vim.lsp.buf.hover = function()
         return hover({

@@ -6,6 +6,7 @@
     ./gitsigns.nix
     ./lsp.nix
     ./mini.nix
+    ./minuet.nix
     ./neogit.nix
     ./obsidian.nix
     ./oil.nix
