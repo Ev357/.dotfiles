@@ -17,6 +17,10 @@
     packages.enable = true;
   };
 
+  programs = {
+    mosh.enable = true;
+  };
+
   services = {
     openssh.enable = true;
     cloudflared.enable = true;

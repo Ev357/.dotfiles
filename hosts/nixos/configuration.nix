@@ -13,6 +13,8 @@
     kernelPackages = pkgs.linuxPackages_latest;
     kernel.sysctl = {
       "kernel.perf_event_paranoid" = 1;
+      "net.ipv4.tcp_congestion_control" = "bbr";
+      "net.core.default_qdisc" = "fq";
     };
     loader = {
       systemd-boot = {
@@ -36,6 +38,7 @@
     nix-ld.enable = true;
     virt-manager.enable = true;
     winbox.enable = true;
+    mosh.enable = true;
     localsend = {
       enable = true;
       package = pkgs.emptyDirectory;

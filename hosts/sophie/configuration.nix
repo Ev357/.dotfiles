@@ -29,6 +29,10 @@
     packages.enable = true;
   };
 
+  programs = {
+    mosh.enable = true;
+  };
+
   services = {
     openssh.enable = true;
     fwupd.enable = true;
