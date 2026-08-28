@@ -31,7 +31,7 @@
               local file = io.open(key_path, "r")
 
               if not file then
-                  return ""
+                  return "TERM"
               end
 
               local key = file:read("*a")
