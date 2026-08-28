@@ -38,7 +38,6 @@
     nix-ld.enable = true;
     virt-manager.enable = true;
     winbox.enable = true;
-    mosh.enable = true;
     localsend = {
       enable = true;
       package = pkgs.emptyDirectory;
