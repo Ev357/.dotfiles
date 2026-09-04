@@ -21,7 +21,7 @@ in {
       settings = {
         npmCommand = ["bun"];
         defaultProvider = "antigravity";
-        defaultModel = "claude-opus-4-6";
+        defaultModel = "gemini-3.7-flash";
         theme = "catppuccin-tui-macchiato";
         quietStartup = true;
         enableInstallTelemetry = false;
