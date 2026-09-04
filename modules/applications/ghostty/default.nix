@@ -43,7 +43,6 @@
         "alt+á=goto_tab:8"
 
         "alt+o=toggle_tab_overview"
-        "global:alt+q=toggle_quick_terminal"
 
         "alt+v=activate_key_table:vim"
 
