@@ -1,7 +1,6 @@
 {
   pkgs,
   inputs,
-  config,
   ...
 }: {
   plugins.lsp = {
@@ -37,7 +36,10 @@
         installRustc = false;
         settings = {
           check.command = "clippy";
-          cargo.targetDir = true;
+          cargo = {
+            targetDir = true;
+            features = "all";
+          };
         };
       };
       nixd = {
