@@ -22,6 +22,7 @@
     ./starship
     ./tano
     ./template-manager
+    ./todo
     ./yazi
     ./zellij
     ./zoxide
@@ -46,13 +47,14 @@
       nixvim.enable = lib.mkDefault true;
       ssh.enable = lib.mkDefault true;
       starship.enable = lib.mkDefault true;
+      # tano.enable = lib.mkDefault true;
       template-manager.enable = lib.mkDefault true;
+      todo.enable = lib.mkDefault true;
       yazi.enable = lib.mkDefault true;
       zoxide.enable = lib.mkDefault true;
       nushell.enable = lib.mkDefault true;
       nix-index-database.comma.enable = lib.mkDefault true;
       zellij.enable = lib.mkDefault true;
-      # tano.enable = lib.mkDefault true;
       cava.enable = lib.mkDefault true;
       fd.enable = lib.mkDefault true;
       bluetuith.enable = lib.mkDefault true;

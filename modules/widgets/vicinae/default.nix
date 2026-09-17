@@ -5,6 +5,9 @@
         dark.name = "catppuccin-macchiato";
         light.name = "catppuccin-macchiato";
       };
+      tray = {
+        enabled = false;
+      };
       providers = {
         "@jomifepe/${pkgs.nur.repos.Ev357.raycast-bitwarden.name}" = {
           preferences = {

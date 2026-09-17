@@ -45,7 +45,7 @@
     eduvpn-client
     slack
     quickemu
-    nur.repos.Ev357.flm-q4nx-converter
+    # nur.repos.Ev357.flm-q4nx-converter
   ];
 
   services = {

@@ -23,7 +23,6 @@
     };
 
     home.packages = with pkgs; [
-      lunar-client
       (heroic.override {
         extraPkgs = pkgs:
           with pkgs; [
