@@ -181,8 +181,7 @@
     ))
     ghostscript
     sql-formatter
-    black
-    isort
+    ruff
     tex-fmt
     taplo
   ];

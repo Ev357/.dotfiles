@@ -25,6 +25,7 @@
       sqls.enable = true;
       eslint.enable = true;
       pyright.enable = true;
+      ruff.enable = true;
       qmlls.enable = true;
       clangd.enable = true;
       bashls.enable = true;

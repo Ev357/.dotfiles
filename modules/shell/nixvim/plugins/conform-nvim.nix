@@ -11,7 +11,7 @@
             html = { 'oxfmt', 'prettierd' },
             markdown = { 'injected' },
             sql = { 'sql_formatter' },
-            python = { 'isort', 'black' },
+            python = { 'ruff_format', 'ruff_organize_imports' },
             tex = { 'tex-fmt' },
             toml = { 'taplo' },
           }
