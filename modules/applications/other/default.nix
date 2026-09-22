@@ -28,7 +28,7 @@
       jellyfin-desktop
       inkscape
       nur.repos.Ev357.hayase
-      nur.repos.Ev357.krita
+      krita
       cosmic-files
     ];
   };

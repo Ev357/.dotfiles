@@ -18,6 +18,7 @@
     ./nushell
     ./packages
     ./pi-coding-agent
+    ./rbw
     ./ssh
     ./starship
     ./tano
