@@ -25,7 +25,7 @@
       systemd.enable = true;
       extensions = with pkgs; [
         nur.repos.Ev357.vicinae-bitwarden
-        nur.repos.Ev357.vicinae-jisho
+        nur.repos.Ev357.raycast-jisho
       ];
     };
 
