@@ -9,7 +9,10 @@
     servers = {
       gopls.enable = true;
       vue_ls.enable = true;
-      tsgo.enable = true;
+      tsgo = {
+        enable = true;
+        package = pkgs.typescript;
+      };
       tailwindcss.enable = true;
       oxlint.enable = true;
       biome.enable = true;
@@ -30,6 +33,7 @@
       clangd.enable = true;
       bashls.enable = true;
       texlab.enable = true;
+      roslyn_ls.enable = true;
 
       rust_analyzer = {
         enable = true;

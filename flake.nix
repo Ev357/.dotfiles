@@ -39,7 +39,6 @@
     tano.url = "github:Ev357/tano";
     template-manager.url = "github:Ev357/template-manager";
     todo.url = "github:Ev357/todo-rs";
-    nix-amd-ai.url = "github:noamsto/nix-amd-ai";
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -66,6 +65,10 @@
     };
     fenix = {
       url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    openflowlm = {
+      url = "github:eyduh/OpenFlowLM-Next";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

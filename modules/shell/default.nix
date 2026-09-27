@@ -10,7 +10,6 @@
     ./btop
     ./bun
     ./direnv
-    ./flm-add
     ./fzf
     ./git
     ./nh

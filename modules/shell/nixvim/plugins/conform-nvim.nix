@@ -7,6 +7,7 @@
           local config = {
             lua = { 'stylua' },
             arduino = { 'clang-format' },
+            cs = { 'csharpier' },
             nix = { 'nix' },
             html = { 'oxfmt', 'prettierd' },
             markdown = { 'injected' },

@@ -14,6 +14,7 @@
         tray = {
           enabled = false;
         };
+        global_shortcuts.toggle = "";
         providers = {
           "@bl4zee1g/${pkgs.nur.repos.Ev357.vicinae-bitwarden.name}" = {
             preferences = {
@@ -24,8 +25,9 @@
       };
       systemd.enable = true;
       extensions = with pkgs; [
-        nur.repos.Ev357.vicinae-bitwarden
         nur.repos.Ev357.raycast-jisho
+        nur.repos.Ev357.vicinae-bitwarden
+        nur.repos.Ev357.vicinae-nix
       ];
     };
 

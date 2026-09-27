@@ -60,7 +60,7 @@ in {
           name = "FastFlowLM";
           baseUrl = "http://127.0.0.1:52625/v1";
           api = "openai-completions";
-          apiKey = "flm-local";
+          apiKey = "oflm-local";
           compat = {
             supportsReasoningEffort = true;
             supportsUsageInStreaming = true;
