@@ -306,8 +306,43 @@ in {
         {_args = [(inline ''mainMod .. " + CONTROL + H"'') (inline ''hl.dsp.exec_cmd("systemctl suspend")'')];}
         {_args = [(inline ''mainMod .. " + CONTROL + P"'') (inline ''hl.dsp.exec_cmd("hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown now'")'')];}
         {_args = [(inline ''mainMod .. " + CONTROL + R"'') (inline ''hl.dsp.exec_cmd("hyprshutdown -t 'Restarting...' --post-cmd 'systemctl reboot'")'')];}
-        {_args = [(inline ''mainMod .. " + CONTROL + M"'') (inline ''hl.dsp.exec_cmd("hyprctl keyword monitor \", preferred, auto-up, 1, mirror, ${cfg.mainMonitorName}\"")'')];}
-        {_args = [(inline ''mainMod .. " + CONTROL + E"'') (inline ''hl.dsp.exec_cmd("hyprctl keyword monitor \", preferred, auto-up, 1\"")'')];}
+        {
+          _args = [
+            (inline ''mainMod .. " + CONTROL + M"'')
+            (inline
+              # lua
+              ''
+                function()
+                  local main = "${cfg.mainMonitorName}"
+                  for _, monitor in ipairs(hl.get_monitors()) do
+                    if monitor.name ~= main then
+                      hl.monitor({ output = monitor.name, mode = "preferred", position = "0x0", scale = 1, mirror = "" })
+                      hl.monitor({ output = main, mode = "preferred", position = "0x0", scale = 1, mirror = monitor.name })
+                      return
+                    end
+                  end
+                end
+              '')
+          ];
+        }
+        {
+          _args = [
+            (inline ''mainMod .. " + CONTROL + E"'')
+            (inline
+              # lua
+              ''
+                function()
+                  local main = "${cfg.mainMonitorName}"
+                  hl.monitor({ output = main, mode = "highres", position = "0x0", scale = ${toString cfg.mainMonitorScaling}, mirror = "" })
+                  for _, monitor in ipairs(hl.get_monitors()) do
+                    if monitor.name ~= main then
+                      hl.monitor({ output = monitor.name, mode = "preferred", position = "auto-up", scale = 1, mirror = "" })
+                    end
+                  end
+                end
+              '')
+          ];
+        }
 
         {_args = [(inline ''mainMod .. " + H"'') (inline ''hl.dsp.layout("move -col")'')];}
         {_args = [(inline ''mainMod .. " + J"'') (inline ''hl.dsp.focus({ direction = "d" })'')];}
@@ -459,6 +494,17 @@ in {
         match = {class = "hyprland-run";};
         float = true;
         move = "20 monitor_h-120";
+      }
+      {
+        name = "mochi";
+        match = {
+          class = "^io\\.github\\.mochi_desktop\\.Mochi.*$";
+        };
+        float = true;
+        no_blur = true;
+        no_shadow = true;
+        border_size = 0;
+        pin = true;
       }
     ];
   };

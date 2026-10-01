@@ -13,12 +13,12 @@
     enable = true;
     mainMonitorName = "eDP-1";
     mainMonitorScaling = 2;
-    settings.config = {
+    settings = {
       monitor = [
         {
           output = mainMonitorName;
           mode = "highres";
-          position = "auto";
+          position = "0x0";
           scale = mainMonitorScaling;
         }
         {
@@ -26,6 +26,13 @@
           mode = "preferred";
           position = "auto-up";
           scale = 1;
+        }
+      ];
+      workspace_rule = [
+        {
+          workspace = "1";
+          monitor = mainMonitorName;
+          default = true;
         }
       ];
     };

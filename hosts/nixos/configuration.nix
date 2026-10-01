@@ -77,7 +77,6 @@
   hardware = {
     opentabletdriver.enable = true;
     bluetooth.enable = true;
-    amd-npu.enable = true;
   };
 
   powerManagement.enable = true;
