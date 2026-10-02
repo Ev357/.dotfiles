@@ -97,7 +97,7 @@ in {
         mode = "allow";
       }
       {
-        binary = lib.escapeRegex "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland}/libexec/.xdg-desktop-portal-hyprland-wrapped";
+        binary = lib.escapeRegex "${pkgs.xdg-desktop-portal-hyprland}/libexec/.xdg-desktop-portal-hyprland-wrapped";
         type = "screencopy";
         mode = "allow";
       }

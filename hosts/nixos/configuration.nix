@@ -43,7 +43,7 @@
       enable = true;
       package = pkgs.emptyDirectory;
     };
-    openflowlm.enable = true;
+    # openflowlm.enable = true;
   };
 
   services = {
