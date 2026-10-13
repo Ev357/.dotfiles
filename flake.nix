@@ -7,7 +7,6 @@
       "https://nix-community.cachix.org"
       "https://nixos-raspberrypi.cachix.org"
       "https://nix-gaming.cachix.org"
-      "https://ghostty.cachix.org"
       "https://tano.cachix.org"
       "https://fenix.cachix.org"
       "https://nix-amd-ai.cachix.org"
@@ -17,7 +16,6 @@
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "nixos-raspberrypi.cachix.org-1:4iMO9LXa8BqhU+Rpg6LQKiGa2lsNh/j2oiYLNOQ5sPI="
       "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
-      "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="
       "tano.cachix.org-1:Vi3qOkAzZY0PVB7ca3Kp03gURYrEFK7gNdX2thodn7I="
       "fenix.cachix.org-1:ecJhr+RdYEdcVgUkjruiYhjbBloIEGov7bos90cZi0Q="
       "nix-amd-ai.cachix.org-1:F4OU4vw/lV2oiG6SBHZ+nqjl4EFJuqI4X9A7pvaBmhQ="
@@ -36,14 +34,6 @@
     tano.url = "github:Ev357/tano";
     template-manager.url = "github:Ev357/template-manager";
     todo.url = "github:Ev357/todo-rs";
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -65,7 +55,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     openflowlm = {
-      url = "github:eyduh/OpenFlowLM-Next";
+      url = "github:Atomic-Germ/OpenFlowLM-Next";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

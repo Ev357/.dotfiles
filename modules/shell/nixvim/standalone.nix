@@ -1,14 +1,8 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./plugins
     ./keymaps.nix
   ];
-
-  package = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
   opts = {
     number = true;
@@ -114,7 +108,7 @@
         # lua
         ''
           function()
-            vim.hl.hl_op()
+            vim.hl.on_yank()
           end
         '';
     }
