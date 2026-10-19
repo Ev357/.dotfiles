@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  inputs,
   ...
 }: let
   cfg = config.wayland.windowManager.hyprland;
@@ -21,7 +22,8 @@ in {
             # lua
             ''
               function()
-                hl.exec_cmd("mpvpaper -p -o \"loop no-audio hwdec=auto\" '*' ~/Pictures/wallpapers/yukino.mp4")
+                hl.exec_cmd("mpvpaper -o \"loop no-audio hwdec=auto --input-ipc-server=/tmp/mpvsocket\" '*' ~/Pictures/wallpapers/yukino.mp4")
+                hl.exec_cmd("${inputs.mpvpaper-stop-rs.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/mpvpaper-stop-rs -d")
               end
             '')
         ];

@@ -34,6 +34,7 @@
     tano.url = "github:Ev357/tano";
     template-manager.url = "github:Ev357/template-manager";
     todo.url = "github:Ev357/todo-rs";
+    mpvpaper-stop-rs.url = "github:Ev357/mpvpaper-stop-rs";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
