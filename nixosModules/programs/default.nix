@@ -1,7 +1,6 @@
 {
   imports = [
     ./localsend
-    ./openflowlm
     ./winbox
   ];
 }

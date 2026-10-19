@@ -81,8 +81,8 @@ in {
             };
           in [
             {
-              id = "qwen3.8-distilled:9b";
-              name = "Qwen3.8-Distilled-9B-NPU2";
+              id = "gemma4-it:12b";
+              name = "Gemma4-12B-IT-NPU2";
               contextWindow = 32768;
               maxTokens = 8192;
               reasoning = true;
@@ -90,19 +90,10 @@ in {
               inherit thinkingLevelMap;
             }
             {
-              id = "qwen3.5-claude-code:9b";
-              name = "Qwen3.5-9B-Claude-Code-NPU2";
-              contextWindow = 32768;
-              maxTokens = 8192;
-              reasoning = true;
-              input = ["text" "image"];
-              inherit thinkingLevelMap;
-            }
-            {
-              id = "gemma4-it:e4b";
-              name = "Gemma4-E4B-IT-NPU2";
-              contextWindow = 65536;
-              maxTokens = 8192;
+              id = "qwen3.8-mtp:27b";
+              name = "Qwen3.8-27B-NPU2";
+              contextWindow = 8192;
+              maxTokens = 2048;
               reasoning = true;
               input = ["text" "image"];
               inherit thinkingLevelMap;

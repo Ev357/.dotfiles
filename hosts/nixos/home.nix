@@ -64,6 +64,7 @@
   programs = {
     waybar.enable = true;
     vicinae.enable = true;
+    mpvpaper.enable = true;
   };
 
   i18n.inputMethod.enable = true;

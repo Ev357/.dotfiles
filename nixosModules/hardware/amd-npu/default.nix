@@ -1,6 +1,10 @@
-{
+{inputs, ...}: {
+  imports = [
+    inputs.nix-amd-ai.nixosModules.default
+  ];
+
   hardware.amd-npu = {
-    enableFastFlowLM = false;
+    enableFastFlowLM = true;
     enableImageGen = false;
     enableLemonade = false;
   };

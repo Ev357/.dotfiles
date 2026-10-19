@@ -54,8 +54,8 @@
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    openflowlm = {
-      url = "github:Atomic-Germ/OpenFlowLM-Next";
+    nix-amd-ai = {
+      url = "github:noamsto/nix-amd-ai";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

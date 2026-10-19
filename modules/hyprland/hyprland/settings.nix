@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
 }: let
   cfg = config.wayland.windowManager.hyprland;
@@ -13,6 +12,21 @@ in {
     fileManager._var = "ghostty -e yazi";
     menu._var = "vicinae toggle";
     mainMod._var = "SUPER";
+
+    on = [
+      {
+        _args = [
+          "hyprland.start"
+          (inline
+            # lua
+            ''
+              function()
+                hl.exec_cmd("mpvpaper -p -o \"loop no-audio hwdec=auto\" '*' ~/Pictures/wallpapers/yukino.mp4")
+              end
+            '')
+        ];
+      }
+    ];
 
     config = {
       ecosystem = {enforce_permissions = true;};

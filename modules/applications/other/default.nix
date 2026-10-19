@@ -30,6 +30,7 @@
       nur.repos.Ev357.hayase
       krita
       cosmic-files
+      pulsemixer
     ];
   };
 }
