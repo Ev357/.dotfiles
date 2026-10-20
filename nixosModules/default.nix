@@ -7,5 +7,6 @@
     ./packages
     ./programs
     ./services
+    ./virtualisation
   ];
 }
