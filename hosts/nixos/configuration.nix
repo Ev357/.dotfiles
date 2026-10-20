@@ -1,12 +1,14 @@
 {
-  inputs,
+  lib,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
     ../../nixosModules
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
+    inputs.lanzaboote.nixosModules.lanzaboote
   ];
 
   boot = {
@@ -19,11 +21,16 @@
     enableContainers = true;
     loader = {
       systemd-boot = {
-        enable = true;
+        enable = lib.mkForce false;
         configurationLimit = 10;
       };
       efi.canTouchEfiVariables = true;
     };
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/var/lib/sbctl";
+    };
+    initrd.luks.devices."luks-a95073de-e62f-4ab1-afad-1d6d2292ed87".crypttabExtraOpts = ["tpm2-device=auto"];
     binfmt.emulatedSystems = ["aarch64-linux"];
   };
 

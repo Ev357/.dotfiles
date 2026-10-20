@@ -55,6 +55,10 @@
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.2.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-amd-ai = {
       url = "github:noamsto/nix-amd-ai";
       inputs.nixpkgs.follows = "nixpkgs";
