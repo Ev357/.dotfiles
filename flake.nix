@@ -25,16 +25,28 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
-    stylix.url = "github:nix-community/stylix";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
     nix-gaming.url = "github:fufexan/nix-gaming";
-    nur.url = "github:nix-community/NUR";
-    nixvim.url = "github:nix-community/nixvim";
     tano.url = "github:Ev357/tano";
     template-manager.url = "github:Ev357/template-manager";
     todo.url = "github:Ev357/todo-rs";
     mpvpaper-stop-rs.url = "github:Ev357/mpvpaper-stop-rs";
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
