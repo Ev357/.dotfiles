@@ -1,4 +1,8 @@
 {
+  imports = [
+    ./patch
+  ];
+
   programs.ghostty = {
     settings = {
       theme = "Catppuccin Macchiato";
