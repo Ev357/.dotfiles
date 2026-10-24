@@ -81,6 +81,7 @@
   virtualisation.libvirtd.enable = true;
 
   hardware = {
+    framework.enableKmod = false;
     opentabletdriver.enable = true;
     bluetooth.enable = true;
     amd-npu.enable = true;
