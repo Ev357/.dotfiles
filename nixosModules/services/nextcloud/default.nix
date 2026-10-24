@@ -13,8 +13,8 @@
       nextcloud = {
         extraApps = {
           theming_customcss = pkgs.fetchNextcloudApp {
-            url = "https://github.com/nextcloud-releases/theming_customcss/releases/download/v1.21.0/theming_customcss-v1.21.0.tar.gz";
-            hash = "sha256-gJcQJv0tD7lykS+26cLr5zlujJjajNqITWmTv0ki2T0=";
+            url = "https://github.com/nextcloud-releases/theming_customcss/releases/download/v1.22.0/theming_customcss-v1.22.0.tar.gz";
+            hash = "sha256-CUE7rV1yVIzRH8mogwGxuMB2Che3vRPbadTz0o3tgTE=";
             license = "agpl3Plus";
           };
         };

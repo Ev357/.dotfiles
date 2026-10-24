@@ -4,7 +4,7 @@
   ...
 }: {
   services.home-assistant = {
-    package = inputs.nixpkgs-stable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.home-assistant;
+    package = inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.home-assistant;
     config = {
       wake_on_lan = {};
       switch = [

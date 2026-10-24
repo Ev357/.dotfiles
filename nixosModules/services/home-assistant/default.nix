@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }: {
   config = lib.mkIf (config.services.home-assistant.enable) {
