@@ -22,6 +22,8 @@ in {
         };
       };
 
+      loadSessionVariables = true;
+
       shellAliases = {
         "la" = "ls -a";
         "tree" = "ls **/*";
