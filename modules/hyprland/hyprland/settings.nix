@@ -23,7 +23,7 @@ in {
             ''
               function()
                 hl.exec_cmd("mpvpaper -o \"loop no-audio hwdec=auto --input-ipc-server=/tmp/mpvsocket\" '*' ~/Pictures/wallpapers/yukino.mp4")
-                hl.exec_cmd("${inputs.mpvpaper-stop-rs.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/mpvpaper-stop-rs -d")
+                hl.exec_cmd("${inputs.mpvpaper-stop-rs.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/mpvpaper-stop-rs -d -i com.mitchellh.ghostty")
               end
             '')
         ];
@@ -382,7 +382,7 @@ in {
         {_args = ["PRINT" (inline ''hl.dsp.exec_cmd("hyprshot -m output -z")'')];}
         {_args = ["SHIFT + PRINT" (inline ''hl.dsp.exec_cmd("hyprshot -m region -z")'')];}
 
-        {_args = ["ALT + Q" (inline ''hl.dsp.exec_cmd("busctl --user call com.mitchellh.ghostty /com/mitchellh/ghostty org.gtk.Actions Activate 'sava{sv}' toggle-quick-terminal 0 0")'')];}
+        {_args = ["ALT + Q" (inline ''hl.dsp.pass({ window = "class:^(com.mitchellh.ghostty)$" })'')];}
 
         {_args = [(inline ''mainMod .. " + S"'') (inline ''hl.dsp.workspace.toggle_special("magic")'')];}
         {_args = [(inline ''mainMod .. " + SHIFT + S"'') (inline ''hl.dsp.window.move({ workspace = "special:magic" })'')];}
