@@ -382,8 +382,6 @@ in {
         {_args = ["PRINT" (inline ''hl.dsp.exec_cmd("hyprshot -m output -z")'')];}
         {_args = ["SHIFT + PRINT" (inline ''hl.dsp.exec_cmd("hyprshot -m region -z")'')];}
 
-        {_args = ["ALT + Q" (inline ''hl.dsp.pass({ window = "class:^(com.mitchellh.ghostty)$" })'')];}
-
         {_args = [(inline ''mainMod .. " + S"'') (inline ''hl.dsp.workspace.toggle_special("magic")'')];}
         {_args = [(inline ''mainMod .. " + SHIFT + S"'') (inline ''hl.dsp.window.move({ workspace = "special:magic" })'')];}
         {_args = [(inline ''mainMod .. " + mouse_down"'') (inline ''hl.dsp.focus({ workspace = "e+1" })'')];}
