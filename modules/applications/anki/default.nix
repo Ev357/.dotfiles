@@ -2,10 +2,12 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }: {
   config = lib.mkIf config.programs.anki.enable {
     programs.anki = {
+      package = inputs.nixpkgs-stable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.anki;
       videoDriver = "opengl";
       theme = "dark";
       style = "anki";

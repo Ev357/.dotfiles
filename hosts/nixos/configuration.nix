@@ -84,7 +84,7 @@
     framework.enableKmod = false;
     opentabletdriver.enable = true;
     bluetooth.enable = true;
-    amd-npu.enable = true;
+    amd-npu.enable = false; # build failure
   };
 
   powerManagement.enable = true;
