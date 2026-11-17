@@ -2,17 +2,14 @@
   pkgs,
   lib,
   config,
-  inputs,
   ...
-}: let
-  pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-in {
+}: {
   config = lib.mkIf config.i18n.inputMethod.enable {
     i18n.inputMethod = {
       type = "fcitx5";
       fcitx5 = {
         addons = [
-          pkgs-stable.fcitx5-mozc
+          pkgs.fcitx5-mozc
           pkgs.fcitx5-gtk
         ];
         waylandFrontend = true;

@@ -24,7 +24,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
     nixos-raspberrypi.url = "github:nvmd/nixos-raspberrypi/main";
     nix-gaming.url = "github:fufexan/nix-gaming";
     tano.url = "github:Ev357/tano";

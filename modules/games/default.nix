@@ -2,14 +2,8 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
-}: let
-  pkgs-stable = import inputs.nixpkgs-stable {
-    system = pkgs.stdenv.hostPlatform.system;
-    config.allowUnfree = true;
-  };
-in {
+}: {
   imports = [
     ./osu
     ./prismlauncher
@@ -36,7 +30,7 @@ in {
             vlc
           ];
       })
-      pkgs-stable.lutris
+      lutris
     ];
 
     modules.electron-flags.enable = true;
