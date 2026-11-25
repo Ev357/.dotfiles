@@ -21,7 +21,7 @@ in {
       settings = {
         npmCommand = ["bun"];
         defaultProvider = "antigravity";
-        defaultModel = "gemini-3.8-flash";
+        defaultModel = "gemini-4-hydrogen";
         theme = "catppuccin-tui-macchiato";
         quietStartup = true;
         enableInstallTelemetry = false;
@@ -30,6 +30,7 @@ in {
         enabledModels =
           [
             cfg.settings.defaultModel
+            "openrouter/free"
           ]
           ++ (
             lib.concatMap
@@ -56,6 +57,36 @@ in {
       };
 
       models.providers = {
+        e-infra = {
+          name = "e-INFRA";
+          baseUrl = "https://llm.ai.e-infra.cz/v1";
+          api = "openai-completions";
+          models = [
+            {
+              id = "kimi-k3.1-pro";
+              name = "Kimi K3.1 Pro";
+              reasoning = true;
+              input = ["text" "image"];
+              contextWindow = 1048576;
+              maxTokens = 65536;
+              thinkingLevelMap = {
+                off = null;
+                minimal = null;
+                low = "low";
+                medium = "medium";
+                high = "high";
+              };
+            }
+            {
+              name = "DeepSeek v4.1 Flash";
+              id = "deepseek-v4.1-flash";
+              reasoning = false;
+              input = ["text"];
+              contextWindow = 1048576;
+              maxTokens = 65536;
+            }
+          ];
+        };
         fastflowlm = {
           name = "FastFlowLM";
           baseUrl = "http://127.0.0.1:52625/v1";
